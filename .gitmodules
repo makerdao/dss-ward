@@ -1,3 +1,6 @@
 [submodule "lib/dss-chain-log"]
 	path = lib/dss-chain-log
 	url = https://github.com/makerdao/dss-chain-log
+[submodule "lib/univ2-lp-oracle"]
+	path = lib/univ2-lp-oracle
+	url = https://github.com/makerdao/univ2-lp-oracle
