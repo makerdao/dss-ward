@@ -91,12 +91,11 @@ const getWho = (chainLog, address) => {
   return chainLog[address] || address;
 }
 
-const getLogNote = async (web3, chainLog, what, address) => {
+const getLogNoteRelies = async (web3, chainLog, address) => {
   const who = getWho(chainLog, address);
   const authorizations = [];
-  const sig = getSig(web3, `${ what }(address)`);
-  const whats = what.replace('y', 'ies');
-  process.stdout.write(`getting logNote ${ whats } for ${ who }... `);
+  const sig = getSig(web3, 'rely(address)');
+  process.stdout.write(`getting logNote relies for ${ who }... `);
   const start = new Date();
   const logs = await web3.eth.getPastLogs({
     fromBlock: 0, // 11800000,
@@ -105,11 +104,10 @@ const getLogNote = async (web3, chainLog, what, address) => {
   });
   const end = new Date();
   const span = Math.floor((end - start) / 1000);
-  console.log(`found ${ logs.length } ${ whats } in ${ span } seconds.`);
+  console.log(`found ${ logs.length } relies in ${ span } seconds`);
   for (const log of logs) {
     const address = getAddress(web3, log);
-    const name = chainLog[address];
-    authorizations.push(name || address);
+    authorizations.push(address);
   }
   return authorizations;
 }
@@ -141,24 +139,36 @@ const getDeployer = async (env, web3, chainLog, address) => {
   return '0x0';
 }
 
-const isRelied = async (web3, relier, relied) => {
+const isRelied = async (contract, suspect) => {
+  const relied = await contract.methods.wards(suspect).call() != 0;
+  return relied;
+}
+
+const checkRelies = async (web3, chainLog, address, suspects) => {
+  const who = getWho(chainLog, address);
+  process.stdout.write(`checking wards for ${ who }... `);
+  const start = new Date();
+  const relies = [];
   const abi = await getChainLogAbi();
-  const contract = new web3.eth.Contract(abi, relier);
-  const result = await contract.methods.wards(relied).call();
-  return result != 0;
+  const contract = new web3.eth.Contract(abi, address);
+  for (const suspect of suspects) {
+    const relied = await isRelied(contract, suspect);
+    if (relied) {
+      relies.push(suspect);
+    }
+  }
+  const end = new Date();
+  const time = Math.floor((end - start) / 1000);
+  console.log(`found ${ relies.length } wards in ${ time } seconds`);
+  return relies;
 }
 
 const getRelies = async (env, web3, chainLog, address) => {
   const deployer = await getDeployer(env, web3, chainLog, address);
-  const relies = await getLogNote(web3, chainLog, 'rely', address);
-  const uniqueRelies = Array.from(new Set(relies));
-  const denies = await getLogNote(web3, chainLog, 'deny', address);
-  const currentRelies = uniqueRelies.filter(rely => !denies.includes(rely));
-  const relied = await isRelied(web3, address, deployer);
-  if (relied) {
-    currentRelies.push(deployer);
-  }
-  return currentRelies;
+  const suspects = await getLogNoteRelies(web3, chainLog, address);
+  suspects.push(deployer);
+  const relies = checkRelies(web3, chainLog, address, suspects);
+  return relies;
 }
 
 const ward = async () => {
@@ -169,7 +179,7 @@ const ward = async () => {
   // fs.writeFileSync('chainLog.json', JSON.stringify(chainLog));
   const args = getArgs(web3, chainLog);
   const relies = await getRelies(env, web3, chainLog, args.address);
-  console.log(relies);
+  console.log(relies.map(rely => getWho(chainLog, rely)));
 }
 
 ward();
