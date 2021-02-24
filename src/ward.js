@@ -33,42 +33,65 @@ const getSig = (web3, funcWithParams) => {
   return paddedSig;
 }
 
-const getAddress = log => {
+const getAddress = (web3, log) => {
   const argument = log.topics[1];
   const length = argument.length;
   const address = `0x${argument.substring(length - 40, length)}`;
-  return address;
+  const checksumAddress = web3.utils.toChecksumAddress(address);
+  return checksumAddress;
 }
 
-const getAddresses = async (web3, chainLog, what, who) => {
-  const hexWho = web3.utils.toHex(who);
-  const address = await chainLog.methods.getAddress(hexWho).call();
-  const addresses = [];
+const getChainLog = async web3 => {
+  const chainLog = {};
+  const abi = await getChainLogAbi();
+  const contract = new web3.eth.Contract(abi, settings.chainLogAddress);
+  const count = await contract.methods.count().call();
+  for (let i = 0; i < count; i ++) {
+    const progress = Math.floor(100 * i / count);
+    process.stdout.write(`Downloading the chainlog... ${ progress }%\r`);
+    const result = await contract.methods.get(i).call();
+    const address = result['1'];
+    const nameHex = result['0'];
+    const name = web3.utils.hexToUtf8(nameHex);
+    chainLog[address] = name;
+  }
+  console.log();
+  return chainLog;
+}
+
+const getKey = (object, value) => {
+  return Object.keys(object).find(key => object[key] === value);
+}
+
+const getAuthorizations = async (web3, chainLog, what, who) => {
+  const address = getKey(chainLog, who);
+  const authorizations = [];
   const sig = getSig(web3, `${ what }(address)`);
-  process.stdout.write(`getting ${ what }s for ${ who }... `);
+  const subWhat = what.substring(0, what.length - 1);
+  process.stdout.write(`getting ${ subWhat }es for ${ who }... `);
   const start = new Date();
   const logs = await web3.eth.getPastLogs({
-    fromBlock: 0,
+    fromBlock: 11800000,
     address,
     topics: [ sig ],
   });
   const end = new Date();
-  console.log(`done in ${ (end - start) / 1000 } seconds.`);
+  console.log(`done in ${ Math.floor((end - start) / 1000) } seconds.`);
   for (const log of logs) {
-    const address = getAddress(log);
-    addresses.push(address);
+    const address = getAddress(web3, log);
+    const name = chainLog[address];
+    authorizations.push(name || address);
   }
-  return addresses;
+  return authorizations;
 }
 
 const ward = async () => {
-  const chainLogAbi = await getChainLogAbi();
   const env = getEnv();
   const web3 = new Web3(env.rpcUrl);
-  const chainLog = new web3.eth.Contract(chainLogAbi, settings.chainLogAddress);
+  const chainLog = await getChainLog(web3);
 
-  const relies = await getAddresses(web3, chainLog, 'rely', 'MCD_VAT');
-  const denies = await getAddresses(web3, chainLog, 'deny', 'MCD_VAT');
+  const relies = await getAuthorizations(web3, chainLog, 'rely', 'MCD_VAT');
+  const denies = await getAuthorizations(web3, chainLog, 'deny', 'MCD_VAT');
   const currentRelies = relies.filter(rely => !denies.includes(rely));
   console.log(relies);
   console.log(denies);
