@@ -88,7 +88,7 @@ const getLogNoteRelies = async (web3, chainLog, address) => {
   const sig = getSig(web3, 'rely(address)');
   const start = new Date();
   const logs = await web3.eth.getPastLogs({
-    fromBlock: 11800000,
+    fromBlock: settings.fromBlock,
     address,
     topics: [ sig ],
   });
@@ -108,7 +108,9 @@ const getEventRelies = async (web3, chainLog, address) => {
   const abi = getJson('./lib/univ2-lp-oracle/out/UNIV2LPOracle.abi');
   const contract = new web3.eth.Contract(abi, address);
   const start = new Date();
-  const events = await contract.getPastEvents('Rely', { fromBlock: 0 });
+  const events = await contract.getPastEvents('Rely', {
+    fromBlock: settings.fromBlock,
+  });
   const end = new Date();
   const span = Math.floor((end - start) / 1000);
   console.log(`found ${ events.length } relies in ${ span } seconds`);
@@ -191,9 +193,13 @@ const getWards = async (env, web3, chainLog, address) => {
 const ward = async () => {
   const env = getEnv();
   const web3 = new Web3(env.ETH_RPC_URL);
-  const chainLog = JSON.parse(fs.readFileSync('chainLog.json', 'utf8'));
-  // const chainLog = await getChainLog(web3);
-  // fs.writeFileSync('chainLog.json', JSON.stringify(chainLog));
+  let chainLog;
+  if (settings.cachedChainLog) {
+    chainLog = JSON.parse(fs.readFileSync('chainLog.json', 'utf8'));
+  } else {
+    chainLog = await getChainLog(web3);
+    fs.writeFileSync('chainLog.json', JSON.stringify(chainLog));
+  }
   const args = getArgs(web3, chainLog);
   const wards = await getWards(env, web3, chainLog, args.address);
   console.log(wards.map(rely => getWho(chainLog, rely)));
