@@ -102,6 +102,20 @@ const getLogNoteRelies = async (web3, chainLog, address) => {
   return relies;
 }
 
+const getEventRelies = async (web3, chainLog, address) => {
+  const who = getWho(chainLog, address);
+  process.stdout.write(`getting event relies for ${ who }... `);
+  const abi = getJson('./lib/univ2-lp-oracle/out/UNIV2LPOracle.abi');
+  const contract = new web3.eth.Contract(abi, address);
+  const start = new Date();
+  const events = await contract.getPastEvents('Rely', { fromBlock: 0 });
+  const end = new Date();
+  const span = Math.floor((end - start) / 1000);
+  console.log(`found ${ events.length } relies in ${ span } seconds`);
+  const relies = events.map(event => event.returnValues['0']);
+  return relies;
+}
+
 const getTxs = async (env, address, internal) => {
   const endpoint = 'https://api.etherscan.io/api';
   const fixedEntries = 'module=account&startblock=0&sort=asc';
@@ -162,11 +176,13 @@ const checkSuspects = async (web3, chainLog, address, suspects) => {
 }
 
 const getWards = async (env, web3, chainLog, address) => {
-  const suspects = [];
+  let suspects = [];
   const deployers = await getDeployers(env, web3, chainLog, address);
-  suspects.concat(deployers);
+  suspects = suspects.concat(deployers);
   const logNoteRelies = await getLogNoteRelies(web3, chainLog, address);
-  suspects.concat(logNoteRelies);
+  suspects = suspects.concat(logNoteRelies);
+  const eventRelies = await getEventRelies(web3, chainLog, address);
+  suspects = suspects.concat(eventRelies);
   const uniqueSuspects = Array.from(new Set(suspects));
   const wards = checkSuspects(web3, chainLog, address, uniqueSuspects);
   return wards;
