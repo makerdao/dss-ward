@@ -3,18 +3,8 @@ const settings = require('../settings.js');
 const fs = require('fs');
 const fetch = require('node-fetch');
 
-const getChainLogAbi = () => {
-  return new Promise((resolve, reject) => {
-    const chainLogPath = './lib/dss-chain-log/out/ChainLog.abi';
-    fs.readFile(chainLogPath, (err, byteData) => {
-      if (err) reject(err);
-      else {
-        const stringData = byteData.toString();
-        const jsonData = JSON.parse(stringData);
-        resolve(jsonData);
-      }
-    });
-  });
+const getJson = path => {
+  return JSON.parse(fs.readFileSync(path));
 }
 
 const getArgs = (web3, chainLog) => {
@@ -67,7 +57,7 @@ const getAddress = (web3, log) => {
 
 const getChainLog = async web3 => {
   const chainLog = {};
-  const abi = await getChainLogAbi();
+  const abi = getJson('./lib/dss-chain-log/out/ChainLog.abi');
   const contract = new web3.eth.Contract(abi, settings.chainLogAddress);
   const count = await contract.methods.count().call();
   for (let i = 0; i < count; i ++) {
@@ -93,9 +83,9 @@ const getWho = (chainLog, address) => {
 
 const getLogNoteRelies = async (web3, chainLog, address) => {
   const who = getWho(chainLog, address);
-  const authorizations = [];
-  const sig = getSig(web3, 'rely(address)');
   process.stdout.write(`getting logNote relies for ${ who }... `);
+  const relies = [];
+  const sig = getSig(web3, 'rely(address)');
   const start = new Date();
   const logs = await web3.eth.getPastLogs({
     fromBlock: 11800000,
@@ -107,9 +97,9 @@ const getLogNoteRelies = async (web3, chainLog, address) => {
   console.log(`found ${ logs.length } relies in ${ span } seconds`);
   for (const log of logs) {
     const address = getAddress(web3, log);
-    authorizations.push(address);
+    relies.push(address);
   }
-  return authorizations;
+  return relies;
 }
 
 const getTxs = async (env, address, internal) => {
@@ -157,7 +147,7 @@ const checkSuspects = async (web3, chainLog, address, suspects) => {
   process.stdout.write(`checking wards for ${ who }... `);
   const start = new Date();
   const relies = [];
-  const abi = await getChainLogAbi();
+  const abi = getJson('./lib/dss-chain-log/out/ChainLog.abi');
   const contract = new web3.eth.Contract(abi, address);
   for (const suspect of suspects) {
     const relied = await isWard(contract, suspect);
