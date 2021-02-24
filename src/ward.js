@@ -16,6 +16,22 @@ const getChainLogAbi = () => {
   });
 }
 
+const getArgs = chainLog => {
+  let who = 'MCD_VAT';
+  if (process.argv.length > 2) {
+    who = process.argv[2];
+  }
+  if (isAddress(who)) {
+    return { address: who };
+  }
+  const address = getKey(chainLog, who);
+  if (!address) {
+    console.log(`${ who } isn't an address nor does it exist in the chainlog.`);
+    process.exit();
+  }
+  return { address };
+}
+
 const getEnv = () => {
   if (!process.env.ETH_RPC_URL) {
     console.log('please specify a ETH_RPC_URL env var');
@@ -31,6 +47,10 @@ const getSig = (web3, funcWithParams) => {
   const sig = hash.substring(0, 10);
   const paddedSig = `${ sig }${ '0'.repeat(56) }`
   return paddedSig;
+}
+
+const isAddress = string => {
+  return Boolean(string.match('^0x[0-9a-fA-F]{40}$'))
 }
 
 const getAddress = (web3, log) => {
@@ -63,20 +83,21 @@ const getKey = (object, value) => {
   return Object.keys(object).find(key => object[key] === value);
 }
 
-const getAuthorizations = async (web3, chainLog, what, who) => {
-  const address = getKey(chainLog, who);
+const getLogNote = async (web3, chainLog, what, address) => {
+  const who = chainLog[address] || address;
   const authorizations = [];
   const sig = getSig(web3, `${ what }(address)`);
-  const subWhat = what.substring(0, what.length - 1);
-  process.stdout.write(`getting ${ subWhat }es for ${ who }... `);
+  const whats = what.replace('y', 'ies');
+  process.stdout.write(`getting logNote ${ whats } for ${ who }... `);
   const start = new Date();
   const logs = await web3.eth.getPastLogs({
-    fromBlock: 11800000,
+    fromBlock: 0,
     address,
     topics: [ sig ],
   });
   const end = new Date();
-  console.log(`done in ${ Math.floor((end - start) / 1000) } seconds.`);
+  const span = Math.floor((end - start) / 1000);
+  console.log(`found ${ logs.length } ${ whats } in ${ span } seconds.`);
   for (const log of logs) {
     const address = getAddress(web3, log);
     const name = chainLog[address];
@@ -85,16 +106,23 @@ const getAuthorizations = async (web3, chainLog, what, who) => {
   return authorizations;
 }
 
+const getCurrentRelies = async (web3, chainLog, address) => {
+  const relies = await getLogNote(web3, chainLog, 'rely', address);
+  console.log(relies);
+  const denies = await getLogNote(web3, chainLog, 'deny', address);
+  console.log(denies);
+  const currentRelies = relies.filter(rely => !denies.includes(rely));
+  return currentRelies;
+}
+
 const ward = async () => {
   const env = getEnv();
   const web3 = new Web3(env.rpcUrl);
+  // const chainLog = JSON.parse(fs.readFileSync('chainLog.json', 'utf8'));
   const chainLog = await getChainLog(web3);
-
-  const relies = await getAuthorizations(web3, chainLog, 'rely', 'MCD_VAT');
-  const denies = await getAuthorizations(web3, chainLog, 'deny', 'MCD_VAT');
-  const currentRelies = relies.filter(rely => !denies.includes(rely));
-  console.log(relies);
-  console.log(denies);
+  // fs.writeFileSync('chainLog.json', JSON.stringify(chainLog));
+  const args = getArgs(chainLog);
+  const currentRelies = await getCurrentRelies(web3, chainLog, args.address);
   console.log(currentRelies);
 }
 
