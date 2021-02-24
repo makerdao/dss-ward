@@ -7,20 +7,25 @@ const getJson = path => {
   return JSON.parse(fs.readFileSync(path));
 }
 
-const getArgs = (web3, chainLog) => {
-  let who = 'MCD_VAT';
+const parseWho = (web3, chainLog) => {
+  let who;
   if (process.argv.length > 2) {
     who = process.argv[2];
+  } else {
+    return null;
   }
+  let address;
   if (isAddress(who)) {
-    return { address: web3.utils.toChecksumAddress(who) };
+    address = web3.utils.toChecksumAddress(who);
+  } else {
+    address = getKey(chainLog, who);
+    if (!address) {
+      console.log(`${ who } isn't an address nor does it exist in the`
+                  + ` chainlog.`);
+      process.exit();
+    }
   }
-  const address = getKey(chainLog, who);
-  if (!address) {
-    console.log(`${ who } isn't an address nor does it exist in the chainlog.`);
-    process.exit();
-  }
-  return { address };
+  return address;
 }
 
 const getEnv = () => {
@@ -194,12 +199,14 @@ const isWard = async (contract, suspect) => {
 const checkSuspects = async (web3, chainLog, address, suspects) => {
   const who = getWho(chainLog, address);
   const relies = [];
-  let wardsPresent = true;
   const abi = getJson('./lib/dss-chain-log/out/ChainLog.abi');
   const contract = new web3.eth.Contract(abi, address);
-  process.stdout.write(`checking wards for ${ who }... `);
   const start = new Date();
+  let count = 1;
   for (const suspect of suspects) {
+    const progress = Math.floor(100 * count / suspects.length);
+    count ++;
+    process.stdout.write(`checking wards for ${ who }... ${ progress }%\r`);
     try {
       const relied = await isWard(contract, suspect);
       if (relied) {
@@ -207,17 +214,15 @@ const checkSuspects = async (web3, chainLog, address, suspects) => {
       }
     } catch (err) {
       if (err.data === 'Reverted 0x') {
-        console.log('no wards');
-        wardsPresent = false;
+        console.log(`checking wards for ${ who }... no wards`);
         break;
       }
     }
   }
   const end = new Date();
-  const time = Math.floor((end - start) / 1000);
-  if (wardsPresent) {
-    console.log(`found ${ relies.length } wards in ${ time } seconds`);
-  }
+  const span = Math.floor((end - start) / 1000);
+  console.log(`checking wards for ${ who }... found ${ relies.length }`
+              + ` wards in ${ span } seconds`);
   return relies;
 }
 
@@ -225,14 +230,40 @@ const getWards = async (env, web3, chainLog, address) => {
   let suspects = [];
   const deployers = await getDeployers(env, web3, chainLog, address);
   suspects = suspects.concat(deployers);
+  const authorities = await getAuthorities(web3, chainLog, address);
   const logNoteRelies = await getLogNoteRelies(web3, chainLog, address);
   suspects = suspects.concat(logNoteRelies);
   const eventRelies = await getEventRelies(web3, chainLog, address);
   suspects = suspects.concat(eventRelies);
   const uniqueSuspects = Array.from(new Set(suspects));
   const wards = await checkSuspects(web3, chainLog, address, uniqueSuspects);
-  const authorities = await getAuthorities(web3, chainLog, address);
-  return wards.concat(authorities);
+  const allWards = wards.concat(authorities).filter(w => w != address);
+  return allWards;
+}
+
+const lookup = async (env, web3, chainLog, address) => {
+  const wards = {};
+  let level = 0;
+  wards[level] = [ address ];
+  while(wards[level]) {
+    console.log(`\nlevel ${ level } (${ wards[level].length } addresses)\n`);
+    let count = 1;
+    for (const ward of wards[level]) {
+      console.log(`${ count } / ${ wards[level].length }`);
+      count ++;
+      const subWards = await getWards(env, web3, chainLog, ward);
+      console.log(subWards.map(w => getWho(chainLog, w)));
+      console.log();
+      if (!subWards.length) continue;
+      if (!wards[level + 1]) {
+        wards[level + 1] = [];
+      }
+      wards[level + 1] = wards[level + 1].concat(subWards);
+      wards[level + 1] = Array.from(new Set(wards[level + 1]));
+    }
+    level ++;
+  }
+  return wards;
 }
 
 const ward = async () => {
@@ -245,9 +276,27 @@ const ward = async () => {
     chainLog = await getChainLog(web3);
     fs.writeFileSync('chainLog.json', JSON.stringify(chainLog));
   }
-  const args = getArgs(web3, chainLog);
-  const wards = await getWards(env, web3, chainLog, args.address);
-  console.log(wards.map(rely => getWho(chainLog, rely)));
+  const address = parseWho(web3, chainLog);
+  if (!address) {
+    console.log('performing full system lookup...');
+    const address = getKey(chainLog, 'MCD_VAT');
+    const wards = await lookup(env, web3, chainLog, address);
+    const namedWards = {};
+    let level = 0;
+    while(wards[level]) {
+      namedWards[level] = wards[level].map(ward => getWho(chainLog, ward));
+      level ++;
+    }
+    console.log('the following addresses have direct or indirect privileged'
+                + ' access to the Vat:');
+    console.log(namedWards);
+  } else {
+    const who = getWho(chainLog, address);
+    const wards = await getWards(env, web3, chainLog, address);
+    console.log(`the following addresses have direct privileged access to `
+                + `${ who }:`);
+    console.log(wards.map(rely => getWho(chainLog, rely)));
+  }
 }
 
 ward();
