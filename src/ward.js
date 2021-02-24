@@ -118,6 +118,39 @@ const getEventRelies = async (web3, chainLog, address) => {
   return relies;
 }
 
+const getAuthorities = async (web3, chainLog, address) => {
+  const who = getWho(chainLog, address);
+  const abi = getJson('./lib/ds-pause/out/DSPause.abi');
+  const contract = new web3.eth.Contract(abi, address);
+  const authorities = [];
+  let owner;
+  process.stdout.write(`getting owner for ${ who }... `);
+  try {
+    owner = await contract.methods.owner().call();
+    console.log(getWho(chainLog, owner));
+    if (Number(owner) != 0) {
+      authorities.push(owner);
+    }
+  } catch (err) {
+    if (err.data === 'Reverted 0x') {
+      console.log('no owner');
+    }
+  }
+  process.stdout.write(`getting authority for ${ who }... `);
+  try {
+    const authority = await contract.methods.authority().call();
+    console.log(getWho(chainLog, authority));
+    if (Number(authority) != 0) {
+      authorities.push(authority);
+    }
+  } catch (err) {
+    if (err.data === 'Reverted 0x') {
+      console.log('no authority');
+    }
+  }
+  return authorities;
+}
+
 const getTxs = async (env, address, internal) => {
   const endpoint = 'https://api.etherscan.io/api';
   const fixedEntries = 'module=account&startblock=0&sort=asc';
@@ -160,20 +193,31 @@ const isWard = async (contract, suspect) => {
 
 const checkSuspects = async (web3, chainLog, address, suspects) => {
   const who = getWho(chainLog, address);
-  process.stdout.write(`checking wards for ${ who }... `);
-  const start = new Date();
   const relies = [];
+  let wardsPresent = true;
   const abi = getJson('./lib/dss-chain-log/out/ChainLog.abi');
   const contract = new web3.eth.Contract(abi, address);
+  process.stdout.write(`checking wards for ${ who }... `);
+  const start = new Date();
   for (const suspect of suspects) {
-    const relied = await isWard(contract, suspect);
-    if (relied) {
-      relies.push(suspect);
+    try {
+      const relied = await isWard(contract, suspect);
+      if (relied) {
+        relies.push(suspect);
+      }
+    } catch (err) {
+      if (err.data === 'Reverted 0x') {
+        console.log('no wards');
+        wardsPresent = false;
+        break;
+      }
     }
   }
   const end = new Date();
   const time = Math.floor((end - start) / 1000);
-  console.log(`found ${ relies.length } wards in ${ time } seconds`);
+  if (wardsPresent) {
+    console.log(`found ${ relies.length } wards in ${ time } seconds`);
+  }
   return relies;
 }
 
@@ -186,8 +230,9 @@ const getWards = async (env, web3, chainLog, address) => {
   const eventRelies = await getEventRelies(web3, chainLog, address);
   suspects = suspects.concat(eventRelies);
   const uniqueSuspects = Array.from(new Set(suspects));
-  const wards = checkSuspects(web3, chainLog, address, uniqueSuspects);
-  return wards;
+  const wards = await checkSuspects(web3, chainLog, address, uniqueSuspects);
+  const authorities = await getAuthorities(web3, chainLog, address);
+  return wards.concat(authorities);
 }
 
 const ward = async () => {
