@@ -98,7 +98,7 @@ const getLogNoteRelies = async (web3, chainLog, address) => {
   process.stdout.write(`getting logNote relies for ${ who }... `);
   const start = new Date();
   const logs = await web3.eth.getPastLogs({
-    fromBlock: 0, // 11800000,
+    fromBlock: 11800000,
     address,
     topics: [ sig ],
   });
@@ -139,12 +139,12 @@ const getDeployer = async (env, web3, chainLog, address) => {
   return '0x0';
 }
 
-const isRelied = async (contract, suspect) => {
-  const relied = await contract.methods.wards(suspect).call() != 0;
-  return relied;
+const isWard = async (contract, suspect) => {
+  const ward = await contract.methods.wards(suspect).call();
+  return ward != 0;
 }
 
-const checkRelies = async (web3, chainLog, address, suspects) => {
+const checkSuspects = async (web3, chainLog, address, suspects) => {
   const who = getWho(chainLog, address);
   process.stdout.write(`checking wards for ${ who }... `);
   const start = new Date();
@@ -152,7 +152,7 @@ const checkRelies = async (web3, chainLog, address, suspects) => {
   const abi = await getChainLogAbi();
   const contract = new web3.eth.Contract(abi, address);
   for (const suspect of suspects) {
-    const relied = await isRelied(contract, suspect);
+    const relied = await isWard(contract, suspect);
     if (relied) {
       relies.push(suspect);
     }
@@ -163,23 +163,23 @@ const checkRelies = async (web3, chainLog, address, suspects) => {
   return relies;
 }
 
-const getRelies = async (env, web3, chainLog, address) => {
+const getWards = async (env, web3, chainLog, address) => {
   const deployer = await getDeployer(env, web3, chainLog, address);
   const suspects = await getLogNoteRelies(web3, chainLog, address);
   suspects.push(deployer);
-  const relies = checkRelies(web3, chainLog, address, suspects);
-  return relies;
+  const wards = checkSuspects(web3, chainLog, address, suspects);
+  return wards;
 }
 
 const ward = async () => {
   const env = getEnv();
   const web3 = new Web3(env.ETH_RPC_URL);
-  // const chainLog = JSON.parse(fs.readFileSync('chainLog.json', 'utf8'));
-  const chainLog = await getChainLog(web3);
+  const chainLog = JSON.parse(fs.readFileSync('chainLog.json', 'utf8'));
+  // const chainLog = await getChainLog(web3);
   // fs.writeFileSync('chainLog.json', JSON.stringify(chainLog));
   const args = getArgs(web3, chainLog);
-  const relies = await getRelies(env, web3, chainLog, args.address);
-  console.log(relies.map(rely => getWho(chainLog, rely)));
+  const wards = await getWards(env, web3, chainLog, args.address);
+  console.log(wards.map(rely => getWho(chainLog, rely)));
 }
 
 ward();
