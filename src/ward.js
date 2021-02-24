@@ -112,31 +112,39 @@ const getLogNoteRelies = async (web3, chainLog, address) => {
   return authorizations;
 }
 
-const getDeployer = async (env, web3, chainLog, address) => {
-  const who = getWho(chainLog, address);
-  process.stdout.write(`getting deployer for ${ who }... `);
+const getTxs = async (env, address, internal) => {
   const endpoint = 'https://api.etherscan.io/api';
-  const fixedEntries = 'module=account&action=txlistinternal&startblock=0'
-        + '&sort=asc';
+  const fixedEntries = 'module=account&startblock=0&sort=asc';
+  const actionEntry = `action=txlist${ internal ? 'internal' : '' }`;
   const addressEntry = `address=${ address }`;
   const keyEntry = `apiKey=${env.ETHERSCAN_API_KEY}`;
-  const url = `${ endpoint }?${ fixedEntries }&${ addressEntry }&${ keyEntry }`;
+  const url = `${ endpoint }?${ fixedEntries }&${ actionEntry }`
+        + `&${ addressEntry }&${ keyEntry }`;
   const response = await fetch(url);
   const data = await response.json();
   if (data.status != '1') {
+    if (data.message === 'No transactions found') {
+      return [];
+    }
     console.error(data.message);
-    return '0x0';
+    process.exit();
   }
   const txs = data.result;
-  for (const tx of txs) {
-    if (tx.type === 'create') {
-      const deployer = web3.utils.toChecksumAddress(tx.from);
-      console.log(getWho(chainLog, deployer));
-      return deployer;
-    }
-  }
-  console.error('not found');
-  return '0x0';
+  return txs;
+}
+
+const getDeployers = async (env, web3, chainLog, address) => {
+  const who = getWho(chainLog, address);
+  process.stdout.write(`getting deployer for ${ who }... `);
+  const regularTxs = await getTxs(env, address, false);
+  const internalTxs = await getTxs(env, address, true);
+  const txs = regularTxs.concat(internalTxs);
+  const deployTxs = txs.filter(tx =>
+    tx.type === 'create' || tx.to === ''
+  );
+  const deployers = deployTxs.map(tx => web3.utils.toChecksumAddress(tx.from));
+  console.log(deployers.map(deployer => getWho(chainLog, deployer)));
+  return deployers;
 }
 
 const isWard = async (contract, suspect) => {
@@ -164,10 +172,13 @@ const checkSuspects = async (web3, chainLog, address, suspects) => {
 }
 
 const getWards = async (env, web3, chainLog, address) => {
-  const deployer = await getDeployer(env, web3, chainLog, address);
-  const suspects = await getLogNoteRelies(web3, chainLog, address);
-  suspects.push(deployer);
-  const wards = checkSuspects(web3, chainLog, address, suspects);
+  const suspects = [];
+  const deployers = await getDeployers(env, web3, chainLog, address);
+  suspects.concat(deployers);
+  const logNoteRelies = await getLogNoteRelies(web3, chainLog, address);
+  suspects.concat(logNoteRelies);
+  const uniqueSuspects = Array.from(new Set(suspects));
+  const wards = checkSuspects(web3, chainLog, address, uniqueSuspects);
   return wards;
 }
 
