@@ -4,3 +4,6 @@
 [submodule "lib/univ2-lp-oracle"]
 	path = lib/univ2-lp-oracle
 	url = https://github.com/makerdao/univ2-lp-oracle
+[submodule "lib/ds-pause"]
+	path = lib/ds-pause
+	url = https://github.com/makerdao/ds-pause
