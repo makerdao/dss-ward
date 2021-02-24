@@ -141,13 +141,23 @@ const getDeployer = async (env, web3, chainLog, address) => {
   return '0x0';
 }
 
+const isRelied = async (web3, relier, relied) => {
+  const abi = await getChainLogAbi();
+  const contract = new web3.eth.Contract(abi, relier);
+  const result = await contract.methods.wards(relied).call();
+  return result != 0;
+}
+
 const getRelies = async (env, web3, chainLog, address) => {
   const deployer = await getDeployer(env, web3, chainLog, address);
   const relies = await getLogNote(web3, chainLog, 'rely', address);
-  relies.push(deployer);
   const uniqueRelies = Array.from(new Set(relies));
   const denies = await getLogNote(web3, chainLog, 'deny', address);
   const currentRelies = uniqueRelies.filter(rely => !denies.includes(rely));
+  const relied = await isRelied(web3, address, deployer);
+  if (relied) {
+    currentRelies.push(deployer);
+  }
   return currentRelies;
 }
 
