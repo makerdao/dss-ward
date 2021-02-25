@@ -50,3 +50,56 @@ node src/ward.js
 
 This will take a while. At the end, it will output all the addresses that have
 direct or indirect permissions over the Vat, ordered by closeness level.
+
+## current permissions of the mainnet deployment
+
+Currently, the permissions of the mainnet deployment look like this:
+
+```
+{
+  '0': [ 'MCD_VAT' ],
+  '1': [
+    'MCD_SPOT',
+    'MCD_JUG',
+    'MCD_POT',
+    'MCD_END',
+    'MCD_PAUSE_PROXY',
+    'MCD_JOIN_ETH_A',
+    'MCD_JOIN_BAT_A',
+    'MCD_JOIN_USDC_A',
+    'MCD_JOIN_WBTC_A',
+    'MCD_JOIN_USDC_B',
+    'MCD_JOIN_TUSD_A',
+    'MCD_JOIN_KNC_A',
+    'MCD_JOIN_ZRX_A',
+    'MCD_JOIN_MANA_A',
+    'MCD_FLOP',
+    'MCD_CAT',
+    'MCD_JOIN_USDT_A',
+    'MCD_JOIN_PAXUSD_A',
+    'MCD_JOIN_COMP_A',
+    'MCD_JOIN_LRC_A',
+    'MCD_JOIN_LINK_A',
+    'MCD_JOIN_ETH_B',
+    'MCD_JOIN_BAL_A',
+    'MCD_JOIN_YFI_A',
+    'MCD_JOIN_GUSD_A',
+    'MCD_JOIN_UNI_A',
+    'MCD_JOIN_RENBTC_A',
+    'MCD_IAM_AUTO_LINE',
+    'MCD_JOIN_AAVE_A',
+    'MCD_JOIN_UNIV2DAIETH_A',
+    'MCD_JOIN_PSM_USDC_A',
+    '0x7b3799b30f268BA55f926d7F714a3001aF89d359',
+    'MCD_JOIN_UNIV2WBTCETH_A',
+    'MCD_JOIN_UNIV2USDCETH_A',
+    'MCD_JOIN_UNIV2DAIUSDC_A',
+    'MCD_JOIN_UNIV2ETHUSDT_A',
+    'MCD_JOIN_UNIV2LINKETH_A',
+    'MCD_JOIN_UNIV2UNIETH_A'
+  ],
+  '2': [ 'MCD_PAUSE', 'MCD_PAUSE_PROXY' ],
+  '3': [ 'MCD_ADM', 'MCD_PAUSE' ],
+  '4': [ 'MCD_ADM' ]
+}
+```
