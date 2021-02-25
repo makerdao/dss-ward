@@ -202,6 +202,7 @@ const checkSuspects = async (web3, chainLog, address, suspects) => {
   const abi = getJson('./lib/dss-chain-log/out/ChainLog.abi');
   const contract = new web3.eth.Contract(abi, address);
   const start = new Date();
+  const hasWards = true;
   let count = 1;
   for (const suspect of suspects) {
     const progress = Math.floor(100 * count / suspects.length);
@@ -215,14 +216,17 @@ const checkSuspects = async (web3, chainLog, address, suspects) => {
     } catch (err) {
       if (err.data === 'Reverted 0x') {
         console.log(`checking wards for ${ who }... no wards`);
+        hasWards = false;
         break;
       }
     }
   }
   const end = new Date();
   const span = Math.floor((end - start) / 1000);
-  console.log(`checking wards for ${ who }... found ${ relies.length }`
-              + ` wards in ${ span } seconds`);
+  if (hasWards) {
+    console.log(`checking wards for ${ who }... found ${ relies.length }`
+                + ` wards in ${ span } seconds`);
+  }
   return relies;
 }
 
@@ -242,26 +246,52 @@ const getWards = async (env, web3, chainLog, address) => {
 }
 
 const lookup = async (env, web3, chainLog, address) => {
-  const wards = {};
-  let level = 0;
-  wards[level] = [ address ];
-  while(wards[level]) {
-    console.log(`\nlevel ${ level } (${ wards[level].length } addresses)\n`);
-    let count = 1;
-    for (const ward of wards[level]) {
-      console.log(`${ count } / ${ wards[level].length }`);
-      count ++;
-      const subWards = await getWards(env, web3, chainLog, ward);
-      console.log(subWards.map(w => getWho(chainLog, w)));
-      console.log();
-      if (!subWards.length) continue;
-      if (!wards[level + 1]) {
-        wards[level + 1] = [];
+  let wards, level, count;
+  if (settings.cachedWards) {
+    console.log('recovering wards from disk...');
+    const file = fs.readFileSync('wards.json', 'utf8');
+    const object = JSON.parse(file);
+    wards = object.wards;
+    level = object.level;
+    count = object.count;
+    console.log(wards);
+  } else {
+    wards = {};
+    level = 0;
+    count = 0;
+    wards[level] = [ address ];
+  }
+  try {
+    while(wards[level]) {
+      console.log(`\nlevel ${ level } (${ wards[level].length } addresses)\n`);
+      while (count < wards[level].length) {
+        const ward = wards[level][count];
+        console.log(`${ count + 1 } / ${ wards[level].length }`);
+        const subWards = await getWards(env, web3, chainLog, ward);
+        console.log(subWards.map(w => getWho(chainLog, w)));
+        console.log();
+        count ++;
+        if (!subWards.length) continue;
+        if (!wards[level + 1]) {
+          wards[level + 1] = [];
+        }
+        wards[level + 1] = wards[level + 1].concat(subWards);
+        wards[level + 1] = Array.from(new Set(wards[level + 1]));
       }
-      wards[level + 1] = wards[level + 1].concat(subWards);
-      wards[level + 1] = Array.from(new Set(wards[level + 1]));
+      level ++;
+      count = 0;
     }
-    level ++;
+  } catch (err) {
+    console.log('an error occurred: ' + err.message);
+    console.log('the following wards have been obtained so far:');
+    console.log(wards);
+    console.log('saving wards to disk...');
+    fs.writeFileSync('wards.json', JSON.stringify({
+      wards,
+      level,
+      count,
+    }));
+    process.exit();
   }
   return wards;
 }
