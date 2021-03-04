@@ -17,7 +17,7 @@ const parseWho = (web3, chainLog) => {
   let address;
   if (isAddress(who)) {
     address = web3.utils.toChecksumAddress(who);
-  } else if (['full'].includes(who)) {
+  } else if (['full', 'oracles'].includes(who)) {
     return who;
   } else {
     address = getKey(chainLog, who);
@@ -298,6 +298,17 @@ const lookup = async (env, web3, chainLog, address) => {
   return wards;
 }
 
+const getOracleAddresses = chainLog => {
+  const oracles = [];
+  for (const address of Object.keys(chainLog)) {
+    const name = chainLog[address];
+    if (name.startsWith('PIP_')) {
+      oracles.push(address);
+    }
+  }
+  return oracles;
+}
+
 const ward = async () => {
   const env = getEnv();
   const web3 = new Web3(env.ETH_RPC_URL);
@@ -322,6 +333,17 @@ const ward = async () => {
     console.log('the following addresses have direct or indirect privileged'
                 + ' access to the Vat:');
     console.log(namedWards);
+  } else if (address === 'oracles') {
+    console.log('checking oracles...\n');
+    const addresses = getOracleAddresses(chainLog);
+    for (const address of addresses) {
+      const wards = await getWards(env, web3, chainLog, address);
+      const who = getWho(chainLog, address);
+      console.log(`the following addresses have direct privileged access to `
+                  + `${ who }:`);
+      console.log(wards.map(ward => getWho(chainLog, ward)));
+      console.log();
+    }
   } else {
     const who = getWho(chainLog, address);
     const wards = await getWards(env, web3, chainLog, address);
