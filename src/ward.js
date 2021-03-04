@@ -17,6 +17,8 @@ const parseWho = (web3, chainLog) => {
   let address;
   if (isAddress(who)) {
     address = web3.utils.toChecksumAddress(who);
+  } else if (['full'].includes(who)) {
+    return who;
   } else {
     address = getKey(chainLog, who);
     if (!address) {
@@ -307,7 +309,7 @@ const ward = async () => {
     fs.writeFileSync('chainLog.json', JSON.stringify(chainLog));
   }
   const address = parseWho(web3, chainLog);
-  if (!address) {
+  if (!address || address === 'full') {
     console.log('performing full system lookup...');
     const address = getKey(chainLog, 'MCD_VAT');
     const wards = await lookup(env, web3, chainLog, address);

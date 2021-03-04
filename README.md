@@ -45,7 +45,7 @@ in order to check the authorization of any contract.
 In order to check the authorizations of the whole system, run
 
 ```
-node src/ward.js
+node src/ward.js [full]
 ```
 
 This will take a while. At the end, it will output all the addresses that have
