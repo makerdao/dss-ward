@@ -304,12 +304,40 @@ const lookup = async (env, web3, chainLog, address) => {
   return wards;
 }
 
-const getOracleAddresses = chainLog => {
+const getOracleAddresses = async (web3, chainLog) => {
   const oracles = [];
   for (const address of Object.keys(chainLog)) {
-    const name = chainLog[address];
-    if (name.startsWith('PIP_')) {
+    const who = chainLog[address];
+    if (who.startsWith('PIP_')) {
+      console.log(`${ who } (${ address })`);
       oracles.push(address);
+      process.stdout.write('orbs: ');
+      const abi = getJson('./lib/univ2-lp-oracle/out/UNIV2LPOracle.abi');
+      const contract = new web3.eth.Contract(abi, address);
+      try {
+        const orb0 = await contract.methods.orb0().call();
+        const orb1 = await contract.methods.orb1().call();
+        oracles.push(orb0);
+        oracles.push(orb1);
+        chainLog[orb0] = who + '_ORB0';
+        chainLog[orb1] = who + '_ORB1';
+        console.log([orb0, orb1], '\n');
+      } catch (err) {
+        if (err.data === 'Reverted 0x') {
+          console.log('no orbs');
+          process.stdout.write('source: ');
+          try {
+            const source = await contract.methods.src().call();
+            oracles.push(source);
+            chainLog[source] = who + '_SRC';
+            console.log(source, '\n');
+          } catch (err) {
+            if (err.data === 'Reverted 0x') {
+              console.log('no source\n');
+            }
+          }
+        }
+      }
     }
   }
   return oracles;
@@ -341,7 +369,7 @@ const ward = async () => {
     console.log(namedWards);
   } else if (address === 'oracles') {
     console.log('checking oracles...\n');
-    const addresses = getOracleAddresses(chainLog);
+    const addresses = await getOracleAddresses(web3, chainLog);
     for (const address of addresses) {
       const wards = await getWards(env, web3, chainLog, address);
       const who = getWho(chainLog, address);
