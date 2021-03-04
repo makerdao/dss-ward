@@ -233,6 +233,12 @@ const checkSuspects = async (web3, chainLog, address, suspects) => {
 }
 
 const getWards = async (env, web3, chainLog, address) => {
+  const who = getWho(chainLog, address);
+  if (who !== address) {
+    console.log(`starting check for ${ who } (${ address })`);
+  } else {
+    console.log(`starting check for address ${ address }...`);
+  }
   let suspects = [];
   const deployers = await getDeployers(env, web3, chainLog, address);
   suspects = suspects.concat(deployers);
@@ -349,7 +355,7 @@ const ward = async () => {
     const wards = await getWards(env, web3, chainLog, address);
     console.log(`the following addresses have direct privileged access to `
                 + `${ who }:`);
-    console.log(wards.map(rely => getWho(chainLog, rely)));
+    console.log(wards.map(ward => getWho(chainLog, ward)));
   }
 }
 
