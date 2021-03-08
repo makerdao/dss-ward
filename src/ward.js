@@ -110,7 +110,7 @@ const getLogs = async (who, web3, address, topics) => {
     const blocksProcessed = toBlock - mcdDeployment;
     const progress = 100 * blocksProcessed / totalBlocks;
     process.stdout.write(`getting logNote and event relies for ${ who }... `
-                         + `${ Math.floor(progress) }%\r`);
+                         + `${ progress.toFixed(1) }%\r`);
   }
   return logs;
 }
