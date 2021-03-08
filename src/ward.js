@@ -287,13 +287,12 @@ const lookup = async (env, web3, chainLog, address) => {
     while(wards[level]) {
       console.log(`\nlevel ${ level } (${ wards[level].length } addresses)\n`);
       if (wards[level].length > 1) {
+        for (const address of wards[level]) {
+          allLogs[address] = [];
+        }
         const logs = await getLogs(web3, chainLog, wards[level]);
         for (const log of logs) {
-          if (!allLogs[log.address]) {
-            allLogs[log.address] = [ log ];
-          } else {
-            allLogs[log.address].push(log);
-          }
+          allLogs[log.address].push(log);
         }
       }
       while (count < wards[level].length) {
