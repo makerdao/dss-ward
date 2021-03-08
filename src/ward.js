@@ -95,7 +95,7 @@ const getLogNoteRelies = async (web3, chainLog, address) => {
   const sig = getSig(web3, 'rely(address)');
   const start = new Date();
   const logs = await web3.eth.getPastLogs({
-    fromBlock: settings.fromBlock,
+    fromBlock: settings.mcdDeployment,
     address,
     topics: [ sig ],
   });
@@ -116,7 +116,7 @@ const getEventRelies = async (web3, chainLog, address) => {
   const contract = new web3.eth.Contract(abi, address);
   const start = new Date();
   const events = await contract.getPastEvents('Rely', {
-    fromBlock: settings.fromBlock,
+    fromBlock: settings.mcdDeployment,
   });
   const end = new Date();
   const span = Math.floor((end - start) / 1000);
