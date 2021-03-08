@@ -126,6 +126,7 @@ const getRelies = async (web3, chainLog, address) => {
   const logs = await getLogs(who, web3, address, topics);
   const end = new Date();
   const span = Math.floor((end - start) / 1000);
+  process.stdout.write(`getting logNote and event relies for ${ who }... `);
   console.log(`found ${ logs.length } relies in ${ span } seconds`);
   for (const log of logs) {
     const address = getAddress(web3, log);
