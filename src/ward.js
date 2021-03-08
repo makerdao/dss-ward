@@ -214,7 +214,7 @@ const checkSuspects = async (web3, chainLog, address, suspects) => {
   const abi = getJson('./lib/dss-chain-log/out/ChainLog.abi');
   const contract = new web3.eth.Contract(abi, address);
   const start = new Date();
-  const hasWards = true;
+  let hasWards = true;
   let count = 1;
   for (const suspect of suspects) {
     const progress = Math.floor(100 * count / suspects.length);
