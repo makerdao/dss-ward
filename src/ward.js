@@ -94,7 +94,6 @@ const getLogs = async (web3, chainLog, addresses) => {
   const who = addresses.length === 1
         ? await getWho(chainLog, addresses[0])
         : `${ addresses.length } addresses`;
-  process.stdout.write(`getting logNote and event relies for ${ who }... \r`);
   let logs = [];
   const logNoteSig = getSig(web3, 'rely(address)');
   const eventSig = web3.utils.sha3('Rely(address)');
@@ -104,6 +103,7 @@ const getLogs = async (web3, chainLog, addresses) => {
   let fromBlock = mcdDeployment;
   const totalBlocks = end - fromBlock;
   let toBlock = 0;
+  const startTime = new Date();
   while (toBlock < end) {
     toBlock = fromBlock + settings.batchSize;
     const blocksProcessed = fromBlock - mcdDeployment;
@@ -121,26 +121,24 @@ const getLogs = async (web3, chainLog, addresses) => {
     logs = logs.concat(batch);
     fromBlock = toBlock + 1;
   }
+  const endTime = new Date();
+  const span = Math.floor((endTime - startTime) / 1000);
+  process.stdout.write(`getting logNote and event relies for ${ who }... `);
+  console.log(`found ${ logs.length } relies in ${ span } seconds`);
   return logs;
 }
 
 const getRelies = async (web3, chainLog, address) => {
   const who = getWho(chainLog, address);
   const relies = [];
-  process.stdout.write(`getting logNote and event relies for ${ who }... \r`);
   let logs;
-  if (Object.keys(allLogs).includes(address)) {
+  if (allLogs[address]) {
     logs = allLogs[address];
-    process.stdout.write(`getting logNote and event relies for ${ who }... `);
-    console.log(`found ${ logs.length } cached logs`);
+    console.log(`getting logNote and event relies for ${ who }... `
+                + `found ${ logs.length } cached logs`);
   } else {
-    const start = new Date();
     logs = await getLogs(web3, chainLog, [ address ]);
     allLogs[address] = logs;
-    const end = new Date();
-    const span = Math.floor((end - start) / 1000);
-    process.stdout.write(`getting logNote and event relies for ${ who }... `);
-    console.log(`found ${ logs.length } relies in ${ span } seconds`);
   }
   for (const log of logs) {
     const address = getAddress(web3, log);
@@ -163,9 +161,7 @@ const getAuthorities = async (web3, chainLog, address) => {
       authorities.push(owner);
     }
   } catch (err) {
-    if (err.data === 'Reverted 0x') {
-      console.log('no owner');
-    }
+    console.log('no owner');
   }
   process.stdout.write(`getting authority for ${ who }... `);
   try {
@@ -175,9 +171,7 @@ const getAuthorities = async (web3, chainLog, address) => {
       authorities.push(authority);
     }
   } catch (err) {
-    if (err.data === 'Reverted 0x') {
-      console.log('no authority');
-    }
+    console.log('no authority');
   }
   return authorities;
 }
@@ -240,11 +234,9 @@ const checkSuspects = async (web3, chainLog, address, suspects) => {
         relies.push(suspect);
       }
     } catch (err) {
-      if (err.data === 'Reverted 0x') {
-        console.log(`checking wards for ${ who }... no wards`);
-        hasWards = false;
-        break;
-      }
+      console.log(`checking wards for ${ who }... no wards`);
+      hasWards = false;
+      break;
     }
   }
   const end = new Date();
@@ -294,6 +286,16 @@ const lookup = async (env, web3, chainLog, address) => {
   try {
     while(wards[level]) {
       console.log(`\nlevel ${ level } (${ wards[level].length } addresses)\n`);
+      if (wards[level].length > 1) {
+        const logs = await getLogs(web3, chainLog, wards[level]);
+        for (const log of logs) {
+          if (!allLogs[log.address]) {
+            allLogs[log.address] = [ log ];
+          } else {
+            allLogs[log.address].push(log);
+          }
+        }
+      }
       while (count < wards[level].length) {
         const ward = wards[level][count];
         console.log(`${ count + 1 } / ${ wards[level].length }`);
@@ -345,19 +347,15 @@ const getOracleAddresses = async (web3, chainLog) => {
         chainLog[orb1] = who + '_ORB1';
         console.log([orb0, orb1], '\n');
       } catch (err) {
-        if (err.data === 'Reverted 0x') {
-          console.log('no orbs');
-          process.stdout.write('source: ');
-          try {
-            const source = await contract.methods.src().call();
-            oracles.push(source);
-            chainLog[source] = who + '_SRC';
-            console.log(source, '\n');
-          } catch (err) {
-            if (err.data === 'Reverted 0x') {
-              console.log('no source\n');
-            }
-          }
+        console.log('no orbs');
+        process.stdout.write('source: ');
+        try {
+          const source = await contract.methods.src().call();
+          oracles.push(source);
+          chainLog[source] = who + '_SRC';
+          console.log(source, '\n');
+        } catch (err) {
+          console.log('no source\n');
         }
       }
     }
