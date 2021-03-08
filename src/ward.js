@@ -88,18 +88,42 @@ const getWho = (chainLog, address) => {
   return chainLog[address] || address;
 }
 
+const getLogs = async (who, web3, address, topics) => {
+  let logs = [];
+  const end = await web3.eth.getBlockNumber();
+  const { mcdDeployment } = settings;
+  let fromBlock = mcdDeployment;
+  const totalBlocks = end - fromBlock;
+  let toBlock = 0;
+  while (toBlock < end) {
+    toBlock = fromBlock + settings.batchSize;
+    const batch = await web3.eth.getPastLogs(
+      {
+        fromBlock,
+        toBlock: Math.min(toBlock, end),
+        address,
+        topics,
+      }
+    );
+    logs = logs.concat(batch);
+    fromBlock = toBlock + 1;
+    const blocksProcessed = toBlock - mcdDeployment;
+    const progress = 100 * blocksProcessed / totalBlocks;
+    process.stdout.write(`getting logNote and event relies for ${ who }... `
+                         + `${ Math.floor(progress) }%\r`);
+  }
+  return logs;
+}
+
 const getRelies = async (web3, chainLog, address) => {
   const who = getWho(chainLog, address);
-  process.stdout.write(`getting logNote and event relies for ${ who }... `);
+  process.stdout.write(`getting logNote and event relies for ${ who }... \r`);
   const relies = [];
   const logNoteSig = getSig(web3, 'rely(address)');
   const eventSig = web3.utils.sha3('Rely(address)');
+  const topics = [ [logNoteSig, eventSig] ];
   const start = new Date();
-  const logs = await web3.eth.getPastLogs({
-    fromBlock: settings.mcdDeployment,
-    address,
-    topics: [ [logNoteSig, eventSig] ],
-  });
+  const logs = await getLogs(who, web3, address, topics);
   const end = new Date();
   const span = Math.floor((end - start) / 1000);
   console.log(`found ${ logs.length } relies in ${ span } seconds`);
