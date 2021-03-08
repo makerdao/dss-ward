@@ -88,16 +88,17 @@ const getWho = (chainLog, address) => {
   return chainLog[address] || address;
 }
 
-const getLogNoteRelies = async (web3, chainLog, address) => {
+const getRelies = async (web3, chainLog, address) => {
   const who = getWho(chainLog, address);
-  process.stdout.write(`getting logNote relies for ${ who }... `);
+  process.stdout.write(`getting logNote and event relies for ${ who }... `);
   const relies = [];
-  const sig = getSig(web3, 'rely(address)');
+  const logNoteSig = getSig(web3, 'rely(address)');
+  const eventSig = web3.utils.sha3('Rely(address)');
   const start = new Date();
   const logs = await web3.eth.getPastLogs({
     fromBlock: settings.mcdDeployment,
     address,
-    topics: [ sig ],
+    topics: [ [logNoteSig, eventSig] ],
   });
   const end = new Date();
   const span = Math.floor((end - start) / 1000);
@@ -106,22 +107,6 @@ const getLogNoteRelies = async (web3, chainLog, address) => {
     const address = getAddress(web3, log);
     relies.push(address);
   }
-  return relies;
-}
-
-const getEventRelies = async (web3, chainLog, address) => {
-  const who = getWho(chainLog, address);
-  process.stdout.write(`getting event relies for ${ who }... `);
-  const abi = getJson('./lib/univ2-lp-oracle/out/UNIV2LPOracle.abi');
-  const contract = new web3.eth.Contract(abi, address);
-  const start = new Date();
-  const events = await contract.getPastEvents('Rely', {
-    fromBlock: settings.mcdDeployment,
-  });
-  const end = new Date();
-  const span = Math.floor((end - start) / 1000);
-  console.log(`found ${ events.length } relies in ${ span } seconds`);
-  const relies = events.map(event => event.returnValues['0']);
   return relies;
 }
 
@@ -243,10 +228,8 @@ const getWards = async (env, web3, chainLog, address) => {
   const deployers = await getDeployers(env, web3, chainLog, address);
   suspects = suspects.concat(deployers);
   const authorities = await getAuthorities(web3, chainLog, address);
-  const logNoteRelies = await getLogNoteRelies(web3, chainLog, address);
-  suspects = suspects.concat(logNoteRelies);
-  const eventRelies = await getEventRelies(web3, chainLog, address);
-  suspects = suspects.concat(eventRelies);
+  const relies = await getRelies(web3, chainLog, address);
+  suspects = suspects.concat(relies);
   const uniqueSuspects = Array.from(new Set(suspects));
   const wards = await checkSuspects(web3, chainLog, address, uniqueSuspects);
   const allWards = wards.concat(authorities).filter(w => w != address);
