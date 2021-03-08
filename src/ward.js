@@ -3,6 +3,8 @@ const settings = require('../settings.js');
 const fs = require('fs');
 const fetch = require('node-fetch');
 
+const allLogs = {};
+
 const getJson = path => {
   return JSON.parse(fs.readFileSync(path));
 }
@@ -88,8 +90,15 @@ const getWho = (chainLog, address) => {
   return chainLog[address] || address;
 }
 
-const getLogs = async (who, web3, address, topics) => {
+const getLogs = async (web3, chainLog, addresses) => {
+  const who = addresses.length === 1
+        ? await getWho(chainLog, addresses[0])
+        : `${ addresses.length } addresses`;
+  process.stdout.write(`getting logNote and event relies for ${ who }... \r`);
   let logs = [];
+  const logNoteSig = getSig(web3, 'rely(address)');
+  const eventSig = web3.utils.sha3('Rely(address)');
+  const topics = [ [logNoteSig, eventSig] ];
   const end = await web3.eth.getBlockNumber();
   const { mcdDeployment } = settings;
   let fromBlock = mcdDeployment;
@@ -97,37 +106,42 @@ const getLogs = async (who, web3, address, topics) => {
   let toBlock = 0;
   while (toBlock < end) {
     toBlock = fromBlock + settings.batchSize;
+    const blocksProcessed = fromBlock - mcdDeployment;
+    const progress = 100 * blocksProcessed / totalBlocks;
+    process.stdout.write(`getting logNote and event relies for ${ who }... `
+                         + `${ progress.toFixed(1) }%\r`);
     const batch = await web3.eth.getPastLogs(
       {
         fromBlock,
         toBlock: Math.min(toBlock, end),
-        address,
+        address: addresses,
         topics,
       }
     );
     logs = logs.concat(batch);
     fromBlock = toBlock + 1;
-    const blocksProcessed = toBlock - mcdDeployment;
-    const progress = 100 * blocksProcessed / totalBlocks;
-    process.stdout.write(`getting logNote and event relies for ${ who }... `
-                         + `${ progress.toFixed(1) }%\r`);
   }
   return logs;
 }
 
 const getRelies = async (web3, chainLog, address) => {
   const who = getWho(chainLog, address);
-  process.stdout.write(`getting logNote and event relies for ${ who }... \r`);
   const relies = [];
-  const logNoteSig = getSig(web3, 'rely(address)');
-  const eventSig = web3.utils.sha3('Rely(address)');
-  const topics = [ [logNoteSig, eventSig] ];
-  const start = new Date();
-  const logs = await getLogs(who, web3, address, topics);
-  const end = new Date();
-  const span = Math.floor((end - start) / 1000);
-  process.stdout.write(`getting logNote and event relies for ${ who }... `);
-  console.log(`found ${ logs.length } relies in ${ span } seconds`);
+  process.stdout.write(`getting logNote and event relies for ${ who }... \r`);
+  let logs;
+  if (Object.keys(allLogs).includes(address)) {
+    logs = allLogs[address];
+    process.stdout.write(`getting logNote and event relies for ${ who }... `);
+    console.log(`found ${ logs.length } cached logs`);
+  } else {
+    const start = new Date();
+    logs = await getLogs(web3, chainLog, [ address ]);
+    allLogs[address] = logs;
+    const end = new Date();
+    const span = Math.floor((end - start) / 1000);
+    process.stdout.write(`getting logNote and event relies for ${ who }... `);
+    console.log(`found ${ logs.length } relies in ${ span } seconds`);
+  }
   for (const log of logs) {
     const address = getAddress(web3, log);
     relies.push(address);
