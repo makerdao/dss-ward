@@ -349,6 +349,9 @@ const compareResults = next => {
     console.log(next);
     console.log('no changes from last lookup');
   } else {
+    fs.writeFileSync(`log/${ new Date().getTime() }.txt`, next);
+    fs.writeFileSync('log/latest.txt', next);
+    console.log('changes detected; calculating diff...');
     const diff = Diff.diffChars(prev, next);
     diff.forEach(part => {
       const text = part.added
@@ -359,8 +362,6 @@ const compareResults = next => {
       process.stdout.write(text);
     });
     console.log('\nchanges detected from last lookup');
-    fs.writeFileSync(`log/${ new Date().getTime() }.txt`, next);
-    fs.writeFileSync('log/latest.txt', next);
   }
 }
 
