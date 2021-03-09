@@ -60,12 +60,16 @@ const isAddress = string => {
   return Boolean(string.match('^0x[0-9a-fA-F]{40}$'))
 }
 
-const getAddress = (web3, log) => {
-  const argument = log.topics[1];
-  const length = argument.length;
-  const address = `0x${argument.substring(length - 40, length)}`;
-  const checksumAddress = web3.utils.toChecksumAddress(address);
-  return checksumAddress;
+const getAddresses = (web3, log) => {
+  const addresses = [];
+  for (const topic of log.topics) {
+    if (topic.match(/^0x0{24}/)) {
+      const address = `0x${ topic.substring(26, 66) }`;
+      const checksumAddress = web3.utils.toChecksumAddress(address);
+      addresses.push(checksumAddress);
+    }
+  }
+  return addresses;
 }
 
 const getChainLog = async web3 => {
@@ -145,9 +149,10 @@ const getRelies = async (web3, chainLog, address) => {
     allLogs[address] = logs;
   }
   for (const log of logs) {
-    const address = getAddress(web3, log);
-    relies.push(address);
+    const addresses = getAddresses(web3, log);
+    relies.push(...addresses);
   }
+  const uniqueRelies = Array.from(new Set(relies));
   return relies;
 }
 
@@ -277,6 +282,7 @@ const treeLookup = async (env, web3, chainLog, vatAddress) => {
   while (Object.values(tree).includes('new')) {
     const addresses = Object.keys(tree).filter(addr => tree[addr] === 'new');
     if (addresses.length > 1) {
+      console.log();
       allLogs.push(...await getLogs(web3, chainLog, addresses));
       scannedAddresses.push(...addresses);
     }
@@ -327,10 +333,11 @@ const getOracleAddresses = async (web3, chainLog) => {
   return oracles;
 }
 
-const getBranch = (tree, node) => {
+const getBranch = (tree, node, parents) => {
   const branch = {};
-  for (const subBranch of tree[node]) {
-    branch[subBranch] = getBranch(tree, subBranch);
+  for (const subNode of tree[node]) {
+    if (parents.includes(subNode)) continue;
+    branch[subNode] = getBranch(tree, subNode, [...parents, node]);
   }
   return branch;
 }
@@ -377,7 +384,7 @@ const ward = async () => {
       const who = getWho(chainLog, address);
       namedTree[who] = tree[address].map(address => getWho(chainLog, address));
     }
-    const hier = getBranch(namedTree, 'MCD_VAT');
+    const hier = getBranch(namedTree, 'MCD_VAT', []);
     const result = 'MCD_VAT\n' + treeify.asTree(hier);
     compareResults(result);
   } else if (address === 'oracles') {
