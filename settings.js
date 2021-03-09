@@ -3,5 +3,4 @@ module.exports = {
   mcdDeployment: 8928152,
   batchSize: 10000,
   cachedChainLog: false,
-  cachedWards: false,
 };

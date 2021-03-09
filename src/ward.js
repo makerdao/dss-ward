@@ -3,7 +3,8 @@ const settings = require('../settings.js');
 const fs = require('fs');
 const fetch = require('node-fetch');
 
-const allLogs = {};
+const allLogs = [];
+const scannedAddresses = [];
 
 const getJson = path => {
   return JSON.parse(fs.readFileSync(path));
@@ -132,8 +133,8 @@ const getRelies = async (web3, chainLog, address) => {
   const who = getWho(chainLog, address);
   const relies = [];
   let logs;
-  if (allLogs[address]) {
-    logs = allLogs[address];
+  if (scannedAddresses.includes(address)) {
+    logs = allLogs.filter(log => log.address === address);
     console.log(`getting logNote and event relies for ${ who }... `
                 + `found ${ logs.length } cached logs`);
   } else {
@@ -251,9 +252,9 @@ const checkSuspects = async (web3, chainLog, address, suspects) => {
 const getWards = async (env, web3, chainLog, address) => {
   const who = getWho(chainLog, address);
   if (who !== address) {
-    console.log(`starting check for ${ who } (${ address })`);
+    console.log(`\nstarting check for ${ who } (${ address })`);
   } else {
-    console.log(`starting check for address ${ address }...`);
+    console.log(`\nstarting check for address ${ address }...`);
   }
   let suspects = [];
   const deployers = await getDeployers(env, web3, chainLog, address);
@@ -267,64 +268,25 @@ const getWards = async (env, web3, chainLog, address) => {
   return allWards;
 }
 
-const lookup = async (env, web3, chainLog, address) => {
-  let wards, level, count;
-  if (settings.cachedWards) {
-    console.log('recovering wards from disk...');
-    const file = fs.readFileSync('wards.json', 'utf8');
-    const object = JSON.parse(file);
-    wards = object.wards;
-    level = object.level;
-    count = object.count;
-    console.log(wards);
-  } else {
-    wards = {};
-    level = 0;
-    count = 0;
-    wards[level] = [ address ];
-  }
-  try {
-    while(wards[level]) {
-      console.log(`\nlevel ${ level } (${ wards[level].length } addresses)\n`);
-      if (wards[level].length > 1) {
-        for (const address of wards[level]) {
-          allLogs[address] = [];
-        }
-        const logs = await getLogs(web3, chainLog, wards[level]);
-        for (const log of logs) {
-          allLogs[log.address].push(log);
-        }
-      }
-      while (count < wards[level].length) {
-        const ward = wards[level][count];
-        console.log(`${ count + 1 } / ${ wards[level].length }`);
-        const subWards = await getWards(env, web3, chainLog, ward);
-        console.log(subWards.map(w => getWho(chainLog, w)));
-        console.log();
-        count ++;
-        if (!subWards.length) continue;
-        if (!wards[level + 1]) {
-          wards[level + 1] = [];
-        }
-        wards[level + 1] = wards[level + 1].concat(subWards);
-        wards[level + 1] = Array.from(new Set(wards[level + 1]));
-      }
-      level ++;
-      count = 0;
+const treeLookup = async (env, web3, chainLog, vatAddress) => {
+  const tree = {};
+  tree[vatAddress] = 'new';
+  while (Object.values(tree).includes('new')) {
+    const addresses = Object.keys(tree).filter(addr => tree[addr] === 'new');
+    if (addresses.length > 1) {
+      allLogs.push(...await getLogs(web3, chainLog, addresses));
+      scannedAddresses.push(...addresses);
     }
-  } catch (err) {
-    console.log('an error occurred: ' + err.message);
-    console.log('the following wards have been obtained so far:');
-    console.log(wards);
-    console.log('saving wards to disk...');
-    fs.writeFileSync('wards.json', JSON.stringify({
-      wards,
-      level,
-      count,
-    }));
-    process.exit();
+    for (const address of addresses) {
+      tree[address] = await getWards(env, web3, chainLog, address);
+      for (const child of tree[address]) {
+        if (!tree[child]) {
+          tree[child] = 'new';
+        }
+      }
+    }
   }
-  return wards;
+  return tree;
 }
 
 const getOracleAddresses = async (web3, chainLog) => {
@@ -375,17 +337,16 @@ const ward = async () => {
   const address = parseWho(web3, chainLog);
   if (!address || address === 'full') {
     console.log('performing full system lookup...');
-    const address = getKey(chainLog, 'MCD_VAT');
-    const wards = await lookup(env, web3, chainLog, address);
-    const namedWards = {};
-    let level = 0;
-    while(wards[level]) {
-      namedWards[level] = wards[level].map(ward => getWho(chainLog, ward));
-      level ++;
+    const vatAddress = getKey(chainLog, 'MCD_VAT');
+    const tree = await treeLookup(env, web3, chainLog, vatAddress);
+    const namedTree = {};
+    for (const address of Object.keys(tree)) {
+      const who = getWho(chainLog, address);
+      namedTree[who] = tree[address].map(address => getWho(chainLog, address));
     }
-    console.log('the following addresses have direct or indirect privileged'
+    console.log('\nthe following addresses have direct or indirect privileged'
                 + ' access to the Vat:');
-    console.log(namedWards);
+    console.log(namedTree);
   } else if (address === 'oracles') {
     console.log('checking oracles...\n');
     const addresses = await getOracleAddresses(web3, chainLog);
