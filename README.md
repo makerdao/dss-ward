@@ -66,70 +66,8 @@ node src/ward.js oracles
 This will get all the PIPs in the chainlog, as well as their medianizers
 (either orbs or source) and run the checks against each one of them.
 
-## current permissions of the mainnet deployment
+## output example
 
-Currently, the permissions of the mainnet deployment look like this:
+As of 2021-03-09, the permissions of the mainnet deployment look like this:
 
-```
-MCD_VAT
-├─ MCD_SPOT
-├─ MCD_JUG
-├─ MCD_POT
-├─ MCD_END
-├─ MCD_PAUSE_PROXY
-│  └─ MCD_PAUSE
-│     └─ MCD_ADM
-├─ MCD_JOIN_ETH_A
-├─ MCD_JOIN_BAT_A
-├─ MCD_JOIN_USDC_A
-├─ MCD_JOIN_WBTC_A
-├─ MCD_JOIN_USDC_B
-├─ MCD_JOIN_TUSD_A
-├─ MCD_JOIN_KNC_A
-├─ MCD_JOIN_ZRX_A
-├─ MCD_JOIN_MANA_A
-├─ MCD_FLOP
-│  └─ MCD_PAUSE_PROXY
-│     └─ MCD_PAUSE
-│        └─ MCD_ADM
-├─ MCD_CAT
-│  └─ MCD_PAUSE_PROXY
-│     └─ MCD_PAUSE
-│        └─ MCD_ADM
-├─ MCD_JOIN_USDT_A
-├─ MCD_JOIN_PAXUSD_A
-├─ MCD_JOIN_COMP_A
-├─ MCD_JOIN_LRC_A
-├─ MCD_JOIN_LINK_A
-├─ MCD_JOIN_ETH_B
-├─ MCD_JOIN_BAL_A
-├─ MCD_JOIN_YFI_A
-├─ MCD_JOIN_GUSD_A
-├─ MCD_JOIN_UNI_A
-├─ MCD_JOIN_RENBTC_A
-├─ MCD_IAM_AUTO_LINE
-│  └─ MCD_PAUSE_PROXY
-│     └─ MCD_PAUSE
-│        └─ MCD_ADM
-├─ MCD_JOIN_AAVE_A
-├─ MCD_JOIN_UNIV2DAIETH_A
-├─ MCD_JOIN_PSM_USDC_A
-├─ MCD_JOIN_UNIV2WBTCETH_A
-├─ MCD_JOIN_UNIV2USDCETH_A
-├─ MCD_JOIN_UNIV2DAIUSDC_A
-├─ MCD_JOIN_UNIV2ETHUSDT_A
-├─ MCD_JOIN_UNIV2LINKETH_A
-├─ MCD_JOIN_UNIV2UNIETH_A
-├─ MCD_JOIN_UNIV2WBTCDAI_A
-├─ MCD_JOIN_UNIV2AAVEETH_A
-├─ MCD_JOIN_UNIV2DAIUSDT_A
-├─ MCD_JOIN_RWA001_A
-│  └─ MCD_PAUSE_PROXY
-│     └─ MCD_PAUSE
-│        └─ MCD_ADM
-└─ MIP21_LIQUIDATION_ORACLE
-   └─ MCD_PAUSE_PROXY
-      └─ MCD_PAUSE
-         └─ MCD_ADM
-
-```
+![Screenshot from 2021-03-09 11-14-09](https://user-images.githubusercontent.com/16065447/110502652-63700680-80c9-11eb-9624-3c3c0f41af5b.png)
