@@ -2,6 +2,7 @@ const Web3 = require('web3');
 const settings = require('../settings.js');
 const fs = require('fs');
 const fetch = require('node-fetch');
+const treeify = require('treeify');
 
 const allLogs = [];
 const scannedAddresses = [];
@@ -324,6 +325,14 @@ const getOracleAddresses = async (web3, chainLog) => {
   return oracles;
 }
 
+const getBranch = (tree, node) => {
+  const branch = {};
+  for (const subBranch of tree[node]) {
+    branch[subBranch] = getBranch(tree, subBranch);
+  }
+  return branch;
+}
+
 const ward = async () => {
   const env = getEnv();
   const web3 = new Web3(env.ETH_RPC_URL);
@@ -344,9 +353,9 @@ const ward = async () => {
       const who = getWho(chainLog, address);
       namedTree[who] = tree[address].map(address => getWho(chainLog, address));
     }
-    console.log('\nthe following addresses have direct or indirect privileged'
-                + ' access to the Vat:');
-    console.log(namedTree);
+    const hier = getBranch(namedTree, 'MCD_VAT');
+    console.log('\nMCD_VAT');
+    console.log(treeify.asTree(hier));
   } else if (address === 'oracles') {
     console.log('checking oracles...\n');
     const addresses = await getOracleAddresses(web3, chainLog);
