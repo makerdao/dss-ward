@@ -3,6 +3,8 @@ const settings = require('../settings.js');
 const fs = require('fs');
 const fetch = require('node-fetch');
 const treeify = require('treeify');
+const Diff = require('diff');
+const chalk = require('chalk');
 
 const allLogs = [];
 const scannedAddresses = [];
@@ -333,6 +335,28 @@ const getBranch = (tree, node) => {
   return branch;
 }
 
+const compareResults = next => {
+  const prev = fs.readFileSync('log/latest.txt', 'utf8');
+  console.log();
+  if (next === prev) {
+    console.log(next);
+    console.log('no changes from last lookup');
+  } else {
+    const diff = Diff.diffChars(prev, next);
+    diff.forEach(part => {
+      const text = part.added
+            ? chalk.green(part.value)
+            : part.removed
+            ? chalk.red(part.value)
+            : chalk.grey(part.value);
+      process.stdout.write(text);
+    });
+    console.log('\nchanges detected from last lookup');
+    fs.writeFileSync(`log/${ new Date().getTime() }.txt`, next);
+    fs.writeFileSync('log/latest.txt', next);
+  }
+}
+
 const ward = async () => {
   const env = getEnv();
   const web3 = new Web3(env.ETH_RPC_URL);
@@ -354,8 +378,8 @@ const ward = async () => {
       namedTree[who] = tree[address].map(address => getWho(chainLog, address));
     }
     const hier = getBranch(namedTree, 'MCD_VAT');
-    console.log('\nMCD_VAT');
-    console.log(treeify.asTree(hier));
+    const result = 'MCD_VAT\n' + treeify.asTree(hier);
+    compareResults(result);
   } else if (address === 'oracles') {
     console.log('checking oracles...\n');
     const addresses = await getOracleAddresses(web3, chainLog);
