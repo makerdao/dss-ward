@@ -28,6 +28,7 @@ const parseWho = (web3, chainLog) => {
   } else {
     address = getKey(chainLog, who);
     if (!address) {
+      console.log(chainLog);
       console.log(`${ who } isn't an address nor does it exist in the`
                   + ` chainlog.`);
       process.exit();
@@ -276,9 +277,9 @@ const getWards = async (env, web3, chainLog, address) => {
   return allWards;
 }
 
-const treeLookup = async (env, web3, chainLog, vatAddress) => {
+const treeLookup = async (env, web3, chainLog, address) => {
   const tree = {};
-  tree[vatAddress] = 'new';
+  tree[address] = 'new';
   while (Object.values(tree).includes('new')) {
     const addresses = Object.keys(tree).filter(addr => tree[addr] === 'new');
     if (addresses.length > 1) {
@@ -365,6 +366,19 @@ const compareResults = next => {
   }
 }
 
+const getTree = async (env, web3, chainLog, address) => {
+  const who = getWho(chainLog, address);
+  const tree = await treeLookup(env, web3, chainLog, address);
+  const namedTree = {};
+  for (const address of Object.keys(tree)) {
+    const who = getWho(chainLog, address);
+    namedTree[who] = tree[address].map(address => getWho(chainLog, address));
+  }
+  const hier = getBranch(namedTree, who, []);
+  const result = who + '\n' + treeify.asTree(hier);
+  return result;
+}
+
 const ward = async () => {
   const env = getEnv();
   const web3 = new Web3(env.ETH_RPC_URL);
@@ -379,14 +393,7 @@ const ward = async () => {
   if (!address || address === 'full') {
     console.log('performing full system lookup...');
     const vatAddress = getKey(chainLog, 'MCD_VAT');
-    const tree = await treeLookup(env, web3, chainLog, vatAddress);
-    const namedTree = {};
-    for (const address of Object.keys(tree)) {
-      const who = getWho(chainLog, address);
-      namedTree[who] = tree[address].map(address => getWho(chainLog, address));
-    }
-    const hier = getBranch(namedTree, 'MCD_VAT', []);
-    const result = 'MCD_VAT\n' + treeify.asTree(hier);
+    const result = await getTree(env, web3, chainLog, vatAddress);
     compareResults(result);
   } else if (address === 'oracles') {
     console.log('checking oracles...\n');
@@ -400,11 +407,8 @@ const ward = async () => {
       console.log();
     }
   } else {
-    const who = getWho(chainLog, address);
-    const wards = await getWards(env, web3, chainLog, address);
-    console.log(`the following addresses have direct privileged access to `
-                + `${ who }:`);
-    console.log(wards.map(ward => getWho(chainLog, ward)));
+    const tree = await getTree(env, web3, chainLog, address);
+    console.log(tree);
   }
 }
 
