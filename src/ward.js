@@ -398,13 +398,13 @@ const ward = async () => {
   } else if (address === 'oracles') {
     console.log('checking oracles...\n');
     const addresses = await getOracleAddresses(web3, chainLog);
+    const allWards = {};
     for (const address of addresses) {
       const wards = await getWards(env, web3, chainLog, address);
       const who = getWho(chainLog, address);
-      console.log(`the following addresses have direct privileged access to `
-                  + `${ who }:`);
-      console.log(wards.map(ward => getWho(chainLog, ward)));
-      console.log();
+      const namedWards = wards.map(ward => getWho(chainLog, ward));
+      allWards[who] = namedWards;
+      console.log(allWards);
     }
   } else {
     const tree = await getTree(env, web3, chainLog, address);
