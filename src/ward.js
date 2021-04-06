@@ -264,12 +264,6 @@ const checkSuspects = async (web3, chainLog, address, suspects) => {
 }
 
 const getWards = async (env, web3, chainLog, address) => {
-  const who = getWho(chainLog, address);
-  if (who !== address) {
-    console.log(`\nstarting check for ${ who } (${ address })`);
-  } else {
-    console.log(`\nstarting check for address ${ address }...`);
-  }
   let suspects = [];
   const deployers = await getDeployers(env, web3, chainLog, address);
   suspects = suspects.concat(deployers);
@@ -282,6 +276,12 @@ const getWards = async (env, web3, chainLog, address) => {
 }
 
 const getCustodians = async (env, web3, chainLog, address) => {
+  const who = getWho(chainLog, address);
+  if (who !== address) {
+    console.log(`\nstarting check for ${ who } (${ address })`);
+  } else {
+    console.log(`\nstarting check for address ${ address }...`);
+  }
   const owner = await getOwner(web3, chainLog, address);
   const authority = await getAuthority(web3, chainLog, address);
   const wards = await getWards(env, web3, chainLog, address);
