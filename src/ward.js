@@ -157,33 +157,38 @@ const getRelies = async (web3, chainLog, address) => {
   return relies;
 }
 
-const getAuthorities = async (web3, chainLog, address) => {
+const getOwner = async (web3, chainLog, address) => {
   const who = getWho(chainLog, address);
   const abi = getJson('./lib/ds-pause/out/DSPause.abi');
   const contract = new web3.eth.Contract(abi, address);
-  const authorities = [];
-  let owner;
   process.stdout.write(`getting owner for ${ who }... `);
   try {
-    owner = await contract.methods.owner().call();
+    const owner = await contract.methods.owner().call();
     console.log(getWho(chainLog, owner));
     if (Number(owner) != 0) {
-      authorities.push(owner);
+      return owner;
     }
   } catch (err) {
     console.log('no owner');
   }
+  return null;
+}
+
+const getAuthority = async (web3, chainLog, address) => {
+  const who = getWho(chainLog, address);
+  const abi = getJson('./lib/ds-pause/out/DSPause.abi');
+  const contract = new web3.eth.Contract(abi, address);
   process.stdout.write(`getting authority for ${ who }... `);
   try {
     const authority = await contract.methods.authority().call();
     console.log(getWho(chainLog, authority));
     if (Number(authority) != 0) {
-      authorities.push(authority);
+      return authority;
     }
   } catch (err) {
     console.log('no authority');
   }
-  return authorities;
+  return null;
 }
 
 const getTxs = async (env, address, internal) => {
@@ -268,13 +273,19 @@ const getWards = async (env, web3, chainLog, address) => {
   let suspects = [];
   const deployers = await getDeployers(env, web3, chainLog, address);
   suspects = suspects.concat(deployers);
-  const authorities = await getAuthorities(web3, chainLog, address);
   const relies = await getRelies(web3, chainLog, address);
   suspects = suspects.concat(relies);
   const uniqueSuspects = Array.from(new Set(suspects));
   const wards = await checkSuspects(web3, chainLog, address, uniqueSuspects);
-  const allWards = wards.concat(authorities).filter(w => w != address);
+  const allWards = wards.filter(w => w != address);
   return allWards;
+}
+
+const getCustodians = async (env, web3, chainLog, address) => {
+  const owner = await getOwner(web3, chainLog, address);
+  const authority = await getAuthority(web3, chainLog, address);
+  const wards = await getWards(env, web3, chainLog, address);
+  return { owner, authority, wards };
 }
 
 const treeLookup = async (env, web3, chainLog, address) => {
@@ -288,7 +299,7 @@ const treeLookup = async (env, web3, chainLog, address) => {
       scannedAddresses.push(...addresses);
     }
     for (const address of addresses) {
-      tree[address] = await getWards(env, web3, chainLog, address);
+      tree[address] = await getWards(env, web3, chainLog, address); // TODO: change for getCustodians
       for (const child of tree[address]) {
         if (!tree[child]) {
           tree[child] = 'new';
@@ -400,7 +411,7 @@ const ward = async () => {
     const addresses = await getOracleAddresses(web3, chainLog);
     const allWards = {};
     for (const address of addresses) {
-      const wards = await getWards(env, web3, chainLog, address);
+      const wards = await getWards(env, web3, chainLog, address); // TODO: change for getCustodians
       const who = getWho(chainLog, address);
       const namedWards = wards.map(ward => getWho(chainLog, ward));
       allWards[who] = namedWards;
