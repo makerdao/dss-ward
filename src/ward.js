@@ -310,6 +310,35 @@ const treeLookup = async (env, web3, chainLog, address) => {
   return tree;
 }
 
+const getGraph = async (env, web3, chainLog, address) => {
+  const edges = [];
+  const vertices = { all: [], current: [], new: [ address ]};
+  while(vertices.new.length) {
+    vertices.current = Array.from(new Set(vertices.new));
+    vertices.all.push(...vertices.current);
+    vertices.new = [];
+    for (const dst of vertices.current) {
+      const custodians = await getCustodians(env, web3, chainLog, dst);
+      if (custodians.owner) {
+        edges.push({ dst, src: custodians.owner, lbl: 'owner' });
+        vertices.new.push(custodians.owner);
+      }
+      if (custodians.authority) {
+        edges.push({ dst, src: custodians.authority, lbl: 'authority' });
+        vertices.new.push(custodians.authority);
+      }
+      for (const ward of custodians.wards) {
+        edges.push({ dst, src: ward, lbl: 'ward' });
+        vertices.new.push(ward);
+      }
+    }
+    vertices.new = vertices.new.filter(vertex =>
+      !vertices.all.includes(vertex)
+    );
+  }
+  return edges;
+}
+
 const getOracleAddresses = async (web3, chainLog) => {
   const oracles = [];
   for (const address of Object.keys(chainLog)) {
