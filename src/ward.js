@@ -404,8 +404,8 @@ const ward = async () => {
       const who = getWho(chainLog, address);
       const namedWards = wards.map(ward => getWho(chainLog, ward));
       allWards[who] = namedWards;
-      console.log(allWards);
     }
+    console.log(allWards);
   } else {
     const tree = await getTree(env, web3, chainLog, address);
     console.log(tree);
