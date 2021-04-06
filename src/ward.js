@@ -366,27 +366,16 @@ const compareResults = next => {
   }
 }
 
-const getName = (chainLog, tree, address) => {
-  const who = getWho(chainLog, address);
-  const governance = tree[address].some(address =>
-    getWho(chainLog, address) === 'MCD_PAUSE_PROXY'
-  );
-  const name = `${ who }${ governance ? '*' : '' }`;
-  return name;
-}
-
 const getTree = async (env, web3, chainLog, address) => {
+  const who = getWho(chainLog, address);
   const tree = await treeLookup(env, web3, chainLog, address);
   const namedTree = {};
   for (const address of Object.keys(tree)) {
-    const name = getName(chainLog, tree, address);
-    namedTree[name] = tree[address]
-      .map(address => getName(chainLog, tree, address))
-      .filter(who => who !== 'MCD_PAUSE_PROXY');
+    const who = getWho(chainLog, address);
+    namedTree[who] = tree[address].map(address => getWho(chainLog, address));
   }
-  const name = getName(chainLog, tree, address);
-  const hier = getBranch(namedTree, name, []);
-  const result = name + '\n' + treeify.asTree(hier);
+  const hier = getBranch(namedTree, who, []);
+  const result = who + '\n' + treeify.asTree(hier);
   return result;
 }
 
