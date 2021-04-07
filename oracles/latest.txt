@@ -1,0 +1,557 @@
+PIP_BAT
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+└─ ward: OSM_MOM
+   ├─ owner: MCD_PAUSE_PROXY
+   │  └─ owner: MCD_PAUSE
+   │     └─ authority: MCD_ADM
+   │        └─ authority: MCD_ADM
+   └─ authority: MCD_ADM
+      └─ authority: MCD_ADM
+
+PIP_BAT_SRC
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_COMP
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+└─ ward: OSM_MOM
+   ├─ owner: MCD_PAUSE_PROXY
+   │  └─ owner: MCD_PAUSE
+   │     └─ authority: MCD_ADM
+   │        └─ authority: MCD_ADM
+   └─ authority: MCD_ADM
+      └─ authority: MCD_ADM
+
+PIP_COMP_SRC
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_ETH
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+└─ ward: OSM_MOM
+   ├─ owner: MCD_PAUSE_PROXY
+   │  └─ owner: MCD_PAUSE
+   │     └─ authority: MCD_ADM
+   │        └─ authority: MCD_ADM
+   └─ authority: MCD_ADM
+      └─ authority: MCD_ADM
+
+PIP_UNIV2AAVEETH_ORB1
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_KNC
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+└─ ward: OSM_MOM
+   ├─ owner: MCD_PAUSE_PROXY
+   │  └─ owner: MCD_PAUSE
+   │     └─ authority: MCD_ADM
+   │        └─ authority: MCD_ADM
+   └─ authority: MCD_ADM
+      └─ authority: MCD_ADM
+
+PIP_KNC_SRC
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_LINK
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+└─ ward: OSM_MOM
+   ├─ owner: MCD_PAUSE_PROXY
+   │  └─ owner: MCD_PAUSE
+   │     └─ authority: MCD_ADM
+   │        └─ authority: MCD_ADM
+   └─ authority: MCD_ADM
+      └─ authority: MCD_ADM
+
+PIP_UNIV2LINKETH_ORB0
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_LRC
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+└─ ward: OSM_MOM
+   ├─ owner: MCD_PAUSE_PROXY
+   │  └─ owner: MCD_PAUSE
+   │     └─ authority: MCD_ADM
+   │        └─ authority: MCD_ADM
+   └─ authority: MCD_ADM
+      └─ authority: MCD_ADM
+
+PIP_LRC_SRC
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_MANA
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+└─ ward: OSM_MOM
+   ├─ owner: MCD_PAUSE_PROXY
+   │  └─ owner: MCD_PAUSE
+   │     └─ authority: MCD_ADM
+   │        └─ authority: MCD_ADM
+   └─ authority: MCD_ADM
+      └─ authority: MCD_ADM
+
+PIP_MANA_SRC
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_PAXUSD
+└─ owner: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_TUSD
+└─ owner: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2DAIUSDC_ORB1
+└─ owner: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_USDT
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+└─ ward: OSM_MOM
+   ├─ owner: MCD_PAUSE_PROXY
+   │  └─ owner: MCD_PAUSE
+   │     └─ authority: MCD_ADM
+   │        └─ authority: MCD_ADM
+   └─ authority: MCD_ADM
+      └─ authority: MCD_ADM
+
+PIP_UNIV2DAIUSDT_ORB1
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_RENBTC
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+└─ ward: OSM_MOM
+   ├─ owner: MCD_PAUSE_PROXY
+   │  └─ owner: MCD_PAUSE
+   │     └─ authority: MCD_ADM
+   │        └─ authority: MCD_ADM
+   └─ authority: MCD_ADM
+      └─ authority: MCD_ADM
+
+PIP_UNIV2WBTCDAI_ORB0
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_ZRX
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+└─ ward: OSM_MOM
+   ├─ owner: MCD_PAUSE_PROXY
+   │  └─ owner: MCD_PAUSE
+   │     └─ authority: MCD_ADM
+   │        └─ authority: MCD_ADM
+   └─ authority: MCD_ADM
+      └─ authority: MCD_ADM
+
+PIP_ZRX_SRC
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_BAL
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+└─ ward: OSM_MOM
+   ├─ owner: MCD_PAUSE_PROXY
+   │  └─ owner: MCD_PAUSE
+   │     └─ authority: MCD_ADM
+   │        └─ authority: MCD_ADM
+   └─ authority: MCD_ADM
+      └─ authority: MCD_ADM
+
+PIP_BAL_SRC
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_YFI
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+└─ ward: OSM_MOM
+   ├─ owner: MCD_PAUSE_PROXY
+   │  └─ owner: MCD_PAUSE
+   │     └─ authority: MCD_ADM
+   │        └─ authority: MCD_ADM
+   └─ authority: MCD_ADM
+      └─ authority: MCD_ADM
+
+PIP_YFI_SRC
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_GUSD
+└─ owner: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNI
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+└─ ward: OSM_MOM
+   ├─ owner: MCD_PAUSE_PROXY
+   │  └─ owner: MCD_PAUSE
+   │     └─ authority: MCD_ADM
+   │        └─ authority: MCD_ADM
+   └─ authority: MCD_ADM
+      └─ authority: MCD_ADM
+
+PIP_UNIV2UNIETH_ORB0
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_AAVE
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+└─ ward: OSM_MOM
+   ├─ owner: MCD_PAUSE_PROXY
+   │  └─ owner: MCD_PAUSE
+   │     └─ authority: MCD_ADM
+   │        └─ authority: MCD_ADM
+   └─ authority: MCD_ADM
+      └─ authority: MCD_ADM
+
+PIP_UNIV2AAVEETH_ORB0
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2DAIETH
+├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+└─ ward: OSM_MOM
+   ├─ owner: MCD_PAUSE_PROXY
+   │  └─ owner: MCD_PAUSE
+   │     └─ authority: MCD_ADM
+   │        └─ authority: MCD_ADM
+   └─ authority: MCD_ADM
+      └─ authority: MCD_ADM
+
+PIP_UNIV2DAIUSDT_ORB0
+└─ owner: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2AAVEETH_ORB1
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2WBTCETH
+├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+└─ ward: OSM_MOM
+   ├─ owner: MCD_PAUSE_PROXY
+   │  └─ owner: MCD_PAUSE
+   │     └─ authority: MCD_ADM
+   │        └─ authority: MCD_ADM
+   └─ authority: MCD_ADM
+      └─ authority: MCD_ADM
+
+PIP_UNIV2WBTCDAI_ORB0
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2AAVEETH_ORB1
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2USDCETH
+├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+└─ ward: OSM_MOM
+   ├─ owner: MCD_PAUSE_PROXY
+   │  └─ owner: MCD_PAUSE
+   │     └─ authority: MCD_ADM
+   │        └─ authority: MCD_ADM
+   └─ authority: MCD_ADM
+      └─ authority: MCD_ADM
+
+PIP_UNIV2DAIUSDC_ORB1
+└─ owner: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2AAVEETH_ORB1
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2DAIUSDC
+├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+├─ ward: OSM_MOM
+│  ├─ owner: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2DAIUSDT_ORB0
+└─ owner: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2DAIUSDC_ORB1
+└─ owner: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2ETHUSDT
+├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+├─ ward: OSM_MOM
+│  ├─ owner: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2AAVEETH_ORB1
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2DAIUSDT_ORB1
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2LINKETH
+├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+├─ ward: OSM_MOM
+│  ├─ owner: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2LINKETH_ORB0
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2AAVEETH_ORB1
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2UNIETH
+├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+├─ ward: OSM_MOM
+│  ├─ owner: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2UNIETH_ORB0
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2AAVEETH_ORB1
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2WBTCDAI
+├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+├─ ward: OSM_MOM
+│  ├─ owner: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2WBTCDAI_ORB0
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2DAIUSDT_ORB0
+└─ owner: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2AAVEETH
+├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+├─ ward: OSM_MOM
+│  ├─ owner: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2AAVEETH_ORB0
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2AAVEETH_ORB1
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2DAIUSDT
+├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+├─ ward: OSM_MOM
+│  ├─ owner: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2DAIUSDT_ORB0
+└─ owner: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2DAIUSDT_ORB1
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_RWA001
+└─ owner: MIP21_LIQUIDATION_ORACLE
+   └─ ward: MCD_PAUSE_PROXY
+      └─ owner: MCD_PAUSE
+         └─ authority: MCD_ADM
+            └─ authority: MCD_ADM
+
