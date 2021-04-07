@@ -1,0 +1,42 @@
+[
+    {
+        "dst": "PIP_UNIV2WBTCETH",
+        "src": "0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40",
+        "lbl": "ward"
+    },
+    {
+        "dst": "PIP_UNIV2WBTCETH",
+        "src": "MCD_PAUSE_PROXY",
+        "lbl": "ward"
+    },
+    {
+        "dst": "PIP_UNIV2WBTCETH",
+        "src": "OSM_MOM",
+        "lbl": "ward"
+    },
+    {
+        "dst": "MCD_PAUSE_PROXY",
+        "src": "MCD_PAUSE",
+        "lbl": "owner"
+    },
+    {
+        "dst": "OSM_MOM",
+        "src": "MCD_PAUSE_PROXY",
+        "lbl": "owner"
+    },
+    {
+        "dst": "OSM_MOM",
+        "src": "MCD_ADM",
+        "lbl": "authority"
+    },
+    {
+        "dst": "MCD_PAUSE",
+        "src": "MCD_ADM",
+        "lbl": "authority"
+    },
+    {
+        "dst": "MCD_ADM",
+        "src": "MCD_ADM",
+        "lbl": "authority"
+    }
+]

@@ -1,0 +1,22 @@
+[
+    {
+        "dst": "PIP_PAXUSD",
+        "src": "MCD_PAUSE_PROXY",
+        "lbl": "owner"
+    },
+    {
+        "dst": "MCD_PAUSE_PROXY",
+        "src": "MCD_PAUSE",
+        "lbl": "owner"
+    },
+    {
+        "dst": "MCD_PAUSE",
+        "src": "MCD_ADM",
+        "lbl": "authority"
+    },
+    {
+        "dst": "MCD_ADM",
+        "src": "MCD_ADM",
+        "lbl": "authority"
+    }
+]

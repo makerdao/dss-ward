@@ -1,0 +1,37 @@
+[
+    {
+        "dst": "PIP_LRC",
+        "src": "MCD_PAUSE_PROXY",
+        "lbl": "ward"
+    },
+    {
+        "dst": "PIP_LRC",
+        "src": "OSM_MOM",
+        "lbl": "ward"
+    },
+    {
+        "dst": "MCD_PAUSE_PROXY",
+        "src": "MCD_PAUSE",
+        "lbl": "owner"
+    },
+    {
+        "dst": "OSM_MOM",
+        "src": "MCD_PAUSE_PROXY",
+        "lbl": "owner"
+    },
+    {
+        "dst": "OSM_MOM",
+        "src": "MCD_ADM",
+        "lbl": "authority"
+    },
+    {
+        "dst": "MCD_PAUSE",
+        "src": "MCD_ADM",
+        "lbl": "authority"
+    },
+    {
+        "dst": "MCD_ADM",
+        "src": "MCD_ADM",
+        "lbl": "authority"
+    }
+]
