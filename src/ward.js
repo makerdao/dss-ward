@@ -288,26 +288,13 @@ const getCustodians = async (env, web3, chainLog, address) => {
   return { owner, authority, wards };
 }
 
-const treeLookup = async (env, web3, chainLog, address) => {
-  const tree = {};
-  tree[address] = 'new';
-  while (Object.values(tree).includes('new')) {
-    const addresses = Object.keys(tree).filter(addr => tree[addr] === 'new');
-    if (addresses.length > 1) {
-      console.log();
-      allLogs.push(...await getLogs(web3, chainLog, addresses));
-      scannedAddresses.push(...addresses);
-    }
-    for (const address of addresses) {
-      tree[address] = await getWards(env, web3, chainLog, address); // TODO: change for getCustodians
-      for (const child of tree[address]) {
-        if (!tree[child]) {
-          tree[child] = 'new';
-        }
-      }
-    }
+const cacheLogs = async (web3, chainLog, addresses) => {
+  const newAddresses = addresses.filter(a => !scannedAddresses.includes(a));
+  if (newAddresses.length > 1) {
+    console.log();
+    allLogs.push(...await getLogs(web3, chainLog, newAddresses));
+    scannedAddresses.push(...newAddresses);
   }
-  return tree;
 }
 
 const getGraph = async (env, web3, chainLog, address) => {
@@ -317,6 +304,7 @@ const getGraph = async (env, web3, chainLog, address) => {
     vertices.current = Array.from(new Set(vertices.new));
     vertices.all.push(...vertices.current);
     vertices.new = [];
+    await cacheLogs(web3, chainLog, vertices.current);
     for (const dst of vertices.current) {
       const custodians = await getCustodians(env, web3, chainLog, dst);
       if (custodians.owner) {
@@ -340,6 +328,7 @@ const getGraph = async (env, web3, chainLog, address) => {
 }
 
 const getOracleAddresses = async (web3, chainLog) => {
+  console.log('getting oracle addresses...\n\n');
   const oracles = [];
   for (const address of Object.keys(chainLog)) {
     const who = chainLog[address];
@@ -371,28 +360,28 @@ const getOracleAddresses = async (web3, chainLog) => {
       }
     }
   }
+  console.log(`found ${ oracles.length } oracle addresses`);
   return oracles;
 }
 
-const getBranch = (tree, node, parents) => {
-  const branch = {};
-  for (const subNode of tree[node]) {
-    if (parents.includes(subNode)) continue;
-    branch[subNode] = getBranch(tree, subNode, [...parents, node]);
+const writeResult = (next, type) => {
+  const dir = type === 'full' ? 'log' : type;
+  let prev;
+  try {
+    prev = fs.readFileSync(`${ dir }/latest.txt`, 'utf8');
+  } catch (err) {
+    prev = '';
   }
-  return branch;
-}
-
-const compareResults = next => {
-  const prev = fs.readFileSync('log/latest.txt', 'utf8');
   console.log();
   if (next === prev) {
     console.log(next);
-    console.log('no changes from last lookup');
+    console.log('no changes since last lookup');
   } else {
-    fs.writeFileSync(`log/${ new Date().getTime() }.txt`, next);
-    fs.writeFileSync('log/latest.txt', next);
-    console.log('changes detected; calculating diff...');
+    fs.writeFileSync(`${ dir }/${ new Date().getTime() }.txt`, next);
+    fs.writeFileSync(`${ dir }/latest.txt`, next);
+    console.log(next);
+    console.log('changes detected; created new file.');
+    console.log('calculating diff, press Ctrl+C to skip');
     const diff = Diff.diffChars(prev, next);
     diff.forEach(part => {
       const text = part.added
@@ -402,52 +391,112 @@ const compareResults = next => {
             : chalk.grey(part.value);
       process.stdout.write(text);
     });
-    console.log('\nchanges detected from last lookup');
+    console.log('\nchanges detected since last lookup');
   }
 }
 
-const getTree = async (env, web3, chainLog, address) => {
-  const who = getWho(chainLog, address);
-  const tree = await treeLookup(env, web3, chainLog, address);
-  const namedTree = {};
-  for (const address of Object.keys(tree)) {
-    const who = getWho(chainLog, address);
-    namedTree[who] = tree[address].map(address => getWho(chainLog, address));
+const drawSubTree = (chainLog, graph, parents, root) => {
+  const subGraph = graph.filter(edge => edge.dst === root);
+  const subTree = {};
+  for (const edge of subGraph) {
+    if (parents.includes(edge.src)) continue;
+    const who = getWho(chainLog, edge.src);
+    const card = `${ edge.lbl }: ${ who }`;
+    subTree[card] = drawSubTree(chainLog, graph, [...parents, root ], edge.src);
   }
-  const hier = getBranch(namedTree, who, []);
-  const result = who + '\n' + treeify.asTree(hier);
-  return result;
+  return subTree;
+}
+
+const drawTree = (chainLog, graph, root) => {
+  const who = getWho(chainLog, root);
+  const subTree = drawSubTree(chainLog, graph, [], root);
+  const tree = who + '\n' + treeify.asTree(subTree);
+  return tree;
+}
+
+const readGraph = who => {
+  return JSON.parse(fs.readFileSync(`debug/${ who }.json`, 'utf8'));
+}
+
+const writeGraph = (chainLog, name, graph) => {
+  fs.writeFileSync(`debug/${ name }.json`, JSON.stringify(graph));
+  const namedGraph = graph.map(edge => {
+    return {
+      dst: getWho(chainLog, edge.dst),
+      src: getWho(chainLog, edge.src),
+      lbl: edge.lbl
+    };
+  });
+  fs.writeFileSync(
+    `debug/${ name }-named.json`,
+    JSON.stringify(namedGraph, null, 4)
+  );
 }
 
 const ward = async () => {
   const env = getEnv();
   const web3 = new Web3(env.ETH_RPC_URL);
   let chainLog;
-  if (settings.cachedChainLog) {
+  if (settings.debug === 'read') {
     chainLog = JSON.parse(fs.readFileSync('chainLog.json', 'utf8'));
   } else {
     chainLog = await getChainLog(web3);
-    fs.writeFileSync('chainLog.json', JSON.stringify(chainLog));
+    if (settings.debug === 'write') {
+      fs.writeFileSync('chainLog.json', JSON.stringify(chainLog));
+    }
   }
   const address = parseWho(web3, chainLog);
   if (!address || address === 'full') {
     console.log('performing full system lookup...');
     const vatAddress = getKey(chainLog, 'MCD_VAT');
-    const result = await getTree(env, web3, chainLog, vatAddress);
-    compareResults(result);
-  } else if (address === 'oracles') {
-    console.log('checking oracles...\n');
-    const addresses = await getOracleAddresses(web3, chainLog);
-    const allWards = {};
-    for (const address of addresses) {
-      const wards = await getWards(env, web3, chainLog, address); // TODO: change for getCustodians
-      const who = getWho(chainLog, address);
-      const namedWards = wards.map(ward => getWho(chainLog, ward));
-      allWards[who] = namedWards;
+    let graph;
+    if (settings.debug === 'read') {
+      graph = readGraph('MCD_VAT');
+    } else {
+      graph = await getGraph(env, web3, chainLog, vatAddress);
+      if (settings.debug === 'write') {
+        writeGraph(chainLog, 'MCD_VAT', graph);
+      }
     }
-    console.log(allWards);
+    const tree = drawTree(chainLog, graph, vatAddress);
+    writeResult(tree, 'full');
+  } else if (address === 'oracles') {
+    const addresses = await getOracleAddresses(web3, chainLog);
+    let trees = '';
+    if (settings.debug !== 'read') {
+      await cacheLogs(web3, chainLog, addresses);
+    }
+    for (const address of addresses) {
+      let graph;
+      const who = getWho(chainLog, address);
+      if (settings.debug === 'read') {
+        try {
+          graph = readGraph(who);
+        } catch (err) {
+          continue;
+        }
+      } else {
+        graph = await getGraph(env, web3, chainLog, address);
+        if (settings.debug === 'write') {
+          writeGraph(chainLog, who, graph);
+        }
+      }
+      const tree = drawTree(chainLog, graph, address);
+      trees += tree + '\n';
+    }
+    writeResult(trees, 'oracles');
   } else {
-    const tree = await getTree(env, web3, chainLog, address);
+    const who = getWho(chainLog, address);
+    let graph;
+    if (settings.debug === 'read') {
+      graph = readGraph(who);
+    } else {
+      graph = await getGraph(env, web3, chainLog, address);
+      if (settings.debug === 'write') {
+        writeGraph(chainLog, who, graph);
+      }
+    }
+    const tree = drawTree(chainLog, graph, address);
     console.log(tree);
   }
 }
