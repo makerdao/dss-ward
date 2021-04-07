@@ -148,6 +148,7 @@ const getRelies = async (web3, chainLog, address) => {
   } else {
     logs = await getLogs(web3, chainLog, [ address ]);
     allLogs[address] = logs;
+    scannedAddresses.push(address);
   }
   for (const log of logs) {
     const addresses = getAddresses(web3, log);
