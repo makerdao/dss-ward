@@ -62,3 +62,13 @@ node src/ward.js --mode oracles
 
 This will get all the `PIP`s in the chainlog, as well as their medianizers
 (either `orb`s or `src`) and get the authorities over each one of them.
+
+### get permissions of a contract
+
+The permissions of a contract are all the contract where it is an
+authority. In other words, getting the permissions of a contract is the reverse
+operation from getting its authorities.
+
+```
+node src/ward.js --mode permissions MCD_SPOT
+```

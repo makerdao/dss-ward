@@ -386,7 +386,29 @@ const drawSubTree = (chainLog, graph, parents, root) => {
     if (parents.includes(edge.src)) continue;
     const who = getWho(chainLog, edge.src);
     const card = `${ edge.lbl }: ${ who }`;
-    subTree[card] = drawSubTree(chainLog, graph, [...parents, root ], edge.src);
+    subTree[card] = drawSubTree(
+      chainLog,
+      graph,
+      [ ...parents, root ],
+      edge.src
+    );
+  }
+  return subTree;
+}
+
+const drawPermissionsSubTree = (chainLog, graph, parents, root) => {
+  const subGraph = graph.filter(edge => edge.src === root);
+  const subTree = {};
+  for (const edge of subGraph) {
+    if (parents.includes(edge.dst)) continue;
+    const who = getWho(chainLog, edge.dst);
+    const card = `${ edge.lbl } of ${ who }`;
+    subTree[card] = drawPermissionsSubTree(
+      chainLog,
+      graph,
+      [...parents, root],
+      edge.dst
+    );
   }
   return subTree;
 }
@@ -394,6 +416,13 @@ const drawSubTree = (chainLog, graph, parents, root) => {
 const drawTree = (chainLog, graph, root) => {
   const who = getWho(chainLog, root);
   const subTree = drawSubTree(chainLog, graph, [], root);
+  const tree = who + '\n' + treeify.asTree(subTree);
+  return tree;
+}
+
+const drawPermissions = (chainLog, graph, root) => {
+  const who = getWho(chainLog, root);
+  const subTree = drawPermissionsSubTree(chainLog, graph, [], root);
   const tree = who + '\n' + treeify.asTree(subTree);
   return tree;
 }
@@ -460,7 +489,7 @@ const oraclesMode = async (env, args, web3, chainLog) => {
   writeResult(trees, 'oracles');
 }
 
-const contractMode = async (env, args, web3, chainLog, contract) => {
+const parseAddress = (web3, chainLog, contract) => {
   let address;
   if (isAddress(contract)) {
     address = web3.utils.toChecksumAddress(contract);
@@ -473,6 +502,30 @@ const contractMode = async (env, args, web3, chainLog, contract) => {
       process.exit();
     }
   }
+  return address;
+}
+
+const permissionsMode = async (env, args, web3, chainLog, contract) => {
+  const address = parseAddress(web3, chainLog, contract);
+  const who = getWho(chainLog, address);
+  console.log(`performing permissions lookup for ${ who }...`);
+  const vatAddress = getKey(chainLog, 'MCD_VAT');
+  let graph;
+  if (args.debug === 'read') {
+    graph = readGraph('MCD_VAT');
+  } else {
+    graph = await getGraph(env, web3, chainLog, vatAddress);
+    if (args.debug === 'write') {
+      writeGraph(chainLog, 'MCD_VAT', graph);
+    }
+  }
+  const permissions = drawPermissions(chainLog, graph, address);
+  console.log();
+  console.log(permissions);
+}
+
+const contractMode = async (env, args, web3, chainLog, contract) => {
+  const address = parseAddress(web3, chainLog, contract);
   const who = getWho(chainLog, address);
   let graph;
   if (args.debug === 'read') {
@@ -493,7 +546,7 @@ const parseArgs = () => {
     description: 'check permissions for DSS'
   });
   parser.add_argument('--mode', '-m', {
-    help: 'mode: full, oracles, contract',
+    help: 'mode: full, oracles, authorities, permissions',
   });
   parser.add_argument('contract', {
     help: 'contract to inspect',
@@ -522,6 +575,8 @@ const ward = async () => {
     await fullMode(env, args, web3, chainLog);
   } else if (args.mode === 'oracles') {
     await oraclesMode(env, args, web3, chainLog);
+  } else if (args.mode === 'permissions') {
+    await permissionsMode(env, args, web3, chainLog, args.contract);
   } else {
     await contractMode(env, args, web3, chainLog, args.contract);
   }
