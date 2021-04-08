@@ -1,3 +1,4 @@
+const { ArgumentParser } = require('argparse');
 const Web3 = require('web3');
 const settings = require('../settings.js');
 const fs = require('fs');
@@ -11,30 +12,6 @@ const scannedAddresses = [];
 
 const getJson = path => {
   return JSON.parse(fs.readFileSync(path));
-}
-
-const parseArgs = (web3, chainLog) => {
-  let who;
-  if (process.argv.length > 2) {
-    who = process.argv[2];
-  } else {
-    return null;
-  }
-  let address;
-  if (isAddress(who)) {
-    address = web3.utils.toChecksumAddress(who);
-  } else if (['full', 'oracles'].includes(who)) {
-    return who;
-  } else {
-    address = getKey(chainLog, who);
-    if (!address) {
-      console.log(chainLog);
-      console.log(`${ who } isn't an address nor does it exist in the`
-                  + ` chainlog.`);
-      process.exit();
-    }
-  }
-  return address;
 }
 
 const getEnv = () => {
@@ -73,8 +50,8 @@ const getAddresses = (web3, log) => {
   return addresses;
 }
 
-const getChainLog = async web3 => {
-  if (settings.debug === 'read') {
+const getChainLog = async (args, web3) => {
+  if (args.debug === 'read') {
     return JSON.parse(fs.readFileSync('chainLog.json', 'utf8'));
   }
   const chainLog = {};
@@ -91,7 +68,7 @@ const getChainLog = async web3 => {
     chainLog[address] = name;
   }
   console.log();
-  if (settings.debug === 'write') {
+  if (args.debug === 'write') {
     fs.writeFileSync('chainLog.json', JSON.stringify(chainLog));
   }
   return chainLog;
@@ -440,15 +417,15 @@ const writeGraph = (chainLog, name, graph) => {
   );
 }
 
-const fullMode = async (env, web3, chainLog) => {
+const fullMode = async (env, args, web3, chainLog) => {
   console.log('performing full system lookup...');
   const vatAddress = getKey(chainLog, 'MCD_VAT');
   let graph;
-  if (settings.debug === 'read') {
+  if (args.debug === 'read') {
     graph = readGraph('MCD_VAT');
   } else {
     graph = await getGraph(env, web3, chainLog, vatAddress);
-    if (settings.debug === 'write') {
+    if (args.debug === 'write') {
       writeGraph(chainLog, 'MCD_VAT', graph);
     }
   }
@@ -456,16 +433,16 @@ const fullMode = async (env, web3, chainLog) => {
   writeResult(tree, 'full');
 }
 
-const oraclesMode = async (env, web3, chainLog) => {
+const oraclesMode = async (env, args, web3, chainLog) => {
   const addresses = await getOracleAddresses(web3, chainLog);
   let trees = '';
-  if (settings.debug !== 'read') {
+  if (args.debug !== 'read') {
     await cacheLogs(web3, chainLog, addresses);
   }
   for (const address of addresses) {
     let graph;
     const who = getWho(chainLog, address);
-    if (settings.debug === 'read') {
+    if (args.debug === 'read') {
       try {
         graph = readGraph(who);
       } catch (err) {
@@ -473,7 +450,7 @@ const oraclesMode = async (env, web3, chainLog) => {
       }
     } else {
       graph = await getGraph(env, web3, chainLog, address);
-      if (settings.debug === 'write') {
+      if (args.debug === 'write') {
         writeGraph(chainLog, who, graph);
       }
     }
@@ -483,32 +460,70 @@ const oraclesMode = async (env, web3, chainLog) => {
   writeResult(trees, 'oracles');
 }
 
-const addressMode = async (env, web3, chainLog, address) => {
+const contractMode = async (env, args, web3, chainLog, contract) => {
+  let address;
+  if (isAddress(contract)) {
+    address = web3.utils.toChecksumAddress(contract);
+  } else {
+    address = getKey(chainLog, contract);
+    if (!address) {
+      console.log(chainLog);
+      console.log(`'${ contract }' isn't an address nor does it exist in the`
+                  + ` chainlog.`);
+      process.exit();
+    }
+  }
   const who = getWho(chainLog, address);
   let graph;
-  if (settings.debug === 'read') {
+  if (args.debug === 'read') {
     graph = readGraph(who);
   } else {
     graph = await getGraph(env, web3, chainLog, address);
-    if (settings.debug === 'write') {
+    if (args.debug === 'write') {
       writeGraph(chainLog, who, graph);
     }
   }
   const tree = drawTree(chainLog, graph, address);
+  console.log();
   console.log(tree);
+}
+
+const parseArgs = () => {
+  const parser = new ArgumentParser({
+    description: 'check permissions for DSS'
+  });
+  parser.add_argument('--mode', '-m', {
+    help: 'mode: full, oracles, contract',
+  });
+  parser.add_argument('contract', {
+    help: 'contract to inspect',
+    nargs: '?',
+  });
+  parser.add_argument('--debug', '-d', {
+    help: 'debug mode: write, read',
+  });
+  const args = parser.parse_args();
+  if (!args.contract && !args.mode) {
+    args.mode = 'full';
+  }
+  if (!['full', 'oracles'].includes(args.mode) && !args.contract) {
+    parser.print_help();
+    process.exit();
+  }
+  return args;
 }
 
 const ward = async () => {
   const env = getEnv();
+  const args = parseArgs();
   const web3 = new Web3(env.ETH_RPC_URL);
-  const chainLog = await getChainLog(web3);
-  const address = parseArgs(web3, chainLog);
-  if (!address || address === 'full') {
-    await fullMode(env, web3, chainLog);
-  } else if (address === 'oracles') {
-    await oraclesMode(env, web3, chainLog);
+  const chainLog = await getChainLog(args, web3);
+  if (args.mode === 'full') {
+    await fullMode(env, args, web3, chainLog);
+  } else if (args.mode === 'oracles') {
+    await oraclesMode(env, args, web3, chainLog);
   } else {
-    await addressMode(env, web3, chainLog, address);
+    await contractMode(env, args, web3, chainLog, args.contract);
   }
 }
 
