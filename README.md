@@ -6,10 +6,7 @@ This script checks:
 
 * owner
 * authority
-* wards:
-*     deployer
-*     logNote relies
-*     event-emitting relies
+* wards: deployer, logNote relies and event-emitting relies
 
 It can be used to check the authorities over a single contract by specifying its
 chainlog name or address, or it can also be used to check all the authorities in
