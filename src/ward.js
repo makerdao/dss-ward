@@ -379,7 +379,8 @@ const writeResult = (next, type) => {
   }
 }
 
-const drawSubTree = (chainLog, graph, parents, root) => {
+const drawSubTree = (chainLog, graph, parents, root, level, depth) => {
+  if (depth && level == depth) return {};
   const subGraph = graph.filter(edge => edge.dst === root);
   const subTree = {};
   for (const edge of subGraph) {
@@ -390,39 +391,44 @@ const drawSubTree = (chainLog, graph, parents, root) => {
       chainLog,
       graph,
       [ ...parents, root ],
-      edge.src
+      edge.src,
+      level + 1,
+      depth
     );
   }
   return subTree;
 }
 
-const drawPermissionsSubTree = (chainLog, graph, parents, root) => {
+const drawReverseSubTree = (chainLog, graph, parents, root, level, depth) => {
+  if (depth && level == depth) return {};
   const subGraph = graph.filter(edge => edge.src === root);
   const subTree = {};
   for (const edge of subGraph) {
     if (parents.includes(edge.dst)) continue;
     const who = getWho(chainLog, edge.dst);
     const card = `${ edge.lbl } of ${ who }`;
-    subTree[card] = drawPermissionsSubTree(
+    subTree[card] = drawReverseSubTree(
       chainLog,
       graph,
       [...parents, root],
-      edge.dst
+      edge.dst,
+      level + 1,
+      depth
     );
   }
   return subTree;
 }
 
-const drawTree = (chainLog, graph, root) => {
+const drawTree = (chainLog, graph, depth, root) => {
   const who = getWho(chainLog, root);
-  const subTree = drawSubTree(chainLog, graph, [], root);
+  const subTree = drawSubTree(chainLog, graph, [], root, 0, depth);
   const tree = who + '\n' + treeify.asTree(subTree);
   return tree;
 }
 
-const drawPermissions = (chainLog, graph, root) => {
+const drawPermissions = (chainLog, graph, depth, root) => {
   const who = getWho(chainLog, root);
-  const subTree = drawPermissionsSubTree(chainLog, graph, [], root);
+  const subTree = drawReverseSubTree(chainLog, graph, [], root, 0, depth);
   const tree = who + '\n' + treeify.asTree(subTree);
   return tree;
 }
@@ -458,7 +464,7 @@ const fullMode = async (env, args, web3, chainLog) => {
       writeGraph(chainLog, 'MCD_VAT', graph);
     }
   }
-  const tree = drawTree(chainLog, graph, vatAddress);
+  const tree = drawTree(chainLog, graph, args.level, vatAddress);
   writeResult(tree, 'full');
 }
 
@@ -483,7 +489,7 @@ const oraclesMode = async (env, args, web3, chainLog) => {
         writeGraph(chainLog, who, graph);
       }
     }
-    const tree = drawTree(chainLog, graph, address);
+    const tree = drawTree(chainLog, graph, args.level, address);
     trees += tree + '\n';
   }
   writeResult(trees, 'oracles');
@@ -519,7 +525,7 @@ const permissionsMode = async (env, args, web3, chainLog, contract) => {
       writeGraph(chainLog, 'MCD_VAT', graph);
     }
   }
-  const permissions = drawPermissions(chainLog, graph, address);
+  const permissions = drawPermissions(chainLog, graph, args.level, address);
   console.log();
   console.log(permissions);
 }
@@ -536,7 +542,7 @@ const contractMode = async (env, args, web3, chainLog, contract) => {
       writeGraph(chainLog, who, graph);
     }
   }
-  const tree = drawTree(chainLog, graph, address);
+  const tree = drawTree(chainLog, graph, args.level, address);
   console.log();
   console.log(tree);
 }
@@ -551,6 +557,9 @@ const parseArgs = () => {
   parser.add_argument('contract', {
     help: 'contract to inspect',
     nargs: '?',
+  });
+  parser.add_argument('--level', '-l', {
+    help: 'maximum depth level for trees',
   });
   parser.add_argument('--debug', '-d', {
     help: 'debug mode: write, read',
