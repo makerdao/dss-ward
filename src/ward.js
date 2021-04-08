@@ -259,7 +259,7 @@ const getWards = async (env, web3, chainLog, address) => {
   return allWards;
 }
 
-const getCustodians = async (env, web3, chainLog, address) => {
+const getAuthorities = async (env, web3, chainLog, address) => {
   const who = getWho(chainLog, address);
   if (who !== address) {
     console.log(`\nstarting check for ${ who } (${ address })`);
@@ -290,16 +290,16 @@ const getGraph = async (env, web3, chainLog, address) => {
     vertices.new = [];
     await cacheLogs(web3, chainLog, vertices.current);
     for (const dst of vertices.current) {
-      const custodians = await getCustodians(env, web3, chainLog, dst);
-      if (custodians.owner) {
-        edges.push({ dst, src: custodians.owner, lbl: 'owner' });
-        vertices.new.push(custodians.owner);
+      const authorities = await getAuthorities(env, web3, chainLog, dst);
+      if (authorities.owner) {
+        edges.push({ dst, src: authorities.owner, lbl: 'owner' });
+        vertices.new.push(authorities.owner);
       }
-      if (custodians.authority) {
-        edges.push({ dst, src: custodians.authority, lbl: 'authority' });
-        vertices.new.push(custodians.authority);
+      if (authorities.authority) {
+        edges.push({ dst, src: authorities.authority, lbl: 'authority' });
+        vertices.new.push(authorities.authority);
       }
-      for (const ward of custodians.wards) {
+      for (const ward of authorities.wards) {
         edges.push({ dst, src: ward, lbl: 'ward' });
         vertices.new.push(ward);
       }
