@@ -1,0 +1,2761 @@
+PIP_BAT
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ ward: OSM_MOM
+│  ├─ owner: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+├─ bud: MCD_SPOT
+│  ├─ ward: MCD_END
+│  │  ├─ ward: MCD_ESM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+├─ bud: MCD_END
+│  ├─ ward: MCD_ESM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+└─ bud: 0xeAa474cbFFA87Ae0F1a6f68a3aBA6C77C656F72c
+   └─ owner: 0x0528A32fda5beDf89Ba9ad67296db83c9452F28C
+
+PIP_BAT_SRC
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+└─ bud: PIP_BAT
+   ├─ ward: MCD_PAUSE_PROXY
+   │  └─ owner: MCD_PAUSE
+   │     └─ authority: MCD_ADM
+   │        └─ authority: MCD_ADM
+   ├─ ward: OSM_MOM
+   │  ├─ owner: MCD_PAUSE_PROXY
+   │  │  └─ owner: MCD_PAUSE
+   │  │     └─ authority: MCD_ADM
+   │  │        └─ authority: MCD_ADM
+   │  └─ authority: MCD_ADM
+   │     └─ authority: MCD_ADM
+   ├─ bud: MCD_SPOT
+   │  ├─ ward: MCD_END
+   │  │  ├─ ward: MCD_ESM
+   │  │  └─ ward: MCD_PAUSE_PROXY
+   │  │     └─ owner: MCD_PAUSE
+   │  │        └─ authority: MCD_ADM
+   │  │           └─ authority: MCD_ADM
+   │  └─ ward: MCD_PAUSE_PROXY
+   │     └─ owner: MCD_PAUSE
+   │        └─ authority: MCD_ADM
+   │           └─ authority: MCD_ADM
+   ├─ bud: MCD_END
+   │  ├─ ward: MCD_ESM
+   │  └─ ward: MCD_PAUSE_PROXY
+   │     └─ owner: MCD_PAUSE
+   │        └─ authority: MCD_ADM
+   │           └─ authority: MCD_ADM
+   └─ bud: 0xeAa474cbFFA87Ae0F1a6f68a3aBA6C77C656F72c
+      └─ owner: 0x0528A32fda5beDf89Ba9ad67296db83c9452F28C
+
+PIP_COMP
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ ward: OSM_MOM
+│  ├─ owner: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+├─ bud: MCD_SPOT
+│  ├─ ward: MCD_END
+│  │  ├─ ward: MCD_ESM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+├─ bud: MCD_END
+│  ├─ ward: MCD_ESM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+└─ bud: 0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777
+
+PIP_COMP_SRC
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+└─ bud: PIP_COMP
+   ├─ ward: MCD_PAUSE_PROXY
+   │  └─ owner: MCD_PAUSE
+   │     └─ authority: MCD_ADM
+   │        └─ authority: MCD_ADM
+   ├─ ward: OSM_MOM
+   │  ├─ owner: MCD_PAUSE_PROXY
+   │  │  └─ owner: MCD_PAUSE
+   │  │     └─ authority: MCD_ADM
+   │  │        └─ authority: MCD_ADM
+   │  └─ authority: MCD_ADM
+   │     └─ authority: MCD_ADM
+   ├─ bud: MCD_SPOT
+   │  ├─ ward: MCD_END
+   │  │  ├─ ward: MCD_ESM
+   │  │  └─ ward: MCD_PAUSE_PROXY
+   │  │     └─ owner: MCD_PAUSE
+   │  │        └─ authority: MCD_ADM
+   │  │           └─ authority: MCD_ADM
+   │  └─ ward: MCD_PAUSE_PROXY
+   │     └─ owner: MCD_PAUSE
+   │        └─ authority: MCD_ADM
+   │           └─ authority: MCD_ADM
+   ├─ bud: MCD_END
+   │  ├─ ward: MCD_ESM
+   │  └─ ward: MCD_PAUSE_PROXY
+   │     └─ owner: MCD_PAUSE
+   │        └─ authority: MCD_ADM
+   │           └─ authority: MCD_ADM
+   └─ bud: 0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777
+
+PIP_ETH
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ ward: OSM_MOM
+│  ├─ owner: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+├─ bud: MCD_SPOT
+│  ├─ ward: MCD_END
+│  │  ├─ ward: MCD_ESM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+├─ bud: MCD_END
+│  ├─ ward: MCD_ESM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+├─ bud: 0xeAa474cbFFA87Ae0F1a6f68a3aBA6C77C656F72c
+│  └─ owner: 0x0528A32fda5beDf89Ba9ad67296db83c9452F28C
+├─ bud: 0xCF63089A8aD2a9D8BD6Bb8022f3190EB7e1eD0f1
+├─ bud: 0x2325aa20DEAa9770a978f1dc7C073589ffC79DC3
+│  └─ owner: 0xd0643BC0D0C879F175556509dbcEe9373379D5C3
+├─ bud: 0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777
+└─ bud: 0xDF3CDd10e646e4155723a3bC5b1191741DD90333
+
+PIP_UNIV2AAVEETH_ORB1
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_ETH
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  ├─ bud: MCD_SPOT
+│  │  ├─ ward: MCD_END
+│  │  │  ├─ ward: MCD_ESM
+│  │  │  └─ ward: MCD_PAUSE_PROXY
+│  │  │     └─ owner: MCD_PAUSE
+│  │  │        └─ authority: MCD_ADM
+│  │  │           └─ authority: MCD_ADM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  ├─ bud: MCD_END
+│  │  ├─ ward: MCD_ESM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  ├─ bud: 0xeAa474cbFFA87Ae0F1a6f68a3aBA6C77C656F72c
+│  │  └─ owner: 0x0528A32fda5beDf89Ba9ad67296db83c9452F28C
+│  ├─ bud: 0xCF63089A8aD2a9D8BD6Bb8022f3190EB7e1eD0f1
+│  ├─ bud: 0x2325aa20DEAa9770a978f1dc7C073589ffC79DC3
+│  │  └─ owner: 0xd0643BC0D0C879F175556509dbcEe9373379D5C3
+│  ├─ bud: 0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777
+│  └─ bud: 0xDF3CDd10e646e4155723a3bC5b1191741DD90333
+├─ bud: 0x97C3e595e8f80169266B5534e4d7A1bB58BB45ab
+│  └─ owner: 0xF8523c551763FE4261A28313015267F163de7541
+├─ bud: 0x12Ee7E3369272CeE4e9843F36331561DBF9Ae6b4
+│  └─ owner: 0xA9E664bB519Dc372C025100eA83255eDC8d9bDE3
+├─ bud: 0x538038E526517680735568f9C5342c6E68bbDA12
+│  └─ owner: 0xba2906b18B069b40C6D2CAFd392E76ad479B1B53
+├─ bud: 0x2325aa20DEAa9770a978f1dc7C073589ffC79DC3
+│  └─ owner: 0xd0643BC0D0C879F175556509dbcEe9373379D5C3
+├─ bud: PIP_UNIV2DAIETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ ward: OSM_MOM
+│     ├─ owner: MCD_PAUSE_PROXY
+│     │  └─ owner: MCD_PAUSE
+│     │     └─ authority: MCD_ADM
+│     │        └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2WBTCETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ ward: OSM_MOM
+│     ├─ owner: MCD_PAUSE_PROXY
+│     │  └─ owner: MCD_PAUSE
+│     │     └─ authority: MCD_ADM
+│     │        └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2USDCETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ ward: OSM_MOM
+│     ├─ owner: MCD_PAUSE_PROXY
+│     │  └─ owner: MCD_PAUSE
+│     │     └─ authority: MCD_ADM
+│     │        └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2ETHUSDT
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2LINKETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2UNIETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+└─ bud: PIP_UNIV2AAVEETH
+   ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+   ├─ ward: OSM_MOM
+   │  ├─ owner: MCD_PAUSE_PROXY
+   │  │  └─ owner: MCD_PAUSE
+   │  │     └─ authority: MCD_ADM
+   │  │        └─ authority: MCD_ADM
+   │  └─ authority: MCD_ADM
+   │     └─ authority: MCD_ADM
+   └─ ward: MCD_PAUSE_PROXY
+      └─ owner: MCD_PAUSE
+         └─ authority: MCD_ADM
+            └─ authority: MCD_ADM
+
+PIP_KNC
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ ward: OSM_MOM
+│  ├─ owner: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+├─ bud: MCD_SPOT
+│  ├─ ward: MCD_END
+│  │  ├─ ward: MCD_ESM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+└─ bud: MCD_END
+   ├─ ward: MCD_ESM
+   └─ ward: MCD_PAUSE_PROXY
+      └─ owner: MCD_PAUSE
+         └─ authority: MCD_ADM
+            └─ authority: MCD_ADM
+
+PIP_KNC_SRC
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+└─ bud: PIP_KNC
+   ├─ ward: MCD_PAUSE_PROXY
+   │  └─ owner: MCD_PAUSE
+   │     └─ authority: MCD_ADM
+   │        └─ authority: MCD_ADM
+   ├─ ward: OSM_MOM
+   │  ├─ owner: MCD_PAUSE_PROXY
+   │  │  └─ owner: MCD_PAUSE
+   │  │     └─ authority: MCD_ADM
+   │  │        └─ authority: MCD_ADM
+   │  └─ authority: MCD_ADM
+   │     └─ authority: MCD_ADM
+   ├─ bud: MCD_SPOT
+   │  ├─ ward: MCD_END
+   │  │  ├─ ward: MCD_ESM
+   │  │  └─ ward: MCD_PAUSE_PROXY
+   │  │     └─ owner: MCD_PAUSE
+   │  │        └─ authority: MCD_ADM
+   │  │           └─ authority: MCD_ADM
+   │  └─ ward: MCD_PAUSE_PROXY
+   │     └─ owner: MCD_PAUSE
+   │        └─ authority: MCD_ADM
+   │           └─ authority: MCD_ADM
+   └─ bud: MCD_END
+      ├─ ward: MCD_ESM
+      └─ ward: MCD_PAUSE_PROXY
+         └─ owner: MCD_PAUSE
+            └─ authority: MCD_ADM
+               └─ authority: MCD_ADM
+
+PIP_LINK
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ ward: OSM_MOM
+│  ├─ owner: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+├─ bud: MCD_SPOT
+│  ├─ ward: MCD_END
+│  │  ├─ ward: MCD_ESM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+├─ bud: MCD_END
+│  ├─ ward: MCD_ESM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+└─ bud: 0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777
+
+PIP_UNIV2LINKETH_ORB0
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_LINK
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  ├─ bud: MCD_SPOT
+│  │  ├─ ward: MCD_END
+│  │  │  ├─ ward: MCD_ESM
+│  │  │  └─ ward: MCD_PAUSE_PROXY
+│  │  │     └─ owner: MCD_PAUSE
+│  │  │        └─ authority: MCD_ADM
+│  │  │           └─ authority: MCD_ADM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  ├─ bud: MCD_END
+│  │  ├─ ward: MCD_ESM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  └─ bud: 0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777
+└─ bud: PIP_UNIV2LINKETH
+   ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+   ├─ ward: OSM_MOM
+   │  ├─ owner: MCD_PAUSE_PROXY
+   │  │  └─ owner: MCD_PAUSE
+   │  │     └─ authority: MCD_ADM
+   │  │        └─ authority: MCD_ADM
+   │  └─ authority: MCD_ADM
+   │     └─ authority: MCD_ADM
+   └─ ward: MCD_PAUSE_PROXY
+      └─ owner: MCD_PAUSE
+         └─ authority: MCD_ADM
+            └─ authority: MCD_ADM
+
+PIP_LRC
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ ward: OSM_MOM
+│  ├─ owner: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+├─ bud: MCD_SPOT
+│  ├─ ward: MCD_END
+│  │  ├─ ward: MCD_ESM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+└─ bud: MCD_END
+   ├─ ward: MCD_ESM
+   └─ ward: MCD_PAUSE_PROXY
+      └─ owner: MCD_PAUSE
+         └─ authority: MCD_ADM
+            └─ authority: MCD_ADM
+
+PIP_LRC_SRC
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_LRC
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  ├─ bud: MCD_SPOT
+│  │  ├─ ward: MCD_END
+│  │  │  ├─ ward: MCD_ESM
+│  │  │  └─ ward: MCD_PAUSE_PROXY
+│  │  │     └─ owner: MCD_PAUSE
+│  │  │        └─ authority: MCD_ADM
+│  │  │           └─ authority: MCD_ADM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  └─ bud: MCD_END
+│     ├─ ward: MCD_ESM
+│     └─ ward: MCD_PAUSE_PROXY
+│        └─ owner: MCD_PAUSE
+│           └─ authority: MCD_ADM
+│              └─ authority: MCD_ADM
+└─ bud: 0x1D5d9a2DDa0843eD9D8a9Bddc33F1fca9f9C64a0
+   └─ owner: 0xF8523c551763FE4261A28313015267F163de7541
+
+PIP_MANA
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ ward: OSM_MOM
+│  ├─ owner: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+├─ bud: MCD_SPOT
+│  ├─ ward: MCD_END
+│  │  ├─ ward: MCD_ESM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+└─ bud: MCD_END
+   ├─ ward: MCD_ESM
+   └─ ward: MCD_PAUSE_PROXY
+      └─ owner: MCD_PAUSE
+         └─ authority: MCD_ADM
+            └─ authority: MCD_ADM
+
+PIP_MANA_SRC
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+└─ bud: PIP_MANA
+   ├─ ward: MCD_PAUSE_PROXY
+   │  └─ owner: MCD_PAUSE
+   │     └─ authority: MCD_ADM
+   │        └─ authority: MCD_ADM
+   ├─ ward: OSM_MOM
+   │  ├─ owner: MCD_PAUSE_PROXY
+   │  │  └─ owner: MCD_PAUSE
+   │  │     └─ authority: MCD_ADM
+   │  │        └─ authority: MCD_ADM
+   │  └─ authority: MCD_ADM
+   │     └─ authority: MCD_ADM
+   ├─ bud: MCD_SPOT
+   │  ├─ ward: MCD_END
+   │  │  ├─ ward: MCD_ESM
+   │  │  └─ ward: MCD_PAUSE_PROXY
+   │  │     └─ owner: MCD_PAUSE
+   │  │        └─ authority: MCD_ADM
+   │  │           └─ authority: MCD_ADM
+   │  └─ ward: MCD_PAUSE_PROXY
+   │     └─ owner: MCD_PAUSE
+   │        └─ authority: MCD_ADM
+   │           └─ authority: MCD_ADM
+   └─ bud: MCD_END
+      ├─ ward: MCD_ESM
+      └─ ward: MCD_PAUSE_PROXY
+         └─ owner: MCD_PAUSE
+            └─ authority: MCD_ADM
+               └─ authority: MCD_ADM
+
+PIP_PAXUSD
+└─ owner: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_TUSD
+└─ owner: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2DAIUSDC_ORB1
+└─ owner: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_USDT
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ ward: OSM_MOM
+│  ├─ owner: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+├─ bud: MCD_SPOT
+│  ├─ ward: MCD_END
+│  │  ├─ ward: MCD_ESM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+└─ bud: MCD_END
+   ├─ ward: MCD_ESM
+   └─ ward: MCD_PAUSE_PROXY
+      └─ owner: MCD_PAUSE
+         └─ authority: MCD_ADM
+            └─ authority: MCD_ADM
+
+PIP_UNIV2DAIUSDT_ORB1
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_USDT
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  ├─ bud: MCD_SPOT
+│  │  ├─ ward: MCD_END
+│  │  │  ├─ ward: MCD_ESM
+│  │  │  └─ ward: MCD_PAUSE_PROXY
+│  │  │     └─ owner: MCD_PAUSE
+│  │  │        └─ authority: MCD_ADM
+│  │  │           └─ authority: MCD_ADM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  └─ bud: MCD_END
+│     ├─ ward: MCD_ESM
+│     └─ ward: MCD_PAUSE_PROXY
+│        └─ owner: MCD_PAUSE
+│           └─ authority: MCD_ADM
+│              └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2ETHUSDT
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+└─ bud: PIP_UNIV2DAIUSDT
+   ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+   ├─ ward: OSM_MOM
+   │  ├─ owner: MCD_PAUSE_PROXY
+   │  │  └─ owner: MCD_PAUSE
+   │  │     └─ authority: MCD_ADM
+   │  │        └─ authority: MCD_ADM
+   │  └─ authority: MCD_ADM
+   │     └─ authority: MCD_ADM
+   └─ ward: MCD_PAUSE_PROXY
+      └─ owner: MCD_PAUSE
+         └─ authority: MCD_ADM
+            └─ authority: MCD_ADM
+
+PIP_RENBTC
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ ward: OSM_MOM
+│  ├─ owner: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+├─ bud: MCD_SPOT
+│  ├─ ward: MCD_END
+│  │  ├─ ward: MCD_ESM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+├─ bud: MCD_END
+│  ├─ ward: MCD_ESM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+├─ bud: 0xeAa474cbFFA87Ae0F1a6f68a3aBA6C77C656F72c
+│  └─ owner: 0x0528A32fda5beDf89Ba9ad67296db83c9452F28C
+├─ bud: 0x82c93333e4E295AA17a05B15092159597e823e8a
+└─ bud: 0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777
+
+PIP_UNIV2WBTCDAI_ORB0
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: 0xbf63446ecF3341e04c6569b226a57860B188edBc
+│  └─ owner: 0xF8523c551763FE4261A28313015267F163de7541
+├─ bud: 0x538038E526517680735568f9C5342c6E68bbDA12
+│  └─ owner: 0xba2906b18B069b40C6D2CAFd392E76ad479B1B53
+├─ bud: PIP_RENBTC
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  ├─ bud: MCD_SPOT
+│  │  ├─ ward: MCD_END
+│  │  │  ├─ ward: MCD_ESM
+│  │  │  └─ ward: MCD_PAUSE_PROXY
+│  │  │     └─ owner: MCD_PAUSE
+│  │  │        └─ authority: MCD_ADM
+│  │  │           └─ authority: MCD_ADM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  ├─ bud: MCD_END
+│  │  ├─ ward: MCD_ESM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  ├─ bud: 0xeAa474cbFFA87Ae0F1a6f68a3aBA6C77C656F72c
+│  │  └─ owner: 0x0528A32fda5beDf89Ba9ad67296db83c9452F28C
+│  ├─ bud: 0x82c93333e4E295AA17a05B15092159597e823e8a
+│  └─ bud: 0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777
+├─ bud: 0x4935B1188EB940C39e22172cc5fe595E267706a1
+│  └─ owner: 0xD7518704C86Dea22a0Ab2f146435e3e1cCBc16ea
+├─ bud: PIP_UNIV2WBTCETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ ward: OSM_MOM
+│     ├─ owner: MCD_PAUSE_PROXY
+│     │  └─ owner: MCD_PAUSE
+│     │     └─ authority: MCD_ADM
+│     │        └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+└─ bud: PIP_UNIV2WBTCDAI
+   ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+   ├─ ward: OSM_MOM
+   │  ├─ owner: MCD_PAUSE_PROXY
+   │  │  └─ owner: MCD_PAUSE
+   │  │     └─ authority: MCD_ADM
+   │  │        └─ authority: MCD_ADM
+   │  └─ authority: MCD_ADM
+   │     └─ authority: MCD_ADM
+   └─ ward: MCD_PAUSE_PROXY
+      └─ owner: MCD_PAUSE
+         └─ authority: MCD_ADM
+            └─ authority: MCD_ADM
+
+PIP_ZRX
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ ward: OSM_MOM
+│  ├─ owner: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+├─ bud: MCD_SPOT
+│  ├─ ward: MCD_END
+│  │  ├─ ward: MCD_ESM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+├─ bud: MCD_END
+│  ├─ ward: MCD_ESM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+└─ bud: 0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777
+
+PIP_ZRX_SRC
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_ZRX
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  ├─ bud: MCD_SPOT
+│  │  ├─ ward: MCD_END
+│  │  │  ├─ ward: MCD_ESM
+│  │  │  └─ ward: MCD_PAUSE_PROXY
+│  │  │     └─ owner: MCD_PAUSE
+│  │  │        └─ authority: MCD_ADM
+│  │  │           └─ authority: MCD_ADM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  ├─ bud: MCD_END
+│  │  ├─ ward: MCD_ESM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  └─ bud: 0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777
+└─ bud: 0xFF60D1650696238F81BE53D23b3F91bfAAad938f
+   └─ owner: 0xF8523c551763FE4261A28313015267F163de7541
+
+PIP_BAL
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ ward: OSM_MOM
+│  ├─ owner: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+├─ bud: MCD_SPOT
+│  ├─ ward: MCD_END
+│  │  ├─ ward: MCD_ESM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+└─ bud: MCD_END
+   ├─ ward: MCD_ESM
+   └─ ward: MCD_PAUSE_PROXY
+      └─ owner: MCD_PAUSE
+         └─ authority: MCD_ADM
+            └─ authority: MCD_ADM
+
+PIP_BAL_SRC
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+└─ bud: PIP_BAL
+   ├─ ward: MCD_PAUSE_PROXY
+   │  └─ owner: MCD_PAUSE
+   │     └─ authority: MCD_ADM
+   │        └─ authority: MCD_ADM
+   ├─ ward: OSM_MOM
+   │  ├─ owner: MCD_PAUSE_PROXY
+   │  │  └─ owner: MCD_PAUSE
+   │  │     └─ authority: MCD_ADM
+   │  │        └─ authority: MCD_ADM
+   │  └─ authority: MCD_ADM
+   │     └─ authority: MCD_ADM
+   ├─ bud: MCD_SPOT
+   │  ├─ ward: MCD_END
+   │  │  ├─ ward: MCD_ESM
+   │  │  └─ ward: MCD_PAUSE_PROXY
+   │  │     └─ owner: MCD_PAUSE
+   │  │        └─ authority: MCD_ADM
+   │  │           └─ authority: MCD_ADM
+   │  └─ ward: MCD_PAUSE_PROXY
+   │     └─ owner: MCD_PAUSE
+   │        └─ authority: MCD_ADM
+   │           └─ authority: MCD_ADM
+   └─ bud: MCD_END
+      ├─ ward: MCD_ESM
+      └─ ward: MCD_PAUSE_PROXY
+         └─ owner: MCD_PAUSE
+            └─ authority: MCD_ADM
+               └─ authority: MCD_ADM
+
+PIP_YFI
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ ward: OSM_MOM
+│  ├─ owner: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+├─ bud: MCD_SPOT
+│  ├─ ward: MCD_END
+│  │  ├─ ward: MCD_ESM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+├─ bud: MCD_END
+│  ├─ ward: MCD_ESM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+├─ bud: 0x208EfCD7aad0b5DD49438E0b6A0f38E951A50E5f
+│  └─ owner: 0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52
+└─ bud: 0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777
+
+PIP_YFI_SRC
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_YFI
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  ├─ bud: MCD_SPOT
+│  │  ├─ ward: MCD_END
+│  │  │  ├─ ward: MCD_ESM
+│  │  │  └─ ward: MCD_PAUSE_PROXY
+│  │  │     └─ owner: MCD_PAUSE
+│  │  │        └─ authority: MCD_ADM
+│  │  │           └─ authority: MCD_ADM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  ├─ bud: MCD_END
+│  │  ├─ ward: MCD_ESM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  ├─ bud: 0x208EfCD7aad0b5DD49438E0b6A0f38E951A50E5f
+│  │  └─ owner: 0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52
+│  └─ bud: 0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777
+└─ bud: 0x1686d01Bd776a1C2A3cCF1579647cA6D39dd2465
+   └─ owner: 0xF8523c551763FE4261A28313015267F163de7541
+
+PIP_GUSD
+└─ owner: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNI
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ ward: OSM_MOM
+│  ├─ owner: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+├─ bud: MCD_SPOT
+│  ├─ ward: MCD_END
+│  │  ├─ ward: MCD_ESM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+└─ bud: MCD_END
+   ├─ ward: MCD_ESM
+   └─ ward: MCD_PAUSE_PROXY
+      └─ owner: MCD_PAUSE
+         └─ authority: MCD_ADM
+            └─ authority: MCD_ADM
+
+PIP_UNIV2UNIETH_ORB0
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_UNI
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  ├─ bud: MCD_SPOT
+│  │  ├─ ward: MCD_END
+│  │  │  ├─ ward: MCD_ESM
+│  │  │  └─ ward: MCD_PAUSE_PROXY
+│  │  │     └─ owner: MCD_PAUSE
+│  │  │        └─ authority: MCD_ADM
+│  │  │           └─ authority: MCD_ADM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  └─ bud: MCD_END
+│     ├─ ward: MCD_ESM
+│     └─ ward: MCD_PAUSE_PROXY
+│        └─ owner: MCD_PAUSE
+│           └─ authority: MCD_ADM
+│              └─ authority: MCD_ADM
+├─ bud: 0x3c3Afa479d8C95CF0E1dF70449Bb5A14A3b7Af67
+│  └─ owner: 0xF8523c551763FE4261A28313015267F163de7541
+└─ bud: PIP_UNIV2UNIETH
+   ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+   ├─ ward: OSM_MOM
+   │  ├─ owner: MCD_PAUSE_PROXY
+   │  │  └─ owner: MCD_PAUSE
+   │  │     └─ authority: MCD_ADM
+   │  │        └─ authority: MCD_ADM
+   │  └─ authority: MCD_ADM
+   │     └─ authority: MCD_ADM
+   └─ ward: MCD_PAUSE_PROXY
+      └─ owner: MCD_PAUSE
+         └─ authority: MCD_ADM
+            └─ authority: MCD_ADM
+
+PIP_AAVE
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ ward: OSM_MOM
+│  ├─ owner: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+├─ bud: MCD_SPOT
+│  ├─ ward: MCD_END
+│  │  ├─ ward: MCD_ESM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+└─ bud: MCD_END
+   ├─ ward: MCD_ESM
+   └─ ward: MCD_PAUSE_PROXY
+      └─ owner: MCD_PAUSE
+         └─ authority: MCD_ADM
+            └─ authority: MCD_ADM
+
+PIP_UNIV2AAVEETH_ORB0
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_AAVE
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  ├─ bud: MCD_SPOT
+│  │  ├─ ward: MCD_END
+│  │  │  ├─ ward: MCD_ESM
+│  │  │  └─ ward: MCD_PAUSE_PROXY
+│  │  │     └─ owner: MCD_PAUSE
+│  │  │        └─ authority: MCD_ADM
+│  │  │           └─ authority: MCD_ADM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  └─ bud: MCD_END
+│     ├─ ward: MCD_ESM
+│     └─ ward: MCD_PAUSE_PROXY
+│        └─ owner: MCD_PAUSE
+│           └─ authority: MCD_ADM
+│              └─ authority: MCD_ADM
+├─ bud: 0x8b1C079f8192706532cC0Bf0C02dcC4fF40d045D
+│  └─ owner: 0xF8523c551763FE4261A28313015267F163de7541
+└─ bud: PIP_UNIV2AAVEETH
+   ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+   ├─ ward: OSM_MOM
+   │  ├─ owner: MCD_PAUSE_PROXY
+   │  │  └─ owner: MCD_PAUSE
+   │  │     └─ authority: MCD_ADM
+   │  │        └─ authority: MCD_ADM
+   │  └─ authority: MCD_ADM
+   │     └─ authority: MCD_ADM
+   └─ ward: MCD_PAUSE_PROXY
+      └─ owner: MCD_PAUSE
+         └─ authority: MCD_ADM
+            └─ authority: MCD_ADM
+
+PIP_UNIV2DAIETH
+├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+└─ ward: OSM_MOM
+   ├─ owner: MCD_PAUSE_PROXY
+   │  └─ owner: MCD_PAUSE
+   │     └─ authority: MCD_ADM
+   │        └─ authority: MCD_ADM
+   └─ authority: MCD_ADM
+      └─ authority: MCD_ADM
+
+PIP_UNIV2DAIUSDT_ORB0
+└─ owner: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2AAVEETH_ORB1
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_ETH
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  ├─ bud: MCD_SPOT
+│  │  ├─ ward: MCD_END
+│  │  │  ├─ ward: MCD_ESM
+│  │  │  └─ ward: MCD_PAUSE_PROXY
+│  │  │     └─ owner: MCD_PAUSE
+│  │  │        └─ authority: MCD_ADM
+│  │  │           └─ authority: MCD_ADM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  ├─ bud: MCD_END
+│  │  ├─ ward: MCD_ESM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  ├─ bud: 0xeAa474cbFFA87Ae0F1a6f68a3aBA6C77C656F72c
+│  │  └─ owner: 0x0528A32fda5beDf89Ba9ad67296db83c9452F28C
+│  ├─ bud: 0xCF63089A8aD2a9D8BD6Bb8022f3190EB7e1eD0f1
+│  ├─ bud: 0x2325aa20DEAa9770a978f1dc7C073589ffC79DC3
+│  │  └─ owner: 0xd0643BC0D0C879F175556509dbcEe9373379D5C3
+│  ├─ bud: 0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777
+│  └─ bud: 0xDF3CDd10e646e4155723a3bC5b1191741DD90333
+├─ bud: 0x97C3e595e8f80169266B5534e4d7A1bB58BB45ab
+│  └─ owner: 0xF8523c551763FE4261A28313015267F163de7541
+├─ bud: 0x12Ee7E3369272CeE4e9843F36331561DBF9Ae6b4
+│  └─ owner: 0xA9E664bB519Dc372C025100eA83255eDC8d9bDE3
+├─ bud: 0x538038E526517680735568f9C5342c6E68bbDA12
+│  └─ owner: 0xba2906b18B069b40C6D2CAFd392E76ad479B1B53
+├─ bud: 0x2325aa20DEAa9770a978f1dc7C073589ffC79DC3
+│  └─ owner: 0xd0643BC0D0C879F175556509dbcEe9373379D5C3
+├─ bud: PIP_UNIV2DAIETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ ward: OSM_MOM
+│     ├─ owner: MCD_PAUSE_PROXY
+│     │  └─ owner: MCD_PAUSE
+│     │     └─ authority: MCD_ADM
+│     │        └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2WBTCETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ ward: OSM_MOM
+│     ├─ owner: MCD_PAUSE_PROXY
+│     │  └─ owner: MCD_PAUSE
+│     │     └─ authority: MCD_ADM
+│     │        └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2USDCETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ ward: OSM_MOM
+│     ├─ owner: MCD_PAUSE_PROXY
+│     │  └─ owner: MCD_PAUSE
+│     │     └─ authority: MCD_ADM
+│     │        └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2ETHUSDT
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2LINKETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2UNIETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+└─ bud: PIP_UNIV2AAVEETH
+   ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+   ├─ ward: OSM_MOM
+   │  ├─ owner: MCD_PAUSE_PROXY
+   │  │  └─ owner: MCD_PAUSE
+   │  │     └─ authority: MCD_ADM
+   │  │        └─ authority: MCD_ADM
+   │  └─ authority: MCD_ADM
+   │     └─ authority: MCD_ADM
+   └─ ward: MCD_PAUSE_PROXY
+      └─ owner: MCD_PAUSE
+         └─ authority: MCD_ADM
+            └─ authority: MCD_ADM
+
+PIP_UNIV2WBTCETH
+├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+└─ ward: OSM_MOM
+   ├─ owner: MCD_PAUSE_PROXY
+   │  └─ owner: MCD_PAUSE
+   │     └─ authority: MCD_ADM
+   │        └─ authority: MCD_ADM
+   └─ authority: MCD_ADM
+      └─ authority: MCD_ADM
+
+PIP_UNIV2WBTCDAI_ORB0
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: 0xbf63446ecF3341e04c6569b226a57860B188edBc
+│  └─ owner: 0xF8523c551763FE4261A28313015267F163de7541
+├─ bud: 0x538038E526517680735568f9C5342c6E68bbDA12
+│  └─ owner: 0xba2906b18B069b40C6D2CAFd392E76ad479B1B53
+├─ bud: PIP_RENBTC
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  ├─ bud: MCD_SPOT
+│  │  ├─ ward: MCD_END
+│  │  │  ├─ ward: MCD_ESM
+│  │  │  └─ ward: MCD_PAUSE_PROXY
+│  │  │     └─ owner: MCD_PAUSE
+│  │  │        └─ authority: MCD_ADM
+│  │  │           └─ authority: MCD_ADM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  ├─ bud: MCD_END
+│  │  ├─ ward: MCD_ESM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  ├─ bud: 0xeAa474cbFFA87Ae0F1a6f68a3aBA6C77C656F72c
+│  │  └─ owner: 0x0528A32fda5beDf89Ba9ad67296db83c9452F28C
+│  ├─ bud: 0x82c93333e4E295AA17a05B15092159597e823e8a
+│  └─ bud: 0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777
+├─ bud: 0x4935B1188EB940C39e22172cc5fe595E267706a1
+│  └─ owner: 0xD7518704C86Dea22a0Ab2f146435e3e1cCBc16ea
+├─ bud: PIP_UNIV2WBTCETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ ward: OSM_MOM
+│     ├─ owner: MCD_PAUSE_PROXY
+│     │  └─ owner: MCD_PAUSE
+│     │     └─ authority: MCD_ADM
+│     │        └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+└─ bud: PIP_UNIV2WBTCDAI
+   ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+   ├─ ward: OSM_MOM
+   │  ├─ owner: MCD_PAUSE_PROXY
+   │  │  └─ owner: MCD_PAUSE
+   │  │     └─ authority: MCD_ADM
+   │  │        └─ authority: MCD_ADM
+   │  └─ authority: MCD_ADM
+   │     └─ authority: MCD_ADM
+   └─ ward: MCD_PAUSE_PROXY
+      └─ owner: MCD_PAUSE
+         └─ authority: MCD_ADM
+            └─ authority: MCD_ADM
+
+PIP_UNIV2AAVEETH_ORB1
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_ETH
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  ├─ bud: MCD_SPOT
+│  │  ├─ ward: MCD_END
+│  │  │  ├─ ward: MCD_ESM
+│  │  │  └─ ward: MCD_PAUSE_PROXY
+│  │  │     └─ owner: MCD_PAUSE
+│  │  │        └─ authority: MCD_ADM
+│  │  │           └─ authority: MCD_ADM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  ├─ bud: MCD_END
+│  │  ├─ ward: MCD_ESM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  ├─ bud: 0xeAa474cbFFA87Ae0F1a6f68a3aBA6C77C656F72c
+│  │  └─ owner: 0x0528A32fda5beDf89Ba9ad67296db83c9452F28C
+│  ├─ bud: 0xCF63089A8aD2a9D8BD6Bb8022f3190EB7e1eD0f1
+│  ├─ bud: 0x2325aa20DEAa9770a978f1dc7C073589ffC79DC3
+│  │  └─ owner: 0xd0643BC0D0C879F175556509dbcEe9373379D5C3
+│  ├─ bud: 0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777
+│  └─ bud: 0xDF3CDd10e646e4155723a3bC5b1191741DD90333
+├─ bud: 0x97C3e595e8f80169266B5534e4d7A1bB58BB45ab
+│  └─ owner: 0xF8523c551763FE4261A28313015267F163de7541
+├─ bud: 0x12Ee7E3369272CeE4e9843F36331561DBF9Ae6b4
+│  └─ owner: 0xA9E664bB519Dc372C025100eA83255eDC8d9bDE3
+├─ bud: 0x538038E526517680735568f9C5342c6E68bbDA12
+│  └─ owner: 0xba2906b18B069b40C6D2CAFd392E76ad479B1B53
+├─ bud: 0x2325aa20DEAa9770a978f1dc7C073589ffC79DC3
+│  └─ owner: 0xd0643BC0D0C879F175556509dbcEe9373379D5C3
+├─ bud: PIP_UNIV2DAIETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ ward: OSM_MOM
+│     ├─ owner: MCD_PAUSE_PROXY
+│     │  └─ owner: MCD_PAUSE
+│     │     └─ authority: MCD_ADM
+│     │        └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2WBTCETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ ward: OSM_MOM
+│     ├─ owner: MCD_PAUSE_PROXY
+│     │  └─ owner: MCD_PAUSE
+│     │     └─ authority: MCD_ADM
+│     │        └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2USDCETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ ward: OSM_MOM
+│     ├─ owner: MCD_PAUSE_PROXY
+│     │  └─ owner: MCD_PAUSE
+│     │     └─ authority: MCD_ADM
+│     │        └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2ETHUSDT
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2LINKETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2UNIETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+└─ bud: PIP_UNIV2AAVEETH
+   ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+   ├─ ward: OSM_MOM
+   │  ├─ owner: MCD_PAUSE_PROXY
+   │  │  └─ owner: MCD_PAUSE
+   │  │     └─ authority: MCD_ADM
+   │  │        └─ authority: MCD_ADM
+   │  └─ authority: MCD_ADM
+   │     └─ authority: MCD_ADM
+   └─ ward: MCD_PAUSE_PROXY
+      └─ owner: MCD_PAUSE
+         └─ authority: MCD_ADM
+            └─ authority: MCD_ADM
+
+PIP_UNIV2USDCETH
+├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+└─ ward: OSM_MOM
+   ├─ owner: MCD_PAUSE_PROXY
+   │  └─ owner: MCD_PAUSE
+   │     └─ authority: MCD_ADM
+   │        └─ authority: MCD_ADM
+   └─ authority: MCD_ADM
+      └─ authority: MCD_ADM
+
+PIP_UNIV2DAIUSDC_ORB1
+└─ owner: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2AAVEETH_ORB1
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_ETH
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  ├─ bud: MCD_SPOT
+│  │  ├─ ward: MCD_END
+│  │  │  ├─ ward: MCD_ESM
+│  │  │  └─ ward: MCD_PAUSE_PROXY
+│  │  │     └─ owner: MCD_PAUSE
+│  │  │        └─ authority: MCD_ADM
+│  │  │           └─ authority: MCD_ADM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  ├─ bud: MCD_END
+│  │  ├─ ward: MCD_ESM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  ├─ bud: 0xeAa474cbFFA87Ae0F1a6f68a3aBA6C77C656F72c
+│  │  └─ owner: 0x0528A32fda5beDf89Ba9ad67296db83c9452F28C
+│  ├─ bud: 0xCF63089A8aD2a9D8BD6Bb8022f3190EB7e1eD0f1
+│  ├─ bud: 0x2325aa20DEAa9770a978f1dc7C073589ffC79DC3
+│  │  └─ owner: 0xd0643BC0D0C879F175556509dbcEe9373379D5C3
+│  ├─ bud: 0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777
+│  └─ bud: 0xDF3CDd10e646e4155723a3bC5b1191741DD90333
+├─ bud: 0x97C3e595e8f80169266B5534e4d7A1bB58BB45ab
+│  └─ owner: 0xF8523c551763FE4261A28313015267F163de7541
+├─ bud: 0x12Ee7E3369272CeE4e9843F36331561DBF9Ae6b4
+│  └─ owner: 0xA9E664bB519Dc372C025100eA83255eDC8d9bDE3
+├─ bud: 0x538038E526517680735568f9C5342c6E68bbDA12
+│  └─ owner: 0xba2906b18B069b40C6D2CAFd392E76ad479B1B53
+├─ bud: 0x2325aa20DEAa9770a978f1dc7C073589ffC79DC3
+│  └─ owner: 0xd0643BC0D0C879F175556509dbcEe9373379D5C3
+├─ bud: PIP_UNIV2DAIETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ ward: OSM_MOM
+│     ├─ owner: MCD_PAUSE_PROXY
+│     │  └─ owner: MCD_PAUSE
+│     │     └─ authority: MCD_ADM
+│     │        └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2WBTCETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ ward: OSM_MOM
+│     ├─ owner: MCD_PAUSE_PROXY
+│     │  └─ owner: MCD_PAUSE
+│     │     └─ authority: MCD_ADM
+│     │        └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2USDCETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ ward: OSM_MOM
+│     ├─ owner: MCD_PAUSE_PROXY
+│     │  └─ owner: MCD_PAUSE
+│     │     └─ authority: MCD_ADM
+│     │        └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2ETHUSDT
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2LINKETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2UNIETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+└─ bud: PIP_UNIV2AAVEETH
+   ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+   ├─ ward: OSM_MOM
+   │  ├─ owner: MCD_PAUSE_PROXY
+   │  │  └─ owner: MCD_PAUSE
+   │  │     └─ authority: MCD_ADM
+   │  │        └─ authority: MCD_ADM
+   │  └─ authority: MCD_ADM
+   │     └─ authority: MCD_ADM
+   └─ ward: MCD_PAUSE_PROXY
+      └─ owner: MCD_PAUSE
+         └─ authority: MCD_ADM
+            └─ authority: MCD_ADM
+
+PIP_UNIV2DAIUSDC
+├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+├─ ward: OSM_MOM
+│  ├─ owner: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2DAIUSDT_ORB0
+└─ owner: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2DAIUSDC_ORB1
+└─ owner: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2ETHUSDT
+├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+├─ ward: OSM_MOM
+│  ├─ owner: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2AAVEETH_ORB1
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_ETH
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  ├─ bud: MCD_SPOT
+│  │  ├─ ward: MCD_END
+│  │  │  ├─ ward: MCD_ESM
+│  │  │  └─ ward: MCD_PAUSE_PROXY
+│  │  │     └─ owner: MCD_PAUSE
+│  │  │        └─ authority: MCD_ADM
+│  │  │           └─ authority: MCD_ADM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  ├─ bud: MCD_END
+│  │  ├─ ward: MCD_ESM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  ├─ bud: 0xeAa474cbFFA87Ae0F1a6f68a3aBA6C77C656F72c
+│  │  └─ owner: 0x0528A32fda5beDf89Ba9ad67296db83c9452F28C
+│  ├─ bud: 0xCF63089A8aD2a9D8BD6Bb8022f3190EB7e1eD0f1
+│  ├─ bud: 0x2325aa20DEAa9770a978f1dc7C073589ffC79DC3
+│  │  └─ owner: 0xd0643BC0D0C879F175556509dbcEe9373379D5C3
+│  ├─ bud: 0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777
+│  └─ bud: 0xDF3CDd10e646e4155723a3bC5b1191741DD90333
+├─ bud: 0x97C3e595e8f80169266B5534e4d7A1bB58BB45ab
+│  └─ owner: 0xF8523c551763FE4261A28313015267F163de7541
+├─ bud: 0x12Ee7E3369272CeE4e9843F36331561DBF9Ae6b4
+│  └─ owner: 0xA9E664bB519Dc372C025100eA83255eDC8d9bDE3
+├─ bud: 0x538038E526517680735568f9C5342c6E68bbDA12
+│  └─ owner: 0xba2906b18B069b40C6D2CAFd392E76ad479B1B53
+├─ bud: 0x2325aa20DEAa9770a978f1dc7C073589ffC79DC3
+│  └─ owner: 0xd0643BC0D0C879F175556509dbcEe9373379D5C3
+├─ bud: PIP_UNIV2DAIETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ ward: OSM_MOM
+│     ├─ owner: MCD_PAUSE_PROXY
+│     │  └─ owner: MCD_PAUSE
+│     │     └─ authority: MCD_ADM
+│     │        └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2WBTCETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ ward: OSM_MOM
+│     ├─ owner: MCD_PAUSE_PROXY
+│     │  └─ owner: MCD_PAUSE
+│     │     └─ authority: MCD_ADM
+│     │        └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2USDCETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ ward: OSM_MOM
+│     ├─ owner: MCD_PAUSE_PROXY
+│     │  └─ owner: MCD_PAUSE
+│     │     └─ authority: MCD_ADM
+│     │        └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2ETHUSDT
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2LINKETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2UNIETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+└─ bud: PIP_UNIV2AAVEETH
+   ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+   ├─ ward: OSM_MOM
+   │  ├─ owner: MCD_PAUSE_PROXY
+   │  │  └─ owner: MCD_PAUSE
+   │  │     └─ authority: MCD_ADM
+   │  │        └─ authority: MCD_ADM
+   │  └─ authority: MCD_ADM
+   │     └─ authority: MCD_ADM
+   └─ ward: MCD_PAUSE_PROXY
+      └─ owner: MCD_PAUSE
+         └─ authority: MCD_ADM
+            └─ authority: MCD_ADM
+
+PIP_UNIV2DAIUSDT_ORB1
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_USDT
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  ├─ bud: MCD_SPOT
+│  │  ├─ ward: MCD_END
+│  │  │  ├─ ward: MCD_ESM
+│  │  │  └─ ward: MCD_PAUSE_PROXY
+│  │  │     └─ owner: MCD_PAUSE
+│  │  │        └─ authority: MCD_ADM
+│  │  │           └─ authority: MCD_ADM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  └─ bud: MCD_END
+│     ├─ ward: MCD_ESM
+│     └─ ward: MCD_PAUSE_PROXY
+│        └─ owner: MCD_PAUSE
+│           └─ authority: MCD_ADM
+│              └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2ETHUSDT
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+└─ bud: PIP_UNIV2DAIUSDT
+   ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+   ├─ ward: OSM_MOM
+   │  ├─ owner: MCD_PAUSE_PROXY
+   │  │  └─ owner: MCD_PAUSE
+   │  │     └─ authority: MCD_ADM
+   │  │        └─ authority: MCD_ADM
+   │  └─ authority: MCD_ADM
+   │     └─ authority: MCD_ADM
+   └─ ward: MCD_PAUSE_PROXY
+      └─ owner: MCD_PAUSE
+         └─ authority: MCD_ADM
+            └─ authority: MCD_ADM
+
+PIP_UNIV2LINKETH
+├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+├─ ward: OSM_MOM
+│  ├─ owner: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2LINKETH_ORB0
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_LINK
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  ├─ bud: MCD_SPOT
+│  │  ├─ ward: MCD_END
+│  │  │  ├─ ward: MCD_ESM
+│  │  │  └─ ward: MCD_PAUSE_PROXY
+│  │  │     └─ owner: MCD_PAUSE
+│  │  │        └─ authority: MCD_ADM
+│  │  │           └─ authority: MCD_ADM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  ├─ bud: MCD_END
+│  │  ├─ ward: MCD_ESM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  └─ bud: 0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777
+└─ bud: PIP_UNIV2LINKETH
+   ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+   ├─ ward: OSM_MOM
+   │  ├─ owner: MCD_PAUSE_PROXY
+   │  │  └─ owner: MCD_PAUSE
+   │  │     └─ authority: MCD_ADM
+   │  │        └─ authority: MCD_ADM
+   │  └─ authority: MCD_ADM
+   │     └─ authority: MCD_ADM
+   └─ ward: MCD_PAUSE_PROXY
+      └─ owner: MCD_PAUSE
+         └─ authority: MCD_ADM
+            └─ authority: MCD_ADM
+
+PIP_UNIV2AAVEETH_ORB1
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_ETH
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  ├─ bud: MCD_SPOT
+│  │  ├─ ward: MCD_END
+│  │  │  ├─ ward: MCD_ESM
+│  │  │  └─ ward: MCD_PAUSE_PROXY
+│  │  │     └─ owner: MCD_PAUSE
+│  │  │        └─ authority: MCD_ADM
+│  │  │           └─ authority: MCD_ADM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  ├─ bud: MCD_END
+│  │  ├─ ward: MCD_ESM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  ├─ bud: 0xeAa474cbFFA87Ae0F1a6f68a3aBA6C77C656F72c
+│  │  └─ owner: 0x0528A32fda5beDf89Ba9ad67296db83c9452F28C
+│  ├─ bud: 0xCF63089A8aD2a9D8BD6Bb8022f3190EB7e1eD0f1
+│  ├─ bud: 0x2325aa20DEAa9770a978f1dc7C073589ffC79DC3
+│  │  └─ owner: 0xd0643BC0D0C879F175556509dbcEe9373379D5C3
+│  ├─ bud: 0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777
+│  └─ bud: 0xDF3CDd10e646e4155723a3bC5b1191741DD90333
+├─ bud: 0x97C3e595e8f80169266B5534e4d7A1bB58BB45ab
+│  └─ owner: 0xF8523c551763FE4261A28313015267F163de7541
+├─ bud: 0x12Ee7E3369272CeE4e9843F36331561DBF9Ae6b4
+│  └─ owner: 0xA9E664bB519Dc372C025100eA83255eDC8d9bDE3
+├─ bud: 0x538038E526517680735568f9C5342c6E68bbDA12
+│  └─ owner: 0xba2906b18B069b40C6D2CAFd392E76ad479B1B53
+├─ bud: 0x2325aa20DEAa9770a978f1dc7C073589ffC79DC3
+│  └─ owner: 0xd0643BC0D0C879F175556509dbcEe9373379D5C3
+├─ bud: PIP_UNIV2DAIETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ ward: OSM_MOM
+│     ├─ owner: MCD_PAUSE_PROXY
+│     │  └─ owner: MCD_PAUSE
+│     │     └─ authority: MCD_ADM
+│     │        └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2WBTCETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ ward: OSM_MOM
+│     ├─ owner: MCD_PAUSE_PROXY
+│     │  └─ owner: MCD_PAUSE
+│     │     └─ authority: MCD_ADM
+│     │        └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2USDCETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ ward: OSM_MOM
+│     ├─ owner: MCD_PAUSE_PROXY
+│     │  └─ owner: MCD_PAUSE
+│     │     └─ authority: MCD_ADM
+│     │        └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2ETHUSDT
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2LINKETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2UNIETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+└─ bud: PIP_UNIV2AAVEETH
+   ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+   ├─ ward: OSM_MOM
+   │  ├─ owner: MCD_PAUSE_PROXY
+   │  │  └─ owner: MCD_PAUSE
+   │  │     └─ authority: MCD_ADM
+   │  │        └─ authority: MCD_ADM
+   │  └─ authority: MCD_ADM
+   │     └─ authority: MCD_ADM
+   └─ ward: MCD_PAUSE_PROXY
+      └─ owner: MCD_PAUSE
+         └─ authority: MCD_ADM
+            └─ authority: MCD_ADM
+
+PIP_UNIV2UNIETH
+├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+├─ ward: OSM_MOM
+│  ├─ owner: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2UNIETH_ORB0
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_UNI
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  ├─ bud: MCD_SPOT
+│  │  ├─ ward: MCD_END
+│  │  │  ├─ ward: MCD_ESM
+│  │  │  └─ ward: MCD_PAUSE_PROXY
+│  │  │     └─ owner: MCD_PAUSE
+│  │  │        └─ authority: MCD_ADM
+│  │  │           └─ authority: MCD_ADM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  └─ bud: MCD_END
+│     ├─ ward: MCD_ESM
+│     └─ ward: MCD_PAUSE_PROXY
+│        └─ owner: MCD_PAUSE
+│           └─ authority: MCD_ADM
+│              └─ authority: MCD_ADM
+├─ bud: 0x3c3Afa479d8C95CF0E1dF70449Bb5A14A3b7Af67
+│  └─ owner: 0xF8523c551763FE4261A28313015267F163de7541
+└─ bud: PIP_UNIV2UNIETH
+   ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+   ├─ ward: OSM_MOM
+   │  ├─ owner: MCD_PAUSE_PROXY
+   │  │  └─ owner: MCD_PAUSE
+   │  │     └─ authority: MCD_ADM
+   │  │        └─ authority: MCD_ADM
+   │  └─ authority: MCD_ADM
+   │     └─ authority: MCD_ADM
+   └─ ward: MCD_PAUSE_PROXY
+      └─ owner: MCD_PAUSE
+         └─ authority: MCD_ADM
+            └─ authority: MCD_ADM
+
+PIP_UNIV2AAVEETH_ORB1
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_ETH
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  ├─ bud: MCD_SPOT
+│  │  ├─ ward: MCD_END
+│  │  │  ├─ ward: MCD_ESM
+│  │  │  └─ ward: MCD_PAUSE_PROXY
+│  │  │     └─ owner: MCD_PAUSE
+│  │  │        └─ authority: MCD_ADM
+│  │  │           └─ authority: MCD_ADM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  ├─ bud: MCD_END
+│  │  ├─ ward: MCD_ESM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  ├─ bud: 0xeAa474cbFFA87Ae0F1a6f68a3aBA6C77C656F72c
+│  │  └─ owner: 0x0528A32fda5beDf89Ba9ad67296db83c9452F28C
+│  ├─ bud: 0xCF63089A8aD2a9D8BD6Bb8022f3190EB7e1eD0f1
+│  ├─ bud: 0x2325aa20DEAa9770a978f1dc7C073589ffC79DC3
+│  │  └─ owner: 0xd0643BC0D0C879F175556509dbcEe9373379D5C3
+│  ├─ bud: 0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777
+│  └─ bud: 0xDF3CDd10e646e4155723a3bC5b1191741DD90333
+├─ bud: 0x97C3e595e8f80169266B5534e4d7A1bB58BB45ab
+│  └─ owner: 0xF8523c551763FE4261A28313015267F163de7541
+├─ bud: 0x12Ee7E3369272CeE4e9843F36331561DBF9Ae6b4
+│  └─ owner: 0xA9E664bB519Dc372C025100eA83255eDC8d9bDE3
+├─ bud: 0x538038E526517680735568f9C5342c6E68bbDA12
+│  └─ owner: 0xba2906b18B069b40C6D2CAFd392E76ad479B1B53
+├─ bud: 0x2325aa20DEAa9770a978f1dc7C073589ffC79DC3
+│  └─ owner: 0xd0643BC0D0C879F175556509dbcEe9373379D5C3
+├─ bud: PIP_UNIV2DAIETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ ward: OSM_MOM
+│     ├─ owner: MCD_PAUSE_PROXY
+│     │  └─ owner: MCD_PAUSE
+│     │     └─ authority: MCD_ADM
+│     │        └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2WBTCETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ ward: OSM_MOM
+│     ├─ owner: MCD_PAUSE_PROXY
+│     │  └─ owner: MCD_PAUSE
+│     │     └─ authority: MCD_ADM
+│     │        └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2USDCETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ ward: OSM_MOM
+│     ├─ owner: MCD_PAUSE_PROXY
+│     │  └─ owner: MCD_PAUSE
+│     │     └─ authority: MCD_ADM
+│     │        └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2ETHUSDT
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2LINKETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2UNIETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+└─ bud: PIP_UNIV2AAVEETH
+   ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+   ├─ ward: OSM_MOM
+   │  ├─ owner: MCD_PAUSE_PROXY
+   │  │  └─ owner: MCD_PAUSE
+   │  │     └─ authority: MCD_ADM
+   │  │        └─ authority: MCD_ADM
+   │  └─ authority: MCD_ADM
+   │     └─ authority: MCD_ADM
+   └─ ward: MCD_PAUSE_PROXY
+      └─ owner: MCD_PAUSE
+         └─ authority: MCD_ADM
+            └─ authority: MCD_ADM
+
+PIP_UNIV2WBTCDAI
+├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+├─ ward: OSM_MOM
+│  ├─ owner: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2WBTCDAI_ORB0
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: 0xbf63446ecF3341e04c6569b226a57860B188edBc
+│  └─ owner: 0xF8523c551763FE4261A28313015267F163de7541
+├─ bud: 0x538038E526517680735568f9C5342c6E68bbDA12
+│  └─ owner: 0xba2906b18B069b40C6D2CAFd392E76ad479B1B53
+├─ bud: PIP_RENBTC
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  ├─ bud: MCD_SPOT
+│  │  ├─ ward: MCD_END
+│  │  │  ├─ ward: MCD_ESM
+│  │  │  └─ ward: MCD_PAUSE_PROXY
+│  │  │     └─ owner: MCD_PAUSE
+│  │  │        └─ authority: MCD_ADM
+│  │  │           └─ authority: MCD_ADM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  ├─ bud: MCD_END
+│  │  ├─ ward: MCD_ESM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  ├─ bud: 0xeAa474cbFFA87Ae0F1a6f68a3aBA6C77C656F72c
+│  │  └─ owner: 0x0528A32fda5beDf89Ba9ad67296db83c9452F28C
+│  ├─ bud: 0x82c93333e4E295AA17a05B15092159597e823e8a
+│  └─ bud: 0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777
+├─ bud: 0x4935B1188EB940C39e22172cc5fe595E267706a1
+│  └─ owner: 0xD7518704C86Dea22a0Ab2f146435e3e1cCBc16ea
+├─ bud: PIP_UNIV2WBTCETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ ward: OSM_MOM
+│     ├─ owner: MCD_PAUSE_PROXY
+│     │  └─ owner: MCD_PAUSE
+│     │     └─ authority: MCD_ADM
+│     │        └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+└─ bud: PIP_UNIV2WBTCDAI
+   ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+   ├─ ward: OSM_MOM
+   │  ├─ owner: MCD_PAUSE_PROXY
+   │  │  └─ owner: MCD_PAUSE
+   │  │     └─ authority: MCD_ADM
+   │  │        └─ authority: MCD_ADM
+   │  └─ authority: MCD_ADM
+   │     └─ authority: MCD_ADM
+   └─ ward: MCD_PAUSE_PROXY
+      └─ owner: MCD_PAUSE
+         └─ authority: MCD_ADM
+            └─ authority: MCD_ADM
+
+PIP_UNIV2DAIUSDT_ORB0
+└─ owner: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2AAVEETH
+├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+├─ ward: OSM_MOM
+│  ├─ owner: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2AAVEETH_ORB0
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_AAVE
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  ├─ bud: MCD_SPOT
+│  │  ├─ ward: MCD_END
+│  │  │  ├─ ward: MCD_ESM
+│  │  │  └─ ward: MCD_PAUSE_PROXY
+│  │  │     └─ owner: MCD_PAUSE
+│  │  │        └─ authority: MCD_ADM
+│  │  │           └─ authority: MCD_ADM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  └─ bud: MCD_END
+│     ├─ ward: MCD_ESM
+│     └─ ward: MCD_PAUSE_PROXY
+│        └─ owner: MCD_PAUSE
+│           └─ authority: MCD_ADM
+│              └─ authority: MCD_ADM
+├─ bud: 0x8b1C079f8192706532cC0Bf0C02dcC4fF40d045D
+│  └─ owner: 0xF8523c551763FE4261A28313015267F163de7541
+└─ bud: PIP_UNIV2AAVEETH
+   ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+   ├─ ward: OSM_MOM
+   │  ├─ owner: MCD_PAUSE_PROXY
+   │  │  └─ owner: MCD_PAUSE
+   │  │     └─ authority: MCD_ADM
+   │  │        └─ authority: MCD_ADM
+   │  └─ authority: MCD_ADM
+   │     └─ authority: MCD_ADM
+   └─ ward: MCD_PAUSE_PROXY
+      └─ owner: MCD_PAUSE
+         └─ authority: MCD_ADM
+            └─ authority: MCD_ADM
+
+PIP_UNIV2AAVEETH_ORB1
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_ETH
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  ├─ bud: MCD_SPOT
+│  │  ├─ ward: MCD_END
+│  │  │  ├─ ward: MCD_ESM
+│  │  │  └─ ward: MCD_PAUSE_PROXY
+│  │  │     └─ owner: MCD_PAUSE
+│  │  │        └─ authority: MCD_ADM
+│  │  │           └─ authority: MCD_ADM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  ├─ bud: MCD_END
+│  │  ├─ ward: MCD_ESM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  ├─ bud: 0xeAa474cbFFA87Ae0F1a6f68a3aBA6C77C656F72c
+│  │  └─ owner: 0x0528A32fda5beDf89Ba9ad67296db83c9452F28C
+│  ├─ bud: 0xCF63089A8aD2a9D8BD6Bb8022f3190EB7e1eD0f1
+│  ├─ bud: 0x2325aa20DEAa9770a978f1dc7C073589ffC79DC3
+│  │  └─ owner: 0xd0643BC0D0C879F175556509dbcEe9373379D5C3
+│  ├─ bud: 0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777
+│  └─ bud: 0xDF3CDd10e646e4155723a3bC5b1191741DD90333
+├─ bud: 0x97C3e595e8f80169266B5534e4d7A1bB58BB45ab
+│  └─ owner: 0xF8523c551763FE4261A28313015267F163de7541
+├─ bud: 0x12Ee7E3369272CeE4e9843F36331561DBF9Ae6b4
+│  └─ owner: 0xA9E664bB519Dc372C025100eA83255eDC8d9bDE3
+├─ bud: 0x538038E526517680735568f9C5342c6E68bbDA12
+│  └─ owner: 0xba2906b18B069b40C6D2CAFd392E76ad479B1B53
+├─ bud: 0x2325aa20DEAa9770a978f1dc7C073589ffC79DC3
+│  └─ owner: 0xd0643BC0D0C879F175556509dbcEe9373379D5C3
+├─ bud: PIP_UNIV2DAIETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ ward: OSM_MOM
+│     ├─ owner: MCD_PAUSE_PROXY
+│     │  └─ owner: MCD_PAUSE
+│     │     └─ authority: MCD_ADM
+│     │        └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2WBTCETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ ward: OSM_MOM
+│     ├─ owner: MCD_PAUSE_PROXY
+│     │  └─ owner: MCD_PAUSE
+│     │     └─ authority: MCD_ADM
+│     │        └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2USDCETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ ward: OSM_MOM
+│     ├─ owner: MCD_PAUSE_PROXY
+│     │  └─ owner: MCD_PAUSE
+│     │     └─ authority: MCD_ADM
+│     │        └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2ETHUSDT
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2LINKETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2UNIETH
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+└─ bud: PIP_UNIV2AAVEETH
+   ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+   ├─ ward: OSM_MOM
+   │  ├─ owner: MCD_PAUSE_PROXY
+   │  │  └─ owner: MCD_PAUSE
+   │  │     └─ authority: MCD_ADM
+   │  │        └─ authority: MCD_ADM
+   │  └─ authority: MCD_ADM
+   │     └─ authority: MCD_ADM
+   └─ ward: MCD_PAUSE_PROXY
+      └─ owner: MCD_PAUSE
+         └─ authority: MCD_ADM
+            └─ authority: MCD_ADM
+
+PIP_UNIV2DAIUSDT
+├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+├─ ward: OSM_MOM
+│  ├─ owner: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  └─ authority: MCD_ADM
+│     └─ authority: MCD_ADM
+└─ ward: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2DAIUSDT_ORB0
+└─ owner: MCD_PAUSE_PROXY
+   └─ owner: MCD_PAUSE
+      └─ authority: MCD_ADM
+         └─ authority: MCD_ADM
+
+PIP_UNIV2DAIUSDT_ORB1
+├─ ward: MCD_PAUSE_PROXY
+│  └─ owner: MCD_PAUSE
+│     └─ authority: MCD_ADM
+│        └─ authority: MCD_ADM
+├─ bud: PIP_USDT
+│  ├─ ward: MCD_PAUSE_PROXY
+│  │  └─ owner: MCD_PAUSE
+│  │     └─ authority: MCD_ADM
+│  │        └─ authority: MCD_ADM
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  ├─ bud: MCD_SPOT
+│  │  ├─ ward: MCD_END
+│  │  │  ├─ ward: MCD_ESM
+│  │  │  └─ ward: MCD_PAUSE_PROXY
+│  │  │     └─ owner: MCD_PAUSE
+│  │  │        └─ authority: MCD_ADM
+│  │  │           └─ authority: MCD_ADM
+│  │  └─ ward: MCD_PAUSE_PROXY
+│  │     └─ owner: MCD_PAUSE
+│  │        └─ authority: MCD_ADM
+│  │           └─ authority: MCD_ADM
+│  └─ bud: MCD_END
+│     ├─ ward: MCD_ESM
+│     └─ ward: MCD_PAUSE_PROXY
+│        └─ owner: MCD_PAUSE
+│           └─ authority: MCD_ADM
+│              └─ authority: MCD_ADM
+├─ bud: PIP_UNIV2ETHUSDT
+│  ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+│  ├─ ward: OSM_MOM
+│  │  ├─ owner: MCD_PAUSE_PROXY
+│  │  │  └─ owner: MCD_PAUSE
+│  │  │     └─ authority: MCD_ADM
+│  │  │        └─ authority: MCD_ADM
+│  │  └─ authority: MCD_ADM
+│  │     └─ authority: MCD_ADM
+│  └─ ward: MCD_PAUSE_PROXY
+│     └─ owner: MCD_PAUSE
+│        └─ authority: MCD_ADM
+│           └─ authority: MCD_ADM
+└─ bud: PIP_UNIV2DAIUSDT
+   ├─ ward: 0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40
+   ├─ ward: OSM_MOM
+   │  ├─ owner: MCD_PAUSE_PROXY
+   │  │  └─ owner: MCD_PAUSE
+   │  │     └─ authority: MCD_ADM
+   │  │        └─ authority: MCD_ADM
+   │  └─ authority: MCD_ADM
+   │     └─ authority: MCD_ADM
+   └─ ward: MCD_PAUSE_PROXY
+      └─ owner: MCD_PAUSE
+         └─ authority: MCD_ADM
+            └─ authority: MCD_ADM
+
+PIP_RWA001
+└─ owner: MIP21_LIQUIDATION_ORACLE
+   └─ ward: MCD_PAUSE_PROXY
+      └─ owner: MCD_PAUSE
+         └─ authority: MCD_ADM
+            └─ authority: MCD_ADM
+
