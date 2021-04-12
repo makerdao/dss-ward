@@ -606,13 +606,19 @@ const permissionsMode = async (env, args, web3, chainLog, contract) => {
   const who = getWho(chainLog, address);
   console.log(`performing permissions lookup for ${ who }...`);
   const vatAddress = getKey(chainLog, 'MCD_VAT');
-  let graph;
+  let graph = [];
   if (args.debug === 'read') {
-    graph = readGraph('MCD_VAT');
+    const vatGraph = readGraph('MCD_VAT');
+    const oracleGraph = readGraph('oracles');
+    graph = mergeGraphs(graph, oracleGraph);
   } else {
-    graph = await getGraph(env, args, web3, chainLog, vatAddress);
+    const vatGraph = await getGraph(env, args, web3, chainLog, vatAddress);
+    const oracles = await getOracleAddresses(web3, chainLog);
+    const oracleGraph = await getOracleGraph(env, args, web3, chainLog, oracles);
+    graph = mergeGraphs(vatGraph, oracleGraph);
     if (args.debug === 'write') {
-      writeGraph(chainLog, 'MCD_VAT', graph);
+      writeGraph(chainLog, 'MCD_VAT', vatGraph);
+      writeGraph(chainLog, 'oracles', oracleGraph);
     }
   }
   const permissions = drawPermissions(chainLog, graph, args.level, address);
