@@ -10,6 +10,41 @@
         "lbl": "ward"
     },
     {
+        "dst": "PIP_ETH",
+        "src": "MCD_SPOT",
+        "lbl": "bud"
+    },
+    {
+        "dst": "PIP_ETH",
+        "src": "MCD_END",
+        "lbl": "bud"
+    },
+    {
+        "dst": "PIP_ETH",
+        "src": "0xeAa474cbFFA87Ae0F1a6f68a3aBA6C77C656F72c",
+        "lbl": "bud"
+    },
+    {
+        "dst": "PIP_ETH",
+        "src": "0xCF63089A8aD2a9D8BD6Bb8022f3190EB7e1eD0f1",
+        "lbl": "bud"
+    },
+    {
+        "dst": "PIP_ETH",
+        "src": "0x2325aa20DEAa9770a978f1dc7C073589ffC79DC3",
+        "lbl": "bud"
+    },
+    {
+        "dst": "PIP_ETH",
+        "src": "0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777",
+        "lbl": "bud"
+    },
+    {
+        "dst": "PIP_ETH",
+        "src": "0xDF3CDd10e646e4155723a3bC5b1191741DD90333",
+        "lbl": "bud"
+    },
+    {
         "dst": "MCD_PAUSE_PROXY",
         "src": "MCD_PAUSE",
         "lbl": "owner"
@@ -23,6 +58,36 @@
         "dst": "OSM_MOM",
         "src": "MCD_ADM",
         "lbl": "authority"
+    },
+    {
+        "dst": "MCD_SPOT",
+        "src": "MCD_END",
+        "lbl": "ward"
+    },
+    {
+        "dst": "MCD_SPOT",
+        "src": "MCD_PAUSE_PROXY",
+        "lbl": "ward"
+    },
+    {
+        "dst": "MCD_END",
+        "src": "MCD_ESM",
+        "lbl": "ward"
+    },
+    {
+        "dst": "MCD_END",
+        "src": "MCD_PAUSE_PROXY",
+        "lbl": "ward"
+    },
+    {
+        "dst": "0xeAa474cbFFA87Ae0F1a6f68a3aBA6C77C656F72c",
+        "src": "0x0528A32fda5beDf89Ba9ad67296db83c9452F28C",
+        "lbl": "owner"
+    },
+    {
+        "dst": "0x2325aa20DEAa9770a978f1dc7C073589ffC79DC3",
+        "src": "0xd0643BC0D0C879F175556509dbcEe9373379D5C3",
+        "lbl": "owner"
     },
     {
         "dst": "MCD_PAUSE",

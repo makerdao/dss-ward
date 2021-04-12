@@ -10,6 +10,16 @@
         "lbl": "ward"
     },
     {
+        "dst": "PIP_UNI",
+        "src": "MCD_SPOT",
+        "lbl": "bud"
+    },
+    {
+        "dst": "PIP_UNI",
+        "src": "MCD_END",
+        "lbl": "bud"
+    },
+    {
         "dst": "MCD_PAUSE_PROXY",
         "src": "MCD_PAUSE",
         "lbl": "owner"
@@ -23,6 +33,26 @@
         "dst": "OSM_MOM",
         "src": "MCD_ADM",
         "lbl": "authority"
+    },
+    {
+        "dst": "MCD_SPOT",
+        "src": "MCD_END",
+        "lbl": "ward"
+    },
+    {
+        "dst": "MCD_SPOT",
+        "src": "MCD_PAUSE_PROXY",
+        "lbl": "ward"
+    },
+    {
+        "dst": "MCD_END",
+        "src": "MCD_ESM",
+        "lbl": "ward"
+    },
+    {
+        "dst": "MCD_END",
+        "src": "MCD_PAUSE_PROXY",
+        "lbl": "ward"
     },
     {
         "dst": "MCD_PAUSE",

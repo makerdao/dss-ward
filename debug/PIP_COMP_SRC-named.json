@@ -5,14 +5,74 @@
         "lbl": "ward"
     },
     {
+        "dst": "PIP_COMP_SRC",
+        "src": "PIP_COMP",
+        "lbl": "bud"
+    },
+    {
         "dst": "MCD_PAUSE_PROXY",
         "src": "MCD_PAUSE",
         "lbl": "owner"
     },
     {
+        "dst": "PIP_COMP",
+        "src": "MCD_PAUSE_PROXY",
+        "lbl": "ward"
+    },
+    {
+        "dst": "PIP_COMP",
+        "src": "OSM_MOM",
+        "lbl": "ward"
+    },
+    {
+        "dst": "PIP_COMP",
+        "src": "MCD_SPOT",
+        "lbl": "bud"
+    },
+    {
+        "dst": "PIP_COMP",
+        "src": "MCD_END",
+        "lbl": "bud"
+    },
+    {
+        "dst": "PIP_COMP",
+        "src": "0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777",
+        "lbl": "bud"
+    },
+    {
         "dst": "MCD_PAUSE",
         "src": "MCD_ADM",
         "lbl": "authority"
+    },
+    {
+        "dst": "OSM_MOM",
+        "src": "MCD_PAUSE_PROXY",
+        "lbl": "owner"
+    },
+    {
+        "dst": "OSM_MOM",
+        "src": "MCD_ADM",
+        "lbl": "authority"
+    },
+    {
+        "dst": "MCD_SPOT",
+        "src": "MCD_END",
+        "lbl": "ward"
+    },
+    {
+        "dst": "MCD_SPOT",
+        "src": "MCD_PAUSE_PROXY",
+        "lbl": "ward"
+    },
+    {
+        "dst": "MCD_END",
+        "src": "MCD_ESM",
+        "lbl": "ward"
+    },
+    {
+        "dst": "MCD_END",
+        "src": "MCD_PAUSE_PROXY",
+        "lbl": "ward"
     },
     {
         "dst": "MCD_ADM",

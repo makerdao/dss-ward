@@ -5,14 +5,79 @@
         "lbl": "ward"
     },
     {
+        "dst": "PIP_LRC_SRC",
+        "src": "PIP_LRC",
+        "lbl": "bud"
+    },
+    {
+        "dst": "PIP_LRC_SRC",
+        "src": "0x1D5d9a2DDa0843eD9D8a9Bddc33F1fca9f9C64a0",
+        "lbl": "bud"
+    },
+    {
         "dst": "MCD_PAUSE_PROXY",
         "src": "MCD_PAUSE",
+        "lbl": "owner"
+    },
+    {
+        "dst": "PIP_LRC",
+        "src": "MCD_PAUSE_PROXY",
+        "lbl": "ward"
+    },
+    {
+        "dst": "PIP_LRC",
+        "src": "OSM_MOM",
+        "lbl": "ward"
+    },
+    {
+        "dst": "PIP_LRC",
+        "src": "MCD_SPOT",
+        "lbl": "bud"
+    },
+    {
+        "dst": "PIP_LRC",
+        "src": "MCD_END",
+        "lbl": "bud"
+    },
+    {
+        "dst": "0x1D5d9a2DDa0843eD9D8a9Bddc33F1fca9f9C64a0",
+        "src": "0xF8523c551763FE4261A28313015267F163de7541",
         "lbl": "owner"
     },
     {
         "dst": "MCD_PAUSE",
         "src": "MCD_ADM",
         "lbl": "authority"
+    },
+    {
+        "dst": "OSM_MOM",
+        "src": "MCD_PAUSE_PROXY",
+        "lbl": "owner"
+    },
+    {
+        "dst": "OSM_MOM",
+        "src": "MCD_ADM",
+        "lbl": "authority"
+    },
+    {
+        "dst": "MCD_SPOT",
+        "src": "MCD_END",
+        "lbl": "ward"
+    },
+    {
+        "dst": "MCD_SPOT",
+        "src": "MCD_PAUSE_PROXY",
+        "lbl": "ward"
+    },
+    {
+        "dst": "MCD_END",
+        "src": "MCD_ESM",
+        "lbl": "ward"
+    },
+    {
+        "dst": "MCD_END",
+        "src": "MCD_PAUSE_PROXY",
+        "lbl": "ward"
     },
     {
         "dst": "MCD_ADM",

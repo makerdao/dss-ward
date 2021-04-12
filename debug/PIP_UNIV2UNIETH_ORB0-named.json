@@ -5,14 +5,99 @@
         "lbl": "ward"
     },
     {
+        "dst": "PIP_UNIV2UNIETH_ORB0",
+        "src": "PIP_UNI",
+        "lbl": "bud"
+    },
+    {
+        "dst": "PIP_UNIV2UNIETH_ORB0",
+        "src": "0x3c3Afa479d8C95CF0E1dF70449Bb5A14A3b7Af67",
+        "lbl": "bud"
+    },
+    {
+        "dst": "PIP_UNIV2UNIETH_ORB0",
+        "src": "PIP_UNIV2UNIETH",
+        "lbl": "bud"
+    },
+    {
         "dst": "MCD_PAUSE_PROXY",
         "src": "MCD_PAUSE",
         "lbl": "owner"
     },
     {
+        "dst": "PIP_UNI",
+        "src": "MCD_PAUSE_PROXY",
+        "lbl": "ward"
+    },
+    {
+        "dst": "PIP_UNI",
+        "src": "OSM_MOM",
+        "lbl": "ward"
+    },
+    {
+        "dst": "PIP_UNI",
+        "src": "MCD_SPOT",
+        "lbl": "bud"
+    },
+    {
+        "dst": "PIP_UNI",
+        "src": "MCD_END",
+        "lbl": "bud"
+    },
+    {
+        "dst": "0x3c3Afa479d8C95CF0E1dF70449Bb5A14A3b7Af67",
+        "src": "0xF8523c551763FE4261A28313015267F163de7541",
+        "lbl": "owner"
+    },
+    {
+        "dst": "PIP_UNIV2UNIETH",
+        "src": "0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40",
+        "lbl": "ward"
+    },
+    {
+        "dst": "PIP_UNIV2UNIETH",
+        "src": "OSM_MOM",
+        "lbl": "ward"
+    },
+    {
+        "dst": "PIP_UNIV2UNIETH",
+        "src": "MCD_PAUSE_PROXY",
+        "lbl": "ward"
+    },
+    {
         "dst": "MCD_PAUSE",
         "src": "MCD_ADM",
         "lbl": "authority"
+    },
+    {
+        "dst": "OSM_MOM",
+        "src": "MCD_PAUSE_PROXY",
+        "lbl": "owner"
+    },
+    {
+        "dst": "OSM_MOM",
+        "src": "MCD_ADM",
+        "lbl": "authority"
+    },
+    {
+        "dst": "MCD_SPOT",
+        "src": "MCD_END",
+        "lbl": "ward"
+    },
+    {
+        "dst": "MCD_SPOT",
+        "src": "MCD_PAUSE_PROXY",
+        "lbl": "ward"
+    },
+    {
+        "dst": "MCD_END",
+        "src": "MCD_ESM",
+        "lbl": "ward"
+    },
+    {
+        "dst": "MCD_END",
+        "src": "MCD_PAUSE_PROXY",
+        "lbl": "ward"
     },
     {
         "dst": "MCD_ADM",

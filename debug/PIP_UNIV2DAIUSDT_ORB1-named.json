@@ -5,14 +5,109 @@
         "lbl": "ward"
     },
     {
+        "dst": "PIP_UNIV2DAIUSDT_ORB1",
+        "src": "PIP_USDT",
+        "lbl": "bud"
+    },
+    {
+        "dst": "PIP_UNIV2DAIUSDT_ORB1",
+        "src": "PIP_UNIV2ETHUSDT",
+        "lbl": "bud"
+    },
+    {
+        "dst": "PIP_UNIV2DAIUSDT_ORB1",
+        "src": "PIP_UNIV2DAIUSDT",
+        "lbl": "bud"
+    },
+    {
         "dst": "MCD_PAUSE_PROXY",
         "src": "MCD_PAUSE",
         "lbl": "owner"
     },
     {
+        "dst": "PIP_USDT",
+        "src": "MCD_PAUSE_PROXY",
+        "lbl": "ward"
+    },
+    {
+        "dst": "PIP_USDT",
+        "src": "OSM_MOM",
+        "lbl": "ward"
+    },
+    {
+        "dst": "PIP_USDT",
+        "src": "MCD_SPOT",
+        "lbl": "bud"
+    },
+    {
+        "dst": "PIP_USDT",
+        "src": "MCD_END",
+        "lbl": "bud"
+    },
+    {
+        "dst": "PIP_UNIV2ETHUSDT",
+        "src": "0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40",
+        "lbl": "ward"
+    },
+    {
+        "dst": "PIP_UNIV2ETHUSDT",
+        "src": "OSM_MOM",
+        "lbl": "ward"
+    },
+    {
+        "dst": "PIP_UNIV2ETHUSDT",
+        "src": "MCD_PAUSE_PROXY",
+        "lbl": "ward"
+    },
+    {
+        "dst": "PIP_UNIV2DAIUSDT",
+        "src": "0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40",
+        "lbl": "ward"
+    },
+    {
+        "dst": "PIP_UNIV2DAIUSDT",
+        "src": "OSM_MOM",
+        "lbl": "ward"
+    },
+    {
+        "dst": "PIP_UNIV2DAIUSDT",
+        "src": "MCD_PAUSE_PROXY",
+        "lbl": "ward"
+    },
+    {
         "dst": "MCD_PAUSE",
         "src": "MCD_ADM",
         "lbl": "authority"
+    },
+    {
+        "dst": "OSM_MOM",
+        "src": "MCD_PAUSE_PROXY",
+        "lbl": "owner"
+    },
+    {
+        "dst": "OSM_MOM",
+        "src": "MCD_ADM",
+        "lbl": "authority"
+    },
+    {
+        "dst": "MCD_SPOT",
+        "src": "MCD_END",
+        "lbl": "ward"
+    },
+    {
+        "dst": "MCD_SPOT",
+        "src": "MCD_PAUSE_PROXY",
+        "lbl": "ward"
+    },
+    {
+        "dst": "MCD_END",
+        "src": "MCD_ESM",
+        "lbl": "ward"
+    },
+    {
+        "dst": "MCD_END",
+        "src": "MCD_PAUSE_PROXY",
+        "lbl": "ward"
     },
     {
         "dst": "MCD_ADM",
