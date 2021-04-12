@@ -6,6 +6,7 @@ const fetch = require('node-fetch');
 const treeify = require('treeify');
 const Diff = require('diff');
 const chalk = require('chalk');
+const { createHash } = require('crypto');
 
 const allLogs = [];
 const scannedAddresses = [];
@@ -52,7 +53,7 @@ const getAddresses = (web3, log) => {
 
 const getChainLog = async (args, web3) => {
   if (args.debug === 'read') {
-    return JSON.parse(fs.readFileSync('chainLog.json', 'utf8'));
+    return JSON.parse(fs.readFileSync('debug/chainLog.json', 'utf8'));
   }
   const chainLog = {};
   const abi = getJson('./lib/dss-chain-log/out/ChainLog.abi');
@@ -69,7 +70,7 @@ const getChainLog = async (args, web3) => {
   }
   console.log();
   if (args.debug === 'write') {
-    fs.writeFileSync('chainLog.json', JSON.stringify(chainLog));
+    fs.writeFileSync('debug/chainLog.json', JSON.stringify(chainLog));
   }
   return chainLog;
 }
@@ -82,14 +83,37 @@ const getWho = (chainLog, address) => {
   return chainLog[address] || address;
 }
 
-const getLogs = async (web3, chainLog, addresses) => {
+const getTopics = web3 => {
+  const logNoteRely = getSig(web3, 'rely(address)');
+  const logNoteKiss = getSig(web3, 'kiss(address)');
+  const logNoteKisses = getSig(web3, 'kiss(address[])');
+  const eventRely = web3.utils.sha3('Rely(address)');
+  const eventKiss = web3.utils.sha3('Kiss(address)');
+  const topics = [[
+    logNoteRely,
+    logNoteKiss,
+    logNoteKisses,
+    eventRely,
+    eventKiss
+  ]];
+  return topics;
+}
+
+const getLogs = async (args, web3, chainLog, addresses) => {
+  let digest;
+  if (args.debug === 'read' || args.debug === 'write') {
+    const hash = createHash('sha256');
+    hash.update(addresses.join());
+    digest = hash.digest('hex');
+  }
+  if (args.debug === 'read') {
+    return JSON.parse(fs.readFileSync(`debug/logs-${ digest }.json`, 'utf8'));
+  }
   const who = addresses.length === 1
         ? await getWho(chainLog, addresses[0])
         : `${ addresses.length } addresses`;
   let logs = [];
-  const logNoteSig = getSig(web3, 'rely(address)');
-  const eventSig = web3.utils.sha3('Rely(address)');
-  const topics = [ [logNoteSig, eventSig] ];
+  const topics = getTopics(web3);
   const end = await web3.eth.getBlockNumber();
   const { mcdDeployment } = settings;
   let fromBlock = mcdDeployment;
@@ -100,8 +124,8 @@ const getLogs = async (web3, chainLog, addresses) => {
     toBlock = fromBlock + settings.batchSize;
     const blocksProcessed = fromBlock - mcdDeployment;
     const progress = 100 * blocksProcessed / totalBlocks;
-    process.stdout.write(`getting logNote and event relies for ${ who }... `
-                         + `${ progress.toFixed(1) }%\r`);
+    process.stdout.write(`getting logNote and event relies and kisses for `
+                         + `${ who }... ${ progress.toFixed(1) }%\r`);
     const batch = await web3.eth.getPastLogs(
       {
         fromBlock,
@@ -115,30 +139,35 @@ const getLogs = async (web3, chainLog, addresses) => {
   }
   const endTime = new Date();
   const span = Math.floor((endTime - startTime) / 1000);
-  process.stdout.write(`getting logNote and event relies for ${ who }... `);
+  process.stdout.write(`getting logNote and event relies and kisses for `
+                       + `${ who }... `);
   console.log(`found ${ logs.length } relies in ${ span } seconds`);
+  if (args.debug === 'write') {
+    const jsonLogs = JSON.stringify(logs, null, 4);
+    fs.writeFileSync(`debug/logs-${ digest }.json`, jsonLogs);
+  }
   return logs;
 }
 
-const getRelies = async (web3, chainLog, address) => {
+const getReliesAndKisses = async (args, web3, chainLog, address) => {
   const who = getWho(chainLog, address);
-  const relies = [];
+  const reliesAndKisses = [];
   let logs;
   if (scannedAddresses.includes(address)) {
     logs = allLogs.filter(log => log.address === address);
-    console.log(`getting logNote and event relies for ${ who }... `
+    console.log(`getting logNote and event relies and kisses for ${ who }... `
                 + `found ${ logs.length } cached logs`);
   } else {
-    logs = await getLogs(web3, chainLog, [ address ]);
+    logs = await getLogs(args, web3, chainLog, [ address ]);
     allLogs[address] = logs;
     scannedAddresses.push(address);
   }
   for (const log of logs) {
     const addresses = getAddresses(web3, log);
-    relies.push(...addresses);
+    reliesAndKisses.push(...addresses);
   }
-  const uniqueRelies = Array.from(new Set(relies));
-  return relies;
+  const uniqueReliesAndKisses = Array.from(new Set(reliesAndKisses));
+  return uniqueReliesAndKisses;
 }
 
 const getOwner = async (web3, chainLog, address) => {
@@ -206,8 +235,9 @@ const getDeployers = async (env, web3, chainLog, address) => {
     tx.type === 'create' || tx.to === ''
   );
   const deployers = deployTxs.map(tx => web3.utils.toChecksumAddress(tx.from));
-  console.log(deployers.map(deployer => getWho(chainLog, deployer)));
-  return deployers;
+  const uniqueDeployers = Array.from(new Set(deployers));
+  console.log(uniqueDeployers.map(deployer => getWho(chainLog, deployer)));
+  return uniqueDeployers;
 }
 
 const isWard = async (contract, suspect) => {
@@ -247,11 +277,11 @@ const checkSuspects = async (web3, chainLog, address, suspects) => {
   return relies;
 }
 
-const getWards = async (env, web3, chainLog, address) => {
+const getWards = async (env, args, web3, chainLog, address) => {
   let suspects = [];
   const deployers = await getDeployers(env, web3, chainLog, address);
   suspects = suspects.concat(deployers);
-  const relies = await getRelies(web3, chainLog, address);
+  const relies = await getReliesAndKisses(args, web3, chainLog, address);
   suspects = suspects.concat(relies);
   const uniqueSuspects = Array.from(new Set(suspects));
   const wards = await checkSuspects(web3, chainLog, address, uniqueSuspects);
@@ -259,7 +289,40 @@ const getWards = async (env, web3, chainLog, address) => {
   return allWards;
 }
 
-const getAuthorities = async (env, web3, chainLog, address) => {
+const getBuds = async (args, web3, chainLog, address) => {
+  const buds = [];
+  const who = getWho(chainLog, address);
+  const kisses = await getReliesAndKisses(args, web3, chainLog, address);
+  const abi = getJson('./lib/univ2-lp-oracle/out/UNIV2LPOracle.abi');
+  const contract = new web3.eth.Contract(abi, address);
+  let hasBuds = true;
+  let count = 1;
+  const start = new Date();
+  for (const kiss of kisses) {
+    const progress = Math.floor(100 * count / kisses.length);
+    count ++;
+    process.stdout.write(`checking buds for ${ who }... ${ progress }%\r`);
+    try {
+      const bud = await contract.methods.bud(kiss).call();
+      if (bud != 0) {
+        buds.push(kiss);
+      }
+    } catch (err) {
+      console.log(`checking buds for ${ who }... no buds`);
+      hasBuds = false;
+      break;
+    }
+  }
+  const end = new Date();
+  const span = Math.floor((end - start) / 1000);
+  if (hasBuds) {
+    console.log(`checking buds for ${ who }... found ${ kisses.length }`
+                + ` wards in ${ span } seconds`);
+  }
+  return buds;
+}
+
+const getAuthorities = async (env, args, web3, chainLog, address) => {
   const who = getWho(chainLog, address);
   if (who !== address) {
     console.log(`\nstarting check for ${ who } (${ address })`);
@@ -268,29 +331,30 @@ const getAuthorities = async (env, web3, chainLog, address) => {
   }
   const owner = await getOwner(web3, chainLog, address);
   const authority = await getAuthority(web3, chainLog, address);
-  const wards = await getWards(env, web3, chainLog, address);
-  return { owner, authority, wards };
+  const wards = await getWards(env, args, web3, chainLog, address);
+  const buds = await getBuds(args, web3, chainLog, address);
+  return { owner, authority, wards, buds };
 }
 
-const cacheLogs = async (web3, chainLog, addresses) => {
+const cacheLogs = async (args, web3, chainLog, addresses) => {
   const newAddresses = addresses.filter(a => !scannedAddresses.includes(a));
   if (newAddresses.length > 1) {
     console.log();
-    allLogs.push(...await getLogs(web3, chainLog, newAddresses));
+    allLogs.push(...await getLogs(args, web3, chainLog, newAddresses));
     scannedAddresses.push(...newAddresses);
   }
 }
 
-const getGraph = async (env, web3, chainLog, address) => {
+const getGraph = async (env, args, web3, chainLog, address) => {
   const edges = [];
   const vertices = { all: [], current: [], new: [ address ]};
   while(vertices.new.length) {
     vertices.current = Array.from(new Set(vertices.new));
     vertices.all.push(...vertices.current);
     vertices.new = [];
-    await cacheLogs(web3, chainLog, vertices.current);
+    await cacheLogs(args, web3, chainLog, vertices.current);
     for (const dst of vertices.current) {
-      const authorities = await getAuthorities(env, web3, chainLog, dst);
+      const authorities = await getAuthorities(env, args, web3, chainLog, dst);
       if (authorities.owner) {
         edges.push({ dst, src: authorities.owner, lbl: 'owner' });
         vertices.new.push(authorities.owner);
@@ -302,6 +366,10 @@ const getGraph = async (env, web3, chainLog, address) => {
       for (const ward of authorities.wards) {
         edges.push({ dst, src: ward, lbl: 'ward' });
         vertices.new.push(ward);
+      }
+      for (const bud of authorities.buds) {
+        edges.push({ dst, src: bud, lbl: 'bud' });
+        vertices.new.push(bud);
       }
     }
     vertices.new = vertices.new.filter(vertex =>
@@ -459,7 +527,7 @@ const fullMode = async (env, args, web3, chainLog) => {
   if (args.debug === 'read') {
     graph = readGraph('MCD_VAT');
   } else {
-    graph = await getGraph(env, web3, chainLog, vatAddress);
+    graph = await getGraph(env, args, web3, chainLog, vatAddress);
     if (args.debug === 'write') {
       writeGraph(chainLog, 'MCD_VAT', graph);
     }
@@ -472,7 +540,7 @@ const oraclesMode = async (env, args, web3, chainLog) => {
   const addresses = await getOracleAddresses(web3, chainLog);
   let trees = '';
   if (args.debug !== 'read') {
-    await cacheLogs(web3, chainLog, addresses);
+    await cacheLogs(args, web3, chainLog, addresses);
   }
   for (const address of addresses) {
     let graph;
@@ -484,7 +552,7 @@ const oraclesMode = async (env, args, web3, chainLog) => {
         continue;
       }
     } else {
-      graph = await getGraph(env, web3, chainLog, address);
+      graph = await getGraph(env, args, web3, chainLog, address);
       if (args.debug === 'write') {
         writeGraph(chainLog, who, graph);
       }
@@ -520,7 +588,7 @@ const permissionsMode = async (env, args, web3, chainLog, contract) => {
   if (args.debug === 'read') {
     graph = readGraph('MCD_VAT');
   } else {
-    graph = await getGraph(env, web3, chainLog, vatAddress);
+    graph = await getGraph(env, args, web3, chainLog, vatAddress);
     if (args.debug === 'write') {
       writeGraph(chainLog, 'MCD_VAT', graph);
     }
@@ -537,7 +605,7 @@ const contractMode = async (env, args, web3, chainLog, contract) => {
   if (args.debug === 'read') {
     graph = readGraph(who);
   } else {
-    graph = await getGraph(env, web3, chainLog, address);
+    graph = await getGraph(env, args, web3, chainLog, address);
     if (args.debug === 'write') {
       writeGraph(chainLog, who, graph);
     }
