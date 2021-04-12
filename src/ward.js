@@ -536,27 +536,49 @@ const fullMode = async (env, args, web3, chainLog) => {
   writeResult(tree, 'full');
 }
 
-const oraclesMode = async (env, args, web3, chainLog) => {
-  const addresses = await getOracleAddresses(web3, chainLog);
-  let trees = '';
+const mergeGraphs = (a, b) => {
+  for (const edge of a) {
+    if (!b.find(e => e.src === edge.src
+               && e.dst === edge.dst
+               && e.lbl === edge.lbl)
+       ) {
+      b.push(edge);
+    }
+  }
+  return b;
+}
+
+const getOracleGraph = async (env, args, web3, chainLog, addresses) => {
   if (args.debug !== 'read') {
     await cacheLogs(args, web3, chainLog, addresses);
   }
+  let graph = [];
   for (const address of addresses) {
-    let graph;
     const who = getWho(chainLog, address);
     if (args.debug === 'read') {
       try {
-        graph = readGraph(who);
+        const oracleGraph = readGraph(who);
+        graph = mergeGraphs(oracleGraph, graph);
       } catch (err) {
+        console.log(err);
         continue;
       }
     } else {
-      graph = await getGraph(env, args, web3, chainLog, address);
+      const oracleGraph = await getGraph(env, args, web3, chainLog, address);
+      graph = mergeGraphs(oracleGraph, graph);
       if (args.debug === 'write') {
         writeGraph(chainLog, who, graph);
       }
     }
+  }
+  return graph;
+}
+
+const oraclesMode = async (env, args, web3, chainLog) => {
+  let trees = '';
+  const addresses = await getOracleAddresses(web3, chainLog);
+  const graph = await getOracleGraph(env, args, web3, chainLog, addresses);
+  for (const address of addresses) {
     const tree = drawTree(chainLog, graph, args.level, address);
     trees += tree + '\n';
   }
