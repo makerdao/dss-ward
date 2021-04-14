@@ -52,8 +52,8 @@ const getAddresses = (web3, log) => {
 }
 
 const getChainLog = async (args, web3) => {
-  if (args.debug === 'read') {
-    return JSON.parse(fs.readFileSync('debug/chainLog.json', 'utf8'));
+  if (cached(args).includes('chainlog')) {
+    return JSON.parse(fs.readFileSync('cached/chainLog.json', 'utf8'));
   }
   const chainLog = {};
   const abi = getJson('./lib/dss-chain-log/out/ChainLog.abi');
@@ -69,9 +69,7 @@ const getChainLog = async (args, web3) => {
     chainLog[address] = name;
   }
   console.log();
-  if (args.debug === 'write') {
-    fs.writeFileSync('debug/chainLog.json', JSON.stringify(chainLog));
-  }
+  fs.writeFileSync('cached/chainLog.json', JSON.stringify(chainLog));
   return chainLog;
 }
 
@@ -101,13 +99,11 @@ const getTopics = web3 => {
 
 const getLogs = async (args, web3, chainLog, addresses) => {
   let digest;
-  if (args.debug === 'read' || args.debug === 'write') {
-    const hash = createHash('sha256');
-    hash.update(addresses.join());
-    digest = hash.digest('hex');
-  }
-  if (args.debug === 'read') {
-    return JSON.parse(fs.readFileSync(`debug/logs-${ digest }.json`, 'utf8'));
+  const hash = createHash('sha256');
+  hash.update(addresses.join());
+  digest = hash.digest('hex');
+  if (cached(args).includes('logs')) {
+    return JSON.parse(fs.readFileSync(`cached/logs-${ digest }.json`, 'utf8'));
   }
   const who = addresses.length === 1
         ? await getWho(chainLog, addresses[0])
@@ -142,10 +138,8 @@ const getLogs = async (args, web3, chainLog, addresses) => {
   process.stdout.write(`getting logNote and event relies and kisses for `
                        + `${ who }... `);
   console.log(`found ${ logs.length } relies in ${ span } seconds`);
-  if (args.debug === 'write') {
-    const jsonLogs = JSON.stringify(logs, null, 4);
-    fs.writeFileSync(`debug/logs-${ digest }.json`, jsonLogs);
-  }
+  const jsonLogs = JSON.stringify(logs, null, 4);
+  fs.writeFileSync(`cached/logs-${ digest }.json`, jsonLogs);
   return logs;
 }
 
@@ -502,11 +496,11 @@ const drawPermissions = (chainLog, graph, depth, root) => {
 }
 
 const readGraph = who => {
-  return JSON.parse(fs.readFileSync(`debug/${ who }.json`, 'utf8'));
+  return JSON.parse(fs.readFileSync(`cached/${ who }.json`, 'utf8'));
 }
 
 const writeGraph = (chainLog, name, graph) => {
-  fs.writeFileSync(`debug/${ name }.json`, JSON.stringify(graph));
+  fs.writeFileSync(`cached/${ name }.json`, JSON.stringify(graph));
   const namedGraph = graph.map(edge => {
     return {
       dst: getWho(chainLog, edge.dst),
@@ -515,7 +509,7 @@ const writeGraph = (chainLog, name, graph) => {
     };
   });
   fs.writeFileSync(
-    `debug/${ name }-named.json`,
+    `cached/${ name }-named.json`,
     JSON.stringify(namedGraph, null, 4)
   );
 }
@@ -524,13 +518,11 @@ const fullMode = async (env, args, web3, chainLog) => {
   console.log('performing full system lookup...');
   const vatAddress = getKey(chainLog, 'MCD_VAT');
   let graph;
-  if (args.debug === 'read') {
+  if (cached(args).includes('graph')) {
     graph = readGraph('MCD_VAT');
   } else {
     graph = await getGraph(env, args, web3, chainLog, vatAddress);
-    if (args.debug === 'write') {
-      writeGraph(chainLog, 'MCD_VAT', graph);
-    }
+    writeGraph(chainLog, 'MCD_VAT', graph);
   }
   const tree = drawTree(chainLog, graph, args.level, vatAddress);
   writeResult(tree, 'full');
@@ -549,13 +541,13 @@ const mergeGraphs = (a, b) => {
 }
 
 const getOracleGraph = async (env, args, web3, chainLog, addresses) => {
-  if (args.debug !== 'read') {
+  if (cached(args).includes('graph')) {
     await cacheLogs(args, web3, chainLog, addresses);
   }
   let graph = [];
   for (const address of addresses) {
     const who = getWho(chainLog, address);
-    if (args.debug === 'read') {
+    if (cached(args).includes('graph')) {
       try {
         const oracleGraph = readGraph(who);
         graph = mergeGraphs(oracleGraph, graph);
@@ -566,9 +558,7 @@ const getOracleGraph = async (env, args, web3, chainLog, addresses) => {
     } else {
       const oracleGraph = await getGraph(env, args, web3, chainLog, address);
       graph = mergeGraphs(oracleGraph, graph);
-      if (args.debug === 'write') {
-        writeGraph(chainLog, who, graph);
-      }
+      writeGraph(chainLog, who, graph);
     }
   }
   return graph;
@@ -607,7 +597,7 @@ const permissionsMode = async (env, args, web3, chainLog, contract) => {
   console.log(`performing permissions lookup for ${ who }...`);
   const vatAddress = getKey(chainLog, 'MCD_VAT');
   let graph = [];
-  if (args.debug === 'read') {
+  if (cached(args).includes('graph')) {
     const vatGraph = readGraph('MCD_VAT');
     const oracleGraph = readGraph('oracles');
     graph = mergeGraphs(graph, oracleGraph);
@@ -616,10 +606,8 @@ const permissionsMode = async (env, args, web3, chainLog, contract) => {
     const oracles = await getOracleAddresses(web3, chainLog);
     const oracleGraph = await getOracleGraph(env, args, web3, chainLog, oracles);
     graph = mergeGraphs(vatGraph, oracleGraph);
-    if (args.debug === 'write') {
-      writeGraph(chainLog, 'MCD_VAT', vatGraph);
-      writeGraph(chainLog, 'oracles', oracleGraph);
-    }
+    writeGraph(chainLog, 'MCD_VAT', vatGraph);
+    writeGraph(chainLog, 'oracles', oracleGraph);
   }
   const permissions = drawPermissions(chainLog, graph, args.level, address);
   console.log();
@@ -630,17 +618,19 @@ const contractMode = async (env, args, web3, chainLog, contract) => {
   const address = parseAddress(web3, chainLog, contract);
   const who = getWho(chainLog, address);
   let graph;
-  if (args.debug === 'read') {
+  if (cached(args).includes('graph')) {
     graph = readGraph(who);
   } else {
     graph = await getGraph(env, args, web3, chainLog, address);
-    if (args.debug === 'write') {
       writeGraph(chainLog, who, graph);
-    }
   }
   const tree = drawTree(chainLog, graph, args.level, address);
   console.log();
   console.log(tree);
+}
+
+const cached = args => {
+  return args.cached ? args.cached : [];
 }
 
 const parseArgs = () => {
@@ -657,8 +647,10 @@ const parseArgs = () => {
   parser.add_argument('--level', '-l', {
     help: 'maximum depth level for trees',
   });
-  parser.add_argument('--debug', '-d', {
-    help: 'debug mode: write, read',
+  parser.add_argument('--cached', '-c', {
+    help: 'use cached data',
+    choices: ['chainlog', 'logs', 'graph'],
+    nargs: '*',
   });
   const args = parser.parse_args();
   if (!args.contract && !args.mode) {
