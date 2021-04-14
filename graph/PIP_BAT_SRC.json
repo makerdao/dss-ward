@@ -1,0 +1,47 @@
+[
+    {
+        "dst": "PIP_BAT_SRC",
+        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
+        "lbl": "ward"
+    },
+    {
+        "dst": "PIP_BAT_SRC",
+        "src": "MCD_PAUSE_PROXY",
+        "lbl": "ward"
+    },
+    {
+        "dst": "PIP_BAT_SRC",
+        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
+        "lbl": "bud"
+    },
+    {
+        "dst": "PIP_BAT_SRC",
+        "src": "MCD_PAUSE_PROXY",
+        "lbl": "bud"
+    },
+    {
+        "dst": "PIP_BAT_SRC",
+        "src": "PIP_BAT",
+        "lbl": "bud"
+    },
+    {
+        "dst": "PIP_BAT_SRC",
+        "src": "0xAdf49005A69AA892572C7d27b6Dc8C0409cc0E3d",
+        "lbl": "bud"
+    },
+    {
+        "dst": "MCD_PAUSE_PROXY",
+        "src": "MCD_PAUSE",
+        "lbl": "owner"
+    },
+    {
+        "dst": "MCD_PAUSE",
+        "src": "MCD_ADM",
+        "lbl": "authority"
+    },
+    {
+        "dst": "MCD_ADM",
+        "src": "MCD_ADM",
+        "lbl": "authority"
+    }
+]

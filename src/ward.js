@@ -509,7 +509,7 @@ const writeGraph = (chainLog, name, graph) => {
     };
   });
   fs.writeFileSync(
-    `cached/${ name }-named.json`,
+    `graph/${ name }.json`,
     JSON.stringify(namedGraph, null, 4)
   );
 }
