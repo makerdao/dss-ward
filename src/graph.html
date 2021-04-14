@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+  </head>
+  <body>
+    <script src="../node_modules/d3/dist/d3.js"></script>
+    <script>
+
+      drag = function(simulation) {
+
+        function dragstarted(event) {
+          if (!event.active) simulation.alphaTarget(0.3).restart();
+          event.subject.fx = event.subject.x;
+          event.subject.fy = event.subject.y;
+        }
+
+        function dragged(event) {
+          event.subject.fx = event.x;
+          event.subject.fy = event.y;
+        }
+
+        function dragended(event) {
+          if (!event.active) simulation.alphaTarget(0);
+          event.subject.fx = null;
+          event.subject.fy = null;
+        }
+
+        return d3.drag()
+          .on("start", dragstarted)
+          .on("drag", dragged)
+          .on("end", dragended);
+      }
+
+      draw = function(data) {
+
+        const links = [{source: 'MCD_SPOT', target: 'MCD_END', lbl: 'ward'}];
+        const nodes = [{id: 'MCD_SPOT'}, {id: 'MCD_END'}];
+
+        const svg = d3.create('svg')
+              .attr('viewBox', [0, 0, 600, 600]);
+
+        const simulation = d3.forceSimulation(nodes)
+        .force("link", d3.forceLink(links).id(d => d.id));
+
+        const link = svg.append('g')
+              .attr('stroke', '#999')
+              .selectAll('line')
+              .data(links)
+              .join('g');
+
+        const defs = svg.append('svg:defs');
+        const arrow = defs.append('svg:marker')
+              .attr('id', 'arrow')
+              .attr('viewBox', '0 -5 10 10')
+              .attr('refX', 16)
+              .attr('markerWidth', 3.5)
+              .attr('markerHeight', 3.5)
+              .attr('orient', 'auto')
+              .append('svg:path')
+              .attr('d', 'M0,-5L10,0L0,5');
+
+        const line = link.append('line')
+              .attr('stroke-width', 2)
+              .style('marker-end', 'url(#arrow)');
+
+        const label = link.append('text')
+              .style('stroke', '#505050')
+              .style('fill', '#505050')
+              .style('font', '10px sans-serif')
+              .text(d => d.lbl);
+
+        const node = svg.append('g')
+              .selectAll('circle')
+              .data(nodes)
+              .join('g')
+              .call(drag(simulation));
+
+        const circle = node.append('circle')
+              .attr('r', 5)
+              .attr('fill', 'red');
+
+        const name = node.append('text')
+              .text(d => d.id);
+
+        simulation.on("tick", () => {
+          line
+            .attr("x1", d => d.source.x)
+            .attr("y1", d => d.source.y)
+            .attr("x2", d => d.target.x)
+            .attr("y2", d => d.target.y);
+
+          label
+            .attr('transform', d => {
+              const x = (d.source.x + d.target.x) / 2;
+              const y = (d.source.y + d.target.y) / 2;
+              return 'translate(' + x + ',' + y + ')'
+            });
+
+          circle
+            .attr("cx", d => d.x)
+            .attr("cy", d => d.y);
+
+          name
+            .attr('transform', d => 'translate(' + d.x + ',' + d.y + ')');
+        });
+
+        document.body.append(svg.node());
+      }
+
+      fetch('http://localhost:5783/MCD_SPOT')
+  .then(response => response.json()).then(data => draw(data));
+    </script>
+  </body>
+</html>
