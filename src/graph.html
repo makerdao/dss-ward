@@ -56,7 +56,6 @@
                     );
 
         const link = g.append('g')
-              .attr('stroke', '#999')
               .selectAll('line')
               .data(links)
               .join('g')
@@ -66,14 +65,17 @@
                   .attr('stroke', 'black');
                 d3.select('#label-' + d.index)
                   .style('opacity', 1)
-
+                selectNode(d.target);
+                selectNode(d.source);
               })
               .on('mouseout', (e, d) => {
                 d3.select('#link-' + d.index)
                   .attr('stroke-width', 2)
                   .attr('stroke', d => linkColor(d));
                 d3.select('#label-' + d.index)
-                  .style('opacity', 0);
+                  .style('opacity', 0)
+                deselectNode(d.target);
+                deselectNode(d.source);
               });
 
         const linkColor = d => {
@@ -86,6 +88,26 @@
             d.label === 'bud' ?
             'orange' :
             'grey';
+        }
+
+        const selectNode = d => {
+          d3.select('#circle-' + d.id)
+            .attr('r', 10);
+          d3.select('#name-' + d.id)
+            .style('font-weight', 1000)
+            .style('opacity', 1);
+        }
+
+        const deselectNode = d => {
+          d3.select('#circle-' + d.id)
+            .attr('r', 5);
+          d3.select('#name-' + d.id)
+            .style('font-weight', 'initial')
+            .style('opacity', d =>
+              d.id.startsWith('FLIP_')
+                || d.id.startsWith('CLIP_')
+                || d.id.startsWith('JOIN_') ? 0 : 1
+            );
         }
 
         const defs = svg.append('svg:defs');
@@ -106,24 +128,30 @@
               .attr('id', d => 'link-' + d.index);
 
         const label = link.append('text')
-              .style('stroke', 'black')
-              .style('font', '10px sans-serif')
+              .style('font-family', 'sans-serif')
               .text(d => d.label)
               .style('opacity', 0)
+              .style('font-weight', 1000)
               .attr('id', d => 'label-' + d.index);
 
         const node = g.append('g')
               .selectAll('circle')
               .data(nodes)
               .join('g')
+              .on('mouseover', (e, d) => selectNode(d))
+              .on('mouseout', (e, d) => deselectNode(d))
               .call(drag(simulation));
 
         const circle = node.append('circle')
               .attr('r', 5)
+              .attr('id', d => 'circle-' + d.id)
               .attr('fill', 'red');
 
         const name = node.append('text')
-              .text(d => d.id);
+              .style('font-family', 'sans-serif')
+              .attr('id', d => 'name-' + d.id)
+              .attr('class', 'name')
+              .text(d => d.id.replaceAll('_', ' '));
 
         simulation.on('tick', () => {
           line
@@ -148,6 +176,7 @@
         });
 
         document.body.append(svg.node());
+        d3.selectAll('.name').each(d => deselectNode(d));
       }
 
       fetch('http://localhost:5783/MCD_VAT')
