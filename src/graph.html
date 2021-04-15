@@ -36,8 +36,15 @@
 
         const { links, nodes } = data;
 
+        const zoom = d3.zoom().on('zoom', e => {
+          g.attr('transform', e.transform);
+        });
+
         const svg = d3.create('svg')
-              .attr('viewBox', [0, 0, 600, 600]);
+              .attr('viewBox', [0, 0, 600, 600])
+              .call(zoom);
+
+        const g = svg.append('g');
 
         const simulation = d3.forceSimulation(nodes)
               .force('link', d3.forceLink(links).id(d => d.id).distance(40))
@@ -48,7 +55,7 @@
                      .distanceMin(10)
                     );
 
-        const link = svg.append('g')
+        const link = g.append('g')
               .attr('stroke', '#999')
               .selectAll('line')
               .data(links)
@@ -75,7 +82,7 @@
               .style('font', '10px sans-serif')
               .text(d => d.label);
 
-        const node = svg.append('g')
+        const node = g.append('g')
               .selectAll('circle')
               .data(nodes)
               .join('g')
@@ -113,7 +120,7 @@
         document.body.append(svg.node());
       }
 
-      fetch('http://localhost:5783/MCD_SPOT')
+      fetch('http://localhost:5783/MCD_VAT')
   .then(response => response.json()).then(data => draw(data));
     </script>
   </body>
