@@ -34,8 +34,7 @@
 
       draw = function(data) {
 
-        const links = [{source: 'MCD_SPOT', target: 'MCD_END', lbl: 'ward'}];
-        const nodes = [{id: 'MCD_SPOT'}, {id: 'MCD_END'}];
+        const { links, nodes } = data;
 
         const svg = d3.create('svg')
               .attr('viewBox', [0, 0, 600, 600]);
@@ -68,7 +67,7 @@
               .style('stroke', '#505050')
               .style('fill', '#505050')
               .style('font', '10px sans-serif')
-              .text(d => d.lbl);
+              .text(d => d.label);
 
         const node = svg.append('g')
               .selectAll('circle')

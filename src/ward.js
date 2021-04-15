@@ -503,14 +503,20 @@ const writeGraph = (chainLog, name, graph) => {
   fs.writeFileSync(`cached/${ name }.json`, JSON.stringify(graph));
   const namedGraph = graph.map(edge => {
     return {
-      dst: getWho(chainLog, edge.dst),
-      src: getWho(chainLog, edge.src),
-      lbl: edge.lbl
+      target: getWho(chainLog, edge.dst),
+      source: getWho(chainLog, edge.src),
+      label: edge.lbl
     };
   });
+  const edges = namedGraph.map(edge => edge.source);
+  const destinations = namedGraph.map(edge => edge.target);
+  edges.push(...destinations);
+  const uniqueEdges = Array.from(new Set(edges));
+  const objectEdges = uniqueEdges.map(edge => { return {id: edge}; });
+  const output = {links: namedGraph, nodes: objectEdges};
   fs.writeFileSync(
     `graph/${ name }.json`,
-    JSON.stringify(namedGraph, null, 4)
+    JSON.stringify(output, null, 4)
   );
 }
 
