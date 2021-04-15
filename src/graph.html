@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <meta charset="UTF-8"/>
+    <meta charset="utf-8"/>
   </head>
   <body>
     <script src="../node_modules/d3/dist/d3.js"></script>
@@ -40,7 +40,13 @@
               .attr('viewBox', [0, 0, 600, 600]);
 
         const simulation = d3.forceSimulation(nodes)
-        .force("link", d3.forceLink(links).id(d => d.id));
+              .force('link', d3.forceLink(links).id(d => d.id).distance(40))
+              .force('center', d3.forceCenter(200, 200))
+              .force('collision', d3.forceCollide(40).strength(0.3))
+              .force('bodies', d3.forceManyBody()
+                     .strength(-200)
+                     .distanceMin(10)
+                    );
 
         const link = svg.append('g')
               .attr('stroke', '#999')
@@ -82,12 +88,12 @@
         const name = node.append('text')
               .text(d => d.id);
 
-        simulation.on("tick", () => {
+        simulation.on('tick', () => {
           line
-            .attr("x1", d => d.source.x)
-            .attr("y1", d => d.source.y)
-            .attr("x2", d => d.target.x)
-            .attr("y2", d => d.target.y);
+            .attr('x1', d => d.source.x)
+            .attr('y1', d => d.source.y)
+            .attr('x2', d => d.target.x)
+            .attr('y2', d => d.target.y);
 
           label
             .attr('transform', d => {
@@ -97,8 +103,8 @@
             });
 
           circle
-            .attr("cx", d => d.x)
-            .attr("cy", d => d.y);
+            .attr('cx', d => d.x)
+            .attr('cy', d => d.y);
 
           name
             .attr('transform', d => 'translate(' + d.x + ',' + d.y + ')');
