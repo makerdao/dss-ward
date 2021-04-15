@@ -503,8 +503,8 @@ const writeGraph = (chainLog, name, graph) => {
   fs.writeFileSync(`cached/${ name }.json`, JSON.stringify(graph));
   const namedGraph = graph.map(edge => {
     return {
-      target: getWho(chainLog, edge.dst),
-      source: getWho(chainLog, edge.src),
+      target: getWho(chainLog, edge.dst).replace(/^MCD_/, ''),
+      source: getWho(chainLog, edge.src).replace(/^MCD_/, ''),
       label: edge.lbl
     };
   });
