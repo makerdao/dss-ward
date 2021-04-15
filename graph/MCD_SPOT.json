@@ -1,37 +1,59 @@
-[
-    {
-        "dst": "MCD_SPOT",
-        "src": "MCD_END",
-        "lbl": "ward"
-    },
-    {
-        "dst": "MCD_SPOT",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "MCD_END",
-        "src": "MCD_ESM",
-        "lbl": "ward"
-    },
-    {
-        "dst": "MCD_END",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "MCD_PAUSE_PROXY",
-        "src": "MCD_PAUSE",
-        "lbl": "owner"
-    },
-    {
-        "dst": "MCD_PAUSE",
-        "src": "MCD_ADM",
-        "lbl": "authority"
-    },
-    {
-        "dst": "MCD_ADM",
-        "src": "MCD_ADM",
-        "lbl": "authority"
-    }
-]
+{
+    "links": [
+        {
+            "target": "MCD_SPOT",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_SPOT",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_END",
+            "source": "MCD_ESM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_END",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_PAUSE_PROXY",
+            "source": "MCD_PAUSE",
+            "label": "owner"
+        },
+        {
+            "target": "MCD_PAUSE",
+            "source": "MCD_ADM",
+            "label": "authority"
+        },
+        {
+            "target": "MCD_ADM",
+            "source": "MCD_ADM",
+            "label": "authority"
+        }
+    ],
+    "nodes": [
+        {
+            "id": "MCD_END"
+        },
+        {
+            "id": "MCD_PAUSE_PROXY"
+        },
+        {
+            "id": "MCD_ESM"
+        },
+        {
+            "id": "MCD_PAUSE"
+        },
+        {
+            "id": "MCD_ADM"
+        },
+        {
+            "id": "MCD_SPOT"
+        }
+    ]
+}
