@@ -41,9 +41,18 @@ const isAddress = string => {
 
 const getAddresses = (web3, log) => {
   const addresses = [];
-  for (const topic of log.topics) {
+  const { topics, data } = log;
+  for (const topic of topics) {
     if (topic.match(/^0x0{24}/)) {
       const address = `0x${ topic.substring(26, 66) }`;
+      const checksumAddress = web3.utils.toChecksumAddress(address);
+      addresses.push(checksumAddress);
+    }
+  }
+  const chunks = data.substring(2).match(/.{64}/g);
+  for (const chunk of chunks) {
+    if (chunk.match(/^0{24}/)) {
+      const address = `0x${ chunk.substring(24, 64) }`;
       const checksumAddress = web3.utils.toChecksumAddress(address);
       addresses.push(checksumAddress);
     }
