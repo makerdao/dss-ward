@@ -50,11 +50,13 @@ const getAddresses = (web3, log) => {
     }
   }
   const chunks = data.substring(2).match(/.{64}/g);
-  for (const chunk of chunks) {
-    if (chunk.match(/^0{24}/)) {
-      const address = `0x${ chunk.substring(24, 64) }`;
-      const checksumAddress = web3.utils.toChecksumAddress(address);
-      addresses.push(checksumAddress);
+  if (chunks) {
+    for (const chunk of chunks) {
+      if (chunk.match(/^0{24}/)) {
+        const address = `0x${ chunk.substring(24, 64) }`;
+        const checksumAddress = web3.utils.toChecksumAddress(address);
+        addresses.push(checksumAddress);
+      }
     }
   }
   return addresses;
