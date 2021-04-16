@@ -316,6 +316,14 @@ const getBuds = async (args, web3, chainLog, address) => {
   return buds;
 }
 
+const isEoa = async (web3, address) => {
+  process.stdout.write('\nchecking if address is externally owned... ');
+  const code = await web3.eth.getCode(address);
+  const isEoa = ['0x', '0x0'].includes(code);
+  console.log(isEoa ? 'yes' : 'no');
+  return isEoa;
+}
+
 const getAuthorities = async (env, args, web3, chainLog, address) => {
   const who = getWho(chainLog, address);
   if (who !== address) {
@@ -323,11 +331,12 @@ const getAuthorities = async (env, args, web3, chainLog, address) => {
   } else {
     console.log(`\nstarting check for address ${ address }...`);
   }
+  const eoa = await isEoa(web3, address);
   const owner = await getOwner(web3, chainLog, address);
   const authority = await getAuthority(web3, chainLog, address);
   const wards = await getWards(env, args, web3, chainLog, address);
   const buds = await getBuds(args, web3, chainLog, address);
-  return { owner, authority, wards, buds };
+  return { eoa, owner, authority, wards, buds };
 }
 
 const cacheLogs = async (args, web3, chainLog, addresses) => {
@@ -349,6 +358,9 @@ const getGraph = async (env, args, web3, chainLog, address) => {
     await cacheLogs(args, web3, chainLog, vertices.current);
     for (const dst of vertices.current) {
       const authorities = await getAuthorities(env, args, web3, chainLog, dst);
+      if (authorities.eoa) {
+        edges.push({ dst, src: 'user', lbl: 'eoa' });
+      }
       if (authorities.owner) {
         edges.push({ dst, src: authorities.owner, lbl: 'owner' });
         vertices.new.push(authorities.owner);
