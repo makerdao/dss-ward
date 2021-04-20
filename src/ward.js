@@ -568,7 +568,11 @@ const writeGraph = (chainLog, name, graph) => {
       label: edge.lbl
     };
   });
-  const edges = getEdges(namedGraph);
+  let edges = getEdges(namedGraph);
+  if (name === 'full') {
+    edges.push(...Object.values(chainLog));
+    edges = Array.from(new Set(edges));
+  }
   const objectEdges = edges.map(edge => { return {id: edge}; });
   const output = {links: namedGraph, nodes: objectEdges};
   fs.writeFileSync(
@@ -592,8 +596,8 @@ const fullMode = async (env, args, web3, chainLog) => {
     const extra = allAddresses.filter(address => !edges.includes(address));
     const extraGraph = await getGraphs(env, args, web3, chainLog, extra);
     fullGraph = mergeGraphs(graph, extraGraph);
-    writeGraph(chainLog, 'full', fullGraph);
   }
+  writeGraph(chainLog, 'full', fullGraph);
   const trees = drawTrees(chainLog, fullGraph, args.level, addresses);
   writeResult(trees, 'full');
 }
