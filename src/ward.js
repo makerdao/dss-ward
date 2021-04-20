@@ -236,9 +236,8 @@ const getTxs = async (env, address, internal) => {
     response = await fetch(url);
     data = await response.json();
   } catch (err) {
-    console.log(err);
-    console.log(response);
-    console.log(data);
+    response = await fetch(url);
+    data = await response.json();
   }
   if (data.status != '1') {
     if (data.message === 'No transactions found') {
@@ -388,25 +387,25 @@ const getGraph = async (env, args, web3, chainLog, address) => {
     vertices.all.push(...vertices.current);
     vertices.new = [];
     await cacheLogs(args, web3, chainLog, vertices.current);
-    for (const dst of vertices.current) {
-      const authorities = await getAuthorities(env, args, web3, chainLog, dst);
+    for (const target of vertices.current) {
+      const authorities = await getAuthorities(env, args, web3, chainLog, target);
       if (authorities.eoa) {
-        edges.push({ dst, src: 'user', lbl: 'eoa' });
+        edges.push({ target, source: target, lbl: 'externally owned account' });
       }
       if (authorities.owner) {
-        edges.push({ dst, src: authorities.owner, lbl: 'owner' });
+        edges.push({ target, source: authorities.owner, lbl: 'owner' });
         vertices.new.push(authorities.owner);
       }
       if (authorities.authority) {
-        edges.push({ dst, src: authorities.authority, lbl: 'authority' });
+        edges.push({ target, source: authorities.authority, lbl: 'authority' });
         vertices.new.push(authorities.authority);
       }
       for (const ward of authorities.wards) {
-        edges.push({ dst, src: ward, lbl: 'ward' });
+        edges.push({ target, source: ward, lbl: 'ward' });
         vertices.new.push(ward);
       }
       for (const bud of authorities.buds) {
-        edges.push({ dst, src: bud, lbl: 'bud' });
+        edges.push({ target, source: bud, lbl: 'bud' });
         vertices.new.push(bud);
       }
     }
@@ -487,17 +486,17 @@ const writeResult = (next, type) => {
 
 const drawSubTree = (chainLog, graph, parents, root, level, depth) => {
   if (depth && level == depth) return {};
-  const subGraph = graph.filter(edge => edge.dst === root);
+  const subGraph = graph.filter(edge => edge.target === root);
   const subTree = {};
   for (const edge of subGraph) {
-    if (parents.includes(edge.src)) continue;
-    const who = getWho(chainLog, edge.src);
+    if (parents.includes(edge.source)) continue;
+    const who = getWho(chainLog, edge.source);
     const card = `${ edge.lbl }: ${ who }`;
     subTree[card] = drawSubTree(
       chainLog,
       graph,
       [ ...parents, root ],
-      edge.src,
+      edge.source,
       level + 1,
       depth
     );
@@ -507,17 +506,17 @@ const drawSubTree = (chainLog, graph, parents, root, level, depth) => {
 
 const drawReverseSubTree = (chainLog, graph, parents, root, level, depth) => {
   if (depth && level == depth) return {};
-  const subGraph = graph.filter(edge => edge.src === root);
+  const subGraph = graph.filter(edge => edge.source === root);
   const subTree = {};
   for (const edge of subGraph) {
-    if (parents.includes(edge.dst)) continue;
-    const who = getWho(chainLog, edge.dst);
+    if (parents.includes(edge.target)) continue;
+    const who = getWho(chainLog, edge.target);
     const card = `${ edge.lbl } of ${ who }`;
     subTree[card] = drawReverseSubTree(
       chainLog,
       graph,
       [...parents, root],
-      edge.dst,
+      edge.target,
       level + 1,
       depth
     );
@@ -552,20 +551,25 @@ const readGraph = who => {
   return JSON.parse(fs.readFileSync(`cached/${ who }.json`, 'utf8'));
 }
 
+const getEdges = graph => {
+  const edges = graph.map(edge => edge.source);
+  const destinations = graph.map(edge => edge.target);
+  edges.push(...destinations);
+  const uniqueEdges = Array.from(new Set(edges));
+  return uniqueEdges;
+}
+
 const writeGraph = (chainLog, name, graph) => {
   fs.writeFileSync(`cached/${ name }.json`, JSON.stringify(graph));
   const namedGraph = graph.map(edge => {
     return {
-      target: getWho(chainLog, edge.dst),
-      source: getWho(chainLog, edge.src),
+      target: getWho(chainLog, edge.target),
+      source: getWho(chainLog, edge.source),
       label: edge.lbl
     };
   });
-  const edges = namedGraph.map(edge => edge.source);
-  const destinations = namedGraph.map(edge => edge.target);
-  edges.push(...destinations);
-  const uniqueEdges = Array.from(new Set(edges));
-  const objectEdges = uniqueEdges.map(edge => { return {id: edge}; });
+  const edges = getEdges(namedGraph);
+  const objectEdges = edges.map(edge => { return {id: edge}; });
   const output = {links: namedGraph, nodes: objectEdges};
   fs.writeFileSync(
     `graph/${ name }.json`,
@@ -576,23 +580,28 @@ const writeGraph = (chainLog, name, graph) => {
 const fullMode = async (env, args, web3, chainLog) => {
   console.log('performing full system lookup...');
   const vatAddress = getKey(chainLog, 'MCD_VAT');
-  const addresses = await getOracleAddresses(web3, chainLog);
-  addresses.push(vatAddress);
-  let graph;
+  const oracleAddresses = await getOracleAddresses(web3, chainLog);
+  const addresses = [ vatAddress, ...oracleAddresses];
+  let fullGraph;
   if (cached(args).includes('graph')) {
-    graph = readGraph('full');
+    fullGraph = readGraph('full');
   } else {
-    graph = await getGraphs(env, args, web3, chainLog, addresses);
-    writeGraph(chainLog, 'full', graph);
+    const graph = await getGraphs(env, args, web3, chainLog, addresses);
+    const allAddresses = Object.keys(chainLog);
+    const edges = getEdges(graph);
+    const extra = allAddresses.filter(address => !edges.includes(address));
+    const extraGraph = await getGraphs(env, args, web3, chainLog, extra);
+    fullGraph = mergeGraphs(graph, extraGraph);
+    writeGraph(chainLog, 'full', fullGraph);
   }
-  const trees = drawTrees(chainLog, graph, args.level, addresses);
+  const trees = drawTrees(chainLog, fullGraph, args.level, addresses);
   writeResult(trees, 'full');
 }
 
 const mergeGraphs = (a, b) => {
   for (const edge of a) {
-    if (!b.find(e => e.src === edge.src
-               && e.dst === edge.dst
+    if (!b.find(e => e.source === edge.source
+               && e.target === edge.target
                && e.lbl === edge.lbl)
        ) {
       b.push(edge);
@@ -606,7 +615,7 @@ const getGraphs = async (env, args, web3, chainLog, addresses) => {
   let graph = [];
   let count = 0;
   for (const address of addresses) {
-    console.log(`\n\n${ ++count } of ${ addresses.length } oracle addresses`);
+    console.log(`\n\naddress ${ ++count } of ${ addresses.length }`);
     const who = getWho(chainLog, address);
     let oracleGraph;
     if (cached(args).includes('graph')) {
