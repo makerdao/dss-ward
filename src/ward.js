@@ -608,19 +608,19 @@ const getGraphs = async (env, args, web3, chainLog, addresses) => {
   for (const address of addresses) {
     console.log(`\n\n${ ++count } of ${ addresses.length } oracle addresses`);
     const who = getWho(chainLog, address);
+    let oracleGraph;
     if (cached(args).includes('graph')) {
       try {
-        const oracleGraph = readGraph(who);
-        graph = mergeGraphs(oracleGraph, graph);
+        oracleGraph = readGraph(who);
       } catch (err) {
-        console.log(err);
-        continue;
+        console.log('no cached graph found');
+        oracleGraph = await getGraph(env, args, web3, chainLog, address);
       }
     } else {
-      const oracleGraph = await getGraph(env, args, web3, chainLog, address);
+      oracleGraph = await getGraph(env, args, web3, chainLog, address);
       writeGraph(chainLog, who, oracleGraph);
-      graph = mergeGraphs(oracleGraph, graph);
     }
+    graph = mergeGraphs(oracleGraph, graph);
   }
   return graph;
 }
