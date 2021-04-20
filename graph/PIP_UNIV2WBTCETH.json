@@ -7,7 +7,7 @@
         },
         {
             "target": "PIP_UNIV2WBTCETH",
-            "source": "PAUSE_PROXY",
+            "source": "MCD_PAUSE_PROXY",
             "label": "ward"
         },
         {
@@ -16,28 +16,28 @@
             "label": "ward"
         },
         {
-            "target": "PAUSE_PROXY",
-            "source": "PAUSE",
+            "target": "MCD_PAUSE_PROXY",
+            "source": "MCD_PAUSE",
             "label": "owner"
         },
         {
             "target": "OSM_MOM",
-            "source": "PAUSE_PROXY",
+            "source": "MCD_PAUSE_PROXY",
             "label": "owner"
         },
         {
             "target": "OSM_MOM",
-            "source": "ADM",
+            "source": "MCD_ADM",
             "label": "authority"
         },
         {
-            "target": "PAUSE",
-            "source": "ADM",
+            "target": "MCD_PAUSE",
+            "source": "MCD_ADM",
             "label": "authority"
         },
         {
-            "target": "ADM",
-            "source": "ADM",
+            "target": "MCD_ADM",
+            "source": "MCD_ADM",
             "label": "authority"
         }
     ],
@@ -46,16 +46,16 @@
             "id": "0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40"
         },
         {
-            "id": "PAUSE_PROXY"
+            "id": "MCD_PAUSE_PROXY"
         },
         {
             "id": "OSM_MOM"
         },
         {
-            "id": "PAUSE"
+            "id": "MCD_PAUSE"
         },
         {
-            "id": "ADM"
+            "id": "MCD_ADM"
         },
         {
             "id": "PIP_UNIV2WBTCETH"

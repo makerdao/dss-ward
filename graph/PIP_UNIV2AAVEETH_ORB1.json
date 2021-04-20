@@ -2,7 +2,7 @@
     "links": [
         {
             "target": "PIP_UNIV2AAVEETH_ORB1",
-            "source": "PAUSE_PROXY",
+            "source": "MCD_PAUSE_PROXY",
             "label": "ward"
         },
         {
@@ -66,13 +66,13 @@
             "label": "bud"
         },
         {
-            "target": "PAUSE_PROXY",
-            "source": "PAUSE",
+            "target": "MCD_PAUSE_PROXY",
+            "source": "MCD_PAUSE",
             "label": "owner"
         },
         {
             "target": "PIP_ETH",
-            "source": "PAUSE_PROXY",
+            "source": "MCD_PAUSE_PROXY",
             "label": "ward"
         },
         {
@@ -82,12 +82,12 @@
         },
         {
             "target": "PIP_ETH",
-            "source": "SPOT",
+            "source": "MCD_SPOT",
             "label": "bud"
         },
         {
             "target": "PIP_ETH",
-            "source": "END",
+            "source": "MCD_END",
             "label": "bud"
         },
         {
@@ -142,7 +142,7 @@
         },
         {
             "target": "PIP_UNIV2DAIETH",
-            "source": "PAUSE_PROXY",
+            "source": "MCD_PAUSE_PROXY",
             "label": "ward"
         },
         {
@@ -157,7 +157,7 @@
         },
         {
             "target": "PIP_UNIV2WBTCETH",
-            "source": "PAUSE_PROXY",
+            "source": "MCD_PAUSE_PROXY",
             "label": "ward"
         },
         {
@@ -172,7 +172,7 @@
         },
         {
             "target": "PIP_UNIV2USDCETH",
-            "source": "PAUSE_PROXY",
+            "source": "MCD_PAUSE_PROXY",
             "label": "ward"
         },
         {
@@ -192,7 +192,7 @@
         },
         {
             "target": "PIP_UNIV2ETHUSDT",
-            "source": "PAUSE_PROXY",
+            "source": "MCD_PAUSE_PROXY",
             "label": "ward"
         },
         {
@@ -207,7 +207,7 @@
         },
         {
             "target": "PIP_UNIV2LINKETH",
-            "source": "PAUSE_PROXY",
+            "source": "MCD_PAUSE_PROXY",
             "label": "ward"
         },
         {
@@ -222,7 +222,7 @@
         },
         {
             "target": "PIP_UNIV2UNIETH",
-            "source": "PAUSE_PROXY",
+            "source": "MCD_PAUSE_PROXY",
             "label": "ward"
         },
         {
@@ -237,42 +237,42 @@
         },
         {
             "target": "PIP_UNIV2AAVEETH",
-            "source": "PAUSE_PROXY",
+            "source": "MCD_PAUSE_PROXY",
             "label": "ward"
         },
         {
-            "target": "PAUSE",
-            "source": "ADM",
+            "target": "MCD_PAUSE",
+            "source": "MCD_ADM",
             "label": "authority"
         },
         {
             "target": "OSM_MOM",
-            "source": "PAUSE_PROXY",
+            "source": "MCD_PAUSE_PROXY",
             "label": "owner"
         },
         {
             "target": "OSM_MOM",
-            "source": "ADM",
+            "source": "MCD_ADM",
             "label": "authority"
         },
         {
-            "target": "SPOT",
-            "source": "END",
+            "target": "MCD_SPOT",
+            "source": "MCD_END",
             "label": "ward"
         },
         {
-            "target": "SPOT",
-            "source": "PAUSE_PROXY",
+            "target": "MCD_SPOT",
+            "source": "MCD_PAUSE_PROXY",
             "label": "ward"
         },
         {
-            "target": "END",
-            "source": "ESM",
+            "target": "MCD_END",
+            "source": "MCD_ESM",
             "label": "ward"
         },
         {
-            "target": "END",
-            "source": "PAUSE_PROXY",
+            "target": "MCD_END",
+            "source": "MCD_PAUSE_PROXY",
             "label": "ward"
         },
         {
@@ -291,8 +291,8 @@
             "label": "eoa"
         },
         {
-            "target": "ADM",
-            "source": "ADM",
+            "target": "MCD_ADM",
+            "source": "MCD_ADM",
             "label": "authority"
         },
         {
@@ -303,7 +303,7 @@
     ],
     "nodes": [
         {
-            "id": "PAUSE_PROXY"
+            "id": "MCD_PAUSE_PROXY"
         },
         {
             "id": "PIP_ETH"
@@ -342,16 +342,16 @@
             "id": "PIP_UNIV2AAVEETH"
         },
         {
-            "id": "PAUSE"
+            "id": "MCD_PAUSE"
         },
         {
             "id": "OSM_MOM"
         },
         {
-            "id": "SPOT"
+            "id": "MCD_SPOT"
         },
         {
-            "id": "END"
+            "id": "MCD_END"
         },
         {
             "id": "0xeAa474cbFFA87Ae0F1a6f68a3aBA6C77C656F72c"
@@ -381,10 +381,10 @@
             "id": "0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40"
         },
         {
-            "id": "ADM"
+            "id": "MCD_ADM"
         },
         {
-            "id": "ESM"
+            "id": "MCD_ESM"
         },
         {
             "id": "0x0528A32fda5beDf89Ba9ad67296db83c9452F28C"

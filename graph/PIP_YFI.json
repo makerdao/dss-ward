@@ -2,7 +2,7 @@
     "links": [
         {
             "target": "PIP_YFI",
-            "source": "PAUSE_PROXY",
+            "source": "MCD_PAUSE_PROXY",
             "label": "ward"
         },
         {
@@ -12,12 +12,12 @@
         },
         {
             "target": "PIP_YFI",
-            "source": "SPOT",
+            "source": "MCD_SPOT",
             "label": "bud"
         },
         {
             "target": "PIP_YFI",
-            "source": "END",
+            "source": "MCD_END",
             "label": "bud"
         },
         {
@@ -31,38 +31,38 @@
             "label": "bud"
         },
         {
-            "target": "PAUSE_PROXY",
-            "source": "PAUSE",
+            "target": "MCD_PAUSE_PROXY",
+            "source": "MCD_PAUSE",
             "label": "owner"
         },
         {
             "target": "OSM_MOM",
-            "source": "PAUSE_PROXY",
+            "source": "MCD_PAUSE_PROXY",
             "label": "owner"
         },
         {
             "target": "OSM_MOM",
-            "source": "ADM",
+            "source": "MCD_ADM",
             "label": "authority"
         },
         {
-            "target": "SPOT",
-            "source": "END",
+            "target": "MCD_SPOT",
+            "source": "MCD_END",
             "label": "ward"
         },
         {
-            "target": "SPOT",
-            "source": "PAUSE_PROXY",
+            "target": "MCD_SPOT",
+            "source": "MCD_PAUSE_PROXY",
             "label": "ward"
         },
         {
-            "target": "END",
-            "source": "ESM",
+            "target": "MCD_END",
+            "source": "MCD_ESM",
             "label": "ward"
         },
         {
-            "target": "END",
-            "source": "PAUSE_PROXY",
+            "target": "MCD_END",
+            "source": "MCD_PAUSE_PROXY",
             "label": "ward"
         },
         {
@@ -71,28 +71,28 @@
             "label": "owner"
         },
         {
-            "target": "PAUSE",
-            "source": "ADM",
+            "target": "MCD_PAUSE",
+            "source": "MCD_ADM",
             "label": "authority"
         },
         {
-            "target": "ADM",
-            "source": "ADM",
+            "target": "MCD_ADM",
+            "source": "MCD_ADM",
             "label": "authority"
         }
     ],
     "nodes": [
         {
-            "id": "PAUSE_PROXY"
+            "id": "MCD_PAUSE_PROXY"
         },
         {
             "id": "OSM_MOM"
         },
         {
-            "id": "SPOT"
+            "id": "MCD_SPOT"
         },
         {
-            "id": "END"
+            "id": "MCD_END"
         },
         {
             "id": "0x208EfCD7aad0b5DD49438E0b6A0f38E951A50E5f"
@@ -101,13 +101,13 @@
             "id": "0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777"
         },
         {
-            "id": "PAUSE"
+            "id": "MCD_PAUSE"
         },
         {
-            "id": "ADM"
+            "id": "MCD_ADM"
         },
         {
-            "id": "ESM"
+            "id": "MCD_ESM"
         },
         {
             "id": "0xFEB4acf3df3cDEA7399794D0869ef76A6EfAff52"

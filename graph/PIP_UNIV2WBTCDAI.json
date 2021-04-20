@@ -12,32 +12,32 @@
         },
         {
             "target": "PIP_UNIV2WBTCDAI",
-            "source": "PAUSE_PROXY",
+            "source": "MCD_PAUSE_PROXY",
             "label": "ward"
         },
         {
             "target": "OSM_MOM",
-            "source": "PAUSE_PROXY",
+            "source": "MCD_PAUSE_PROXY",
             "label": "owner"
         },
         {
             "target": "OSM_MOM",
-            "source": "ADM",
+            "source": "MCD_ADM",
             "label": "authority"
         },
         {
-            "target": "PAUSE_PROXY",
-            "source": "PAUSE",
+            "target": "MCD_PAUSE_PROXY",
+            "source": "MCD_PAUSE",
             "label": "owner"
         },
         {
-            "target": "ADM",
-            "source": "ADM",
+            "target": "MCD_ADM",
+            "source": "MCD_ADM",
             "label": "authority"
         },
         {
-            "target": "PAUSE",
-            "source": "ADM",
+            "target": "MCD_PAUSE",
+            "source": "MCD_ADM",
             "label": "authority"
         }
     ],
@@ -49,13 +49,13 @@
             "id": "OSM_MOM"
         },
         {
-            "id": "PAUSE_PROXY"
+            "id": "MCD_PAUSE_PROXY"
         },
         {
-            "id": "ADM"
+            "id": "MCD_ADM"
         },
         {
-            "id": "PAUSE"
+            "id": "MCD_PAUSE"
         },
         {
             "id": "PIP_UNIV2WBTCDAI"

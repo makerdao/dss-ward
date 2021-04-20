@@ -2,7 +2,7 @@
     "links": [
         {
             "target": "PIP_LRC_SRC",
-            "source": "PAUSE_PROXY",
+            "source": "MCD_PAUSE_PROXY",
             "label": "ward"
         },
         {
@@ -16,13 +16,13 @@
             "label": "bud"
         },
         {
-            "target": "PAUSE_PROXY",
-            "source": "PAUSE",
+            "target": "MCD_PAUSE_PROXY",
+            "source": "MCD_PAUSE",
             "label": "owner"
         },
         {
             "target": "PIP_LRC",
-            "source": "PAUSE_PROXY",
+            "source": "MCD_PAUSE_PROXY",
             "label": "ward"
         },
         {
@@ -32,12 +32,12 @@
         },
         {
             "target": "PIP_LRC",
-            "source": "SPOT",
+            "source": "MCD_SPOT",
             "label": "bud"
         },
         {
             "target": "PIP_LRC",
-            "source": "END",
+            "source": "MCD_END",
             "label": "bud"
         },
         {
@@ -46,49 +46,49 @@
             "label": "owner"
         },
         {
-            "target": "PAUSE",
-            "source": "ADM",
+            "target": "MCD_PAUSE",
+            "source": "MCD_ADM",
             "label": "authority"
         },
         {
             "target": "OSM_MOM",
-            "source": "PAUSE_PROXY",
+            "source": "MCD_PAUSE_PROXY",
             "label": "owner"
         },
         {
             "target": "OSM_MOM",
-            "source": "ADM",
+            "source": "MCD_ADM",
             "label": "authority"
         },
         {
-            "target": "SPOT",
-            "source": "END",
+            "target": "MCD_SPOT",
+            "source": "MCD_END",
             "label": "ward"
         },
         {
-            "target": "SPOT",
-            "source": "PAUSE_PROXY",
+            "target": "MCD_SPOT",
+            "source": "MCD_PAUSE_PROXY",
             "label": "ward"
         },
         {
-            "target": "END",
-            "source": "ESM",
+            "target": "MCD_END",
+            "source": "MCD_ESM",
             "label": "ward"
         },
         {
-            "target": "END",
-            "source": "PAUSE_PROXY",
+            "target": "MCD_END",
+            "source": "MCD_PAUSE_PROXY",
             "label": "ward"
         },
         {
-            "target": "ADM",
-            "source": "ADM",
+            "target": "MCD_ADM",
+            "source": "MCD_ADM",
             "label": "authority"
         }
     ],
     "nodes": [
         {
-            "id": "PAUSE_PROXY"
+            "id": "MCD_PAUSE_PROXY"
         },
         {
             "id": "PIP_LRC"
@@ -97,25 +97,25 @@
             "id": "0x1D5d9a2DDa0843eD9D8a9Bddc33F1fca9f9C64a0"
         },
         {
-            "id": "PAUSE"
+            "id": "MCD_PAUSE"
         },
         {
             "id": "OSM_MOM"
         },
         {
-            "id": "SPOT"
+            "id": "MCD_SPOT"
         },
         {
-            "id": "END"
+            "id": "MCD_END"
         },
         {
             "id": "0xF8523c551763FE4261A28313015267F163de7541"
         },
         {
-            "id": "ADM"
+            "id": "MCD_ADM"
         },
         {
-            "id": "ESM"
+            "id": "MCD_ESM"
         },
         {
             "id": "PIP_LRC_SRC"
