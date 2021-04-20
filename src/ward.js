@@ -532,6 +532,15 @@ const drawTree = (chainLog, graph, depth, root) => {
   return tree;
 }
 
+const drawTrees = (chainLog, graph, depth, addresses) => {
+  let trees = '';
+  for (const address of addresses) {
+    const tree = drawTree(chainLog, graph, depth, address)
+    trees += tree + '\n';
+  }
+  return trees;
+}
+
 const drawPermissions = (chainLog, graph, depth, root) => {
   const who = getWho(chainLog, root);
   const subTree = drawReverseSubTree(chainLog, graph, [], root, 0, depth);
@@ -547,8 +556,8 @@ const writeGraph = (chainLog, name, graph) => {
   fs.writeFileSync(`cached/${ name }.json`, JSON.stringify(graph));
   const namedGraph = graph.map(edge => {
     return {
-      target: getWho(chainLog, edge.dst).replace(/^MCD_/, ''),
-      source: getWho(chainLog, edge.src).replace(/^MCD_/, ''),
+      target: getWho(chainLog, edge.dst),
+      source: getWho(chainLog, edge.src),
       label: edge.lbl
     };
   });
@@ -567,15 +576,17 @@ const writeGraph = (chainLog, name, graph) => {
 const fullMode = async (env, args, web3, chainLog) => {
   console.log('performing full system lookup...');
   const vatAddress = getKey(chainLog, 'MCD_VAT');
+  const addresses = await getOracleAddresses(web3, chainLog);
+  addresses.push(vatAddress);
   let graph;
   if (cached(args).includes('graph')) {
-    graph = readGraph('MCD_VAT');
+    graph = readGraph('full');
   } else {
-    graph = await getGraph(env, args, web3, chainLog, vatAddress);
-    writeGraph(chainLog, 'MCD_VAT', graph);
+    graph = await getGraphs(env, args, web3, chainLog, addresses);
+    writeGraph(chainLog, 'full', graph);
   }
-  const tree = drawTree(chainLog, graph, args.level, vatAddress);
-  writeResult(tree, 'full');
+  const trees = drawTrees(chainLog, graph, args.level, addresses);
+  writeResult(trees, 'full');
 }
 
 const mergeGraphs = (a, b) => {
@@ -590,7 +601,7 @@ const mergeGraphs = (a, b) => {
   return b;
 }
 
-const getOracleGraph = async (env, args, web3, chainLog, addresses) => {
+const getGraphs = async (env, args, web3, chainLog, addresses) => {
   await cacheLogs(args, web3, chainLog, addresses);
   let graph = [];
   let count = 0;
@@ -615,14 +626,10 @@ const getOracleGraph = async (env, args, web3, chainLog, addresses) => {
 }
 
 const oraclesMode = async (env, args, web3, chainLog) => {
-  let trees = '';
   const addresses = await getOracleAddresses(web3, chainLog);
-  const graph = await getOracleGraph(env, args, web3, chainLog, addresses);
+  const graph = await getGraphs(env, args, web3, chainLog, addresses);
   writeGraph(chainLog, 'oracles', graph);
-  for (const address of addresses) {
-    const tree = drawTree(chainLog, graph, args.level, address);
-    trees += tree + '\n';
-  }
+  const trees = drawTrees(chainLog, graph, args.level, addresses);
   writeResult(trees, 'oracles');
 }
 
@@ -655,7 +662,7 @@ const permissionsMode = async (env, args, web3, chainLog, contract) => {
   } else {
     const vatGraph = await getGraph(env, args, web3, chainLog, vatAddress);
     const oracles = await getOracleAddresses(web3, chainLog);
-    const oracleGraph = await getOracleGraph(env, args, web3, chainLog, oracles);
+    const oracleGraph = await getGraphs(env, args, web3, chainLog, oracles);
     graph = mergeGraphs(vatGraph, oracleGraph);
     writeGraph(chainLog, 'MCD_VAT', vatGraph);
     writeGraph(chainLog, 'oracles', oracleGraph);
