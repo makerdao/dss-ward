@@ -60,20 +60,12 @@
               .data(links)
               .join('g')
               .on('mouseover', (e, d) => {
-                d3.select('#link-' + d.index)
-                  .attr('stroke-width', 4)
-                  .attr('stroke', 'black');
-                d3.select('#label-' + d.index)
-                  .style('opacity', 1)
+                selectLink(d);
                 selectNode(d.target);
                 selectNode(d.source);
               })
               .on('mouseout', (e, d) => {
-                d3.select('#link-' + d.index)
-                  .attr('stroke-width', 2)
-                  .attr('stroke', d => linkColor(d));
-                d3.select('#label-' + d.index)
-                  .style('opacity', 0)
+                deselectLink(d);
                 deselectNode(d.target);
                 deselectNode(d.source);
               });
@@ -88,6 +80,22 @@
             d.label === 'bud' ?
             'orange' :
             'grey';
+        }
+
+        const selectLink = d => {
+          d3.select('#link-' + d.index)
+            .attr('stroke-width', 4)
+            .attr('stroke', 'black');
+          d3.select('#label-' + d.index)
+            .style('opacity', 1)
+        }
+
+        const deselectLink = d => {
+          d3.select('#link-' + d.index)
+            .attr('stroke-width', 2)
+            .attr('stroke', d => linkColor(d));
+          d3.select('#label-' + d.index)
+            .style('opacity', 0)
         }
 
         const selectNode = d => {
@@ -138,9 +146,20 @@
               .selectAll('circle')
               .data(nodes)
               .join('g')
-              .on('mouseover', (e, d) => selectNode(d))
-              .on('mouseout', (e, d) => deselectNode(d))
-              .call(drag(simulation));
+              .on('mouseover', (e, d) => {
+                selectNode(d);
+                const nodeLinks = links.filter(link =>
+                  link.source.id === d.id || link.target.id === d.id
+                );
+                for (const link of nodeLinks) {
+                  selectLink(link);
+                }
+              }).on('mouseout', (e, d) => {
+                deselectNode(d);
+                for (const link of links) {
+                  deselectLink(link);
+                }
+              }).call(drag(simulation));
 
         const circle = node.append('circle')
               .attr('r', 5)
