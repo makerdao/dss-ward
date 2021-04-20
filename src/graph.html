@@ -198,7 +198,7 @@
         d3.selectAll('.name').each(d => deselectNode(d));
       }
 
-      fetch('http://localhost:5783/MCD_VAT')
+      fetch('http://localhost:5783/full')
   .then(response => response.json()).then(data => draw(data));
     </script>
   </body>
