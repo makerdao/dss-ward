@@ -119,6 +119,8 @@ const getLogs = async (args, web3, chainLog, addresses) => {
   const who = addresses.length === 1
         ? await getWho(chainLog, addresses[0])
         : `${ addresses.length } addresses`;
+  const whos = addresses.map(address => getWho(chainLog, address));
+  console.log(whos);
   let logs = [];
   const topics = getTopics(web3);
   const end = await web3.eth.getBlockNumber();
@@ -133,15 +135,27 @@ const getLogs = async (args, web3, chainLog, addresses) => {
     const progress = 100 * blocksProcessed / totalBlocks;
     process.stdout.write(`getting logNote and event relies and kisses for `
                          + `${ who }... ${ progress.toFixed(1) }%\r`);
-    const batch = await web3.eth.getPastLogs(
-      {
-        fromBlock,
-        toBlock: Math.min(toBlock, end),
-        address: addresses,
-        topics,
-      }
-    );
-    logs = logs.concat(batch);
+    try {
+      const batch = await web3.eth.getPastLogs(
+        {
+          fromBlock,
+          toBlock: Math.min(toBlock, end),
+          address: addresses,
+          topics,
+        }
+      );
+      logs = logs.concat(batch);
+    } catch (err) {
+      const batch = await web3.eth.getPastLogs(
+        {
+          fromBlock,
+          toBlock: Math.min(toBlock, end),
+          address: addresses,
+          topics,
+        }
+      );
+      logs = logs.concat(batch);
+    }
     fromBlock = toBlock + 1;
   }
   const endTime = new Date();
@@ -217,8 +231,15 @@ const getTxs = async (env, address, internal) => {
   const keyEntry = `apiKey=${env.ETHERSCAN_API_KEY}`;
   const url = `${ endpoint }?${ fixedEntries }&${ actionEntry }`
         + `&${ addressEntry }&${ keyEntry }`;
-  const response = await fetch(url);
-  const data = await response.json();
+  let response, data;
+  try {
+    response = await fetch(url);
+    data = await response.json();
+  } catch (err) {
+    console.log(err);
+    console.log(response);
+    console.log(data);
+  }
   if (data.status != '1') {
     if (data.message === 'No transactions found') {
       return [];
@@ -322,7 +343,7 @@ const getBuds = async (args, web3, chainLog, address) => {
   const span = Math.floor((end - start) / 1000);
   if (hasBuds) {
     console.log(`checking buds for ${ who }... found ${ kisses.length }`
-                + ` wards in ${ span } seconds`);
+                + ` buds in ${ span } seconds`);
   }
   return buds;
 }
@@ -570,11 +591,11 @@ const mergeGraphs = (a, b) => {
 }
 
 const getOracleGraph = async (env, args, web3, chainLog, addresses) => {
-  if (cached(args).includes('graph')) {
-    await cacheLogs(args, web3, chainLog, addresses);
-  }
+  await cacheLogs(args, web3, chainLog, addresses);
   let graph = [];
+  let count = 0;
   for (const address of addresses) {
+    console.log(`\n\n${ ++count } of ${ addresses.length } oracle addresses`);
     const who = getWho(chainLog, address);
     if (cached(args).includes('graph')) {
       try {
@@ -586,8 +607,8 @@ const getOracleGraph = async (env, args, web3, chainLog, addresses) => {
       }
     } else {
       const oracleGraph = await getGraph(env, args, web3, chainLog, address);
+      writeGraph(chainLog, who, oracleGraph);
       graph = mergeGraphs(oracleGraph, graph);
-      writeGraph(chainLog, who, graph);
     }
   }
   return graph;
@@ -597,6 +618,7 @@ const oraclesMode = async (env, args, web3, chainLog) => {
   let trees = '';
   const addresses = await getOracleAddresses(web3, chainLog);
   const graph = await getOracleGraph(env, args, web3, chainLog, addresses);
+  writeGraph(chainLog, 'oracles', graph);
   for (const address of addresses) {
     const tree = drawTree(chainLog, graph, args.level, address);
     trees += tree + '\n';
