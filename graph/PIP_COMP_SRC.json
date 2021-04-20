@@ -1,187 +1,116 @@
-[
-    {
-        "dst": "PIP_BAT_SRC",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_BAT_SRC",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_BAT_SRC",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_BAT_SRC",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_BAT_SRC",
-        "src": "PIP_BAT",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_BAT_SRC",
-        "src": "0xAdf49005A69AA892572C7d27b6Dc8C0409cc0E3d",
-        "lbl": "bud"
-    },
-    {
-        "dst": "MCD_PAUSE_PROXY",
-        "src": "MCD_PAUSE",
-        "lbl": "owner"
-    },
-    {
-        "dst": "MCD_PAUSE",
-        "src": "MCD_ADM",
-        "lbl": "authority"
-    },
-    {
-        "dst": "MCD_ADM",
-        "src": "MCD_ADM",
-        "lbl": "authority"
-    },
-    {
-        "dst": "PIP_COMP",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_COMP",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_COMP",
-        "src": "OSM_MOM",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_COMP",
-        "src": "MCD_SPOT",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_COMP",
-        "src": "MCD_END",
-        "lbl": "bud"
-    },
-    {
-        "dst": "OSM_MOM",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "owner"
-    },
-    {
-        "dst": "OSM_MOM",
-        "src": "MCD_ADM",
-        "lbl": "authority"
-    },
-    {
-        "dst": "MCD_SPOT",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "MCD_SPOT",
-        "src": "MCD_END",
-        "lbl": "ward"
-    },
-    {
-        "dst": "MCD_END",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "MCD_END",
-        "src": "MCD_ESM_BUG",
-        "lbl": "ward"
-    },
-    {
-        "dst": "MCD_END",
-        "src": "MCD_ESM_ATTACK",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_COMP_SRC",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_COMP_SRC",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_COMP_SRC",
-        "src": "0x12AEE3135c20D2c8a43845Ac589C7EddE816E9D6",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_COMP_SRC",
-        "src": "0xA4BED5338632a769e0ddaa3b89cdE0a47DF89d7a",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_COMP_SRC",
-        "src": "0x5EC67c47AD34836b97E21dEF62b324c65FCfB7c2",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_COMP_SRC",
-        "src": "PIP_COMP",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_COMP_SRC",
-        "src": "0xAdf49005A69AA892572C7d27b6Dc8C0409cc0E3d",
-        "lbl": "bud"
-    },
-    {
-        "dst": "0x12AEE3135c20D2c8a43845Ac589C7EddE816E9D6",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0x12AEE3135c20D2c8a43845Ac589C7EddE816E9D6",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0x12AEE3135c20D2c8a43845Ac589C7EddE816E9D6",
-        "src": "MCD_SPOT",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0xA4BED5338632a769e0ddaa3b89cdE0a47DF89d7a",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0xA4BED5338632a769e0ddaa3b89cdE0a47DF89d7a",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0xA4BED5338632a769e0ddaa3b89cdE0a47DF89d7a",
-        "src": "MCD_SPOT",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0x5EC67c47AD34836b97E21dEF62b324c65FCfB7c2",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0x5EC67c47AD34836b97E21dEF62b324c65FCfB7c2",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0x5EC67c47AD34836b97E21dEF62b324c65FCfB7c2",
-        "src": "MCD_SPOT",
-        "lbl": "ward"
-    }
-]
+{
+    "links": [
+        {
+            "target": "PIP_COMP_SRC",
+            "source": "PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "PIP_COMP_SRC",
+            "source": "PIP_COMP",
+            "label": "bud"
+        },
+        {
+            "target": "PAUSE_PROXY",
+            "source": "PAUSE",
+            "label": "owner"
+        },
+        {
+            "target": "PIP_COMP",
+            "source": "PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "PIP_COMP",
+            "source": "OSM_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "PIP_COMP",
+            "source": "SPOT",
+            "label": "bud"
+        },
+        {
+            "target": "PIP_COMP",
+            "source": "END",
+            "label": "bud"
+        },
+        {
+            "target": "PIP_COMP",
+            "source": "0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777",
+            "label": "bud"
+        },
+        {
+            "target": "PAUSE",
+            "source": "ADM",
+            "label": "authority"
+        },
+        {
+            "target": "OSM_MOM",
+            "source": "PAUSE_PROXY",
+            "label": "owner"
+        },
+        {
+            "target": "OSM_MOM",
+            "source": "ADM",
+            "label": "authority"
+        },
+        {
+            "target": "SPOT",
+            "source": "END",
+            "label": "ward"
+        },
+        {
+            "target": "SPOT",
+            "source": "PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "END",
+            "source": "ESM",
+            "label": "ward"
+        },
+        {
+            "target": "END",
+            "source": "PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "ADM",
+            "source": "ADM",
+            "label": "authority"
+        }
+    ],
+    "nodes": [
+        {
+            "id": "PAUSE_PROXY"
+        },
+        {
+            "id": "PIP_COMP"
+        },
+        {
+            "id": "PAUSE"
+        },
+        {
+            "id": "OSM_MOM"
+        },
+        {
+            "id": "SPOT"
+        },
+        {
+            "id": "END"
+        },
+        {
+            "id": "0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777"
+        },
+        {
+            "id": "ADM"
+        },
+        {
+            "id": "ESM"
+        },
+        {
+            "id": "PIP_COMP_SRC"
+        }
+    ]
+}

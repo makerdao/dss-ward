@@ -1,9 +1,9 @@
 {
     "links": [
         {
-            "target": "PIP_PAXUSD",
+            "target": "0xBB856d1742fD182a90239D7AE85706C2FE4e5922",
             "source": "PAUSE_PROXY",
-            "label": "owner"
+            "label": "ward"
         },
         {
             "target": "PAUSE_PROXY",
@@ -32,7 +32,7 @@
             "id": "ADM"
         },
         {
-            "id": "PIP_PAXUSD"
+            "id": "0xBB856d1742fD182a90239D7AE85706C2FE4e5922"
         }
     ]
 }

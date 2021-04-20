@@ -1,34 +1,24 @@
 {
     "links": [
         {
-            "target": "PIP_UNIV2USDCETH",
-            "source": "0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40",
+            "target": "0xa1cB9e29f1727d8a0a6E3e0c1334A2323312A2d5",
+            "source": "0xDA0FaB0700A4389F6E6679aBAb1692B4601ce9bf",
             "label": "ward"
         },
         {
-            "target": "PIP_UNIV2USDCETH",
+            "target": "0xa1cB9e29f1727d8a0a6E3e0c1334A2323312A2d5",
             "source": "PAUSE_PROXY",
             "label": "ward"
         },
         {
-            "target": "PIP_UNIV2USDCETH",
-            "source": "OSM_MOM",
-            "label": "ward"
+            "target": "0xDA0FaB0700A4389F6E6679aBAb1692B4601ce9bf",
+            "source": "user",
+            "label": "eoa"
         },
         {
             "target": "PAUSE_PROXY",
             "source": "PAUSE",
             "label": "owner"
-        },
-        {
-            "target": "OSM_MOM",
-            "source": "PAUSE_PROXY",
-            "label": "owner"
-        },
-        {
-            "target": "OSM_MOM",
-            "source": "ADM",
-            "label": "authority"
         },
         {
             "target": "PAUSE",
@@ -43,13 +33,13 @@
     ],
     "nodes": [
         {
-            "id": "0x9f6D3A34B493b2e8B6BDB04E45Dc640CdF691a40"
+            "id": "0xDA0FaB0700A4389F6E6679aBAb1692B4601ce9bf"
         },
         {
             "id": "PAUSE_PROXY"
         },
         {
-            "id": "OSM_MOM"
+            "id": "user"
         },
         {
             "id": "PAUSE"
@@ -58,7 +48,7 @@
             "id": "ADM"
         },
         {
-            "id": "PIP_UNIV2USDCETH"
+            "id": "0xa1cB9e29f1727d8a0a6E3e0c1334A2323312A2d5"
         }
     ]
 }

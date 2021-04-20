@@ -1,9 +1,9 @@
 {
     "links": [
         {
-            "target": "PIP_PAXUSD",
+            "target": "ILK_REGISTRY",
             "source": "PAUSE_PROXY",
-            "label": "owner"
+            "label": "ward"
         },
         {
             "target": "PAUSE_PROXY",
@@ -32,7 +32,7 @@
             "id": "ADM"
         },
         {
-            "id": "PIP_PAXUSD"
+            "id": "ILK_REGISTRY"
         }
     ]
 }

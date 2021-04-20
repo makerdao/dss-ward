@@ -1,1 +1,119 @@
-[]
+{
+    "links": [
+        {
+            "target": "PIP_BAT",
+            "source": "PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "PIP_BAT",
+            "source": "OSM_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "PIP_BAT",
+            "source": "SPOT",
+            "label": "bud"
+        },
+        {
+            "target": "PIP_BAT",
+            "source": "END",
+            "label": "bud"
+        },
+        {
+            "target": "PIP_BAT",
+            "source": "0xeAa474cbFFA87Ae0F1a6f68a3aBA6C77C656F72c",
+            "label": "bud"
+        },
+        {
+            "target": "PAUSE_PROXY",
+            "source": "PAUSE",
+            "label": "owner"
+        },
+        {
+            "target": "OSM_MOM",
+            "source": "PAUSE_PROXY",
+            "label": "owner"
+        },
+        {
+            "target": "OSM_MOM",
+            "source": "ADM",
+            "label": "authority"
+        },
+        {
+            "target": "SPOT",
+            "source": "END",
+            "label": "ward"
+        },
+        {
+            "target": "SPOT",
+            "source": "PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "END",
+            "source": "ESM",
+            "label": "ward"
+        },
+        {
+            "target": "END",
+            "source": "PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "0xeAa474cbFFA87Ae0F1a6f68a3aBA6C77C656F72c",
+            "source": "0x0528A32fda5beDf89Ba9ad67296db83c9452F28C",
+            "label": "owner"
+        },
+        {
+            "target": "PAUSE",
+            "source": "ADM",
+            "label": "authority"
+        },
+        {
+            "target": "ADM",
+            "source": "ADM",
+            "label": "authority"
+        },
+        {
+            "target": "0x0528A32fda5beDf89Ba9ad67296db83c9452F28C",
+            "source": "user",
+            "label": "eoa"
+        }
+    ],
+    "nodes": [
+        {
+            "id": "PAUSE_PROXY"
+        },
+        {
+            "id": "OSM_MOM"
+        },
+        {
+            "id": "SPOT"
+        },
+        {
+            "id": "END"
+        },
+        {
+            "id": "0xeAa474cbFFA87Ae0F1a6f68a3aBA6C77C656F72c"
+        },
+        {
+            "id": "PAUSE"
+        },
+        {
+            "id": "ADM"
+        },
+        {
+            "id": "ESM"
+        },
+        {
+            "id": "0x0528A32fda5beDf89Ba9ad67296db83c9452F28C"
+        },
+        {
+            "id": "user"
+        },
+        {
+            "id": "PIP_BAT"
+        }
+    ]
+}

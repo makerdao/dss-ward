@@ -1,447 +1,95 @@
-[
-    {
-        "dst": "PIP_BAT_SRC",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_BAT_SRC",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_BAT_SRC",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_BAT_SRC",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_BAT_SRC",
-        "src": "PIP_BAT",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_BAT_SRC",
-        "src": "0xAdf49005A69AA892572C7d27b6Dc8C0409cc0E3d",
-        "lbl": "bud"
-    },
-    {
-        "dst": "MCD_PAUSE_PROXY",
-        "src": "MCD_PAUSE",
-        "lbl": "owner"
-    },
-    {
-        "dst": "MCD_PAUSE",
-        "src": "MCD_ADM",
-        "lbl": "authority"
-    },
-    {
-        "dst": "MCD_ADM",
-        "src": "MCD_ADM",
-        "lbl": "authority"
-    },
-    {
-        "dst": "PIP_COMP",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_COMP",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_COMP",
-        "src": "OSM_MOM",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_COMP",
-        "src": "MCD_SPOT",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_COMP",
-        "src": "MCD_END",
-        "lbl": "bud"
-    },
-    {
-        "dst": "OSM_MOM",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "owner"
-    },
-    {
-        "dst": "OSM_MOM",
-        "src": "MCD_ADM",
-        "lbl": "authority"
-    },
-    {
-        "dst": "MCD_SPOT",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "MCD_SPOT",
-        "src": "MCD_END",
-        "lbl": "ward"
-    },
-    {
-        "dst": "MCD_END",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "MCD_END",
-        "src": "MCD_ESM_BUG",
-        "lbl": "ward"
-    },
-    {
-        "dst": "MCD_END",
-        "src": "MCD_ESM_ATTACK",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_COMP_SRC",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_COMP_SRC",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_COMP_SRC",
-        "src": "0x12AEE3135c20D2c8a43845Ac589C7EddE816E9D6",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_COMP_SRC",
-        "src": "0xA4BED5338632a769e0ddaa3b89cdE0a47DF89d7a",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_COMP_SRC",
-        "src": "0x5EC67c47AD34836b97E21dEF62b324c65FCfB7c2",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_COMP_SRC",
-        "src": "PIP_COMP",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_COMP_SRC",
-        "src": "0xAdf49005A69AA892572C7d27b6Dc8C0409cc0E3d",
-        "lbl": "bud"
-    },
-    {
-        "dst": "0x12AEE3135c20D2c8a43845Ac589C7EddE816E9D6",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0x12AEE3135c20D2c8a43845Ac589C7EddE816E9D6",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0x12AEE3135c20D2c8a43845Ac589C7EddE816E9D6",
-        "src": "MCD_SPOT",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0xA4BED5338632a769e0ddaa3b89cdE0a47DF89d7a",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0xA4BED5338632a769e0ddaa3b89cdE0a47DF89d7a",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0xA4BED5338632a769e0ddaa3b89cdE0a47DF89d7a",
-        "src": "MCD_SPOT",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0x5EC67c47AD34836b97E21dEF62b324c65FCfB7c2",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0x5EC67c47AD34836b97E21dEF62b324c65FCfB7c2",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0x5EC67c47AD34836b97E21dEF62b324c65FCfB7c2",
-        "src": "MCD_SPOT",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_UNIV2DAIETH_ORB1",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_UNIV2DAIETH_ORB1",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_UNIV2DAIETH_ORB1",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_UNIV2DAIETH_ORB1",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_UNIV2DAIETH_ORB1",
-        "src": "PIP_ETH",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_UNIV2DAIETH_ORB1",
-        "src": "0x1893F52fC008670Ff01dceFF6E84bf4223c8D82B",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_UNIV2DAIETH_ORB1",
-        "src": "0xAdf49005A69AA892572C7d27b6Dc8C0409cc0E3d",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_UNIV2DAIETH_ORB1",
-        "src": "0x2d93CA625AC54cB70aBcBe04d57eD8a2b51e7F4F",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_UNIV2DAIETH_ORB1",
-        "src": "PIP_UNIV2DAIETH",
-        "lbl": "bud"
-    },
-    {
-        "dst": "0x1893F52fC008670Ff01dceFF6E84bf4223c8D82B",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "owner"
-    },
-    {
-        "dst": "0x2d93CA625AC54cB70aBcBe04d57eD8a2b51e7F4F",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0x2d93CA625AC54cB70aBcBe04d57eD8a2b51e7F4F",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_UNIV2DAIETH",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_UNIV2DAIETH",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_UNIV2DAIETH",
-        "src": "OSM_MOM",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_KNC",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_KNC",
-        "src": "OSM_MOM",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_KNC",
-        "src": "MCD_SPOT",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_KNC",
-        "src": "MCD_END",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_KNC_SRC",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_KNC_SRC",
-        "src": "0xbBFFC76e94B34F72D96D054b31f6424249c1337d",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_KNC_SRC",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_KNC_SRC",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_KNC_SRC",
-        "src": "PIP_KNC",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_KNC_SRC",
-        "src": "0xAdf49005A69AA892572C7d27b6Dc8C0409cc0E3d",
-        "lbl": "bud"
-    },
-    {
-        "dst": "0xbBFFC76e94B34F72D96D054b31f6424249c1337d",
-        "src": "0xbBFFC76e94B34F72D96D054b31f6424249c1337d",
-        "lbl": "authority"
-    },
-    {
-        "dst": "PIP_LINK",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_LINK",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_LINK",
-        "src": "OSM_MOM",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_LINK",
-        "src": "MCD_SPOT",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_LINK",
-        "src": "MCD_END",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_LINK",
-        "src": "MCD_CLIP_LINK_A",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_LINK",
-        "src": "CLIPPER_MOM",
-        "lbl": "bud"
-    },
-    {
-        "dst": "MCD_CLIP_LINK_A",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "MCD_CLIP_LINK_A",
-        "src": "MCD_DOG",
-        "lbl": "ward"
-    },
-    {
-        "dst": "MCD_CLIP_LINK_A",
-        "src": "MCD_END",
-        "lbl": "ward"
-    },
-    {
-        "dst": "MCD_CLIP_LINK_A",
-        "src": "CLIPPER_MOM",
-        "lbl": "ward"
-    },
-    {
-        "dst": "MCD_CLIP_LINK_A",
-        "src": "MCD_ESM_ATTACK",
-        "lbl": "ward"
-    },
-    {
-        "dst": "CLIPPER_MOM",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "owner"
-    },
-    {
-        "dst": "CLIPPER_MOM",
-        "src": "MCD_ADM",
-        "lbl": "authority"
-    },
-    {
-        "dst": "MCD_DOG",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "MCD_DOG",
-        "src": "MCD_END",
-        "lbl": "ward"
-    },
-    {
-        "dst": "MCD_DOG",
-        "src": "MCD_CLIP_LINK_A",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_LINK_SRC",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_LINK_SRC",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_LINK_SRC",
-        "src": "PIP_LINK",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_LINK_SRC",
-        "src": "0xAdf49005A69AA892572C7d27b6Dc8C0409cc0E3d",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_LRC",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_LRC",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_LRC",
-        "src": "OSM_MOM",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_LRC",
-        "src": "MCD_SPOT",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_LRC",
-        "src": "MCD_END",
-        "lbl": "bud"
-    }
-]
+{
+    "links": [
+        {
+            "target": "PIP_LRC",
+            "source": "PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "PIP_LRC",
+            "source": "OSM_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "PIP_LRC",
+            "source": "SPOT",
+            "label": "bud"
+        },
+        {
+            "target": "PIP_LRC",
+            "source": "END",
+            "label": "bud"
+        },
+        {
+            "target": "PAUSE_PROXY",
+            "source": "PAUSE",
+            "label": "owner"
+        },
+        {
+            "target": "OSM_MOM",
+            "source": "PAUSE_PROXY",
+            "label": "owner"
+        },
+        {
+            "target": "OSM_MOM",
+            "source": "ADM",
+            "label": "authority"
+        },
+        {
+            "target": "SPOT",
+            "source": "END",
+            "label": "ward"
+        },
+        {
+            "target": "SPOT",
+            "source": "PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "END",
+            "source": "ESM",
+            "label": "ward"
+        },
+        {
+            "target": "END",
+            "source": "PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "PAUSE",
+            "source": "ADM",
+            "label": "authority"
+        },
+        {
+            "target": "ADM",
+            "source": "ADM",
+            "label": "authority"
+        }
+    ],
+    "nodes": [
+        {
+            "id": "PAUSE_PROXY"
+        },
+        {
+            "id": "OSM_MOM"
+        },
+        {
+            "id": "SPOT"
+        },
+        {
+            "id": "END"
+        },
+        {
+            "id": "PAUSE"
+        },
+        {
+            "id": "ADM"
+        },
+        {
+            "id": "ESM"
+        },
+        {
+            "id": "PIP_LRC"
+        }
+    ]
+}

@@ -1,847 +1,103 @@
-[
-    {
-        "dst": "PIP_BAT_SRC",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_BAT_SRC",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_BAT_SRC",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_BAT_SRC",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_BAT_SRC",
-        "src": "PIP_BAT",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_BAT_SRC",
-        "src": "0xAdf49005A69AA892572C7d27b6Dc8C0409cc0E3d",
-        "lbl": "bud"
-    },
-    {
-        "dst": "MCD_PAUSE_PROXY",
-        "src": "MCD_PAUSE",
-        "lbl": "owner"
-    },
-    {
-        "dst": "MCD_PAUSE",
-        "src": "MCD_ADM",
-        "lbl": "authority"
-    },
-    {
-        "dst": "MCD_ADM",
-        "src": "MCD_ADM",
-        "lbl": "authority"
-    },
-    {
-        "dst": "PIP_COMP",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_COMP",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_COMP",
-        "src": "OSM_MOM",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_COMP",
-        "src": "MCD_SPOT",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_COMP",
-        "src": "MCD_END",
-        "lbl": "bud"
-    },
-    {
-        "dst": "OSM_MOM",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "owner"
-    },
-    {
-        "dst": "OSM_MOM",
-        "src": "MCD_ADM",
-        "lbl": "authority"
-    },
-    {
-        "dst": "MCD_SPOT",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "MCD_SPOT",
-        "src": "MCD_END",
-        "lbl": "ward"
-    },
-    {
-        "dst": "MCD_END",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "MCD_END",
-        "src": "MCD_ESM_BUG",
-        "lbl": "ward"
-    },
-    {
-        "dst": "MCD_END",
-        "src": "MCD_ESM_ATTACK",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_COMP_SRC",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_COMP_SRC",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_COMP_SRC",
-        "src": "0x12AEE3135c20D2c8a43845Ac589C7EddE816E9D6",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_COMP_SRC",
-        "src": "0xA4BED5338632a769e0ddaa3b89cdE0a47DF89d7a",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_COMP_SRC",
-        "src": "0x5EC67c47AD34836b97E21dEF62b324c65FCfB7c2",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_COMP_SRC",
-        "src": "PIP_COMP",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_COMP_SRC",
-        "src": "0xAdf49005A69AA892572C7d27b6Dc8C0409cc0E3d",
-        "lbl": "bud"
-    },
-    {
-        "dst": "0x12AEE3135c20D2c8a43845Ac589C7EddE816E9D6",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0x12AEE3135c20D2c8a43845Ac589C7EddE816E9D6",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0x12AEE3135c20D2c8a43845Ac589C7EddE816E9D6",
-        "src": "MCD_SPOT",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0xA4BED5338632a769e0ddaa3b89cdE0a47DF89d7a",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0xA4BED5338632a769e0ddaa3b89cdE0a47DF89d7a",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0xA4BED5338632a769e0ddaa3b89cdE0a47DF89d7a",
-        "src": "MCD_SPOT",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0x5EC67c47AD34836b97E21dEF62b324c65FCfB7c2",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0x5EC67c47AD34836b97E21dEF62b324c65FCfB7c2",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0x5EC67c47AD34836b97E21dEF62b324c65FCfB7c2",
-        "src": "MCD_SPOT",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_UNIV2DAIETH_ORB1",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_UNIV2DAIETH_ORB1",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_UNIV2DAIETH_ORB1",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_UNIV2DAIETH_ORB1",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_UNIV2DAIETH_ORB1",
-        "src": "PIP_ETH",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_UNIV2DAIETH_ORB1",
-        "src": "0x1893F52fC008670Ff01dceFF6E84bf4223c8D82B",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_UNIV2DAIETH_ORB1",
-        "src": "0xAdf49005A69AA892572C7d27b6Dc8C0409cc0E3d",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_UNIV2DAIETH_ORB1",
-        "src": "0x2d93CA625AC54cB70aBcBe04d57eD8a2b51e7F4F",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_UNIV2DAIETH_ORB1",
-        "src": "PIP_UNIV2DAIETH",
-        "lbl": "bud"
-    },
-    {
-        "dst": "0x1893F52fC008670Ff01dceFF6E84bf4223c8D82B",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "owner"
-    },
-    {
-        "dst": "0x2d93CA625AC54cB70aBcBe04d57eD8a2b51e7F4F",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0x2d93CA625AC54cB70aBcBe04d57eD8a2b51e7F4F",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_UNIV2DAIETH",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_UNIV2DAIETH",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_UNIV2DAIETH",
-        "src": "OSM_MOM",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_KNC",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_KNC",
-        "src": "OSM_MOM",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_KNC",
-        "src": "MCD_SPOT",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_KNC",
-        "src": "MCD_END",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_KNC_SRC",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_KNC_SRC",
-        "src": "0xbBFFC76e94B34F72D96D054b31f6424249c1337d",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_KNC_SRC",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_KNC_SRC",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_KNC_SRC",
-        "src": "PIP_KNC",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_KNC_SRC",
-        "src": "0xAdf49005A69AA892572C7d27b6Dc8C0409cc0E3d",
-        "lbl": "bud"
-    },
-    {
-        "dst": "0xbBFFC76e94B34F72D96D054b31f6424249c1337d",
-        "src": "0xbBFFC76e94B34F72D96D054b31f6424249c1337d",
-        "lbl": "authority"
-    },
-    {
-        "dst": "PIP_LINK",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_LINK",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_LINK",
-        "src": "OSM_MOM",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_LINK",
-        "src": "MCD_SPOT",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_LINK",
-        "src": "MCD_END",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_LINK",
-        "src": "MCD_CLIP_LINK_A",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_LINK",
-        "src": "CLIPPER_MOM",
-        "lbl": "bud"
-    },
-    {
-        "dst": "MCD_CLIP_LINK_A",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "MCD_CLIP_LINK_A",
-        "src": "MCD_DOG",
-        "lbl": "ward"
-    },
-    {
-        "dst": "MCD_CLIP_LINK_A",
-        "src": "MCD_END",
-        "lbl": "ward"
-    },
-    {
-        "dst": "MCD_CLIP_LINK_A",
-        "src": "CLIPPER_MOM",
-        "lbl": "ward"
-    },
-    {
-        "dst": "MCD_CLIP_LINK_A",
-        "src": "MCD_ESM_ATTACK",
-        "lbl": "ward"
-    },
-    {
-        "dst": "CLIPPER_MOM",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "owner"
-    },
-    {
-        "dst": "CLIPPER_MOM",
-        "src": "MCD_ADM",
-        "lbl": "authority"
-    },
-    {
-        "dst": "MCD_DOG",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "MCD_DOG",
-        "src": "MCD_END",
-        "lbl": "ward"
-    },
-    {
-        "dst": "MCD_DOG",
-        "src": "MCD_CLIP_LINK_A",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_LINK_SRC",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_LINK_SRC",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_LINK_SRC",
-        "src": "PIP_LINK",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_LINK_SRC",
-        "src": "0xAdf49005A69AA892572C7d27b6Dc8C0409cc0E3d",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_LRC",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_LRC",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_LRC",
-        "src": "OSM_MOM",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_LRC",
-        "src": "MCD_SPOT",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_LRC",
-        "src": "MCD_END",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_LRC_SRC",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_LRC_SRC",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_LRC_SRC",
-        "src": "PIP_LRC",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_LRC_SRC",
-        "src": "0xAdf49005A69AA892572C7d27b6Dc8C0409cc0E3d",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_MANA",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_MANA",
-        "src": "OSM_MOM",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_MANA",
-        "src": "MCD_SPOT",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_MANA",
-        "src": "MCD_END",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_MANA_SRC",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_MANA_SRC",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_MANA_SRC",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_MANA_SRC",
-        "src": "PIP_MANA",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_PAXUSD",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "owner"
-    },
-    {
-        "dst": "PIP_TUSD",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "owner"
-    },
-    {
-        "dst": "PIP_USDC",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "owner"
-    },
-    {
-        "dst": "PIP_USDT",
-        "src": "0xe8D1bea8907dB186C4baa631b4d3dA4bC98c0001",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_USDT",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_USDT",
-        "src": "OSM_MOM",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_USDT",
-        "src": "MCD_SPOT",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_USDT",
-        "src": "MCD_END",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_USDT_SRC",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_USDT_SRC",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_USDT_SRC",
-        "src": "PIP_USDT",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_USDT_SRC",
-        "src": "0xAdf49005A69AA892572C7d27b6Dc8C0409cc0E3d",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_RENBTC",
-        "src": "0x00DaA9a2D88BEd5a29A6ca93e0B7d860cd1d403F",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_RENBTC",
-        "src": "0xdB33dFD3D61308C33C63209845DaD3e6bfb2c674",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_RENBTC",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_RENBTC",
-        "src": "OSM_MOM",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_RENBTC",
-        "src": "0x646F7ba52aeC7669d49CD946F3944dc4D8Cf7976",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_RENBTC",
-        "src": "0x14367e0eB5b6D668feb71B4757838CBF0B6B485B",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_RENBTC",
-        "src": "0xC7c9EF556BE00b22FaC9060b06Ea4604756053f2",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_RENBTC",
-        "src": "0xe25f8867d9941f679E871D2A68Ad04b9813879D5",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_RENBTC",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_RENBTC",
-        "src": "MCD_SPOT",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_RENBTC",
-        "src": "0xd2150fa2fCFE8D672F10fDfcaed95c651C28aB17",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_RENBTC",
-        "src": "0x5864164561ea097bBD4243FDd3dd661BB6Ca1f70",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_RENBTC",
-        "src": "0xFcBc6f79235E1FA4c95E570488B916238E574F86",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_RENBTC",
-        "src": "0x14e3A9b7577b4b6F02EBEa6e146bC0C6060431cB",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_RENBTC",
-        "src": "0xe301DA24B02baD41a7c24942DC965E03e2AAEa87",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_RENBTC",
-        "src": "0x571b90924773b643dB0A6B09C288E827B8484ACe",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_RENBTC",
-        "src": "0xd8A43939C718e02abAD9eeb0A4BEE27d6b53e07E",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_RENBTC",
-        "src": "0x07FD7b41A90c1da736d811e8b8875368A8091cfe",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_RENBTC",
-        "src": "MCD_END",
-        "lbl": "bud"
-    },
-    {
-        "dst": "0x646F7ba52aeC7669d49CD946F3944dc4D8Cf7976",
-        "src": "0x55db3055436AB028D8E90F3394F656eDc99DAA14",
-        "lbl": "owner"
-    },
-    {
-        "dst": "0x646F7ba52aeC7669d49CD946F3944dc4D8Cf7976",
-        "src": "0xbBFFC76e94B34F72D96D054b31f6424249c1337d",
-        "lbl": "authority"
-    },
-    {
-        "dst": "0x14367e0eB5b6D668feb71B4757838CBF0B6B485B",
-        "src": "0x40Dd55977AaC95A213D11a89558F260FDB3B14aa",
-        "lbl": "owner"
-    },
-    {
-        "dst": "0x14367e0eB5b6D668feb71B4757838CBF0B6B485B",
-        "src": "0xbBFFC76e94B34F72D96D054b31f6424249c1337d",
-        "lbl": "authority"
-    },
-    {
-        "dst": "0xC7c9EF556BE00b22FaC9060b06Ea4604756053f2",
-        "src": "0xcf6AA13fC09c8777819634a0D6BF5471185E0aEc",
-        "lbl": "owner"
-    },
-    {
-        "dst": "0xC7c9EF556BE00b22FaC9060b06Ea4604756053f2",
-        "src": "MCD_ADM",
-        "lbl": "authority"
-    },
-    {
-        "dst": "0xe25f8867d9941f679E871D2A68Ad04b9813879D5",
-        "src": "0xa45072558c479A3d468A5487A9225d7c9b578a6F",
-        "lbl": "owner"
-    },
-    {
-        "dst": "0xe25f8867d9941f679E871D2A68Ad04b9813879D5",
-        "src": "MCD_ADM",
-        "lbl": "authority"
-    },
-    {
-        "dst": "0xd2150fa2fCFE8D672F10fDfcaed95c651C28aB17",
-        "src": "0x5864164561ea097bBD4243FDd3dd661BB6Ca1f70",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0xd2150fa2fCFE8D672F10fDfcaed95c651C28aB17",
-        "src": "0x55db3055436AB028D8E90F3394F656eDc99DAA14",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0x5864164561ea097bBD4243FDd3dd661BB6Ca1f70",
-        "src": "0xB5947194763507494601001B20De77fb9b39e018",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0x5864164561ea097bBD4243FDd3dd661BB6Ca1f70",
-        "src": "0x55db3055436AB028D8E90F3394F656eDc99DAA14",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0xFcBc6f79235E1FA4c95E570488B916238E574F86",
-        "src": "0x14e3A9b7577b4b6F02EBEa6e146bC0C6060431cB",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0xFcBc6f79235E1FA4c95E570488B916238E574F86",
-        "src": "0x40Dd55977AaC95A213D11a89558F260FDB3B14aa",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0x14e3A9b7577b4b6F02EBEa6e146bC0C6060431cB",
-        "src": "0xd2F1c9905865Dd5A9fD59EAf45ab664C3CD694B3",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0x14e3A9b7577b4b6F02EBEa6e146bC0C6060431cB",
-        "src": "0x40Dd55977AaC95A213D11a89558F260FDB3B14aa",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0xe301DA24B02baD41a7c24942DC965E03e2AAEa87",
-        "src": "0x571b90924773b643dB0A6B09C288E827B8484ACe",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0xe301DA24B02baD41a7c24942DC965E03e2AAEa87",
-        "src": "0xcf6AA13fC09c8777819634a0D6BF5471185E0aEc",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0x571b90924773b643dB0A6B09C288E827B8484ACe",
-        "src": "0xF014933dB27D6865374f10bB0D74cF59D9f7099B",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0x571b90924773b643dB0A6B09C288E827B8484ACe",
-        "src": "0xcf6AA13fC09c8777819634a0D6BF5471185E0aEc",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0xd8A43939C718e02abAD9eeb0A4BEE27d6b53e07E",
-        "src": "0x07FD7b41A90c1da736d811e8b8875368A8091cfe",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0xd8A43939C718e02abAD9eeb0A4BEE27d6b53e07E",
-        "src": "0xa45072558c479A3d468A5487A9225d7c9b578a6F",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0x07FD7b41A90c1da736d811e8b8875368A8091cfe",
-        "src": "0x176D79b700b68d2B97fb85F3b4AeE5d9f33828A6",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0x07FD7b41A90c1da736d811e8b8875368A8091cfe",
-        "src": "0xa45072558c479A3d468A5487A9225d7c9b578a6F",
-        "lbl": "ward"
-    },
-    {
-        "dst": "0x55db3055436AB028D8E90F3394F656eDc99DAA14",
-        "src": "0x5585795A8eD4f1a71D3cFbc61F089c89b0A77c7C",
-        "lbl": "owner"
-    },
-    {
-        "dst": "0x40Dd55977AaC95A213D11a89558F260FDB3B14aa",
-        "src": "0x2776f6F417c0F87D94881ECD2b2Bf0fF70ea649C",
-        "lbl": "owner"
-    },
-    {
-        "dst": "0xcf6AA13fC09c8777819634a0D6BF5471185E0aEc",
-        "src": "0x8578A12A0E133b86dD90812A76B82a6958Aa4EA0",
-        "lbl": "owner"
-    },
-    {
-        "dst": "0xa45072558c479A3d468A5487A9225d7c9b578a6F",
-        "src": "0x3Aa10b765fd93c27ACfA4fC3744234e9a0935391",
-        "lbl": "owner"
-    },
-    {
-        "dst": "0x5585795A8eD4f1a71D3cFbc61F089c89b0A77c7C",
-        "src": "0xbBFFC76e94B34F72D96D054b31f6424249c1337d",
-        "lbl": "authority"
-    },
-    {
-        "dst": "0x2776f6F417c0F87D94881ECD2b2Bf0fF70ea649C",
-        "src": "0xbBFFC76e94B34F72D96D054b31f6424249c1337d",
-        "lbl": "authority"
-    },
-    {
-        "dst": "0x8578A12A0E133b86dD90812A76B82a6958Aa4EA0",
-        "src": "MCD_ADM",
-        "lbl": "authority"
-    },
-    {
-        "dst": "0x3Aa10b765fd93c27ACfA4fC3744234e9a0935391",
-        "src": "MCD_ADM",
-        "lbl": "authority"
-    },
-    {
-        "dst": "PIP_RENBTC_SRC",
-        "src": "0x00DaA9a2D88BEd5a29A6ca93e0B7d860cd1d403F",
-        "lbl": "owner"
-    },
-    {
-        "dst": "PIP_ZRX",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_ZRX",
-        "src": "OSM_MOM",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_ZRX",
-        "src": "MCD_SPOT",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_ZRX",
-        "src": "MCD_END",
-        "lbl": "bud"
-    }
-]
+{
+    "links": [
+        {
+            "target": "PIP_ZRX",
+            "source": "PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "PIP_ZRX",
+            "source": "OSM_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "PIP_ZRX",
+            "source": "SPOT",
+            "label": "bud"
+        },
+        {
+            "target": "PIP_ZRX",
+            "source": "END",
+            "label": "bud"
+        },
+        {
+            "target": "PIP_ZRX",
+            "source": "0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777",
+            "label": "bud"
+        },
+        {
+            "target": "PAUSE_PROXY",
+            "source": "PAUSE",
+            "label": "owner"
+        },
+        {
+            "target": "OSM_MOM",
+            "source": "PAUSE_PROXY",
+            "label": "owner"
+        },
+        {
+            "target": "OSM_MOM",
+            "source": "ADM",
+            "label": "authority"
+        },
+        {
+            "target": "SPOT",
+            "source": "END",
+            "label": "ward"
+        },
+        {
+            "target": "SPOT",
+            "source": "PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "END",
+            "source": "ESM",
+            "label": "ward"
+        },
+        {
+            "target": "END",
+            "source": "PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "PAUSE",
+            "source": "ADM",
+            "label": "authority"
+        },
+        {
+            "target": "ADM",
+            "source": "ADM",
+            "label": "authority"
+        }
+    ],
+    "nodes": [
+        {
+            "id": "PAUSE_PROXY"
+        },
+        {
+            "id": "OSM_MOM"
+        },
+        {
+            "id": "SPOT"
+        },
+        {
+            "id": "END"
+        },
+        {
+            "id": "0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777"
+        },
+        {
+            "id": "PAUSE"
+        },
+        {
+            "id": "ADM"
+        },
+        {
+            "id": "ESM"
+        },
+        {
+            "id": "PIP_ZRX"
+        }
+    ]
+}

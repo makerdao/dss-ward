@@ -1,0 +1,17 @@
+{
+    "links": [
+        {
+            "target": "PIP_RWA002",
+            "source": "MIP21_LIQUIDATION_ORACLE",
+            "label": "owner"
+        }
+    ],
+    "nodes": [
+        {
+            "id": "MIP21_LIQUIDATION_ORACLE"
+        },
+        {
+            "id": "PIP_RWA002"
+        }
+    ]
+}

@@ -1,47 +1,132 @@
-[
-    {
-        "dst": "PIP_BAT_SRC",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_BAT_SRC",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "ward"
-    },
-    {
-        "dst": "PIP_BAT_SRC",
-        "src": "0x0048d6225D1F3eA4385627eFDC5B4709Cab4A21c",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_BAT_SRC",
-        "src": "MCD_PAUSE_PROXY",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_BAT_SRC",
-        "src": "PIP_BAT",
-        "lbl": "bud"
-    },
-    {
-        "dst": "PIP_BAT_SRC",
-        "src": "0xAdf49005A69AA892572C7d27b6Dc8C0409cc0E3d",
-        "lbl": "bud"
-    },
-    {
-        "dst": "MCD_PAUSE_PROXY",
-        "src": "MCD_PAUSE",
-        "lbl": "owner"
-    },
-    {
-        "dst": "MCD_PAUSE",
-        "src": "MCD_ADM",
-        "lbl": "authority"
-    },
-    {
-        "dst": "MCD_ADM",
-        "src": "MCD_ADM",
-        "lbl": "authority"
-    }
-]
+{
+    "links": [
+        {
+            "target": "PIP_BAT_SRC",
+            "source": "PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "PIP_BAT_SRC",
+            "source": "PIP_BAT",
+            "label": "bud"
+        },
+        {
+            "target": "PAUSE_PROXY",
+            "source": "PAUSE",
+            "label": "owner"
+        },
+        {
+            "target": "PIP_BAT",
+            "source": "PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "PIP_BAT",
+            "source": "OSM_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "PIP_BAT",
+            "source": "SPOT",
+            "label": "bud"
+        },
+        {
+            "target": "PIP_BAT",
+            "source": "END",
+            "label": "bud"
+        },
+        {
+            "target": "PIP_BAT",
+            "source": "0xeAa474cbFFA87Ae0F1a6f68a3aBA6C77C656F72c",
+            "label": "bud"
+        },
+        {
+            "target": "PAUSE",
+            "source": "ADM",
+            "label": "authority"
+        },
+        {
+            "target": "OSM_MOM",
+            "source": "PAUSE_PROXY",
+            "label": "owner"
+        },
+        {
+            "target": "OSM_MOM",
+            "source": "ADM",
+            "label": "authority"
+        },
+        {
+            "target": "SPOT",
+            "source": "END",
+            "label": "ward"
+        },
+        {
+            "target": "SPOT",
+            "source": "PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "END",
+            "source": "ESM",
+            "label": "ward"
+        },
+        {
+            "target": "END",
+            "source": "PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "0xeAa474cbFFA87Ae0F1a6f68a3aBA6C77C656F72c",
+            "source": "0x0528A32fda5beDf89Ba9ad67296db83c9452F28C",
+            "label": "owner"
+        },
+        {
+            "target": "ADM",
+            "source": "ADM",
+            "label": "authority"
+        },
+        {
+            "target": "0x0528A32fda5beDf89Ba9ad67296db83c9452F28C",
+            "source": "user",
+            "label": "eoa"
+        }
+    ],
+    "nodes": [
+        {
+            "id": "PAUSE_PROXY"
+        },
+        {
+            "id": "PIP_BAT"
+        },
+        {
+            "id": "PAUSE"
+        },
+        {
+            "id": "OSM_MOM"
+        },
+        {
+            "id": "SPOT"
+        },
+        {
+            "id": "END"
+        },
+        {
+            "id": "0xeAa474cbFFA87Ae0F1a6f68a3aBA6C77C656F72c"
+        },
+        {
+            "id": "ADM"
+        },
+        {
+            "id": "ESM"
+        },
+        {
+            "id": "0x0528A32fda5beDf89Ba9ad67296db83c9452F28C"
+        },
+        {
+            "id": "user"
+        },
+        {
+            "id": "PIP_BAT_SRC"
+        }
+    ]
+}
