@@ -175,14 +175,22 @@
         simulation.on('tick', () => {
           line
             .attr('x1', d => d.source.x)
-            .attr('y1', d => d.source.y)
-            .attr('x2', d => d.target.x)
+            .attr('y1', d => {
+              if (d.source.x === d.target.x && d.source.y === d.target.y) {
+                return d.source.y + 50;
+              }
+              return d.source.y;
+            }).attr('x2', d => d.target.x)
             .attr('y2', d => d.target.y);
 
           label
             .attr('transform', d => {
-              const x = (d.source.x + d.target.x) / 2;
-              const y = (d.source.y + d.target.y) / 2;
+              let x = (d.source.x + d.target.x) / 2;
+              let y = (d.source.y + d.target.y) / 2;
+              if (d.source.x === d.target.x && d.source.y === d.target.y) {
+                y += 65;
+                x -= 30;
+              }
               return 'translate(' + x + ',' + y + ')'
             });
 
