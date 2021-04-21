@@ -1,0 +1,22 @@
+{
+    "links": [
+        {
+            "target": "PROXY_DEPLOYER",
+            "source": "0xdDb108893104dE4E1C6d0E47c42237dB4E617ACc",
+            "label": "owner"
+        },
+        {
+            "target": "0xdDb108893104dE4E1C6d0E47c42237dB4E617ACc",
+            "source": "0xdDb108893104dE4E1C6d0E47c42237dB4E617ACc",
+            "label": "externally owned account"
+        }
+    ],
+    "nodes": [
+        {
+            "id": "0xdDb108893104dE4E1C6d0E47c42237dB4E617ACc"
+        },
+        {
+            "id": "PROXY_DEPLOYER"
+        }
+    ]
+}

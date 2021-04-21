@@ -162,8 +162,8 @@
         },
         {
             "target": "0xD7518704C86Dea22a0Ab2f146435e3e1cCBc16ea",
-            "source": "user",
-            "label": "eoa"
+            "source": "0xD7518704C86Dea22a0Ab2f146435e3e1cCBc16ea",
+            "label": "externally owned account"
         },
         {
             "target": "MCD_ADM",
@@ -172,8 +172,8 @@
         },
         {
             "target": "0x0528A32fda5beDf89Ba9ad67296db83c9452F28C",
-            "source": "user",
-            "label": "eoa"
+            "source": "0x0528A32fda5beDf89Ba9ad67296db83c9452F28C",
+            "label": "externally owned account"
         }
     ],
     "nodes": [
@@ -239,9 +239,6 @@
         },
         {
             "id": "0x0528A32fda5beDf89Ba9ad67296db83c9452F28C"
-        },
-        {
-            "id": "user"
         },
         {
             "id": "PIP_UNIV2WBTCDAI_ORB0"

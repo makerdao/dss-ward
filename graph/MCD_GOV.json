@@ -1,0 +1,17 @@
+{
+    "links": [
+        {
+            "target": "MCD_GOV",
+            "source": "GOV_GUARD",
+            "label": "authority"
+        }
+    ],
+    "nodes": [
+        {
+            "id": "GOV_GUARD"
+        },
+        {
+            "id": "MCD_GOV"
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "links": [
+        {
+            "target": "WBTC",
+            "source": "0xCA06411bd7a7296d7dbdd0050DFc846E95fEBEB7",
+            "label": "owner"
+        },
+        {
+            "target": "0xCA06411bd7a7296d7dbdd0050DFc846E95fEBEB7",
+            "source": "0xD409dB68d0E6E97E1cB1F3EB0BD38dE278bc3C68",
+            "label": "owner"
+        }
+    ],
+    "nodes": [
+        {
+            "id": "0xCA06411bd7a7296d7dbdd0050DFc846E95fEBEB7"
+        },
+        {
+            "id": "0xD409dB68d0E6E97E1cB1F3EB0BD38dE278bc3C68"
+        },
+        {
+            "id": "WBTC"
+        }
+    ]
+}

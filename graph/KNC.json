@@ -1,0 +1,17 @@
+{
+    "links": [
+        {
+            "target": "KNC",
+            "source": "0xFDF28Bf25779ED4cA74e958d54653260af604C20",
+            "label": "owner"
+        }
+    ],
+    "nodes": [
+        {
+            "id": "0xFDF28Bf25779ED4cA74e958d54653260af604C20"
+        },
+        {
+            "id": "KNC"
+        }
+    ]
+}

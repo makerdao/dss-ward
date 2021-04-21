@@ -1,0 +1,25 @@
+{
+    "links": [
+        {
+            "target": "MCD_DAI",
+            "source": "MCD_JOIN_DAI",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_DAI",
+            "source": "0x64a84e558192dd025F3A96775FEE8FB530f27177",
+            "label": "ward"
+        }
+    ],
+    "nodes": [
+        {
+            "id": "MCD_JOIN_DAI"
+        },
+        {
+            "id": "0x64a84e558192dd025F3A96775FEE8FB530f27177"
+        },
+        {
+            "id": "MCD_DAI"
+        }
+    ]
+}

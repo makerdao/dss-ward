@@ -1,14 +1,24 @@
 {
     "links": [
         {
-            "target": "ILK_REGISTRY",
+            "target": "RWA001_A_OUTPUT_CONDUIT",
             "source": "MCD_PAUSE_PROXY",
             "label": "ward"
+        },
+        {
+            "target": "RWA001_A_OUTPUT_CONDUIT",
+            "source": "0xDA0FaB0700A4389F6E6679aBAb1692B4601ce9bf",
+            "label": "bud"
         },
         {
             "target": "MCD_PAUSE_PROXY",
             "source": "MCD_PAUSE",
             "label": "owner"
+        },
+        {
+            "target": "0xDA0FaB0700A4389F6E6679aBAb1692B4601ce9bf",
+            "source": "0xDA0FaB0700A4389F6E6679aBAb1692B4601ce9bf",
+            "label": "externally owned account"
         },
         {
             "target": "MCD_PAUSE",
@@ -26,13 +36,16 @@
             "id": "MCD_PAUSE_PROXY"
         },
         {
+            "id": "0xDA0FaB0700A4389F6E6679aBAb1692B4601ce9bf"
+        },
+        {
             "id": "MCD_PAUSE"
         },
         {
             "id": "MCD_ADM"
         },
         {
-            "id": "ILK_REGISTRY"
+            "id": "RWA001_A_OUTPUT_CONDUIT"
         }
     ]
 }

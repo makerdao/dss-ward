@@ -1,7 +1,7 @@
 {
     "links": [
         {
-            "target": "ILK_REGISTRY",
+            "target": "CHANGELOG",
             "source": "MCD_PAUSE_PROXY",
             "label": "ward"
         },
@@ -32,7 +32,7 @@
             "id": "MCD_ADM"
         },
         {
-            "id": "ILK_REGISTRY"
+            "id": "CHANGELOG"
         }
     ]
 }

@@ -1,0 +1,30 @@
+{
+    "links": [
+        {
+            "target": "MANA",
+            "source": "0xA66d83716c7CFE425B44D0f7ef92dE263468fb3d",
+            "label": "owner"
+        },
+        {
+            "target": "0xA66d83716c7CFE425B44D0f7ef92dE263468fb3d",
+            "source": "0xDf861993Edbe95BAFbfA7760838f8ebbd5Afda9F",
+            "label": "owner"
+        },
+        {
+            "target": "0xDf861993Edbe95BAFbfA7760838f8ebbd5Afda9F",
+            "source": "0xDf861993Edbe95BAFbfA7760838f8ebbd5Afda9F",
+            "label": "externally owned account"
+        }
+    ],
+    "nodes": [
+        {
+            "id": "0xA66d83716c7CFE425B44D0f7ef92dE263468fb3d"
+        },
+        {
+            "id": "0xDf861993Edbe95BAFbfA7760838f8ebbd5Afda9F"
+        },
+        {
+            "id": "MANA"
+        }
+    ]
+}

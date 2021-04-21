@@ -1,6 +1,1451 @@
 {
     "links": [
         {
+            "target": "CHANGELOG",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_PAUSE_PROXY",
+            "source": "MCD_PAUSE",
+            "label": "owner"
+        },
+        {
+            "target": "MCD_PAUSE",
+            "source": "MCD_ADM",
+            "label": "authority"
+        },
+        {
+            "target": "MCD_ADM",
+            "source": "MCD_ADM",
+            "label": "authority"
+        },
+        {
+            "target": "ILK_REGISTRY",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "KNC",
+            "source": "0xFDF28Bf25779ED4cA74e958d54653260af604C20",
+            "label": "owner"
+        },
+        {
+            "target": "MANA",
+            "source": "0xA66d83716c7CFE425B44D0f7ef92dE263468fb3d",
+            "label": "owner"
+        },
+        {
+            "target": "0xA66d83716c7CFE425B44D0f7ef92dE263468fb3d",
+            "source": "0xDf861993Edbe95BAFbfA7760838f8ebbd5Afda9F",
+            "label": "owner"
+        },
+        {
+            "target": "0xDf861993Edbe95BAFbfA7760838f8ebbd5Afda9F",
+            "source": "0xDf861993Edbe95BAFbfA7760838f8ebbd5Afda9F",
+            "label": "externally owned account"
+        },
+        {
+            "target": "MCD_DAI",
+            "source": "MCD_JOIN_DAI",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_DAI",
+            "source": "0x64a84e558192dd025F3A96775FEE8FB530f27177",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_DEPLOY",
+            "source": "0xdDb108893104dE4E1C6d0E47c42237dB4E617ACc",
+            "label": "owner"
+        },
+        {
+            "target": "0xdDb108893104dE4E1C6d0E47c42237dB4E617ACc",
+            "source": "0xdDb108893104dE4E1C6d0E47c42237dB4E617ACc",
+            "label": "externally owned account"
+        },
+        {
+            "target": "MCD_FLAP",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLAP",
+            "source": "MCD_VOW",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VOW",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VOW",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VOW",
+            "source": "MCD_CAT",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_END",
+            "source": "MCD_ESM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_END",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CAT",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CAT",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CAT",
+            "source": "MCD_FLIP_ETH_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CAT",
+            "source": "MCD_FLIP_BAT_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CAT",
+            "source": "MCD_FLIP_USDC_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CAT",
+            "source": "MCD_FLIP_USDC_B",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CAT",
+            "source": "MCD_FLIP_WBTC_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CAT",
+            "source": "MCD_FLIP_TUSD_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CAT",
+            "source": "MCD_FLIP_ZRX_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CAT",
+            "source": "MCD_FLIP_KNC_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CAT",
+            "source": "MCD_FLIP_MANA_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CAT",
+            "source": "MCD_FLIP_USDT_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CAT",
+            "source": "MCD_FLIP_PAXUSD_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CAT",
+            "source": "MCD_FLIP_COMP_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CAT",
+            "source": "MCD_FLIP_LRC_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CAT",
+            "source": "MCD_FLIP_LINK_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CAT",
+            "source": "MCD_FLIP_ETH_B",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CAT",
+            "source": "MCD_FLIP_BAL_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CAT",
+            "source": "MCD_FLIP_YFI_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CAT",
+            "source": "MCD_FLIP_GUSD_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CAT",
+            "source": "MCD_FLIP_UNI_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CAT",
+            "source": "MCD_FLIP_RENBTC_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CAT",
+            "source": "MCD_FLIP_AAVE_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CAT",
+            "source": "MCD_FLIP_UNIV2DAIETH_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CAT",
+            "source": "MCD_FLIP_PSM_USDC_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CAT",
+            "source": "MCD_FLIP_UNIV2WBTCETH_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CAT",
+            "source": "MCD_FLIP_UNIV2USDCETH_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CAT",
+            "source": "MCD_FLIP_UNIV2DAIUSDC_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CAT",
+            "source": "MCD_FLIP_UNIV2ETHUSDT_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CAT",
+            "source": "MCD_FLIP_UNIV2LINKETH_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CAT",
+            "source": "MCD_FLIP_UNIV2UNIETH_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CAT",
+            "source": "MCD_FLIP_UNIV2WBTCDAI_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CAT",
+            "source": "MCD_FLIP_UNIV2AAVEETH_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CAT",
+            "source": "MCD_FLIP_UNIV2DAIUSDT_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CAT",
+            "source": "MCD_FLIP_ETH_C",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_ETH_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_ETH_A",
+            "source": "MCD_CAT",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_ETH_A",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_ETH_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_BAT_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_BAT_A",
+            "source": "MCD_CAT",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_BAT_A",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_BAT_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_USDC_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_USDC_A",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_USDC_B",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_USDC_B",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_WBTC_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_WBTC_A",
+            "source": "MCD_CAT",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_WBTC_A",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_WBTC_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_TUSD_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_TUSD_A",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_ZRX_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_ZRX_A",
+            "source": "MCD_CAT",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_ZRX_A",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_ZRX_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_KNC_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_KNC_A",
+            "source": "MCD_CAT",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_KNC_A",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_KNC_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_MANA_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_MANA_A",
+            "source": "MCD_CAT",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_MANA_A",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_MANA_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_USDT_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_USDT_A",
+            "source": "MCD_CAT",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_USDT_A",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_USDT_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_PAXUSD_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_PAXUSD_A",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_COMP_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_COMP_A",
+            "source": "MCD_CAT",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_COMP_A",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_COMP_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_LRC_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_LRC_A",
+            "source": "MCD_CAT",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_LRC_A",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_LRC_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_LINK_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_LINK_A",
+            "source": "MCD_CAT",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_LINK_A",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_LINK_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_ETH_B",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_ETH_B",
+            "source": "MCD_CAT",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_ETH_B",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_ETH_B",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_BAL_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_BAL_A",
+            "source": "MCD_CAT",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_BAL_A",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_BAL_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_YFI_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_YFI_A",
+            "source": "MCD_CAT",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_YFI_A",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_YFI_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_GUSD_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_GUSD_A",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNI_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNI_A",
+            "source": "MCD_CAT",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNI_A",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNI_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_RENBTC_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_RENBTC_A",
+            "source": "MCD_CAT",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_RENBTC_A",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_RENBTC_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_AAVE_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_AAVE_A",
+            "source": "MCD_CAT",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_AAVE_A",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_AAVE_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2DAIETH_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2DAIETH_A",
+            "source": "MCD_CAT",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2DAIETH_A",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2DAIETH_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_PSM_USDC_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_PSM_USDC_A",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2WBTCETH_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2WBTCETH_A",
+            "source": "MCD_CAT",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2WBTCETH_A",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2WBTCETH_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2USDCETH_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2USDCETH_A",
+            "source": "MCD_CAT",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2USDCETH_A",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2USDCETH_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2DAIUSDC_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2DAIUSDC_A",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2ETHUSDT_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2ETHUSDT_A",
+            "source": "MCD_CAT",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2ETHUSDT_A",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2ETHUSDT_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2LINKETH_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2LINKETH_A",
+            "source": "MCD_CAT",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2LINKETH_A",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2LINKETH_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2UNIETH_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2UNIETH_A",
+            "source": "MCD_CAT",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2UNIETH_A",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2UNIETH_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2WBTCDAI_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2WBTCDAI_A",
+            "source": "MCD_CAT",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2WBTCDAI_A",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2WBTCDAI_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2AAVEETH_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2AAVEETH_A",
+            "source": "MCD_CAT",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2AAVEETH_A",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2AAVEETH_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2DAIUSDT_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2DAIUSDT_A",
+            "source": "MCD_CAT",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2DAIUSDT_A",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2DAIUSDT_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_ETH_C",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_ETH_C",
+            "source": "MCD_CAT",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_ETH_C",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_ETH_C",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "FLIPPER_MOM",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "owner"
+        },
+        {
+            "target": "FLIPPER_MOM",
+            "source": "MCD_ADM",
+            "label": "authority"
+        },
+        {
+            "target": "MCD_GOV",
+            "source": "GOV_GUARD",
+            "label": "authority"
+        },
+        {
+            "target": "PAXUSD",
+            "source": "0xb87cec7BaA2ce4a055F8563e9cC5a210CeDC329F",
+            "label": "owner"
+        },
+        {
+            "target": "0xb87cec7BaA2ce4a055F8563e9cC5a210CeDC329F",
+            "source": "0xb87cec7BaA2ce4a055F8563e9cC5a210CeDC329F",
+            "label": "externally owned account"
+        },
+        {
+            "target": "PROXY_DEPLOYER",
+            "source": "0xdDb108893104dE4E1C6d0E47c42237dB4E617ACc",
+            "label": "owner"
+        },
+        {
+            "target": "TUSD",
+            "source": "0x0000000000075EfBeE23fe2de1bd0b7690883cc9",
+            "label": "owner"
+        },
+        {
+            "target": "0x0000000000075EfBeE23fe2de1bd0b7690883cc9",
+            "source": "0x93fde11c8107127A80ce95100dF611790E4413c9",
+            "label": "owner"
+        },
+        {
+            "target": "USDC",
+            "source": "0xFcb19e6a322b27c06842A71e8c725399f049AE3a",
+            "label": "owner"
+        },
+        {
+            "target": "0xFcb19e6a322b27c06842A71e8c725399f049AE3a",
+            "source": "0xFcb19e6a322b27c06842A71e8c725399f049AE3a",
+            "label": "externally owned account"
+        },
+        {
+            "target": "USDT",
+            "source": "0xC6CDE7C39eB2f0F0095F41570af89eFC2C1Ea828",
+            "label": "owner"
+        },
+        {
+            "target": "WBTC",
+            "source": "0xCA06411bd7a7296d7dbdd0050DFc846E95fEBEB7",
+            "label": "owner"
+        },
+        {
+            "target": "0xCA06411bd7a7296d7dbdd0050DFc846E95fEBEB7",
+            "source": "0xD409dB68d0E6E97E1cB1F3EB0BD38dE278bc3C68",
+            "label": "owner"
+        },
+        {
+            "target": "RENBTC",
+            "source": "0xe4b679400F0f267212D5D812B95f58C83243EE71",
+            "label": "owner"
+        },
+        {
+            "target": "0xe4b679400F0f267212D5D812B95f58C83243EE71",
+            "source": "0xfE43c3a01102EDA295333F5Ad6CC747f03314fdb",
+            "label": "owner"
+        },
+        {
+            "target": "RWA001_A_OUTPUT_CONDUIT",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "RWA001_A_OUTPUT_CONDUIT",
+            "source": "0xDA0FaB0700A4389F6E6679aBAb1692B4601ce9bf",
+            "label": "bud"
+        },
+        {
+            "target": "0xDA0FaB0700A4389F6E6679aBAb1692B4601ce9bf",
+            "source": "0xDA0FaB0700A4389F6E6679aBAb1692B4601ce9bf",
+            "label": "externally owned account"
+        },
+        {
+            "target": "RWA002_A_OUTPUT_CONDUIT",
+            "source": "0x53b2d22d07E069a3b132BfeaaD275b10273d381E",
+            "label": "ward"
+        },
+        {
+            "target": "0x53b2d22d07E069a3b132BfeaaD275b10273d381E",
+            "source": "0xf3BceA7494D8f3ac21585CA4b0E52aa175c24C25",
+            "label": "ward"
+        },
+        {
+            "target": "0x53b2d22d07E069a3b132BfeaaD275b10273d381E",
+            "source": "0x47082A19EC51c5c4d3b3BD47e81e25D174e599a4",
+            "label": "ward"
+        },
+        {
+            "target": "0x53b2d22d07E069a3b132BfeaaD275b10273d381E",
+            "source": "0xDe365B0a88BB785aBE9fA6534e0c2B258348FBb9",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_SPOT",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_JUG",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_POT",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_JOIN_ETH_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_JOIN_BAT_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_JOIN_USDC_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_JOIN_WBTC_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_JOIN_USDC_B",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_JOIN_TUSD_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_JOIN_KNC_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_JOIN_ZRX_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_JOIN_MANA_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_FLOP",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_CAT",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_JOIN_USDT_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_JOIN_PAXUSD_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_JOIN_COMP_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_JOIN_LRC_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_JOIN_LINK_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_JOIN_ETH_B",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_JOIN_BAL_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_JOIN_YFI_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_JOIN_GUSD_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_JOIN_UNI_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_JOIN_RENBTC_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_IAM_AUTO_LINE",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_JOIN_AAVE_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_JOIN_UNIV2DAIETH_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_JOIN_PSM_USDC_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_JOIN_UNIV2WBTCETH_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_JOIN_UNIV2USDCETH_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_JOIN_UNIV2DAIUSDC_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_JOIN_UNIV2ETHUSDT_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_JOIN_UNIV2LINKETH_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_JOIN_UNIV2UNIETH_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_JOIN_UNIV2WBTCDAI_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_JOIN_UNIV2AAVEETH_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_JOIN_UNIV2DAIUSDT_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_JOIN_RWA001_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MIP21_LIQUIDATION_ORACLE",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_JOIN_ETH_C",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_JOIN_RWA002_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_SPOT",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_SPOT",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JUG",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_POT",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_POT",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_ETH_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_BAT_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_USDC_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_WBTC_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_USDC_B",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_TUSD_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_KNC_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_ZRX_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_MANA_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLOP",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLOP",
+            "source": "MCD_VOW",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_USDT_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_PAXUSD_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_COMP_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_LRC_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_LINK_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_ETH_B",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_BAL_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_YFI_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_GUSD_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_UNI_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_RENBTC_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_IAM_AUTO_LINE",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_AAVE_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_UNIV2DAIETH_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_PSM_USDC_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_PSM_USDC_A",
+            "source": "MCD_PSM_USDC_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_UNIV2WBTCETH_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_UNIV2USDCETH_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_UNIV2DAIUSDC_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_UNIV2ETHUSDT_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_UNIV2LINKETH_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_UNIV2UNIETH_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_UNIV2WBTCDAI_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_UNIV2AAVEETH_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_UNIV2DAIUSDT_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_RWA001_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_RWA001_A",
+            "source": "RWA001_A_URN",
+            "label": "ward"
+        },
+        {
+            "target": "MIP21_LIQUIDATION_ORACLE",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_ETH_C",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_RWA002_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_JOIN_RWA002_A",
+            "source": "RWA002_A_URN",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_PSM_USDC_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "RWA001_A_URN",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "RWA002_A_URN",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
             "target": "PIP_BAT",
             "source": "MCD_PAUSE_PROXY",
             "label": "ward"
@@ -26,11 +1471,6 @@
             "label": "bud"
         },
         {
-            "target": "MCD_PAUSE_PROXY",
-            "source": "MCD_PAUSE",
-            "label": "owner"
-        },
-        {
             "target": "OSM_MOM",
             "source": "MCD_PAUSE_PROXY",
             "label": "owner"
@@ -39,26 +1479,6 @@
             "target": "OSM_MOM",
             "source": "MCD_ADM",
             "label": "authority"
-        },
-        {
-            "target": "MCD_SPOT",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_SPOT",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_END",
-            "source": "MCD_ESM",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_END",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
         },
         {
             "target": "0xeAa474cbFFA87Ae0F1a6f68a3aBA6C77C656F72c",
@@ -66,19 +1486,9 @@
             "label": "owner"
         },
         {
-            "target": "MCD_PAUSE",
-            "source": "MCD_ADM",
-            "label": "authority"
-        },
-        {
-            "target": "MCD_ADM",
-            "source": "MCD_ADM",
-            "label": "authority"
-        },
-        {
             "target": "0x0528A32fda5beDf89Ba9ad67296db83c9452F28C",
-            "source": "user",
-            "label": "eoa"
+            "source": "0x0528A32fda5beDf89Ba9ad67296db83c9452F28C",
+            "label": "externally owned account"
         },
         {
             "target": "PIP_BAT_SRC",
@@ -177,8 +1587,8 @@
         },
         {
             "target": "0xd0643BC0D0C879F175556509dbcEe9373379D5C3",
-            "source": "user",
-            "label": "eoa"
+            "source": "0xd0643BC0D0C879F175556509dbcEe9373379D5C3",
+            "label": "externally owned account"
         },
         {
             "target": "PIP_UNIV2AAVEETH_ORB1",
@@ -367,8 +1777,8 @@
         },
         {
             "target": "0xA9E664bB519Dc372C025100eA83255eDC8d9bDE3",
-            "source": "user",
-            "label": "eoa"
+            "source": "0xA9E664bB519Dc372C025100eA83255eDC8d9bDE3",
+            "label": "externally owned account"
         },
         {
             "target": "PIP_KNC",
@@ -677,8 +2087,8 @@
         },
         {
             "target": "0xD7518704C86Dea22a0Ab2f146435e3e1cCBc16ea",
-            "source": "user",
-            "label": "eoa"
+            "source": "0xD7518704C86Dea22a0Ab2f146435e3e1cCBc16ea",
+            "label": "externally owned account"
         },
         {
             "target": "PIP_ZRX",
@@ -931,1276 +2341,14 @@
             "label": "owner"
         },
         {
-            "target": "MIP21_LIQUIDATION_ORACLE",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
             "target": "PIP_RWA002",
             "source": "MIP21_LIQUIDATION_ORACLE",
             "label": "owner"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_SPOT",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_JUG",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_POT",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_JOIN_ETH_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_JOIN_BAT_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_JOIN_USDC_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_JOIN_WBTC_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_JOIN_USDC_B",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_JOIN_TUSD_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_JOIN_KNC_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_JOIN_ZRX_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_JOIN_MANA_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_FLOP",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_CAT",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_JOIN_USDT_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_JOIN_PAXUSD_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_JOIN_COMP_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_JOIN_LRC_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_JOIN_LINK_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_JOIN_ETH_B",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_JOIN_BAL_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_JOIN_YFI_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_JOIN_GUSD_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_JOIN_UNI_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_JOIN_RENBTC_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_IAM_AUTO_LINE",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_JOIN_AAVE_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_JOIN_UNIV2DAIETH_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_JOIN_PSM_USDC_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_JOIN_UNIV2WBTCETH_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_JOIN_UNIV2USDCETH_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_JOIN_UNIV2DAIUSDC_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_JOIN_UNIV2ETHUSDT_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_JOIN_UNIV2LINKETH_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_JOIN_UNIV2UNIETH_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_JOIN_UNIV2WBTCDAI_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_JOIN_UNIV2AAVEETH_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_JOIN_UNIV2DAIUSDT_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_JOIN_RWA001_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MIP21_LIQUIDATION_ORACLE",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_JOIN_ETH_C",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_JOIN_RWA002_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JUG",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_POT",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_POT",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JOIN_ETH_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JOIN_BAT_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JOIN_USDC_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JOIN_WBTC_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JOIN_USDC_B",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JOIN_TUSD_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JOIN_KNC_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JOIN_ZRX_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JOIN_MANA_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLOP",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLOP",
-            "source": "MCD_VOW",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_CAT",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_CAT",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_CAT",
-            "source": "MCD_FLIP_ETH_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_CAT",
-            "source": "MCD_FLIP_BAT_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_CAT",
-            "source": "MCD_FLIP_USDC_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_CAT",
-            "source": "MCD_FLIP_USDC_B",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_CAT",
-            "source": "MCD_FLIP_WBTC_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_CAT",
-            "source": "MCD_FLIP_TUSD_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_CAT",
-            "source": "MCD_FLIP_ZRX_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_CAT",
-            "source": "MCD_FLIP_KNC_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_CAT",
-            "source": "MCD_FLIP_MANA_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_CAT",
-            "source": "MCD_FLIP_USDT_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_CAT",
-            "source": "MCD_FLIP_PAXUSD_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_CAT",
-            "source": "MCD_FLIP_COMP_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_CAT",
-            "source": "MCD_FLIP_LRC_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_CAT",
-            "source": "MCD_FLIP_LINK_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_CAT",
-            "source": "MCD_FLIP_ETH_B",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_CAT",
-            "source": "MCD_FLIP_BAL_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_CAT",
-            "source": "MCD_FLIP_YFI_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_CAT",
-            "source": "MCD_FLIP_GUSD_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_CAT",
-            "source": "MCD_FLIP_UNI_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_CAT",
-            "source": "MCD_FLIP_RENBTC_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_CAT",
-            "source": "MCD_FLIP_AAVE_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_CAT",
-            "source": "MCD_FLIP_UNIV2DAIETH_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_CAT",
-            "source": "MCD_FLIP_PSM_USDC_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_CAT",
-            "source": "MCD_FLIP_UNIV2WBTCETH_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_CAT",
-            "source": "MCD_FLIP_UNIV2USDCETH_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_CAT",
-            "source": "MCD_FLIP_UNIV2DAIUSDC_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_CAT",
-            "source": "MCD_FLIP_UNIV2ETHUSDT_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_CAT",
-            "source": "MCD_FLIP_UNIV2LINKETH_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_CAT",
-            "source": "MCD_FLIP_UNIV2UNIETH_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_CAT",
-            "source": "MCD_FLIP_UNIV2WBTCDAI_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_CAT",
-            "source": "MCD_FLIP_UNIV2AAVEETH_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_CAT",
-            "source": "MCD_FLIP_UNIV2DAIUSDT_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_CAT",
-            "source": "MCD_FLIP_ETH_C",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JOIN_USDT_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JOIN_PAXUSD_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JOIN_COMP_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JOIN_LRC_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JOIN_LINK_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JOIN_ETH_B",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JOIN_BAL_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JOIN_YFI_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JOIN_GUSD_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JOIN_UNI_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JOIN_RENBTC_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_IAM_AUTO_LINE",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JOIN_AAVE_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JOIN_UNIV2DAIETH_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JOIN_PSM_USDC_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JOIN_PSM_USDC_A",
-            "source": "MCD_PSM_USDC_A",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JOIN_UNIV2WBTCETH_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JOIN_UNIV2USDCETH_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JOIN_UNIV2DAIUSDC_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JOIN_UNIV2ETHUSDT_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JOIN_UNIV2LINKETH_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JOIN_UNIV2UNIETH_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JOIN_UNIV2WBTCDAI_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JOIN_UNIV2AAVEETH_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JOIN_UNIV2DAIUSDT_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JOIN_RWA001_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JOIN_RWA001_A",
-            "source": "RWA001_A_URN",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JOIN_ETH_C",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JOIN_RWA002_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_JOIN_RWA002_A",
-            "source": "RWA002_A_URN",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VOW",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VOW",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VOW",
-            "source": "MCD_CAT",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_ETH_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_ETH_A",
-            "source": "MCD_CAT",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_ETH_A",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_ETH_A",
-            "source": "FLIPPER_MOM",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_BAT_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_BAT_A",
-            "source": "MCD_CAT",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_BAT_A",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_BAT_A",
-            "source": "FLIPPER_MOM",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_USDC_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_USDC_A",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_USDC_B",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_USDC_B",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_WBTC_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_WBTC_A",
-            "source": "MCD_CAT",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_WBTC_A",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_WBTC_A",
-            "source": "FLIPPER_MOM",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_TUSD_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_TUSD_A",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_ZRX_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_ZRX_A",
-            "source": "MCD_CAT",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_ZRX_A",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_ZRX_A",
-            "source": "FLIPPER_MOM",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_KNC_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_KNC_A",
-            "source": "MCD_CAT",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_KNC_A",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_KNC_A",
-            "source": "FLIPPER_MOM",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_MANA_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_MANA_A",
-            "source": "MCD_CAT",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_MANA_A",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_MANA_A",
-            "source": "FLIPPER_MOM",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_USDT_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_USDT_A",
-            "source": "MCD_CAT",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_USDT_A",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_USDT_A",
-            "source": "FLIPPER_MOM",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_PAXUSD_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_PAXUSD_A",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_COMP_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_COMP_A",
-            "source": "MCD_CAT",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_COMP_A",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_COMP_A",
-            "source": "FLIPPER_MOM",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_LRC_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_LRC_A",
-            "source": "MCD_CAT",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_LRC_A",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_LRC_A",
-            "source": "FLIPPER_MOM",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_LINK_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_LINK_A",
-            "source": "MCD_CAT",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_LINK_A",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_LINK_A",
-            "source": "FLIPPER_MOM",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_ETH_B",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_ETH_B",
-            "source": "MCD_CAT",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_ETH_B",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_ETH_B",
-            "source": "FLIPPER_MOM",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_BAL_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_BAL_A",
-            "source": "MCD_CAT",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_BAL_A",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_BAL_A",
-            "source": "FLIPPER_MOM",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_YFI_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_YFI_A",
-            "source": "MCD_CAT",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_YFI_A",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_YFI_A",
-            "source": "FLIPPER_MOM",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_GUSD_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_GUSD_A",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNI_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNI_A",
-            "source": "MCD_CAT",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNI_A",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNI_A",
-            "source": "FLIPPER_MOM",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_RENBTC_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_RENBTC_A",
-            "source": "MCD_CAT",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_RENBTC_A",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_RENBTC_A",
-            "source": "FLIPPER_MOM",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_AAVE_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_AAVE_A",
-            "source": "MCD_CAT",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_AAVE_A",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_AAVE_A",
-            "source": "FLIPPER_MOM",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNIV2DAIETH_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNIV2DAIETH_A",
-            "source": "MCD_CAT",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNIV2DAIETH_A",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNIV2DAIETH_A",
-            "source": "FLIPPER_MOM",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_PSM_USDC_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_PSM_USDC_A",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNIV2WBTCETH_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNIV2WBTCETH_A",
-            "source": "MCD_CAT",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNIV2WBTCETH_A",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNIV2WBTCETH_A",
-            "source": "FLIPPER_MOM",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNIV2USDCETH_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNIV2USDCETH_A",
-            "source": "MCD_CAT",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNIV2USDCETH_A",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNIV2USDCETH_A",
-            "source": "FLIPPER_MOM",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNIV2DAIUSDC_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNIV2DAIUSDC_A",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNIV2ETHUSDT_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNIV2ETHUSDT_A",
-            "source": "MCD_CAT",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNIV2ETHUSDT_A",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNIV2ETHUSDT_A",
-            "source": "FLIPPER_MOM",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNIV2LINKETH_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNIV2LINKETH_A",
-            "source": "MCD_CAT",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNIV2LINKETH_A",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNIV2LINKETH_A",
-            "source": "FLIPPER_MOM",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNIV2UNIETH_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNIV2UNIETH_A",
-            "source": "MCD_CAT",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNIV2UNIETH_A",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNIV2UNIETH_A",
-            "source": "FLIPPER_MOM",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNIV2WBTCDAI_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNIV2WBTCDAI_A",
-            "source": "MCD_CAT",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNIV2WBTCDAI_A",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNIV2WBTCDAI_A",
-            "source": "FLIPPER_MOM",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNIV2AAVEETH_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNIV2AAVEETH_A",
-            "source": "MCD_CAT",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNIV2AAVEETH_A",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNIV2AAVEETH_A",
-            "source": "FLIPPER_MOM",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNIV2DAIUSDT_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNIV2DAIUSDT_A",
-            "source": "MCD_CAT",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNIV2DAIUSDT_A",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_UNIV2DAIUSDT_A",
-            "source": "FLIPPER_MOM",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_ETH_C",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_ETH_C",
-            "source": "MCD_CAT",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_ETH_C",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_ETH_C",
-            "source": "FLIPPER_MOM",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_PSM_USDC_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "RWA001_A_URN",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "RWA002_A_URN",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "FLIPPER_MOM",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "owner"
-        },
-        {
-            "target": "FLIPPER_MOM",
-            "source": "MCD_ADM",
-            "label": "authority"
         }
     ],
     "nodes": [
         {
             "id": "MCD_PAUSE_PROXY"
-        },
-        {
-            "id": "OSM_MOM"
-        },
-        {
-            "id": "MCD_SPOT"
-        },
-        {
-            "id": "MCD_END"
-        },
-        {
-            "id": "0xeAa474cbFFA87Ae0F1a6f68a3aBA6C77C656F72c"
         },
         {
             "id": "MCD_PAUSE"
@@ -2209,13 +2357,322 @@
             "id": "MCD_ADM"
         },
         {
+            "id": "0xFDF28Bf25779ED4cA74e958d54653260af604C20"
+        },
+        {
+            "id": "0xA66d83716c7CFE425B44D0f7ef92dE263468fb3d"
+        },
+        {
+            "id": "0xDf861993Edbe95BAFbfA7760838f8ebbd5Afda9F"
+        },
+        {
+            "id": "MCD_JOIN_DAI"
+        },
+        {
+            "id": "0x64a84e558192dd025F3A96775FEE8FB530f27177"
+        },
+        {
+            "id": "0xdDb108893104dE4E1C6d0E47c42237dB4E617ACc"
+        },
+        {
+            "id": "MCD_VOW"
+        },
+        {
+            "id": "MCD_END"
+        },
+        {
+            "id": "MCD_CAT"
+        },
+        {
             "id": "MCD_ESM"
         },
         {
-            "id": "0x0528A32fda5beDf89Ba9ad67296db83c9452F28C"
+            "id": "MCD_FLIP_ETH_A"
         },
         {
-            "id": "user"
+            "id": "MCD_FLIP_BAT_A"
+        },
+        {
+            "id": "MCD_FLIP_USDC_A"
+        },
+        {
+            "id": "MCD_FLIP_USDC_B"
+        },
+        {
+            "id": "MCD_FLIP_WBTC_A"
+        },
+        {
+            "id": "MCD_FLIP_TUSD_A"
+        },
+        {
+            "id": "MCD_FLIP_ZRX_A"
+        },
+        {
+            "id": "MCD_FLIP_KNC_A"
+        },
+        {
+            "id": "MCD_FLIP_MANA_A"
+        },
+        {
+            "id": "MCD_FLIP_USDT_A"
+        },
+        {
+            "id": "MCD_FLIP_PAXUSD_A"
+        },
+        {
+            "id": "MCD_FLIP_COMP_A"
+        },
+        {
+            "id": "MCD_FLIP_LRC_A"
+        },
+        {
+            "id": "MCD_FLIP_LINK_A"
+        },
+        {
+            "id": "MCD_FLIP_ETH_B"
+        },
+        {
+            "id": "MCD_FLIP_BAL_A"
+        },
+        {
+            "id": "MCD_FLIP_YFI_A"
+        },
+        {
+            "id": "MCD_FLIP_GUSD_A"
+        },
+        {
+            "id": "MCD_FLIP_UNI_A"
+        },
+        {
+            "id": "MCD_FLIP_RENBTC_A"
+        },
+        {
+            "id": "MCD_FLIP_AAVE_A"
+        },
+        {
+            "id": "MCD_FLIP_UNIV2DAIETH_A"
+        },
+        {
+            "id": "MCD_FLIP_PSM_USDC_A"
+        },
+        {
+            "id": "MCD_FLIP_UNIV2WBTCETH_A"
+        },
+        {
+            "id": "MCD_FLIP_UNIV2USDCETH_A"
+        },
+        {
+            "id": "MCD_FLIP_UNIV2DAIUSDC_A"
+        },
+        {
+            "id": "MCD_FLIP_UNIV2ETHUSDT_A"
+        },
+        {
+            "id": "MCD_FLIP_UNIV2LINKETH_A"
+        },
+        {
+            "id": "MCD_FLIP_UNIV2UNIETH_A"
+        },
+        {
+            "id": "MCD_FLIP_UNIV2WBTCDAI_A"
+        },
+        {
+            "id": "MCD_FLIP_UNIV2AAVEETH_A"
+        },
+        {
+            "id": "MCD_FLIP_UNIV2DAIUSDT_A"
+        },
+        {
+            "id": "MCD_FLIP_ETH_C"
+        },
+        {
+            "id": "FLIPPER_MOM"
+        },
+        {
+            "id": "GOV_GUARD"
+        },
+        {
+            "id": "0xb87cec7BaA2ce4a055F8563e9cC5a210CeDC329F"
+        },
+        {
+            "id": "0x0000000000075EfBeE23fe2de1bd0b7690883cc9"
+        },
+        {
+            "id": "0x93fde11c8107127A80ce95100dF611790E4413c9"
+        },
+        {
+            "id": "0xFcb19e6a322b27c06842A71e8c725399f049AE3a"
+        },
+        {
+            "id": "0xC6CDE7C39eB2f0F0095F41570af89eFC2C1Ea828"
+        },
+        {
+            "id": "0xCA06411bd7a7296d7dbdd0050DFc846E95fEBEB7"
+        },
+        {
+            "id": "0xD409dB68d0E6E97E1cB1F3EB0BD38dE278bc3C68"
+        },
+        {
+            "id": "0xe4b679400F0f267212D5D812B95f58C83243EE71"
+        },
+        {
+            "id": "0xfE43c3a01102EDA295333F5Ad6CC747f03314fdb"
+        },
+        {
+            "id": "0xDA0FaB0700A4389F6E6679aBAb1692B4601ce9bf"
+        },
+        {
+            "id": "0x53b2d22d07E069a3b132BfeaaD275b10273d381E"
+        },
+        {
+            "id": "0xf3BceA7494D8f3ac21585CA4b0E52aa175c24C25"
+        },
+        {
+            "id": "0x47082A19EC51c5c4d3b3BD47e81e25D174e599a4"
+        },
+        {
+            "id": "0xDe365B0a88BB785aBE9fA6534e0c2B258348FBb9"
+        },
+        {
+            "id": "MCD_SPOT"
+        },
+        {
+            "id": "MCD_JUG"
+        },
+        {
+            "id": "MCD_POT"
+        },
+        {
+            "id": "MCD_JOIN_ETH_A"
+        },
+        {
+            "id": "MCD_JOIN_BAT_A"
+        },
+        {
+            "id": "MCD_JOIN_USDC_A"
+        },
+        {
+            "id": "MCD_JOIN_WBTC_A"
+        },
+        {
+            "id": "MCD_JOIN_USDC_B"
+        },
+        {
+            "id": "MCD_JOIN_TUSD_A"
+        },
+        {
+            "id": "MCD_JOIN_KNC_A"
+        },
+        {
+            "id": "MCD_JOIN_ZRX_A"
+        },
+        {
+            "id": "MCD_JOIN_MANA_A"
+        },
+        {
+            "id": "MCD_FLOP"
+        },
+        {
+            "id": "MCD_JOIN_USDT_A"
+        },
+        {
+            "id": "MCD_JOIN_PAXUSD_A"
+        },
+        {
+            "id": "MCD_JOIN_COMP_A"
+        },
+        {
+            "id": "MCD_JOIN_LRC_A"
+        },
+        {
+            "id": "MCD_JOIN_LINK_A"
+        },
+        {
+            "id": "MCD_JOIN_ETH_B"
+        },
+        {
+            "id": "MCD_JOIN_BAL_A"
+        },
+        {
+            "id": "MCD_JOIN_YFI_A"
+        },
+        {
+            "id": "MCD_JOIN_GUSD_A"
+        },
+        {
+            "id": "MCD_JOIN_UNI_A"
+        },
+        {
+            "id": "MCD_JOIN_RENBTC_A"
+        },
+        {
+            "id": "MCD_IAM_AUTO_LINE"
+        },
+        {
+            "id": "MCD_JOIN_AAVE_A"
+        },
+        {
+            "id": "MCD_JOIN_UNIV2DAIETH_A"
+        },
+        {
+            "id": "MCD_JOIN_PSM_USDC_A"
+        },
+        {
+            "id": "MCD_JOIN_UNIV2WBTCETH_A"
+        },
+        {
+            "id": "MCD_JOIN_UNIV2USDCETH_A"
+        },
+        {
+            "id": "MCD_JOIN_UNIV2DAIUSDC_A"
+        },
+        {
+            "id": "MCD_JOIN_UNIV2ETHUSDT_A"
+        },
+        {
+            "id": "MCD_JOIN_UNIV2LINKETH_A"
+        },
+        {
+            "id": "MCD_JOIN_UNIV2UNIETH_A"
+        },
+        {
+            "id": "MCD_JOIN_UNIV2WBTCDAI_A"
+        },
+        {
+            "id": "MCD_JOIN_UNIV2AAVEETH_A"
+        },
+        {
+            "id": "MCD_JOIN_UNIV2DAIUSDT_A"
+        },
+        {
+            "id": "MCD_JOIN_RWA001_A"
+        },
+        {
+            "id": "MIP21_LIQUIDATION_ORACLE"
+        },
+        {
+            "id": "MCD_JOIN_ETH_C"
+        },
+        {
+            "id": "MCD_JOIN_RWA002_A"
+        },
+        {
+            "id": "MCD_PSM_USDC_A"
+        },
+        {
+            "id": "RWA001_A_URN"
+        },
+        {
+            "id": "RWA002_A_URN"
+        },
+        {
+            "id": "OSM_MOM"
+        },
+        {
+            "id": "0xeAa474cbFFA87Ae0F1a6f68a3aBA6C77C656F72c"
+        },
+        {
+            "id": "0x0528A32fda5beDf89Ba9ad67296db83c9452F28C"
         },
         {
             "id": "PIP_BAT"
@@ -2356,241 +2813,58 @@
             "id": "0x8b1C079f8192706532cC0Bf0C02dcC4fF40d045D"
         },
         {
-            "id": "MIP21_LIQUIDATION_ORACLE"
+            "id": "CHANGELOG"
         },
         {
-            "id": "MCD_JUG"
+            "id": "ILK_REGISTRY"
         },
         {
-            "id": "MCD_POT"
+            "id": "KNC"
         },
         {
-            "id": "MCD_JOIN_ETH_A"
+            "id": "MANA"
         },
         {
-            "id": "MCD_JOIN_BAT_A"
+            "id": "MCD_DAI"
         },
         {
-            "id": "MCD_JOIN_USDC_A"
+            "id": "MCD_DEPLOY"
         },
         {
-            "id": "MCD_JOIN_WBTC_A"
+            "id": "MCD_FLAP"
         },
         {
-            "id": "MCD_JOIN_USDC_B"
+            "id": "MCD_GOV"
         },
         {
-            "id": "MCD_JOIN_TUSD_A"
+            "id": "PAXUSD"
         },
         {
-            "id": "MCD_JOIN_KNC_A"
+            "id": "PROXY_DEPLOYER"
         },
         {
-            "id": "MCD_JOIN_ZRX_A"
+            "id": "TUSD"
         },
         {
-            "id": "MCD_JOIN_MANA_A"
+            "id": "USDC"
         },
         {
-            "id": "MCD_FLOP"
+            "id": "USDT"
         },
         {
-            "id": "MCD_CAT"
+            "id": "WBTC"
         },
         {
-            "id": "MCD_JOIN_USDT_A"
+            "id": "RENBTC"
         },
         {
-            "id": "MCD_JOIN_PAXUSD_A"
+            "id": "RWA001_A_OUTPUT_CONDUIT"
         },
         {
-            "id": "MCD_JOIN_COMP_A"
+            "id": "RWA002_A_OUTPUT_CONDUIT"
         },
         {
-            "id": "MCD_JOIN_LRC_A"
-        },
-        {
-            "id": "MCD_JOIN_LINK_A"
-        },
-        {
-            "id": "MCD_JOIN_ETH_B"
-        },
-        {
-            "id": "MCD_JOIN_BAL_A"
-        },
-        {
-            "id": "MCD_JOIN_YFI_A"
-        },
-        {
-            "id": "MCD_JOIN_GUSD_A"
-        },
-        {
-            "id": "MCD_JOIN_UNI_A"
-        },
-        {
-            "id": "MCD_JOIN_RENBTC_A"
-        },
-        {
-            "id": "MCD_IAM_AUTO_LINE"
-        },
-        {
-            "id": "MCD_JOIN_AAVE_A"
-        },
-        {
-            "id": "MCD_JOIN_UNIV2DAIETH_A"
-        },
-        {
-            "id": "MCD_JOIN_PSM_USDC_A"
-        },
-        {
-            "id": "MCD_JOIN_UNIV2WBTCETH_A"
-        },
-        {
-            "id": "MCD_JOIN_UNIV2USDCETH_A"
-        },
-        {
-            "id": "MCD_JOIN_UNIV2DAIUSDC_A"
-        },
-        {
-            "id": "MCD_JOIN_UNIV2ETHUSDT_A"
-        },
-        {
-            "id": "MCD_JOIN_UNIV2LINKETH_A"
-        },
-        {
-            "id": "MCD_JOIN_UNIV2UNIETH_A"
-        },
-        {
-            "id": "MCD_JOIN_UNIV2WBTCDAI_A"
-        },
-        {
-            "id": "MCD_JOIN_UNIV2AAVEETH_A"
-        },
-        {
-            "id": "MCD_JOIN_UNIV2DAIUSDT_A"
-        },
-        {
-            "id": "MCD_JOIN_RWA001_A"
-        },
-        {
-            "id": "MCD_JOIN_ETH_C"
-        },
-        {
-            "id": "MCD_JOIN_RWA002_A"
-        },
-        {
-            "id": "MCD_VOW"
-        },
-        {
-            "id": "MCD_FLIP_ETH_A"
-        },
-        {
-            "id": "MCD_FLIP_BAT_A"
-        },
-        {
-            "id": "MCD_FLIP_USDC_A"
-        },
-        {
-            "id": "MCD_FLIP_USDC_B"
-        },
-        {
-            "id": "MCD_FLIP_WBTC_A"
-        },
-        {
-            "id": "MCD_FLIP_TUSD_A"
-        },
-        {
-            "id": "MCD_FLIP_ZRX_A"
-        },
-        {
-            "id": "MCD_FLIP_KNC_A"
-        },
-        {
-            "id": "MCD_FLIP_MANA_A"
-        },
-        {
-            "id": "MCD_FLIP_USDT_A"
-        },
-        {
-            "id": "MCD_FLIP_PAXUSD_A"
-        },
-        {
-            "id": "MCD_FLIP_COMP_A"
-        },
-        {
-            "id": "MCD_FLIP_LRC_A"
-        },
-        {
-            "id": "MCD_FLIP_LINK_A"
-        },
-        {
-            "id": "MCD_FLIP_ETH_B"
-        },
-        {
-            "id": "MCD_FLIP_BAL_A"
-        },
-        {
-            "id": "MCD_FLIP_YFI_A"
-        },
-        {
-            "id": "MCD_FLIP_GUSD_A"
-        },
-        {
-            "id": "MCD_FLIP_UNI_A"
-        },
-        {
-            "id": "MCD_FLIP_RENBTC_A"
-        },
-        {
-            "id": "MCD_FLIP_AAVE_A"
-        },
-        {
-            "id": "MCD_FLIP_UNIV2DAIETH_A"
-        },
-        {
-            "id": "MCD_FLIP_PSM_USDC_A"
-        },
-        {
-            "id": "MCD_FLIP_UNIV2WBTCETH_A"
-        },
-        {
-            "id": "MCD_FLIP_UNIV2USDCETH_A"
-        },
-        {
-            "id": "MCD_FLIP_UNIV2DAIUSDC_A"
-        },
-        {
-            "id": "MCD_FLIP_UNIV2ETHUSDT_A"
-        },
-        {
-            "id": "MCD_FLIP_UNIV2LINKETH_A"
-        },
-        {
-            "id": "MCD_FLIP_UNIV2UNIETH_A"
-        },
-        {
-            "id": "MCD_FLIP_UNIV2WBTCDAI_A"
-        },
-        {
-            "id": "MCD_FLIP_UNIV2AAVEETH_A"
-        },
-        {
-            "id": "MCD_FLIP_UNIV2DAIUSDT_A"
-        },
-        {
-            "id": "MCD_FLIP_ETH_C"
-        },
-        {
-            "id": "MCD_PSM_USDC_A"
-        },
-        {
-            "id": "RWA001_A_URN"
-        },
-        {
-            "id": "RWA002_A_URN"
-        },
-        {
-            "id": "FLIPPER_MOM"
+            "id": "MCD_VAT"
         },
         {
             "id": "PIP_BAT_SRC"
@@ -2659,7 +2933,118 @@
             "id": "PIP_RWA002"
         },
         {
-            "id": "MCD_VAT"
+            "id": "BAT"
+        },
+        {
+            "id": "CDP_MANAGER"
+        },
+        {
+            "id": "COMP"
+        },
+        {
+            "id": "DSR_MANAGER"
+        },
+        {
+            "id": "ETH"
+        },
+        {
+            "id": "LERP_FAB"
+        },
+        {
+            "id": "GET_CDPS"
+        },
+        {
+            "id": "LINK"
+        },
+        {
+            "id": "LRC"
+        },
+        {
+            "id": "MCD_GOV_ACTIONS"
+        },
+        {
+            "id": "MULTICALL"
+        },
+        {
+            "id": "PROXY_ACTIONS"
+        },
+        {
+            "id": "PROXY_ACTIONS_DSR"
+        },
+        {
+            "id": "PROXY_ACTIONS_END"
+        },
+        {
+            "id": "PROXY_FACTORY"
+        },
+        {
+            "id": "PROXY_PAUSE_ACTIONS"
+        },
+        {
+            "id": "PROXY_REGISTRY"
+        },
+        {
+            "id": "ZRX"
+        },
+        {
+            "id": "BAL"
+        },
+        {
+            "id": "YFI"
+        },
+        {
+            "id": "FLIP_FAB"
+        },
+        {
+            "id": "GUSD"
+        },
+        {
+            "id": "VOTE_PROXY_FACTORY"
+        },
+        {
+            "id": "UNI"
+        },
+        {
+            "id": "AAVE"
+        },
+        {
+            "id": "UNIV2DAIETH"
+        },
+        {
+            "id": "UNIV2WBTCETH"
+        },
+        {
+            "id": "UNIV2USDCETH"
+        },
+        {
+            "id": "UNIV2DAIUSDC"
+        },
+        {
+            "id": "UNIV2ETHUSDT"
+        },
+        {
+            "id": "UNIV2LINKETH"
+        },
+        {
+            "id": "UNIV2UNIETH"
+        },
+        {
+            "id": "UNIV2WBTCDAI"
+        },
+        {
+            "id": "UNIV2AAVEETH"
+        },
+        {
+            "id": "UNIV2DAIUSDT"
+        },
+        {
+            "id": "RWA001"
+        },
+        {
+            "id": "RWA001_A_INPUT_CONDUIT"
+        },
+        {
+            "id": "RWA002"
         }
     ]
 }

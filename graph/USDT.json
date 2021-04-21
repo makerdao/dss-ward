@@ -1,0 +1,17 @@
+{
+    "links": [
+        {
+            "target": "USDT",
+            "source": "0xC6CDE7C39eB2f0F0095F41570af89eFC2C1Ea828",
+            "label": "owner"
+        }
+    ],
+    "nodes": [
+        {
+            "id": "0xC6CDE7C39eB2f0F0095F41570af89eFC2C1Ea828"
+        },
+        {
+            "id": "USDT"
+        }
+    ]
+}

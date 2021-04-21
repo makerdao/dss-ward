@@ -1,0 +1,22 @@
+{
+    "links": [
+        {
+            "target": "USDC",
+            "source": "0xFcb19e6a322b27c06842A71e8c725399f049AE3a",
+            "label": "owner"
+        },
+        {
+            "target": "0xFcb19e6a322b27c06842A71e8c725399f049AE3a",
+            "source": "0xFcb19e6a322b27c06842A71e8c725399f049AE3a",
+            "label": "externally owned account"
+        }
+    ],
+    "nodes": [
+        {
+            "id": "0xFcb19e6a322b27c06842A71e8c725399f049AE3a"
+        },
+        {
+            "id": "USDC"
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "links": [
+        {
+            "target": "RENBTC",
+            "source": "0xe4b679400F0f267212D5D812B95f58C83243EE71",
+            "label": "owner"
+        },
+        {
+            "target": "0xe4b679400F0f267212D5D812B95f58C83243EE71",
+            "source": "0xfE43c3a01102EDA295333F5Ad6CC747f03314fdb",
+            "label": "owner"
+        }
+    ],
+    "nodes": [
+        {
+            "id": "0xe4b679400F0f267212D5D812B95f58C83243EE71"
+        },
+        {
+            "id": "0xfE43c3a01102EDA295333F5Ad6CC747f03314fdb"
+        },
+        {
+            "id": "RENBTC"
+        }
+    ]
+}

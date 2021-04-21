@@ -1,0 +1,25 @@
+{
+    "links": [
+        {
+            "target": "TUSD",
+            "source": "0x0000000000075EfBeE23fe2de1bd0b7690883cc9",
+            "label": "owner"
+        },
+        {
+            "target": "0x0000000000075EfBeE23fe2de1bd0b7690883cc9",
+            "source": "0x93fde11c8107127A80ce95100dF611790E4413c9",
+            "label": "owner"
+        }
+    ],
+    "nodes": [
+        {
+            "id": "0x0000000000075EfBeE23fe2de1bd0b7690883cc9"
+        },
+        {
+            "id": "0x93fde11c8107127A80ce95100dF611790E4413c9"
+        },
+        {
+            "id": "TUSD"
+        }
+    ]
+}

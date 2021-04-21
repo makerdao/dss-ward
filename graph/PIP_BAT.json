@@ -77,8 +77,8 @@
         },
         {
             "target": "0x0528A32fda5beDf89Ba9ad67296db83c9452F28C",
-            "source": "user",
-            "label": "eoa"
+            "source": "0x0528A32fda5beDf89Ba9ad67296db83c9452F28C",
+            "label": "externally owned account"
         }
     ],
     "nodes": [
@@ -108,9 +108,6 @@
         },
         {
             "id": "0x0528A32fda5beDf89Ba9ad67296db83c9452F28C"
-        },
-        {
-            "id": "user"
         },
         {
             "id": "PIP_BAT"

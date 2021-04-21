@@ -282,13 +282,13 @@
         },
         {
             "target": "0xA9E664bB519Dc372C025100eA83255eDC8d9bDE3",
-            "source": "user",
-            "label": "eoa"
+            "source": "0xA9E664bB519Dc372C025100eA83255eDC8d9bDE3",
+            "label": "externally owned account"
         },
         {
             "target": "0xd0643BC0D0C879F175556509dbcEe9373379D5C3",
-            "source": "user",
-            "label": "eoa"
+            "source": "0xd0643BC0D0C879F175556509dbcEe9373379D5C3",
+            "label": "externally owned account"
         },
         {
             "target": "MCD_ADM",
@@ -297,8 +297,8 @@
         },
         {
             "target": "0x0528A32fda5beDf89Ba9ad67296db83c9452F28C",
-            "source": "user",
-            "label": "eoa"
+            "source": "0x0528A32fda5beDf89Ba9ad67296db83c9452F28C",
+            "label": "externally owned account"
         }
     ],
     "nodes": [
@@ -388,9 +388,6 @@
         },
         {
             "id": "0x0528A32fda5beDf89Ba9ad67296db83c9452F28C"
-        },
-        {
-            "id": "user"
         },
         {
             "id": "PIP_UNIV2AAVEETH_ORB1"

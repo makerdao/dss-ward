@@ -1,0 +1,41 @@
+{
+    "links": [
+        {
+            "target": "RWA002_A_OUTPUT_CONDUIT",
+            "source": "0x53b2d22d07E069a3b132BfeaaD275b10273d381E",
+            "label": "ward"
+        },
+        {
+            "target": "0x53b2d22d07E069a3b132BfeaaD275b10273d381E",
+            "source": "0xf3BceA7494D8f3ac21585CA4b0E52aa175c24C25",
+            "label": "ward"
+        },
+        {
+            "target": "0x53b2d22d07E069a3b132BfeaaD275b10273d381E",
+            "source": "0x47082A19EC51c5c4d3b3BD47e81e25D174e599a4",
+            "label": "ward"
+        },
+        {
+            "target": "0x53b2d22d07E069a3b132BfeaaD275b10273d381E",
+            "source": "0xDe365B0a88BB785aBE9fA6534e0c2B258348FBb9",
+            "label": "ward"
+        }
+    ],
+    "nodes": [
+        {
+            "id": "0x53b2d22d07E069a3b132BfeaaD275b10273d381E"
+        },
+        {
+            "id": "0xf3BceA7494D8f3ac21585CA4b0E52aa175c24C25"
+        },
+        {
+            "id": "0x47082A19EC51c5c4d3b3BD47e81e25D174e599a4"
+        },
+        {
+            "id": "0xDe365B0a88BB785aBE9fA6534e0c2B258348FBb9"
+        },
+        {
+            "id": "RWA002_A_OUTPUT_CONDUIT"
+        }
+    ]
+}

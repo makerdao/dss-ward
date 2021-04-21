@@ -4,11 +4,40 @@
             "target": "PIP_RWA002",
             "source": "MIP21_LIQUIDATION_ORACLE",
             "label": "owner"
+        },
+        {
+            "target": "MIP21_LIQUIDATION_ORACLE",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_PAUSE_PROXY",
+            "source": "MCD_PAUSE",
+            "label": "owner"
+        },
+        {
+            "target": "MCD_PAUSE",
+            "source": "MCD_ADM",
+            "label": "authority"
+        },
+        {
+            "target": "MCD_ADM",
+            "source": "MCD_ADM",
+            "label": "authority"
         }
     ],
     "nodes": [
         {
             "id": "MIP21_LIQUIDATION_ORACLE"
+        },
+        {
+            "id": "MCD_PAUSE_PROXY"
+        },
+        {
+            "id": "MCD_PAUSE"
+        },
+        {
+            "id": "MCD_ADM"
         },
         {
             "id": "PIP_RWA002"
