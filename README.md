@@ -84,7 +84,7 @@ node src/ward.js --mode full
 
 This command will run checks for the vat, the oracles, and any remaining
 addresses in the chainlog. Its result can be visualized as a graph. See
-[graph visualization]().
+[graph visualization](https://github.com/makerdao/dss-ward#graph-visualization).
 
 ### get permissions of a contract
 
