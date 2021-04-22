@@ -60,11 +60,13 @@
               .data(links)
               .join('g')
               .on('mouseover', (e, d) => {
+                dimAll();
                 selectLink(d);
                 selectNode(d.target);
                 selectNode(d.source);
               })
               .on('mouseout', (e, d) => {
+                litAll();
                 deselectLink(d);
                 deselectNode(d.target);
                 deselectNode(d.source);
@@ -137,8 +139,8 @@
         }
 
         const defs = svg.append('svg:defs');
-        const arrow = defs.append('svg:marker')
-              .attr('id', 'arrow')
+        const endArrow = defs.append('svg:marker')
+              .attr('id', 'endArrow')
               .attr('viewBox', '0 -5 10 10')
               .attr('refX', 16)
               .attr('markerWidth', 3.5)
@@ -147,9 +149,27 @@
               .append('svg:path')
               .attr('d', 'M0,-5L10,0L0,5');
 
+        const startArrow = defs.append('svg:marker')
+              .attr('id', 'startArrow')
+              .attr('viewBox', '0 -5 10 10')
+              .attr('refX', -6)
+              .attr('markerWidth', 3.5)
+              .attr('markerHeight', 3.5)
+              .attr('orient', 'auto')
+              .append('svg:path')
+              .attr('d', 'M10,-5L0,0L10,5');
+
         const line = link.append('line')
               .attr('stroke-width', 2)
-              .style('marker-end', 'url(#arrow)')
+              .style('marker-end', 'url(#endArrow)')
+              .style('marker-start', d => {
+                if(links.some(l =>
+                  l.source.id === d.target.id && l.target.id === d.source.id
+                )) {
+                  return 'url(#startArrow)';
+                }
+                return null;
+              })
               .attr('stroke', d => linkColor(d))
               .attr('id', d => 'link-' + d.index)
               .attr('class', 'link');
