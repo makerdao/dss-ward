@@ -74,14 +74,30 @@
 
         const linkColor = d => {
           return d.label === 'ward' ?
-            '#50a0a0' :
+            '#3e9c3e' :
             d.label === 'owner' ?
-            'red' :
+            '#660000' :
             d.label === 'authority' ?
-            'blue' :
+            '#9c5106' :
             d.label === 'bud' ?
-            'orange' :
+            '#d4c957' :
+            d.label === 'externally owned account' ?
+            'red' :
             'grey';
+        }
+
+        const nodeColor = d => {
+          return d.id.startsWith('MCD_') ?
+            '#1f585c' :
+            d.id.startsWith('PIP_') ?
+            '#141a54' :
+            links.some(l =>
+              l.target.id === d.id && l.label === 'externally owned account'
+            ) ?
+            'red' :
+            !d.id.startsWith('0x') ?
+            '#4c3052' :
+            '#778aa6';
         }
 
         const dimAll = () => {
@@ -214,11 +230,12 @@
               .attr('r', 5)
               .attr('id', d => 'circle-' + d.id)
               .attr('class', 'circle')
-              .attr('fill', 'red');
+              .attr('fill', d => nodeColor(d));
 
         const name = node.append('text')
               .style('font-family', 'sans-serif')
               .attr('id', d => 'name-' + d.id)
+              .attr('fill', d => nodeColor(d))
               .attr('class', 'name')
               .text(d => d.id.replaceAll('_', ' '));
 
