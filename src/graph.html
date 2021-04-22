@@ -82,24 +82,42 @@
             'grey';
         }
 
+        const dimAll = () => {
+          d3.selectAll('.name')
+            .style('opacity', 0.2);
+          d3.selectAll('.link')
+            .style('opacity', 0.2);
+          d3.selectAll('.circle')
+            .style('opacity', 0.2);
+        }
+
+        const litAll = () => {
+          d3.selectAll('.name')
+            .style('opacity', 1);
+          d3.selectAll('.link')
+            .style('opacity', 1);
+          d3.selectAll('.circle')
+            .style('opacity', 1);
+        }
+
         const selectLink = d => {
           d3.select('#link-' + d.index)
-            .attr('stroke-width', 4)
-            .attr('stroke', 'black');
-          d3.select('#label-' + d.index)
             .style('opacity', 1)
+            .attr('stroke-width', 4);
+          d3.select('#label-' + d.index)
+            .style('opacity', 1);
         }
 
         const deselectLink = d => {
           d3.select('#link-' + d.index)
             .attr('stroke-width', 2)
-            .attr('stroke', d => linkColor(d));
           d3.select('#label-' + d.index)
             .style('opacity', 0)
         }
 
         const selectNode = d => {
           d3.select('#circle-' + d.id)
+            .style('opacity', 1)
             .attr('r', 10);
           d3.select('#name-' + d.id)
             .style('font-weight', 1000)
@@ -127,17 +145,19 @@
               .attr('markerHeight', 3.5)
               .attr('orient', 'auto')
               .append('svg:path')
-              .attr('d', 'M0,-5L10,0L0,5')
+              .attr('d', 'M0,-5L10,0L0,5');
 
         const line = link.append('line')
               .attr('stroke-width', 2)
               .style('marker-end', 'url(#arrow)')
               .attr('stroke', d => linkColor(d))
-              .attr('id', d => 'link-' + d.index);
+              .attr('id', d => 'link-' + d.index)
+              .attr('class', 'link');
 
         const label = link.append('text')
               .style('font-family', 'sans-serif')
               .text(d => d.label)
+              .attr('stroke', d => linkColor(d))
               .style('opacity', 0)
               .style('font-weight', 1000)
               .attr('id', d => 'label-' + d.index);
@@ -147,23 +167,33 @@
               .data(nodes)
               .join('g')
               .on('mouseover', (e, d) => {
+                dimAll();
                 selectNode(d);
-                const nodeLinks = links.filter(link =>
-                  link.source.id === d.id || link.target.id === d.id
-                );
-                for (const link of nodeLinks) {
-                  selectLink(link);
+                for (const linkIn of links.filter(l => l.target.id === d.id)) {
+                  selectLink(linkIn);
+                  selectNode(linkIn.source);
+                }
+                for (const linkOut of links.filter(l => l.source.id === d.id)) {
+                  selectLink(linkOut);
+                  selectNode(linkOut.target);
                 }
               }).on('mouseout', (e, d) => {
+                litAll();
                 deselectNode(d);
-                for (const link of links) {
-                  deselectLink(link);
+                for (const linkIn of links.filter(l => l.target.id === d.id)) {
+                  deselectLink(linkIn);
+                  deselectNode(linkIn.source);
+                }
+                for (const linkOut of links.filter(l => l.source.id === d.id)) {
+                  deselectLink(linkOut);
+                  deselectNode(linkOut.target);
                 }
               }).call(drag(simulation));
 
         const circle = node.append('circle')
               .attr('r', 5)
               .attr('id', d => 'circle-' + d.id)
+              .attr('class', 'circle')
               .attr('fill', 'red');
 
         const name = node.append('text')
