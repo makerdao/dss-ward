@@ -162,7 +162,8 @@ const getLogs = async (args, web3, chainLog, addresses) => {
   const span = Math.floor((endTime - startTime) / 1000);
   process.stdout.write(`getting logNote and event relies and kisses for `
                        + `${ who }... `);
-  console.log(`found ${ logs.length } relies in ${ span } seconds`);
+  console.log(`found ${ logs.length } relies and/or kisses in ${ span } `
+              + `seconds`);
   const jsonLogs = JSON.stringify(logs, null, 4);
   fs.writeFileSync(`cached/logs-${ digest }.json`, jsonLogs);
   return logs;
@@ -175,10 +176,10 @@ const getReliesAndKisses = async (args, web3, chainLog, address) => {
   if (scannedAddresses.includes(address)) {
     logs = allLogs.filter(log => log.address === address);
     console.log(`getting logNote and event relies and kisses for ${ who }... `
-                + `found ${ logs.length } cached logs`);
+                + `found ${ logs.length } cached relies and/or kisses`);
   } else {
     logs = await getLogs(args, web3, chainLog, [ address ]);
-    allLogs[address] = logs;
+    allLogs.push(...logs);
     scannedAddresses.push(address);
   }
   for (const log of logs) {
