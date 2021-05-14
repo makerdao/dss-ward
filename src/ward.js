@@ -720,6 +720,7 @@ const parseArgs = () => {
   });
   parser.add_argument('--level', '-l', {
     help: 'maximum depth level for trees',
+    default: Infinity,
   });
   parser.add_argument('--cached', '-c', {
     help: 'use cached data',
