@@ -730,10 +730,10 @@ const parseArgs = () => {
     nargs: '*',
   });
   const args = parser.parse_args();
-  if (!args.contracts && !args.mode) {
+  if (!args.contracts.length && !args.mode) {
     args.mode = 'full';
   }
-  if (!['full', 'oracles'].includes(args.mode) && !args.contracts) {
+  if (!['full', 'oracles'].includes(args.mode) && !args.contracts.length) {
     parser.print_help();
     process.exit();
   }
