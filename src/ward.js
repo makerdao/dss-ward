@@ -383,7 +383,9 @@ const cacheLogs = async (args, web3, chainLog, addresses) => {
 const getGraph = async (env, args, web3, chainLog, address) => {
   const edges = [];
   const vertices = { all: [], current: [], new: [ address ]};
-  while(vertices.new.length) {
+  let level = 0;
+  while(vertices.new.length && level < args.level) {
+    level++;
     vertices.current = Array.from(new Set(vertices.new));
     vertices.all.push(...vertices.current);
     vertices.new = [];
