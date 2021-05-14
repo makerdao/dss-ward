@@ -686,6 +686,7 @@ const permissionsMode = async (env, args, web3, chainLog, contract) => {
   const permissions = drawPermissions(chainLog, graph, args.level, address);
   console.log();
   console.log(permissions);
+  return permissions;
 }
 
 const contractMode = async (env, args, web3, chainLog, contract) => {
@@ -701,6 +702,7 @@ const contractMode = async (env, args, web3, chainLog, contract) => {
   const tree = drawTree(chainLog, graph, args.level, address);
   console.log();
   console.log(tree);
+  return tree;
 }
 
 const cached = args => {
@@ -714,9 +716,9 @@ const parseArgs = () => {
   parser.add_argument('--mode', '-m', {
     help: 'mode: full, oracles, authorities, permissions',
   });
-  parser.add_argument('contract', {
-    help: 'contract to inspect',
-    nargs: '?',
+  parser.add_argument('contracts', {
+    help: 'contracts to inspect',
+    nargs: '*',
   });
   parser.add_argument('--level', '-l', {
     help: 'maximum depth level for trees',
@@ -728,10 +730,10 @@ const parseArgs = () => {
     nargs: '*',
   });
   const args = parser.parse_args();
-  if (!args.contract && !args.mode) {
+  if (!args.contracts && !args.mode) {
     args.mode = 'full';
   }
-  if (!['full', 'oracles'].includes(args.mode) && !args.contract) {
+  if (!['full', 'oracles'].includes(args.mode) && !args.contracts) {
     parser.print_help();
     process.exit();
   }
@@ -747,10 +749,21 @@ const ward = async () => {
     await fullMode(env, args, web3, chainLog);
   } else if (args.mode === 'oracles') {
     await oraclesMode(env, args, web3, chainLog);
-  } else if (args.mode === 'permissions') {
-    await permissionsMode(env, args, web3, chainLog, args.contract);
   } else {
-    await contractMode(env, args, web3, chainLog, args.contract);
+    if (args.contracts.length > 1) {
+      await cacheLogs(args, web3, chainLog, args.contracts);
+    }
+    let tree = '\n\n\n-----------------------------------\n\n\n';
+    for (const contract of args.contracts) {
+      if (args.mode === 'permissions') {
+        tree += await permissionsMode(env, args, web3, chainLog, contract);
+        tree += '\n\n';
+      } else {
+        tree += await contractMode(env, args, web3, chainLog, contract);
+        tree += '\n\n';
+      }
+    }
+    console.log(tree);
   }
 }
 
