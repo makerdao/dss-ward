@@ -1,7 +1,7 @@
 {
     "links": [
         {
-            "target": "LERP_FAB",
+            "target": "0x7dD1Fb6b9aFdBA9F28DB89c81723b8c6B27A2Fbe",
             "source": "MCD_PAUSE_PROXY",
             "label": "ward"
         },
@@ -32,7 +32,7 @@
             "id": "MCD_ADM"
         },
         {
-            "id": "LERP_FAB"
+            "id": "0x7dD1Fb6b9aFdBA9F28DB89c81723b8c6B27A2Fbe"
         }
     ]
 }

@@ -1,0 +1,17 @@
+{
+    "links": [
+        {
+            "target": "0x5bB72127a196392cf4aC00Cf57aB278394d24e55",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        }
+    ],
+    "nodes": [
+        {
+            "id": "MCD_PAUSE_PROXY"
+        },
+        {
+            "id": "0x5bB72127a196392cf4aC00Cf57aB278394d24e55"
+        }
+    ]
+}

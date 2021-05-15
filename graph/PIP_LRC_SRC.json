@@ -62,22 +62,22 @@
         },
         {
             "target": "MCD_SPOT",
-            "source": "MCD_END",
+            "source": "MCD_PAUSE_PROXY",
             "label": "ward"
         },
         {
             "target": "MCD_SPOT",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_END",
             "source": "MCD_PAUSE_PROXY",
             "label": "ward"
         },
         {
             "target": "MCD_END",
             "source": "MCD_ESM",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_END",
-            "source": "MCD_PAUSE_PROXY",
             "label": "ward"
         },
         {

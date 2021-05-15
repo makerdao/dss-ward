@@ -2,18 +2,13 @@
     "links": [
         {
             "target": "PAXUSD",
-            "source": "0xb87cec7BaA2ce4a055F8563e9cC5a210CeDC329F",
+            "source": "0x0644Bd0248d5F89e4F6E845a91D15c23591e5D33",
             "label": "owner"
-        },
-        {
-            "target": "0xb87cec7BaA2ce4a055F8563e9cC5a210CeDC329F",
-            "source": "0xb87cec7BaA2ce4a055F8563e9cC5a210CeDC329F",
-            "label": "externally owned account"
         }
     ],
     "nodes": [
         {
-            "id": "0xb87cec7BaA2ce4a055F8563e9cC5a210CeDC329F"
+            "id": "0x0644Bd0248d5F89e4F6E845a91D15c23591e5D33"
         },
         {
             "id": "PAXUSD"

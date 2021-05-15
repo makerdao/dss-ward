@@ -32,12 +32,12 @@
         },
         {
             "target": "PIP_COMP",
-            "source": "MCD_END",
+            "source": "0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777",
             "label": "bud"
         },
         {
             "target": "PIP_COMP",
-            "source": "0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777",
+            "source": "MCD_END",
             "label": "bud"
         },
         {
@@ -57,22 +57,22 @@
         },
         {
             "target": "MCD_SPOT",
-            "source": "MCD_END",
+            "source": "MCD_PAUSE_PROXY",
             "label": "ward"
         },
         {
             "target": "MCD_SPOT",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_END",
             "source": "MCD_PAUSE_PROXY",
             "label": "ward"
         },
         {
             "target": "MCD_END",
             "source": "MCD_ESM",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_END",
-            "source": "MCD_PAUSE_PROXY",
             "label": "ward"
         },
         {
@@ -98,10 +98,10 @@
             "id": "MCD_SPOT"
         },
         {
-            "id": "MCD_END"
+            "id": "0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777"
         },
         {
-            "id": "0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777"
+            "id": "MCD_END"
         },
         {
             "id": "MCD_ADM"

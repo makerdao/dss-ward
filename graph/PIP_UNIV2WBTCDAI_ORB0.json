@@ -67,11 +67,6 @@
         },
         {
             "target": "PIP_RENBTC",
-            "source": "MCD_END",
-            "label": "bud"
-        },
-        {
-            "target": "PIP_RENBTC",
             "source": "0xeAa474cbFFA87Ae0F1a6f68a3aBA6C77C656F72c",
             "label": "bud"
         },
@@ -83,6 +78,21 @@
         {
             "target": "PIP_RENBTC",
             "source": "0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777",
+            "label": "bud"
+        },
+        {
+            "target": "PIP_RENBTC",
+            "source": "MCD_END",
+            "label": "bud"
+        },
+        {
+            "target": "PIP_RENBTC",
+            "source": "MCD_CLIP_WBTC_A",
+            "label": "bud"
+        },
+        {
+            "target": "PIP_RENBTC",
+            "source": "CLIPPER_MOM",
             "label": "bud"
         },
         {
@@ -137,11 +147,21 @@
         },
         {
             "target": "MCD_SPOT",
-            "source": "MCD_END",
+            "source": "MCD_PAUSE_PROXY",
             "label": "ward"
         },
         {
             "target": "MCD_SPOT",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "0xeAa474cbFFA87Ae0F1a6f68a3aBA6C77C656F72c",
+            "source": "0x0528A32fda5beDf89Ba9ad67296db83c9452F28C",
+            "label": "owner"
+        },
+        {
+            "target": "MCD_END",
             "source": "MCD_PAUSE_PROXY",
             "label": "ward"
         },
@@ -151,14 +171,39 @@
             "label": "ward"
         },
         {
-            "target": "MCD_END",
+            "target": "MCD_CLIP_WBTC_A",
             "source": "MCD_PAUSE_PROXY",
             "label": "ward"
         },
         {
-            "target": "0xeAa474cbFFA87Ae0F1a6f68a3aBA6C77C656F72c",
-            "source": "0x0528A32fda5beDf89Ba9ad67296db83c9452F28C",
+            "target": "MCD_CLIP_WBTC_A",
+            "source": "MCD_DOG",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_WBTC_A",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_WBTC_A",
+            "source": "CLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_WBTC_A",
+            "source": "MCD_ESM",
+            "label": "ward"
+        },
+        {
+            "target": "CLIPPER_MOM",
+            "source": "MCD_PAUSE_PROXY",
             "label": "owner"
+        },
+        {
+            "target": "CLIPPER_MOM",
+            "source": "MCD_ADM",
+            "label": "authority"
         },
         {
             "target": "0xD7518704C86Dea22a0Ab2f146435e3e1cCBc16ea",
@@ -174,6 +219,171 @@
             "target": "0x0528A32fda5beDf89Ba9ad67296db83c9452F28C",
             "source": "0x0528A32fda5beDf89Ba9ad67296db83c9452F28C",
             "label": "externally owned account"
+        },
+        {
+            "target": "MCD_DOG",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_DOG",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_DOG",
+            "source": "MCD_CLIP_LINK_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_DOG",
+            "source": "MCD_CLIP_YFI_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_DOG",
+            "source": "MCD_CLIP_ETH_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_DOG",
+            "source": "MCD_CLIP_ETH_B",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_DOG",
+            "source": "MCD_CLIP_ETH_C",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_DOG",
+            "source": "MCD_CLIP_WBTC_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_LINK_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_LINK_A",
+            "source": "MCD_DOG",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_LINK_A",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_LINK_A",
+            "source": "CLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_LINK_A",
+            "source": "MCD_ESM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_YFI_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_YFI_A",
+            "source": "MCD_DOG",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_YFI_A",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_YFI_A",
+            "source": "CLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_YFI_A",
+            "source": "MCD_ESM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_ETH_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_ETH_A",
+            "source": "MCD_DOG",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_ETH_A",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_ETH_A",
+            "source": "CLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_ETH_A",
+            "source": "MCD_ESM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_ETH_B",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_ETH_B",
+            "source": "MCD_DOG",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_ETH_B",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_ETH_B",
+            "source": "CLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_ETH_B",
+            "source": "MCD_ESM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_ETH_C",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_ETH_C",
+            "source": "MCD_DOG",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_ETH_C",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_ETH_C",
+            "source": "CLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_ETH_C",
+            "source": "MCD_ESM",
+            "label": "ward"
         }
     ],
     "nodes": [
@@ -214,9 +424,6 @@
             "id": "MCD_SPOT"
         },
         {
-            "id": "MCD_END"
-        },
-        {
             "id": "0xeAa474cbFFA87Ae0F1a6f68a3aBA6C77C656F72c"
         },
         {
@@ -224,6 +431,15 @@
         },
         {
             "id": "0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777"
+        },
+        {
+            "id": "MCD_END"
+        },
+        {
+            "id": "MCD_CLIP_WBTC_A"
+        },
+        {
+            "id": "CLIPPER_MOM"
         },
         {
             "id": "0xD7518704C86Dea22a0Ab2f146435e3e1cCBc16ea"
@@ -235,10 +451,28 @@
             "id": "MCD_ADM"
         },
         {
+            "id": "0x0528A32fda5beDf89Ba9ad67296db83c9452F28C"
+        },
+        {
             "id": "MCD_ESM"
         },
         {
-            "id": "0x0528A32fda5beDf89Ba9ad67296db83c9452F28C"
+            "id": "MCD_DOG"
+        },
+        {
+            "id": "MCD_CLIP_LINK_A"
+        },
+        {
+            "id": "MCD_CLIP_YFI_A"
+        },
+        {
+            "id": "MCD_CLIP_ETH_A"
+        },
+        {
+            "id": "MCD_CLIP_ETH_B"
+        },
+        {
+            "id": "MCD_CLIP_ETH_C"
         },
         {
             "id": "PIP_UNIV2WBTCDAI_ORB0"

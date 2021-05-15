@@ -21,6 +21,11 @@
             "label": "authority"
         },
         {
+            "target": "LERP_FAB",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
             "target": "ILK_REGISTRY",
             "source": "MCD_PAUSE_PROXY",
             "label": "ward"
@@ -77,11 +82,6 @@
         },
         {
             "target": "MCD_VOW",
-            "source": "MCD_END",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VOW",
             "source": "MCD_PAUSE_PROXY",
             "label": "ward"
         },
@@ -91,28 +91,28 @@
             "label": "ward"
         },
         {
-            "target": "MCD_END",
-            "source": "MCD_ESM",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_END",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_CAT",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_CAT",
+            "target": "MCD_VOW",
             "source": "MCD_END",
             "label": "ward"
         },
         {
+            "target": "MCD_VOW",
+            "source": "MCD_DOG",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VOW",
+            "source": "0x989C0BDa008E257d5a5133575dc77e039A2e3758",
+            "label": "ward"
+        },
+        {
             "target": "MCD_CAT",
-            "source": "MCD_FLIP_ETH_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CAT",
+            "source": "0xF32836B9E1f47a0515c6Ec431592D5EbC276407f",
             "label": "ward"
         },
         {
@@ -132,7 +132,7 @@
         },
         {
             "target": "MCD_CAT",
-            "source": "MCD_FLIP_WBTC_A",
+            "source": "0x58CD24ac7322890382eE45A3E4F903a5B22Ee930",
             "label": "ward"
         },
         {
@@ -177,12 +177,12 @@
         },
         {
             "target": "MCD_CAT",
-            "source": "MCD_FLIP_LINK_A",
+            "source": "0xB907EEdD63a30A3381E6D898e5815Ee8c9fd2c85",
             "label": "ward"
         },
         {
             "target": "MCD_CAT",
-            "source": "MCD_FLIP_ETH_B",
+            "source": "0xD499d71bE9e9E5D236A07ac562F7B6CeacCa624c",
             "label": "ward"
         },
         {
@@ -192,7 +192,7 @@
         },
         {
             "target": "MCD_CAT",
-            "source": "MCD_FLIP_YFI_A",
+            "source": "0xEe4C9C36257afB8098059a4763A374a4ECFE28A7",
             "label": "ward"
         },
         {
@@ -272,47 +272,102 @@
         },
         {
             "target": "MCD_CAT",
-            "source": "MCD_FLIP_ETH_C",
+            "source": "0x7A67901A68243241EBf66beEB0e7b5395582BF17",
             "label": "ward"
         },
         {
-            "target": "MCD_FLIP_ETH_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_ETH_A",
-            "source": "MCD_CAT",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_ETH_A",
+            "target": "MCD_CAT",
             "source": "MCD_END",
             "label": "ward"
         },
         {
-            "target": "MCD_FLIP_ETH_A",
+            "target": "MCD_END",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_END",
+            "source": "MCD_ESM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_DOG",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_DOG",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_DOG",
+            "source": "MCD_CLIP_LINK_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_DOG",
+            "source": "MCD_CLIP_YFI_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_DOG",
+            "source": "MCD_CLIP_ETH_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_DOG",
+            "source": "MCD_CLIP_ETH_B",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_DOG",
+            "source": "MCD_CLIP_ETH_C",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_DOG",
+            "source": "MCD_CLIP_WBTC_A",
+            "label": "ward"
+        },
+        {
+            "target": "0xF32836B9E1f47a0515c6Ec431592D5EbC276407f",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "0xF32836B9E1f47a0515c6Ec431592D5EbC276407f",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "0xF32836B9E1f47a0515c6Ec431592D5EbC276407f",
+            "source": "MCD_ESM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_BAT_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_BAT_A",
+            "source": "MCD_CAT",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_BAT_A",
             "source": "FLIPPER_MOM",
             "label": "ward"
         },
         {
             "target": "MCD_FLIP_BAT_A",
-            "source": "MCD_PAUSE_PROXY",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_BAT_A",
-            "source": "MCD_CAT",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_BAT_A",
             "source": "MCD_END",
             "label": "ward"
         },
         {
             "target": "MCD_FLIP_BAT_A",
-            "source": "FLIPPER_MOM",
+            "source": "MCD_ESM",
             "label": "ward"
         },
         {
@@ -326,6 +381,11 @@
             "label": "ward"
         },
         {
+            "target": "MCD_FLIP_USDC_A",
+            "source": "MCD_ESM",
+            "label": "ward"
+        },
+        {
             "target": "MCD_FLIP_USDC_B",
             "source": "MCD_PAUSE_PROXY",
             "label": "ward"
@@ -336,23 +396,23 @@
             "label": "ward"
         },
         {
-            "target": "MCD_FLIP_WBTC_A",
+            "target": "MCD_FLIP_USDC_B",
+            "source": "MCD_ESM",
+            "label": "ward"
+        },
+        {
+            "target": "0x58CD24ac7322890382eE45A3E4F903a5B22Ee930",
             "source": "MCD_PAUSE_PROXY",
             "label": "ward"
         },
         {
-            "target": "MCD_FLIP_WBTC_A",
-            "source": "MCD_CAT",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_WBTC_A",
+            "target": "0x58CD24ac7322890382eE45A3E4F903a5B22Ee930",
             "source": "MCD_END",
             "label": "ward"
         },
         {
-            "target": "MCD_FLIP_WBTC_A",
-            "source": "FLIPPER_MOM",
+            "target": "0x58CD24ac7322890382eE45A3E4F903a5B22Ee930",
+            "source": "MCD_ESM",
             "label": "ward"
         },
         {
@@ -366,6 +426,11 @@
             "label": "ward"
         },
         {
+            "target": "MCD_FLIP_TUSD_A",
+            "source": "MCD_ESM",
+            "label": "ward"
+        },
+        {
             "target": "MCD_FLIP_ZRX_A",
             "source": "MCD_PAUSE_PROXY",
             "label": "ward"
@@ -377,12 +442,17 @@
         },
         {
             "target": "MCD_FLIP_ZRX_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_ZRX_A",
             "source": "MCD_END",
             "label": "ward"
         },
         {
             "target": "MCD_FLIP_ZRX_A",
-            "source": "FLIPPER_MOM",
+            "source": "MCD_ESM",
             "label": "ward"
         },
         {
@@ -397,12 +467,17 @@
         },
         {
             "target": "MCD_FLIP_KNC_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_KNC_A",
             "source": "MCD_END",
             "label": "ward"
         },
         {
             "target": "MCD_FLIP_KNC_A",
-            "source": "FLIPPER_MOM",
+            "source": "MCD_ESM",
             "label": "ward"
         },
         {
@@ -417,12 +492,17 @@
         },
         {
             "target": "MCD_FLIP_MANA_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_MANA_A",
             "source": "MCD_END",
             "label": "ward"
         },
         {
             "target": "MCD_FLIP_MANA_A",
-            "source": "FLIPPER_MOM",
+            "source": "MCD_ESM",
             "label": "ward"
         },
         {
@@ -437,12 +517,17 @@
         },
         {
             "target": "MCD_FLIP_USDT_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_USDT_A",
             "source": "MCD_END",
             "label": "ward"
         },
         {
             "target": "MCD_FLIP_USDT_A",
-            "source": "FLIPPER_MOM",
+            "source": "MCD_ESM",
             "label": "ward"
         },
         {
@@ -456,6 +541,11 @@
             "label": "ward"
         },
         {
+            "target": "MCD_FLIP_PAXUSD_A",
+            "source": "MCD_ESM",
+            "label": "ward"
+        },
+        {
             "target": "MCD_FLIP_COMP_A",
             "source": "MCD_PAUSE_PROXY",
             "label": "ward"
@@ -467,12 +557,17 @@
         },
         {
             "target": "MCD_FLIP_COMP_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_COMP_A",
             "source": "MCD_END",
             "label": "ward"
         },
         {
             "target": "MCD_FLIP_COMP_A",
-            "source": "FLIPPER_MOM",
+            "source": "MCD_ESM",
             "label": "ward"
         },
         {
@@ -487,52 +582,47 @@
         },
         {
             "target": "MCD_FLIP_LRC_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_LRC_A",
             "source": "MCD_END",
             "label": "ward"
         },
         {
             "target": "MCD_FLIP_LRC_A",
-            "source": "FLIPPER_MOM",
+            "source": "MCD_ESM",
             "label": "ward"
         },
         {
-            "target": "MCD_FLIP_LINK_A",
+            "target": "0xB907EEdD63a30A3381E6D898e5815Ee8c9fd2c85",
             "source": "MCD_PAUSE_PROXY",
             "label": "ward"
         },
         {
-            "target": "MCD_FLIP_LINK_A",
-            "source": "MCD_CAT",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_LINK_A",
+            "target": "0xB907EEdD63a30A3381E6D898e5815Ee8c9fd2c85",
             "source": "MCD_END",
             "label": "ward"
         },
         {
-            "target": "MCD_FLIP_LINK_A",
-            "source": "FLIPPER_MOM",
+            "target": "0xB907EEdD63a30A3381E6D898e5815Ee8c9fd2c85",
+            "source": "MCD_ESM",
             "label": "ward"
         },
         {
-            "target": "MCD_FLIP_ETH_B",
+            "target": "0xD499d71bE9e9E5D236A07ac562F7B6CeacCa624c",
             "source": "MCD_PAUSE_PROXY",
             "label": "ward"
         },
         {
-            "target": "MCD_FLIP_ETH_B",
-            "source": "MCD_CAT",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_ETH_B",
+            "target": "0xD499d71bE9e9E5D236A07ac562F7B6CeacCa624c",
             "source": "MCD_END",
             "label": "ward"
         },
         {
-            "target": "MCD_FLIP_ETH_B",
-            "source": "FLIPPER_MOM",
+            "target": "0xD499d71bE9e9E5D236A07ac562F7B6CeacCa624c",
+            "source": "MCD_ESM",
             "label": "ward"
         },
         {
@@ -547,32 +637,32 @@
         },
         {
             "target": "MCD_FLIP_BAL_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_BAL_A",
             "source": "MCD_END",
             "label": "ward"
         },
         {
             "target": "MCD_FLIP_BAL_A",
-            "source": "FLIPPER_MOM",
+            "source": "MCD_ESM",
             "label": "ward"
         },
         {
-            "target": "MCD_FLIP_YFI_A",
+            "target": "0xEe4C9C36257afB8098059a4763A374a4ECFE28A7",
             "source": "MCD_PAUSE_PROXY",
             "label": "ward"
         },
         {
-            "target": "MCD_FLIP_YFI_A",
-            "source": "MCD_CAT",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_YFI_A",
+            "target": "0xEe4C9C36257afB8098059a4763A374a4ECFE28A7",
             "source": "MCD_END",
             "label": "ward"
         },
         {
-            "target": "MCD_FLIP_YFI_A",
-            "source": "FLIPPER_MOM",
+            "target": "0xEe4C9C36257afB8098059a4763A374a4ECFE28A7",
+            "source": "MCD_ESM",
             "label": "ward"
         },
         {
@@ -586,6 +676,11 @@
             "label": "ward"
         },
         {
+            "target": "MCD_FLIP_GUSD_A",
+            "source": "MCD_ESM",
+            "label": "ward"
+        },
+        {
             "target": "MCD_FLIP_UNI_A",
             "source": "MCD_PAUSE_PROXY",
             "label": "ward"
@@ -597,12 +692,17 @@
         },
         {
             "target": "MCD_FLIP_UNI_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNI_A",
             "source": "MCD_END",
             "label": "ward"
         },
         {
             "target": "MCD_FLIP_UNI_A",
-            "source": "FLIPPER_MOM",
+            "source": "MCD_ESM",
             "label": "ward"
         },
         {
@@ -617,12 +717,17 @@
         },
         {
             "target": "MCD_FLIP_RENBTC_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_RENBTC_A",
             "source": "MCD_END",
             "label": "ward"
         },
         {
             "target": "MCD_FLIP_RENBTC_A",
-            "source": "FLIPPER_MOM",
+            "source": "MCD_ESM",
             "label": "ward"
         },
         {
@@ -637,12 +742,17 @@
         },
         {
             "target": "MCD_FLIP_AAVE_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_AAVE_A",
             "source": "MCD_END",
             "label": "ward"
         },
         {
             "target": "MCD_FLIP_AAVE_A",
-            "source": "FLIPPER_MOM",
+            "source": "MCD_ESM",
             "label": "ward"
         },
         {
@@ -657,12 +767,17 @@
         },
         {
             "target": "MCD_FLIP_UNIV2DAIETH_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2DAIETH_A",
             "source": "MCD_END",
             "label": "ward"
         },
         {
             "target": "MCD_FLIP_UNIV2DAIETH_A",
-            "source": "FLIPPER_MOM",
+            "source": "MCD_ESM",
             "label": "ward"
         },
         {
@@ -676,6 +791,11 @@
             "label": "ward"
         },
         {
+            "target": "MCD_FLIP_PSM_USDC_A",
+            "source": "MCD_ESM",
+            "label": "ward"
+        },
+        {
             "target": "MCD_FLIP_UNIV2WBTCETH_A",
             "source": "MCD_PAUSE_PROXY",
             "label": "ward"
@@ -687,12 +807,17 @@
         },
         {
             "target": "MCD_FLIP_UNIV2WBTCETH_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2WBTCETH_A",
             "source": "MCD_END",
             "label": "ward"
         },
         {
             "target": "MCD_FLIP_UNIV2WBTCETH_A",
-            "source": "FLIPPER_MOM",
+            "source": "MCD_ESM",
             "label": "ward"
         },
         {
@@ -707,12 +832,17 @@
         },
         {
             "target": "MCD_FLIP_UNIV2USDCETH_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2USDCETH_A",
             "source": "MCD_END",
             "label": "ward"
         },
         {
             "target": "MCD_FLIP_UNIV2USDCETH_A",
-            "source": "FLIPPER_MOM",
+            "source": "MCD_ESM",
             "label": "ward"
         },
         {
@@ -726,6 +856,11 @@
             "label": "ward"
         },
         {
+            "target": "MCD_FLIP_UNIV2DAIUSDC_A",
+            "source": "MCD_ESM",
+            "label": "ward"
+        },
+        {
             "target": "MCD_FLIP_UNIV2ETHUSDT_A",
             "source": "MCD_PAUSE_PROXY",
             "label": "ward"
@@ -737,12 +872,17 @@
         },
         {
             "target": "MCD_FLIP_UNIV2ETHUSDT_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2ETHUSDT_A",
             "source": "MCD_END",
             "label": "ward"
         },
         {
             "target": "MCD_FLIP_UNIV2ETHUSDT_A",
-            "source": "FLIPPER_MOM",
+            "source": "MCD_ESM",
             "label": "ward"
         },
         {
@@ -757,12 +897,17 @@
         },
         {
             "target": "MCD_FLIP_UNIV2LINKETH_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2LINKETH_A",
             "source": "MCD_END",
             "label": "ward"
         },
         {
             "target": "MCD_FLIP_UNIV2LINKETH_A",
-            "source": "FLIPPER_MOM",
+            "source": "MCD_ESM",
             "label": "ward"
         },
         {
@@ -777,12 +922,17 @@
         },
         {
             "target": "MCD_FLIP_UNIV2UNIETH_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2UNIETH_A",
             "source": "MCD_END",
             "label": "ward"
         },
         {
             "target": "MCD_FLIP_UNIV2UNIETH_A",
-            "source": "FLIPPER_MOM",
+            "source": "MCD_ESM",
             "label": "ward"
         },
         {
@@ -797,12 +947,17 @@
         },
         {
             "target": "MCD_FLIP_UNIV2WBTCDAI_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2WBTCDAI_A",
             "source": "MCD_END",
             "label": "ward"
         },
         {
             "target": "MCD_FLIP_UNIV2WBTCDAI_A",
-            "source": "FLIPPER_MOM",
+            "source": "MCD_ESM",
             "label": "ward"
         },
         {
@@ -817,12 +972,17 @@
         },
         {
             "target": "MCD_FLIP_UNIV2AAVEETH_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2AAVEETH_A",
             "source": "MCD_END",
             "label": "ward"
         },
         {
             "target": "MCD_FLIP_UNIV2AAVEETH_A",
-            "source": "FLIPPER_MOM",
+            "source": "MCD_ESM",
             "label": "ward"
         },
         {
@@ -837,32 +997,182 @@
         },
         {
             "target": "MCD_FLIP_UNIV2DAIUSDT_A",
+            "source": "FLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_FLIP_UNIV2DAIUSDT_A",
             "source": "MCD_END",
             "label": "ward"
         },
         {
             "target": "MCD_FLIP_UNIV2DAIUSDT_A",
-            "source": "FLIPPER_MOM",
+            "source": "MCD_ESM",
             "label": "ward"
         },
         {
-            "target": "MCD_FLIP_ETH_C",
+            "target": "0x7A67901A68243241EBf66beEB0e7b5395582BF17",
             "source": "MCD_PAUSE_PROXY",
             "label": "ward"
         },
         {
-            "target": "MCD_FLIP_ETH_C",
-            "source": "MCD_CAT",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_FLIP_ETH_C",
+            "target": "0x7A67901A68243241EBf66beEB0e7b5395582BF17",
             "source": "MCD_END",
             "label": "ward"
         },
         {
-            "target": "MCD_FLIP_ETH_C",
-            "source": "FLIPPER_MOM",
+            "target": "0x7A67901A68243241EBf66beEB0e7b5395582BF17",
+            "source": "MCD_ESM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_LINK_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_LINK_A",
+            "source": "MCD_DOG",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_LINK_A",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_LINK_A",
+            "source": "CLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_LINK_A",
+            "source": "MCD_ESM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_YFI_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_YFI_A",
+            "source": "MCD_DOG",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_YFI_A",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_YFI_A",
+            "source": "CLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_YFI_A",
+            "source": "MCD_ESM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_ETH_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_ETH_A",
+            "source": "MCD_DOG",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_ETH_A",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_ETH_A",
+            "source": "CLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_ETH_A",
+            "source": "MCD_ESM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_ETH_B",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_ETH_B",
+            "source": "MCD_DOG",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_ETH_B",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_ETH_B",
+            "source": "CLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_ETH_B",
+            "source": "MCD_ESM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_ETH_C",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_ETH_C",
+            "source": "MCD_DOG",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_ETH_C",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_ETH_C",
+            "source": "CLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_ETH_C",
+            "source": "MCD_ESM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_WBTC_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_WBTC_A",
+            "source": "MCD_DOG",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_WBTC_A",
+            "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_WBTC_A",
+            "source": "CLIPPER_MOM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_WBTC_A",
+            "source": "MCD_ESM",
             "label": "ward"
         },
         {
@@ -876,19 +1186,39 @@
             "label": "authority"
         },
         {
+            "target": "CLIPPER_MOM",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "owner"
+        },
+        {
+            "target": "CLIPPER_MOM",
+            "source": "MCD_ADM",
+            "label": "authority"
+        },
+        {
+            "target": "MCD_CLIP_CALC_ETH_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_CALC_LINK_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_CALC_WBTC_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
             "target": "MCD_GOV",
             "source": "GOV_GUARD",
             "label": "authority"
         },
         {
             "target": "PAXUSD",
-            "source": "0xb87cec7BaA2ce4a055F8563e9cC5a210CeDC329F",
+            "source": "0x0644Bd0248d5F89e4F6E845a91D15c23591e5D33",
             "label": "owner"
-        },
-        {
-            "target": "0xb87cec7BaA2ce4a055F8563e9cC5a210CeDC329F",
-            "source": "0xb87cec7BaA2ce4a055F8563e9cC5a210CeDC329F",
-            "label": "externally owned account"
         },
         {
             "target": "PROXY_DEPLOYER",
@@ -931,6 +1261,16 @@
             "label": "owner"
         },
         {
+            "target": "MCD_CLIP_CALC_ETH_B",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_CLIP_CALC_YFI_A",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
             "target": "RENBTC",
             "source": "0xe4b679400F0f267212D5D812B95f58C83243EE71",
             "label": "owner"
@@ -956,8 +1296,53 @@
             "label": "externally owned account"
         },
         {
+            "target": "MCD_CLIP_CALC_ETH_C",
+            "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "RWA002_A_OUTPUT_CONDUIT",
+            "source": "0xA9eCF012dD36512e5fFCD5585D72386E46135Cdd",
+            "label": "owner"
+        },
+        {
             "target": "RWA002_A_OUTPUT_CONDUIT",
             "source": "0x53b2d22d07E069a3b132BfeaaD275b10273d381E",
+            "label": "ward"
+        },
+        {
+            "target": "RWA002_A_OUTPUT_CONDUIT",
+            "source": "0x080DE4B4Ea5D037DEA78D44fE9AE94735C4B817a",
+            "label": "ward"
+        },
+        {
+            "target": "RWA002_A_OUTPUT_CONDUIT",
+            "source": "0xA9eCF012dD36512e5fFCD5585D72386E46135Cdd",
+            "label": "ward"
+        },
+        {
+            "target": "0xA9eCF012dD36512e5fFCD5585D72386E46135Cdd",
+            "source": "0x53b2d22d07E069a3b132BfeaaD275b10273d381E",
+            "label": "ward"
+        },
+        {
+            "target": "0xA9eCF012dD36512e5fFCD5585D72386E46135Cdd",
+            "source": "0x080DE4B4Ea5D037DEA78D44fE9AE94735C4B817a",
+            "label": "ward"
+        },
+        {
+            "target": "0xA9eCF012dD36512e5fFCD5585D72386E46135Cdd",
+            "source": "0xcC7AFB5DeED34CF67E72d4C53B142F44c9268ab9",
+            "label": "ward"
+        },
+        {
+            "target": "0xA9eCF012dD36512e5fFCD5585D72386E46135Cdd",
+            "source": "0xD9E4391cF31638a8Da718Ff0Bf69249Cdc48fB2B",
+            "label": "ward"
+        },
+        {
+            "target": "0xA9eCF012dD36512e5fFCD5585D72386E46135Cdd",
+            "source": "0x6A82DdF0DF710fACD0414B37606dC9Db05a4F752",
             "label": "ward"
         },
         {
@@ -976,6 +1361,171 @@
             "label": "ward"
         },
         {
+            "target": "0xcC7AFB5DeED34CF67E72d4C53B142F44c9268ab9",
+            "source": "0x53b2d22d07E069a3b132BfeaaD275b10273d381E",
+            "label": "ward"
+        },
+        {
+            "target": "0xcC7AFB5DeED34CF67E72d4C53B142F44c9268ab9",
+            "source": "0x080DE4B4Ea5D037DEA78D44fE9AE94735C4B817a",
+            "label": "ward"
+        },
+        {
+            "target": "0xD9E4391cF31638a8Da718Ff0Bf69249Cdc48fB2B",
+            "source": "0x53b2d22d07E069a3b132BfeaaD275b10273d381E",
+            "label": "ward"
+        },
+        {
+            "target": "0xD9E4391cF31638a8Da718Ff0Bf69249Cdc48fB2B",
+            "source": "0x080DE4B4Ea5D037DEA78D44fE9AE94735C4B817a",
+            "label": "ward"
+        },
+        {
+            "target": "0xD9E4391cF31638a8Da718Ff0Bf69249Cdc48fB2B",
+            "source": "0x7cD2a6Be6ca8fEB02aeAF08b7F350d7248dA7707",
+            "label": "ward"
+        },
+        {
+            "target": "0xD9E4391cF31638a8Da718Ff0Bf69249Cdc48fB2B",
+            "source": "0x636214f455480D19F17FE1aa45B9989C86041767",
+            "label": "ward"
+        },
+        {
+            "target": "0xD9E4391cF31638a8Da718Ff0Bf69249Cdc48fB2B",
+            "source": "0x83E2369A33104120746B589Cc90180ed776fFb91",
+            "label": "ward"
+        },
+        {
+            "target": "0xD9E4391cF31638a8Da718Ff0Bf69249Cdc48fB2B",
+            "source": "0xA9eCF012dD36512e5fFCD5585D72386E46135Cdd",
+            "label": "ward"
+        },
+        {
+            "target": "0x6A82DdF0DF710fACD0414B37606dC9Db05a4F752",
+            "source": "0x53b2d22d07E069a3b132BfeaaD275b10273d381E",
+            "label": "ward"
+        },
+        {
+            "target": "0x6A82DdF0DF710fACD0414B37606dC9Db05a4F752",
+            "source": "0x080DE4B4Ea5D037DEA78D44fE9AE94735C4B817a",
+            "label": "ward"
+        },
+        {
+            "target": "0x6A82DdF0DF710fACD0414B37606dC9Db05a4F752",
+            "source": "0x71d9f8CFdcCEF71B59DD81AB387e523E2834F2b8",
+            "label": "ward"
+        },
+        {
+            "target": "0x7cD2a6Be6ca8fEB02aeAF08b7F350d7248dA7707",
+            "source": "0xed0d554A3125E79B9E77A919c7cc651d235A3B1A",
+            "label": "ward"
+        },
+        {
+            "target": "0x7cD2a6Be6ca8fEB02aeAF08b7F350d7248dA7707",
+            "source": "0x53b2d22d07E069a3b132BfeaaD275b10273d381E",
+            "label": "ward"
+        },
+        {
+            "target": "0x7cD2a6Be6ca8fEB02aeAF08b7F350d7248dA7707",
+            "source": "0x4c4Cc6a0573db5823ECAA1d1d65EB64E5E0E5F01",
+            "label": "ward"
+        },
+        {
+            "target": "0x7cD2a6Be6ca8fEB02aeAF08b7F350d7248dA7707",
+            "source": "0x080DE4B4Ea5D037DEA78D44fE9AE94735C4B817a",
+            "label": "ward"
+        },
+        {
+            "target": "0x7cD2a6Be6ca8fEB02aeAF08b7F350d7248dA7707",
+            "source": "0xcC7AFB5DeED34CF67E72d4C53B142F44c9268ab9",
+            "label": "ward"
+        },
+        {
+            "target": "0x636214f455480D19F17FE1aa45B9989C86041767",
+            "source": "0x53b2d22d07E069a3b132BfeaaD275b10273d381E",
+            "label": "ward"
+        },
+        {
+            "target": "0x636214f455480D19F17FE1aa45B9989C86041767",
+            "source": "0x080DE4B4Ea5D037DEA78D44fE9AE94735C4B817a",
+            "label": "ward"
+        },
+        {
+            "target": "0x636214f455480D19F17FE1aa45B9989C86041767",
+            "source": "0xcC7AFB5DeED34CF67E72d4C53B142F44c9268ab9",
+            "label": "ward"
+        },
+        {
+            "target": "0x636214f455480D19F17FE1aa45B9989C86041767",
+            "source": "0x230f2E19D6c2Dc0c441c2150D4dD9d67B563A60C",
+            "label": "ward"
+        },
+        {
+            "target": "0x636214f455480D19F17FE1aa45B9989C86041767",
+            "source": "0xA9eCF012dD36512e5fFCD5585D72386E46135Cdd",
+            "label": "ward"
+        },
+        {
+            "target": "0x83E2369A33104120746B589Cc90180ed776fFb91",
+            "source": "0x53b2d22d07E069a3b132BfeaaD275b10273d381E",
+            "label": "ward"
+        },
+        {
+            "target": "0x83E2369A33104120746B589Cc90180ed776fFb91",
+            "source": "0x080DE4B4Ea5D037DEA78D44fE9AE94735C4B817a",
+            "label": "ward"
+        },
+        {
+            "target": "0x83E2369A33104120746B589Cc90180ed776fFb91",
+            "source": "0xcC7AFB5DeED34CF67E72d4C53B142F44c9268ab9",
+            "label": "ward"
+        },
+        {
+            "target": "0x83E2369A33104120746B589Cc90180ed776fFb91",
+            "source": "0xD9E4391cF31638a8Da718Ff0Bf69249Cdc48fB2B",
+            "label": "ward"
+        },
+        {
+            "target": "0x83E2369A33104120746B589Cc90180ed776fFb91",
+            "source": "0xA9eCF012dD36512e5fFCD5585D72386E46135Cdd",
+            "label": "ward"
+        },
+        {
+            "target": "0x83E2369A33104120746B589Cc90180ed776fFb91",
+            "source": "0x6A82DdF0DF710fACD0414B37606dC9Db05a4F752",
+            "label": "ward"
+        },
+        {
+            "target": "0x71d9f8CFdcCEF71B59DD81AB387e523E2834F2b8",
+            "source": "0x71d9f8CFdcCEF71B59DD81AB387e523E2834F2b8",
+            "label": "externally owned account"
+        },
+        {
+            "target": "0x4c4Cc6a0573db5823ECAA1d1d65EB64E5E0E5F01",
+            "source": "0xed0d554A3125E79B9E77A919c7cc651d235A3B1A",
+            "label": "ward"
+        },
+        {
+            "target": "0x4c4Cc6a0573db5823ECAA1d1d65EB64E5E0E5F01",
+            "source": "0x53b2d22d07E069a3b132BfeaaD275b10273d381E",
+            "label": "ward"
+        },
+        {
+            "target": "0x230f2E19D6c2Dc0c441c2150D4dD9d67B563A60C",
+            "source": "0xed0d554A3125E79B9E77A919c7cc651d235A3B1A",
+            "label": "ward"
+        },
+        {
+            "target": "0x230f2E19D6c2Dc0c441c2150D4dD9d67B563A60C",
+            "source": "0x53b2d22d07E069a3b132BfeaaD275b10273d381E",
+            "label": "ward"
+        },
+        {
+            "target": "0x230f2E19D6c2Dc0c441c2150D4dD9d67B563A60C",
+            "source": "0x080DE4B4Ea5D037DEA78D44fE9AE94735C4B817a",
+            "label": "ward"
+        },
+        {
             "target": "MCD_VAT",
             "source": "MCD_SPOT",
             "label": "ward"
@@ -988,11 +1538,6 @@
         {
             "target": "MCD_VAT",
             "source": "MCD_POT",
-            "label": "ward"
-        },
-        {
-            "target": "MCD_VAT",
-            "source": "MCD_END",
             "label": "ward"
         },
         {
@@ -1196,13 +1741,58 @@
             "label": "ward"
         },
         {
-            "target": "MCD_SPOT",
+            "target": "MCD_VAT",
             "source": "MCD_END",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_ESM",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_DOG",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_CLIP_LINK_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_CLIP_YFI_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_CLIP_ETH_A",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_CLIP_ETH_B",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_CLIP_ETH_C",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_VAT",
+            "source": "MCD_CLIP_WBTC_A",
             "label": "ward"
         },
         {
             "target": "MCD_SPOT",
             "source": "MCD_PAUSE_PROXY",
+            "label": "ward"
+        },
+        {
+            "target": "MCD_SPOT",
+            "source": "MCD_END",
             "label": "ward"
         },
         {
@@ -1212,12 +1802,12 @@
         },
         {
             "target": "MCD_POT",
-            "source": "MCD_END",
+            "source": "MCD_PAUSE_PROXY",
             "label": "ward"
         },
         {
             "target": "MCD_POT",
-            "source": "MCD_PAUSE_PROXY",
+            "source": "MCD_END",
             "label": "ward"
         },
         {
@@ -1462,12 +2052,12 @@
         },
         {
             "target": "PIP_BAT",
-            "source": "MCD_END",
+            "source": "0xeAa474cbFFA87Ae0F1a6f68a3aBA6C77C656F72c",
             "label": "bud"
         },
         {
             "target": "PIP_BAT",
-            "source": "0xeAa474cbFFA87Ae0F1a6f68a3aBA6C77C656F72c",
+            "source": "MCD_END",
             "label": "bud"
         },
         {
@@ -1517,12 +2107,12 @@
         },
         {
             "target": "PIP_COMP",
-            "source": "MCD_END",
+            "source": "0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777",
             "label": "bud"
         },
         {
             "target": "PIP_COMP",
-            "source": "0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777",
+            "source": "MCD_END",
             "label": "bud"
         },
         {
@@ -1552,11 +2142,6 @@
         },
         {
             "target": "PIP_ETH",
-            "source": "MCD_END",
-            "label": "bud"
-        },
-        {
-            "target": "PIP_ETH",
             "source": "0xeAa474cbFFA87Ae0F1a6f68a3aBA6C77C656F72c",
             "label": "bud"
         },
@@ -1578,6 +2163,31 @@
         {
             "target": "PIP_ETH",
             "source": "0xDF3CDd10e646e4155723a3bC5b1191741DD90333",
+            "label": "bud"
+        },
+        {
+            "target": "PIP_ETH",
+            "source": "MCD_END",
+            "label": "bud"
+        },
+        {
+            "target": "PIP_ETH",
+            "source": "MCD_CLIP_ETH_A",
+            "label": "bud"
+        },
+        {
+            "target": "PIP_ETH",
+            "source": "CLIPPER_MOM",
+            "label": "bud"
+        },
+        {
+            "target": "PIP_ETH",
+            "source": "MCD_CLIP_ETH_B",
+            "label": "bud"
+        },
+        {
+            "target": "PIP_ETH",
+            "source": "MCD_CLIP_ETH_C",
             "label": "bud"
         },
         {
@@ -1827,12 +2437,22 @@
         },
         {
             "target": "PIP_LINK",
+            "source": "0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777",
+            "label": "bud"
+        },
+        {
+            "target": "PIP_LINK",
             "source": "MCD_END",
             "label": "bud"
         },
         {
             "target": "PIP_LINK",
-            "source": "0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777",
+            "source": "MCD_CLIP_LINK_A",
+            "label": "bud"
+        },
+        {
+            "target": "PIP_LINK",
+            "source": "CLIPPER_MOM",
             "label": "bud"
         },
         {
@@ -2007,11 +2627,6 @@
         },
         {
             "target": "PIP_RENBTC",
-            "source": "MCD_END",
-            "label": "bud"
-        },
-        {
-            "target": "PIP_RENBTC",
             "source": "0xeAa474cbFFA87Ae0F1a6f68a3aBA6C77C656F72c",
             "label": "bud"
         },
@@ -2023,6 +2638,21 @@
         {
             "target": "PIP_RENBTC",
             "source": "0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777",
+            "label": "bud"
+        },
+        {
+            "target": "PIP_RENBTC",
+            "source": "MCD_END",
+            "label": "bud"
+        },
+        {
+            "target": "PIP_RENBTC",
+            "source": "MCD_CLIP_WBTC_A",
+            "label": "bud"
+        },
+        {
+            "target": "PIP_RENBTC",
+            "source": "CLIPPER_MOM",
             "label": "bud"
         },
         {
@@ -2107,12 +2737,12 @@
         },
         {
             "target": "PIP_ZRX",
-            "source": "MCD_END",
+            "source": "0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777",
             "label": "bud"
         },
         {
             "target": "PIP_ZRX",
-            "source": "0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777",
+            "source": "MCD_END",
             "label": "bud"
         },
         {
@@ -2182,17 +2812,27 @@
         },
         {
             "target": "PIP_YFI",
-            "source": "MCD_END",
-            "label": "bud"
-        },
-        {
-            "target": "PIP_YFI",
             "source": "0x208EfCD7aad0b5DD49438E0b6A0f38E951A50E5f",
             "label": "bud"
         },
         {
             "target": "PIP_YFI",
             "source": "0xD5885fbCb9a8a8244746010a3BC6F1C6e0269777",
+            "label": "bud"
+        },
+        {
+            "target": "PIP_YFI",
+            "source": "MCD_END",
+            "label": "bud"
+        },
+        {
+            "target": "PIP_YFI",
+            "source": "MCD_CLIP_YFI_A",
+            "label": "bud"
+        },
+        {
+            "target": "PIP_YFI",
+            "source": "CLIPPER_MOM",
             "label": "bud"
         },
         {
@@ -2378,16 +3018,19 @@
             "id": "MCD_VOW"
         },
         {
-            "id": "MCD_END"
-        },
-        {
             "id": "MCD_CAT"
         },
         {
-            "id": "MCD_ESM"
+            "id": "MCD_END"
         },
         {
-            "id": "MCD_FLIP_ETH_A"
+            "id": "MCD_DOG"
+        },
+        {
+            "id": "0x989C0BDa008E257d5a5133575dc77e039A2e3758"
+        },
+        {
+            "id": "0xF32836B9E1f47a0515c6Ec431592D5EbC276407f"
         },
         {
             "id": "MCD_FLIP_BAT_A"
@@ -2399,7 +3042,7 @@
             "id": "MCD_FLIP_USDC_B"
         },
         {
-            "id": "MCD_FLIP_WBTC_A"
+            "id": "0x58CD24ac7322890382eE45A3E4F903a5B22Ee930"
         },
         {
             "id": "MCD_FLIP_TUSD_A"
@@ -2426,16 +3069,16 @@
             "id": "MCD_FLIP_LRC_A"
         },
         {
-            "id": "MCD_FLIP_LINK_A"
+            "id": "0xB907EEdD63a30A3381E6D898e5815Ee8c9fd2c85"
         },
         {
-            "id": "MCD_FLIP_ETH_B"
+            "id": "0xD499d71bE9e9E5D236A07ac562F7B6CeacCa624c"
         },
         {
             "id": "MCD_FLIP_BAL_A"
         },
         {
-            "id": "MCD_FLIP_YFI_A"
+            "id": "0xEe4C9C36257afB8098059a4763A374a4ECFE28A7"
         },
         {
             "id": "MCD_FLIP_GUSD_A"
@@ -2483,16 +3126,40 @@
             "id": "MCD_FLIP_UNIV2DAIUSDT_A"
         },
         {
-            "id": "MCD_FLIP_ETH_C"
+            "id": "0x7A67901A68243241EBf66beEB0e7b5395582BF17"
+        },
+        {
+            "id": "MCD_ESM"
+        },
+        {
+            "id": "MCD_CLIP_LINK_A"
+        },
+        {
+            "id": "MCD_CLIP_YFI_A"
+        },
+        {
+            "id": "MCD_CLIP_ETH_A"
+        },
+        {
+            "id": "MCD_CLIP_ETH_B"
+        },
+        {
+            "id": "MCD_CLIP_ETH_C"
+        },
+        {
+            "id": "MCD_CLIP_WBTC_A"
         },
         {
             "id": "FLIPPER_MOM"
         },
         {
+            "id": "CLIPPER_MOM"
+        },
+        {
             "id": "GOV_GUARD"
         },
         {
-            "id": "0xb87cec7BaA2ce4a055F8563e9cC5a210CeDC329F"
+            "id": "0x0644Bd0248d5F89e4F6E845a91D15c23591e5D33"
         },
         {
             "id": "0x0000000000075EfBeE23fe2de1bd0b7690883cc9"
@@ -2522,7 +3189,22 @@
             "id": "0xDA0FaB0700A4389F6E6679aBAb1692B4601ce9bf"
         },
         {
+            "id": "0xA9eCF012dD36512e5fFCD5585D72386E46135Cdd"
+        },
+        {
             "id": "0x53b2d22d07E069a3b132BfeaaD275b10273d381E"
+        },
+        {
+            "id": "0x080DE4B4Ea5D037DEA78D44fE9AE94735C4B817a"
+        },
+        {
+            "id": "0xcC7AFB5DeED34CF67E72d4C53B142F44c9268ab9"
+        },
+        {
+            "id": "0xD9E4391cF31638a8Da718Ff0Bf69249Cdc48fB2B"
+        },
+        {
+            "id": "0x6A82DdF0DF710fACD0414B37606dC9Db05a4F752"
         },
         {
             "id": "0xf3BceA7494D8f3ac21585CA4b0E52aa175c24C25"
@@ -2532,6 +3214,27 @@
         },
         {
             "id": "0xDe365B0a88BB785aBE9fA6534e0c2B258348FBb9"
+        },
+        {
+            "id": "0x7cD2a6Be6ca8fEB02aeAF08b7F350d7248dA7707"
+        },
+        {
+            "id": "0x636214f455480D19F17FE1aa45B9989C86041767"
+        },
+        {
+            "id": "0x83E2369A33104120746B589Cc90180ed776fFb91"
+        },
+        {
+            "id": "0x71d9f8CFdcCEF71B59DD81AB387e523E2834F2b8"
+        },
+        {
+            "id": "0xed0d554A3125E79B9E77A919c7cc651d235A3B1A"
+        },
+        {
+            "id": "0x4c4Cc6a0573db5823ECAA1d1d65EB64E5E0E5F01"
+        },
+        {
+            "id": "0x230f2E19D6c2Dc0c441c2150D4dD9d67B563A60C"
         },
         {
             "id": "MCD_SPOT"
@@ -2816,6 +3519,9 @@
             "id": "CHANGELOG"
         },
         {
+            "id": "LERP_FAB"
+        },
+        {
             "id": "ILK_REGISTRY"
         },
         {
@@ -2832,6 +3538,15 @@
         },
         {
             "id": "MCD_FLAP"
+        },
+        {
+            "id": "MCD_CLIP_CALC_ETH_A"
+        },
+        {
+            "id": "MCD_CLIP_CALC_LINK_A"
+        },
+        {
+            "id": "MCD_CLIP_CALC_WBTC_A"
         },
         {
             "id": "MCD_GOV"
@@ -2855,10 +3570,19 @@
             "id": "WBTC"
         },
         {
+            "id": "MCD_CLIP_CALC_ETH_B"
+        },
+        {
+            "id": "MCD_CLIP_CALC_YFI_A"
+        },
+        {
             "id": "RENBTC"
         },
         {
             "id": "RWA001_A_OUTPUT_CONDUIT"
+        },
+        {
+            "id": "MCD_CLIP_CALC_ETH_C"
         },
         {
             "id": "RWA002_A_OUTPUT_CONDUIT"
@@ -2946,9 +3670,6 @@
         },
         {
             "id": "ETH"
-        },
-        {
-            "id": "LERP_FAB"
         },
         {
             "id": "GET_CDPS"
